@@ -8,6 +8,12 @@ func adjugateViaInverse(matrix:float3x3) -> float3x3 {
     return adjugate
 }
 
+func adjugateViaCofactors(matrix:float3x3) -> float3x3 {
+    // TODO: calculate cofactors
+    return matrix
+}
+
+
 class AdjugateSpec: QuickSpec {
     override func spec() {
         context("adjugateViaInverse") {
