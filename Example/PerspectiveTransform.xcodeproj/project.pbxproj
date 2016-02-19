@@ -8,10 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		4226E76D5782BCFD7E16A726 /* Pods_PerspectiveTransform_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94A16A8706A6E84494068BCA /* Pods_PerspectiveTransform_Tests.framework */; };
-		4B3FE4F51C76F57000E6EB40 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B3FE4F31C76F57000E6EB40 /* Nimble.framework */; };
-		4B3FE4F61C76F57000E6EB40 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B3FE4F41C76F57000E6EB40 /* Quick.framework */; };
-		4B3FE4F81C76F5CA00E6EB40 /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4B3FE4F31C76F57000E6EB40 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		4B3FE4F91C76F5CA00E6EB40 /* Quick.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4B3FE4F41C76F57000E6EB40 /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
@@ -30,20 +26,6 @@
 			remoteInfo = PerspectiveTransform;
 		};
 /* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		4B3FE4F71C76F5C000E6EB40 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				4B3FE4F81C76F5CA00E6EB40 /* Nimble.framework in CopyFiles */,
-				4B3FE4F91C76F5CA00E6EB40 /* Quick.framework in CopyFiles */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		11CFEB20812B9CCCF8BF46FE /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
@@ -82,8 +64,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4B3FE4F61C76F57000E6EB40 /* Quick.framework in Frameworks */,
-				4B3FE4F51C76F57000E6EB40 /* Nimble.framework in Frameworks */,
 				4226E76D5782BCFD7E16A726 /* Pods_PerspectiveTransform_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -215,7 +195,6 @@
 				607FACE11AFB9204008FA782 /* Sources */,
 				607FACE21AFB9204008FA782 /* Frameworks */,
 				607FACE31AFB9204008FA782 /* Resources */,
-				4B3FE4F71C76F5C000E6EB40 /* CopyFiles */,
 				36AC9298AFCE04F36DAC2D69 /* Embed Pods Frameworks */,
 				EE57197235997E705B5FC405 /* Copy Pods Resources */,
 			);
@@ -541,10 +520,6 @@
 			baseConfigurationReference = 3C01DBA2314872F457E9DADD /* Pods-PerspectiveTransform_Tests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -562,10 +537,6 @@
 			baseConfigurationReference = 9F3E8114E7EC7B2A47104A86 /* Pods-PerspectiveTransform_Tests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
