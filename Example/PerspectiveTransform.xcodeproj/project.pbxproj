@@ -33,6 +33,8 @@
 		49D74FF71C76808F6942EAE3 /* Pods-PerspectiveTransform_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PerspectiveTransform_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-PerspectiveTransform_Example/Pods-PerspectiveTransform_Example.release.xcconfig"; sourceTree = "<group>"; };
 		4B3FE4F31C76F57000E6EB40 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Nimble.framework; sourceTree = "<group>"; };
 		4B3FE4F41C76F57000E6EB40 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Quick.framework; sourceTree = "<group>"; };
+		4BA3D1781C77010D0009B690 /* Gemfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Gemfile; sourceTree = "<group>"; };
+		4BA3D1791C77010D0009B690 /* Gemfile.lock */ = {isa = PBXFileReference; lastKnownFileType = text; path = Gemfile.lock; sourceTree = "<group>"; };
 		4EA2244D76A3BF4D89D92FD5 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		54239BF346BDA1A204452D96 /* Pods_PerspectiveTransform_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PerspectiveTransform_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD01AFB9204008FA782 /* PerspectiveTransform_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PerspectiveTransform_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -146,6 +148,8 @@
 		607FACF51AFB993E008FA782 /* Podspec Metadata */ = {
 			isa = PBXGroup;
 			children = (
+				4BA3D1781C77010D0009B690 /* Gemfile */,
+				4BA3D1791C77010D0009B690 /* Gemfile.lock */,
 				8E6BB167377E7674273158F4 /* PerspectiveTransform.podspec */,
 				4EA2244D76A3BF4D89D92FD5 /* README.md */,
 				11CFEB20812B9CCCF8BF46FE /* LICENSE */,
