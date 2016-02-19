@@ -58,7 +58,7 @@
 		607FACE51AFB9204008FA782 /* PerspectiveTransform_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PerspectiveTransform_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
-		8E6BB167377E7674273158F4 /* PerspectiveTransform.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = PerspectiveTransform.podspec; path = ../PerspectiveTransform.podspec; sourceTree = "<group>"; };
+		8E6BB167377E7674273158F4 /* PerspectiveTransform.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = PerspectiveTransform.podspec; path = ../PerspectiveTransform.podspec; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
