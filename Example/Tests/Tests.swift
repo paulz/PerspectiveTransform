@@ -1,8 +1,6 @@
-// https://github.com/Quick/Quick
-
 import Quick
 import Nimble
-import PerspectiveTransform
+//import PerspectiveTransform
 
 class TableOfContentsSpec: QuickSpec {
     override func spec() {
