@@ -9,22 +9,18 @@
 Pod::Spec.new do |s|
   s.name             = "PerspectiveTransform"
   s.version          = "0.1.0"
-  s.summary          = "A short description of PerspectiveTransform."
-
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!  
+  s.summary          = "Perspective Transform calculates CATransform3D"
   s.description      = <<-DESC
+  Calculates CATransform3D to transform rectangular frame to convex quadrilateral
+  Allows to overlay images in UIView given 4 points.
                        DESC
 
-  s.homepage         = "https://github.com/<GITHUB_USERNAME>/PerspectiveTransform"
+  s.homepage         = "https://github.com/paulz/PerspectiveTransform"
   # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
   s.license          = 'MIT'
-  s.author           = { "Paul Zabelin" => "pzabelin+git@gmail.com" }
-  s.source           = { :git => "https://github.com/<GITHUB_USERNAME>/PerspectiveTransform.git", :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.author              = { 'Paul Zabelin' => 'https://github.com/paulz' }
+  s.source           = { :git => "https://github.com/paulz/PerspectiveTransform.git", :tag => s.version.to_s }
+  s.social_media_url = 'https://twitter.com/iospaulz'
 
   s.platform     = :ios, '8.0'
   s.requires_arc = true
@@ -35,6 +31,5 @@ Pod::Spec.new do |s|
   }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.frameworks = 'UIKit'
 end
