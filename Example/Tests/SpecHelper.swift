@@ -18,4 +18,9 @@ public func ==(lhs: float3x3, rhs: float3x3) -> Bool {
 }
 extension float3x3 : Equatable {}
 
+public func ==(lhs: float3, rhs: float3) -> Bool {
+  return lhs.x == rhs.x && lhs.y == rhs.y && lhs.z == rhs.z
+}
+extension float3 : Equatable {}
+
 
