@@ -99,7 +99,8 @@ class BasisSpec: QuickSpec {
 
             it("should match fiddle") {
                 let startBasis = float3x3([0, 2818688, 0, 0, 0, 2262368, -18544, 18544, 18544])
-                expect(basis(start)) == startBasis
+                let result = basis(start)
+                expect(result) ≈ startBasis ± 0.5
             }
         }
     }
