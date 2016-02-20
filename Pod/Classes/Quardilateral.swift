@@ -14,11 +14,6 @@ public func adjugateViaInverse(matrix:float3x3) -> float3x3 {
   return adjugate
 }
 
-func adjugateViaCofactors(matrix:float3x3) -> float3x3 {
-  // TODO: calculate cofactors
-  return matrix
-}
-
 extension float3x3 {
   init(_ array:[Float]) {
     let row1 = float3(Array(array[0...2]))
@@ -88,9 +83,10 @@ func general2DProjection(from:Quadrilateral, to:Quadrilateral) -> float3x3 {
   source = normalize(source)
   var destination = basis(to)
   destination = normalize(destination)
-  print(destination.toA())
-  let result = destination * adjugateViaInverse(source)
-  return normalize(result)
+  var result = destination * adjugateViaInverse(source)
+  result = normalize(result)
+  print(result.toA())
+  return result
 }
 
 func expandNoZ(matrix:float3x3) -> float4x3 {
