@@ -26,8 +26,25 @@ extension float3x3 {
         let t = transpose
         return t[0].toA() + t[1].toA() + t[2].toA()
     }
-
 }
+
+extension float4 {
+    func toA() -> [Float] {
+        return [x,y,z,w]
+    }
+}
+
+extension float4x4 {
+    func toA() -> [Float] {
+        let t = transpose
+        return t[0].toA() + t[1].toA() + t[2].toA() + t[3].toA()
+    }
+    func toAA() -> [[Float]] {
+        let t = transpose
+        return [t[0].toA(), t[1].toA(), t[2].toA(), t[3].toA()]
+    }
+}
+
 
 class Quardilateral {
     let p1 : CGPoint
@@ -113,14 +130,14 @@ func expandNoZ(matrix:float4x3) -> float4x4 {
 }
 
 
-func transform(matrix:float3x3) -> CATransform3D {
-  let c = matrix.toA().map{CGFloat($0)}
-  return CATransform3D(
-    m11: c[0], m12: c[3], m13: 0, m14: 0,
-    m21: 0, m22: 0, m23: 0, m24: 0,
-    m31: 0, m32: 0, m33: 0, m34: 0,
-    m41: 0, m42: 0, m43: 0, m44: 0
-  )
+func transform(matrix:float4x4) -> CATransform3D {
+    let c = matrix.toAA().map{$0.map{CGFloat($0)}}
+    return CATransform3D(
+        m11: c[0][0], m12: c[0][1], m13: c[0][2], m14: c[0][3],
+        m21: c[1][0], m22: c[1][1], m23: c[1][2], m24: c[1][3],
+        m31: c[2][0], m32: c[2][1], m33: c[2][2], m34: c[2][3],
+        m41: c[3][0], m42: c[3][1], m43: c[3][2], m44: c[3][3]
+    )
 }
 
 class ProjectionSpec: QuickSpec {
@@ -160,6 +177,21 @@ class ProjectionSpec: QuickSpec {
                         var withZ1 = float4()
                         withZ1[2] = 1
                         expect(expanded[2]) == withZ1
+                    }
+                }
+                context("transform") {
+                    it("should create 3D transformation") {
+                        let expectedNormalized = normalize(expected)
+                        let expanded = expandNoZ(expandNoZ(expectedNormalized))
+                        let transform3D = transform(expanded)
+                        expect(CATransform3DIsAffine(transform3D)) == false
+                        let translate = CATransform3DMakeTranslation(100, 100, 0)
+                        let scale = CATransform3DMakeScale(200.0/152, 200.0/122, 1)
+                        let combined = CATransform3DConcat(translate, scale)
+                        expect(CATransform3DEqualToTransform(combined, transform3D)) == false
+                        let expAffine = CATransform3DGetAffineTransform(scale)
+                        let affine = CATransform3DGetAffineTransform(transform3D)
+//                        expect(CGAffineTransformEqualToTransform(affine, expAffine)) == true
                     }
                 }
             }
@@ -229,7 +261,7 @@ class AdjugateSpec: QuickSpec {
                     ])
                 expect(adjugateViaInverse(a)) == b
             }
-            
+
             it("should match fiddle") {
                 // http://jsfiddle.net/dFrHS/3/
                 let input = float3x3([0, 152, 0, 0, 0, 122, 1, 1, 1])
