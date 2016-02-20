@@ -20,23 +20,23 @@ class ViewController: UIViewController {
     @IBOutlet weak var destView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
+      self.transView.frame = self.destView.frame
     }
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        self.transView.layer.transform = CATransform3DIdentity
+        updatePosition()
+    }
+
+    func updatePosition() {
+        let centers = cornerViews.map{$0.center}
+        let quad = Quadrilateral(centers)
         let start = Quadrilateral(startView.frame)
-        let destination = Quadrilateral(destView.frame)
-        let projection = general2DProjection(start, to: destination)
+        let projection = general2DProjection(start, to: quad)
         let expanded = expandNoZ(expandNoZ(projection))
         let transform3D = transform(expanded)
-        UIView.animateWithDuration(1.0, delay: 0.2,
-            options: [.Repeat, .Autoreverse],
-            animations: { () -> Void in
-                self.transView.layer.transform = transform3D
-            }) { (complete) -> Void in
-                print("animation complete:\(complete)")
-        }
+
+        self.transView.layer.transform = transform3D
     }
 
   @IBAction func didPan(recognizer: UIPanGestureRecognizer) {
@@ -45,6 +45,8 @@ class ViewController: UIViewController {
     controlPoint.center = CGPoint(x: controlPoint.center.x + translation.x,
       y: controlPoint.center.y + translation.y)
     recognizer.setTranslation(CGPointZero, inView: view)
+    updatePosition()
+
   }
 
 }
