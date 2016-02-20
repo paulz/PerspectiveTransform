@@ -101,7 +101,9 @@
 				607FACD11AFB9204008FA782 /* Products */,
 				F7FF9E304AB4C0C160499BEB /* Pods */,
 			);
+			indentWidth = 4;
 			sourceTree = "<group>";
+			tabWidth = 4;
 		};
 		607FACD11AFB9204008FA782 /* Products */ = {
 			isa = PBXGroup;

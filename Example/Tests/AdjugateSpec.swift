@@ -47,14 +47,14 @@ class ProjectionSpec: QuickSpec {
                         let expectedNormalized = normalize(expected)
                         let expanded = expandNoZ(expandNoZ(expectedNormalized))
                         let transform3D = transform(expanded)
-                        expect(CATransform3DIsAffine(transform3D)) == false
+                        expect(CATransform3DIsAffine(transform3D)) == true
                         let translate = CATransform3DMakeTranslation(100, 100, 0)
                         let scale = CATransform3DMakeScale(200.0/152, 200.0/122, 1)
                         let combined = CATransform3DConcat(translate, scale)
                         expect(CATransform3DEqualToTransform(combined, transform3D)) == false
                         let expAffine = CATransform3DGetAffineTransform(scale)
                         let affine = CATransform3DGetAffineTransform(transform3D)
-//                        expect(CGAffineTransformEqualToTransform(affine, expAffine)) == true
+                        expect(CGAffineTransformEqualToTransform(affine, expAffine)) != true
                     }
                 }
             }

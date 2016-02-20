@@ -113,7 +113,7 @@ func expandNoZ(matrix:float4x3) -> float4x4 {
 
 
 func transform(matrix:float4x4) -> CATransform3D {
-  let c = matrix.toAA().map{$0.map{CGFloat($0)}}
+  let c = matrix.transpose.toAA().map{$0.map{CGFloat($0)}}
   return CATransform3D(
     m11: c[0][0], m12: c[0][1], m13: c[0][2], m14: c[0][3],
     m21: c[1][0], m22: c[1][1], m23: c[1][2], m24: c[1][3],
