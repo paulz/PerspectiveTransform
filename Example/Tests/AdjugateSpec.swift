@@ -13,6 +13,16 @@ func adjugateViaCofactors(matrix:float3x3) -> float3x3 {
     return matrix
 }
 
+extension float3x3 {
+    init(_ array:[Float]) {
+        let row1 = float3(Array(array[0...2]))
+        let row2 = float3(Array(array[3...5]))
+        let row3 = float3(Array(array[6...8]))
+        let rows = [row1, row2, row3]
+        self.init(rows)
+    }
+}
+
 
 class AdjugateSpec: QuickSpec {
     override func spec() {
@@ -30,6 +40,13 @@ class AdjugateSpec: QuickSpec {
                     float3(  -4,   2,   4)
                     ])
                 expect(adjugateViaInverse(a)) == b
+            }
+
+            it("should match fiddle") {
+                // http://jsfiddle.net/dFrHS/3/
+                let input = float3x3([0, 152, 0, 0, 0, 122, 1, 1, 1])
+                let output = float3x3([-122, -152, 18544, 122, 0, 0, 0, 152, 0])
+                expect(adjugateViaInverse(input)) == output
             }
         }
 
