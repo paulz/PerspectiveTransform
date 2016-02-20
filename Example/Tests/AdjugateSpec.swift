@@ -1,6 +1,7 @@
 import Quick
 import Nimble
 import simd
+import PerspectiveTransform
 
 func adjugateViaInverse(matrix:float3x3) -> float3x3 {
     let det = matrix_determinant(matrix.cmatrix)
@@ -46,30 +47,6 @@ extension float4x4 {
 }
 
 
-class Quardilateral {
-    let p1 : CGPoint
-    let p2 : CGPoint
-    let p3 : CGPoint
-    let p4 : CGPoint
-    init(_ points:[CGPoint]) {
-        p1 = points[0]
-        p2 = points[1]
-        p3 = points[2]
-        p4 = points[3]
-    }
-    convenience init(_ origin:CGPoint, _ size:CGSize) {
-        self.init([
-            origin,
-            CGPointApplyAffineTransform(origin, CGAffineTransformMakeTranslation(size.width, 0)),
-            CGPointApplyAffineTransform(origin, CGAffineTransformMakeTranslation(0, size.height)),
-            CGPointApplyAffineTransform(origin, CGAffineTransformMakeTranslation(size.width, size.height)),
-            ])
-    }
-    convenience init(_ rect:CGRect) {
-        self.init(rect.origin, rect.size)
-    }
-}
-
 extension float3 {
     init(_ point:CGPoint) {
         self.init(Float(point.x), Float(point.y), 1)
@@ -80,14 +57,14 @@ extension float3 {
     }
 }
 
-func first3(quad:Quardilateral) -> float3x3 {
+func first3(quad:Quadrilateral) -> float3x3 {
     let v1 = float3(quad.p1)
     let v2 = float3(quad.p2)
     let v3 = float3(quad.p3)
     return float3x3([v1, v2, v3])
 }
 
-func basis(quad:Quardilateral) -> float3x3 {
+func basis(quad:Quadrilateral) -> float3x3 {
     let m = first3(quad)
     let v4 = float3(quad.p4)
     let adjM = adjugateViaInverse(m)
@@ -101,7 +78,7 @@ func normalize(input:float3x3) -> float3x3 {
     return (Float(1) / input[2,2]) * input
 }
 
-func general2DProjection(from:Quardilateral, to:Quardilateral) -> float3x3 {
+func general2DProjection(from:Quadrilateral, to:Quadrilateral) -> float3x3 {
     var source = basis(from)
     source = normalize(source)
     var destination = basis(to)
@@ -148,8 +125,8 @@ class ProjectionSpec: QuickSpec {
                 let expected = float3x3([-335626817536000000, 0, -25507638132736000000, 0, -418158002176000000, -25507638132736000000, 0, 0, -255076381327360000])
 
                 it("should match") {
-                    let start = Quardilateral(CGRect(origin: CGPointZero, size: CGSize(width: 152, height: 122)))
-                    let destination = Quardilateral(
+                    let start = Quadrilateral(CGRect(origin: CGPointZero, size: CGSize(width: 152, height: 122)))
+                    let destination = Quadrilateral(
                         CGRect(
                             origin: CGPoint(x: 100, y: 100),
                             size: CGSize(width: 200, height: 200)
@@ -201,8 +178,8 @@ class ProjectionSpec: QuickSpec {
 
 class BasisSpec: QuickSpec {
     override func spec() {
-        let start = Quardilateral(CGRect(origin: CGPointZero, size: CGSize(width: 152, height: 122)))
-        let destination = Quardilateral(
+        let start = Quadrilateral(CGRect(origin: CGPointZero, size: CGSize(width: 152, height: 122)))
+        let destination = Quadrilateral(
             CGRect(
                 origin: CGPoint(x: 100, y: 100),
                 size: CGSize(width: 200, height: 200)
