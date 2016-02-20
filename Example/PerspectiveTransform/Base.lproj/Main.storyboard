@@ -29,6 +29,35 @@
                                 <rect key="frame" x="0.0" y="0.0" width="152" height="122"/>
                                 <color key="backgroundColor" red="0.89019607840000003" green="0.1333333333" blue="0.56470588239999997" alpha="1" colorSpace="deviceRGB"/>
                             </view>
+                            <view alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qnW-dm-dKZ" userLabel="4th corner">
+                                <rect key="frame" x="84" y="280" width="28" height="29"/>
+                                <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="yoO-wr-VEh" appends="YES" id="G90-ai-Ba1"/>
+                                </connections>
+                            </view>
+                            <view alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GXd-f4-Tva" userLabel="2nd corner">
+                                <rect key="frame" x="286" y="84" width="28" height="29"/>
+                                <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="KB0-gW-LkZ" appends="YES" id="2hu-35-W9v"/>
+                                </connections>
+                            </view>
+                            <view alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RAU-xU-nUy" userLabel="3rd corner">
+                                <rect key="frame" x="286" y="285" width="28" height="29"/>
+                                <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Zcm-B9-Aqa" appends="YES" id="u9h-Ay-6Mw"/>
+                                </connections>
+                            </view>
+                            <view alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kYW-iW-GWA" userLabel="1st corner">
+                                <rect key="frame" x="87" y="87" width="28" height="29"/>
+                                <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Dg0-Qp-y8w" appends="YES" id="WaO-BJ-hO2"/>
+                                </connections>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -36,9 +65,33 @@
                         <outlet property="destView" destination="l9I-OJ-n6G" id="gcy-eY-ymS"/>
                         <outlet property="startView" destination="5Fh-mb-69Y" id="ahd-MV-6i4"/>
                         <outlet property="transView" destination="hsB-RN-sg8" id="YTZ-ck-Dfn"/>
+                        <outletCollection property="cornerViews" destination="RAU-xU-nUy" collectionClass="NSMutableArray" id="6Ec-lO-C8V"/>
+                        <outletCollection property="cornerViews" destination="kYW-iW-GWA" collectionClass="NSMutableArray" id="T7k-Pk-qre"/>
+                        <outletCollection property="cornerViews" destination="GXd-f4-Tva" collectionClass="NSMutableArray" id="1VK-SQ-MuP"/>
+                        <outletCollection property="cornerViews" destination="qnW-dm-dKZ" collectionClass="NSMutableArray" id="cJb-WB-b4a"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="Dg0-Qp-y8w" userLabel="1st gesture">
+                    <connections>
+                        <action selector="didPan:" destination="vXZ-lx-hvc" id="2lJ-Xl-0zM"/>
+                    </connections>
+                </panGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="KB0-gW-LkZ" userLabel="2nd gesture">
+                    <connections>
+                        <action selector="didPan:" destination="vXZ-lx-hvc" id="j0h-y4-EfQ"/>
+                    </connections>
+                </panGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="Zcm-B9-Aqa" userLabel="3rd gesture">
+                    <connections>
+                        <action selector="didPan:" destination="vXZ-lx-hvc" id="SHO-aO-kXM"/>
+                    </connections>
+                </panGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="yoO-wr-VEh" userLabel="4th gesture">
+                    <connections>
+                        <action selector="didPan:" destination="vXZ-lx-hvc" id="tG3-4H-taF"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="392" y="206"/>
         </scene>

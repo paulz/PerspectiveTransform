@@ -13,6 +13,8 @@ import QuartzCore
 
 class ViewController: UIViewController {
 
+
+  @IBOutlet var cornerViews: [UIView]!
     @IBOutlet weak var transView: UIView!
     @IBOutlet weak var startView: UIView!
     @IBOutlet weak var destView: UIView!
@@ -37,10 +39,13 @@ class ViewController: UIViewController {
         }
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
+  @IBAction func didPan(recognizer: UIPanGestureRecognizer) {
+    let controlPoint = recognizer.view!
+    let translation = recognizer.translationInView(view)
+    controlPoint.center = CGPoint(x: controlPoint.center.x + translation.x,
+      y: controlPoint.center.y + translation.y)
+    recognizer.setTranslation(CGPointZero, inView: view)
+  }
+
 }
 
