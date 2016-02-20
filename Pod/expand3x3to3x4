@@ -1,0 +1,1 @@
+\begin{bmatrix} a & b & c \\ d & e & f \\ g & h & i \end{bmatrix}\times \begin{bmatrix} 1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 0 & 1 \end{bmatrix}=\begin{bmatrix} a & b & 0 & c \\ d & e & 0 & f \\ g & h & 0 & i \end{bmatrix}

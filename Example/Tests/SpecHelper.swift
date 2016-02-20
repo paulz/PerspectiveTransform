@@ -24,6 +24,11 @@ public func ==(lhs: float3, rhs: float3) -> Bool {
 }
 extension float3 : Equatable {}
 
+public func ==(lhs: float4, rhs: float4) -> Bool {
+  return lhs.x == rhs.x && lhs.y == rhs.y && lhs.z == rhs.z && lhs.w == rhs.w
+}
+extension float4 : Equatable {}
+
 public func beCloseTo(expectedValue: float3x3, within delta: Double = 0.00001) -> NonNilMatcherFunc<float3x3> {
   return NonNilMatcherFunc<float3x3> { (actualExpression:Expression<float3x3>, failureMessage:FailureMessage) in
     return matrix_almost_equal_elements(try! actualExpression.evaluate()!.cmatrix, expectedValue.cmatrix, Float(delta))

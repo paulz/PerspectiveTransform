@@ -94,11 +94,42 @@ func general2DProjection(from:Quardilateral, to:Quardilateral) -> float3x3 {
     return normalize(result)
 }
 
+func expandNoZ(matrix:float3x3) -> float4x3 {
+    var noZ = float4x3()
+    noZ[0,0]=1
+    noZ[1,1]=1
+    noZ[3,2]=1
+    return matrix * noZ
+}
+
+func expandNoZ(matrix:float4x3) -> float4x4 {
+    var noZ = float3x4()
+    noZ[0,0]=1
+    noZ[1,1]=1
+    noZ[2,3]=1
+    var result = noZ * matrix
+    result[2,2] = 1
+    return result
+}
+
+
+func transform(matrix:float3x3) -> CATransform3D {
+  let c = matrix.toA().map{CGFloat($0)}
+  return CATransform3D(
+    m11: c[0], m12: c[3], m13: 0, m14: 0,
+    m21: 0, m22: 0, m23: 0, m24: 0,
+    m31: 0, m32: 0, m33: 0, m34: 0,
+    m41: 0, m42: 0, m43: 0, m44: 0
+  )
+}
+
 class ProjectionSpec: QuickSpec {
     override func spec() {
 
         describe("general2DProjection") {
             context("fiddle") {
+                let expected = float3x3([-335626817536000000, 0, -25507638132736000000, 0, -418158002176000000, -25507638132736000000, 0, 0, -255076381327360000])
+
                 it("should match") {
                     let start = Quardilateral(CGRect(origin: CGPointZero, size: CGSize(width: 152, height: 122)))
                     let destination = Quardilateral(
@@ -109,9 +140,27 @@ class ProjectionSpec: QuickSpec {
                     )
 
                     let projection = general2DProjection(start, to: destination)
-                    var e = float3x3([-335626817536000000, 0, -25507638132736000000, 0, -418158002176000000, -25507638132736000000, 0, 0, -255076381327360000])
-                    let expectedNormalized = (Float(1) / e[2,2]) * e
+                    let expectedNormalized = normalize(expected)
                     expect(projection) == expectedNormalized
+                }
+
+                context("expandNoZ") {
+                    let expectedNormalized = normalize(expected)
+
+                    it("should add empty space") {
+                        let expanded = expandNoZ(expectedNormalized)
+                        expect(expanded[0]) == expectedNormalized[0]
+                        expect(expanded[1]) == expectedNormalized[1]
+                        expect(expanded[2]) == float3()
+                        expect(expanded[3]) == expectedNormalized[2]
+                    }
+
+                    it("should expand to 4x4") {
+                        let expanded = expandNoZ(expandNoZ(expectedNormalized))
+                        var withZ1 = float4()
+                        withZ1[2] = 1
+                        expect(expanded[2]) == withZ1
+                    }
                 }
             }
         }
