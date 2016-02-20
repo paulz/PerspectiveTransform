@@ -21,6 +21,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
       self.transView.frame = self.destView.frame
+      self.transView.layer.anchorPoint = CGPointZero
     }
 
     override func viewDidLayoutSubviews() {

@@ -65,10 +65,10 @@
                         <outlet property="destView" destination="l9I-OJ-n6G" id="gcy-eY-ymS"/>
                         <outlet property="startView" destination="5Fh-mb-69Y" id="ahd-MV-6i4"/>
                         <outlet property="transView" destination="hsB-RN-sg8" id="YTZ-ck-Dfn"/>
-                        <outletCollection property="cornerViews" destination="RAU-xU-nUy" collectionClass="NSMutableArray" id="6Ec-lO-C8V"/>
-                        <outletCollection property="cornerViews" destination="kYW-iW-GWA" collectionClass="NSMutableArray" id="T7k-Pk-qre"/>
-                        <outletCollection property="cornerViews" destination="GXd-f4-Tva" collectionClass="NSMutableArray" id="1VK-SQ-MuP"/>
-                        <outletCollection property="cornerViews" destination="qnW-dm-dKZ" collectionClass="NSMutableArray" id="cJb-WB-b4a"/>
+                        <outletCollection property="cornerViews" destination="kYW-iW-GWA" collectionClass="NSMutableArray" id="y8h-KH-akU"/>
+                        <outletCollection property="cornerViews" destination="GXd-f4-Tva" collectionClass="NSMutableArray" id="XfE-oG-prx"/>
+                        <outletCollection property="cornerViews" destination="qnW-dm-dKZ" collectionClass="NSMutableArray" id="2fG-8H-NqX"/>
+                        <outletCollection property="cornerViews" destination="RAU-xU-nUy" collectionClass="NSMutableArray" id="TDN-Rl-oSY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
