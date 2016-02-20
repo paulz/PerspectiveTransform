@@ -18,23 +18,24 @@ class ViewController: UIViewController {
     @IBOutlet weak var destView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.transView.frame = startView.frame
     }
 
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        self.transView.layer.transform = CATransform3DIdentity
         let start = Quadrilateral(startView.frame)
         let destination = Quadrilateral(destView.frame)
         let projection = general2DProjection(start, to: destination)
         let expanded = expandNoZ(expandNoZ(projection))
         let transform3D = transform(expanded)
-//        self.transView.layer.anchorPoint = CGPointMake(100, 100)
-
-        UIView.animateWithDuration(1.0) {
-            self.transView.layer.transform = transform3D
+        UIView.animateWithDuration(1.0, delay: 0.2,
+            options: [.Repeat, .Autoreverse],
+            animations: { () -> Void in
+                self.transView.layer.transform = transform3D
+            }) { (complete) -> Void in
+                print("animation complete:\(complete)")
         }
     }
-
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
