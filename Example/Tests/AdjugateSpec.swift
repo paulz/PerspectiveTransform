@@ -48,7 +48,6 @@ class Quardilateral {
             CGPointApplyAffineTransform(origin, CGAffineTransformMakeTranslation(size.width, size.height)),
             ])
     }
-
     convenience init(_ rect:CGRect) {
         self.init(rect.origin, rect.size)
     }
@@ -81,9 +80,54 @@ func basis(quad:Quardilateral) -> float3x3 {
     return result
 }
 
+func normalize(input:float3x3) -> float3x3 {
+    return (Float(1) / input[2,2]) * input
+}
+
+func general2DProjection(from:Quardilateral, to:Quardilateral) -> float3x3 {
+    var source = basis(from)
+    source = normalize(source)
+    var destination = basis(to)
+    destination = normalize(destination)
+    print(destination.toA())
+    let result = destination * adjugateViaInverse(source)
+    return normalize(result)
+}
+
+class ProjectionSpec: QuickSpec {
+    override func spec() {
+
+        describe("general2DProjection") {
+            context("fiddle") {
+                it("should match") {
+                    let start = Quardilateral(CGRect(origin: CGPointZero, size: CGSize(width: 152, height: 122)))
+                    let destination = Quardilateral(
+                        CGRect(
+                            origin: CGPoint(x: 100, y: 100),
+                            size: CGSize(width: 200, height: 200)
+                        )
+                    )
+
+                    let projection = general2DProjection(start, to: destination)
+                    var e = float3x3([-335626817536000000, 0, -25507638132736000000, 0, -418158002176000000, -25507638132736000000, 0, 0, -255076381327360000])
+                    let expectedNormalized = (Float(1) / e[2,2]) * e
+                    expect(projection) == expectedNormalized
+                }
+            }
+        }
+    }
+}
+
 class BasisSpec: QuickSpec {
     override func spec() {
         let start = Quardilateral(CGRect(origin: CGPointZero, size: CGSize(width: 152, height: 122)))
+        let destination = Quardilateral(
+            CGRect(
+                origin: CGPoint(x: 100, y: 100),
+                size: CGSize(width: 200, height: 200)
+            )
+        )
+
 
         context("multiply adj by vector") {
             it("should match expected") {
@@ -96,12 +140,25 @@ class BasisSpec: QuickSpec {
         }
 
         context("basis") {
-
             it("should match fiddle") {
                 let startBasis = float3x3([0, 2818688, 0, 0, 0, 2262368, -18544, 18544, 18544])
                 let result = basis(start)
                 expect(result) ≈ startBasis ± 0.5
             }
+
+            it("should work for destination") {
+                let destBasis = float3x3([-4000000, 12000000, 4000000, -4000000, 4000000, 12000000, -40000, 40000, 40000])
+                let result = basis(destination)
+                expect(result) ≈ destBasis ± 0.5
+            }
+        }
+
+
+        context("perspective") {
+            it("should match expected") {
+
+            }
+
         }
     }
 }
@@ -123,7 +180,7 @@ class AdjugateSpec: QuickSpec {
                     ])
                 expect(adjugateViaInverse(a)) == b
             }
-
+            
             it("should match fiddle") {
                 // http://jsfiddle.net/dFrHS/3/
                 let input = float3x3([0, 152, 0, 0, 0, 122, 1, 1, 1])
