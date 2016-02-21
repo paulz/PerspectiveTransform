@@ -11,7 +11,7 @@ import simd
 
 public extension Quadrilateral {
     func basisVector() -> float3x3 {
-        let m = first3(self)
+        let m = float3x3([float3(p1), float3(p2), float3(p3)])
         let v4 = float3(p4)
         let v = m.inverse * v4
         let diag = float3x3(diagonal: v)
@@ -77,13 +77,6 @@ extension float3 {
     func toA() -> [Float] {
         return [x, y, z]
     }
-}
-
-func first3(quad:Quadrilateral) -> float3x3 {
-    let v1 = float3(quad.p1)
-    let v2 = float3(quad.p2)
-    let v3 = float3(quad.p3)
-    return float3x3([v1, v2, v3])
 }
 
 func normalize(input:float3x3) -> float3x3 {
