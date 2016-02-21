@@ -40,17 +40,20 @@ class ViewController: UIViewController {
 
     // MARK: - private
 
+    var startQuadrilateral : Quadrilateral!
+
+
     func anchorAtZeroPoint() {
         let rect = transView.frame
         transView.layer.anchorPoint = CGPointZero
         transView.frame = rect
+        startQuadrilateral = Quadrilateral(transView.frame)
     }
 
     func updatePosition() {
         let centers = cornerViews.map{$0.center}
-        let quad = Quadrilateral(centers)
-        let start = Quadrilateral(startView.frame)
-        transView.layer.transform = start.transformToQuadrilateral(quad)
+        let destination = Quadrilateral(centers)
+        transView.layer.transform = startQuadrilateral.transformToQuadrilateral(destination)
     }
 }
 
