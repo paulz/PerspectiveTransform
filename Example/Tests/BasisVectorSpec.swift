@@ -25,13 +25,13 @@ class BasisSpec: QuickSpec {
 
         context("basis") {
             it("should match fiddle") {
-                let startBasis = zNormalize(float3x3([0, 2818688, 0, 0, 0, 2262368, -18544, 18544, 18544]))
+                let startBasis = float3x3([0, 2818688, 0, 0, 0, 2262368, -18544, 18544, 18544]).zNormalized()
                 let result = start.basisVector()
                 expect(result) ≈ startBasis ± 0.5
             }
 
             it("should work for destination") {
-                let destBasis = zNormalize(float3x3([-4000000, 12000000, 4000000, -4000000, 4000000, 12000000, -40000, 40000, 40000]))
+                let destBasis = float3x3([-4000000, 12000000, 4000000, -4000000, 4000000, 12000000, -40000, 40000, 40000]).zNormalized()
                 let result = destination.basisVector()
                 expect(result) ≈ destBasis ± 0.5
             }

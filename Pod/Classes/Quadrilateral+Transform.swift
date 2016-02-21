@@ -12,22 +12,21 @@ import simd
 public extension Quadrilateral {
     func basisVector() -> float3x3 {
         let m = float3x3([
-            float3(p1),
-            float3(p2),
-            float3(p3)]
+            p1.vector3d,
+            p2.vector3d,
+            p3.vector3d]
         )
-        let v4 = float3(p4)
-        let v = m.inverse * v4
+        let v = m.inverse * p4.vector3d
         let diag = float3x3(diagonal: v)
         let result = m * diag
-        return zNormalize(result)
+        return result.zNormalized()
     }
 
     func general2DProjection(to:Quadrilateral) -> float3x3 {
         let source = basisVector()
         let destination = to.basisVector()
         let result = destination * source.inverse
-        return zNormalize(result)
+        return result.zNormalized()
     }
 
     public func projectiveTransform(quad:Quadrilateral) -> CATransform3D {
@@ -37,12 +36,14 @@ public extension Quadrilateral {
     }
 }
 
-extension float3 {
-    init(_ point:CGPoint) {
-        self.init(Float(point.x), Float(point.y), 1)
+extension CGPoint {
+    var vector3d : float3 {
+        return float3(Float(x), Float(y), 1)
     }
 }
 
-func zNormalize(input:float3x3) -> float3x3 {
-    return (Float(1) / input[2,2]) * input
+extension float3x3 {
+    func zNormalized() -> float3x3 {
+        return (Float(1) / self[2,2]) * self
+    }
 }
