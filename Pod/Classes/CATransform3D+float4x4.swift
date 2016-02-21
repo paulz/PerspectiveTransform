@@ -10,7 +10,7 @@ import QuartzCore
 import simd
 
 extension CATransform3D {
-    init(_ m: float4x4) {
+    init(_ m: Matrix4x4Type) {
         self.init(
             m11: CGFloat(m[0,0]), m12: CGFloat(m[0,1]), m13: CGFloat(m[0,2]), m14: CGFloat(m[0,3]),
             m21: CGFloat(m[1,0]), m22: CGFloat(m[1,1]), m23: CGFloat(m[1,2]), m24: CGFloat(m[1,3]),

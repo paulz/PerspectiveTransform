@@ -10,8 +10,8 @@ import CoreGraphics
 import simd
 
 extension CGPoint {
-    var homogeneous3dvector : float3 {
-        return float3(Float(x), Float(y), 1)
+    var homogeneous3dvector : Vector3Type {
+        return Vector3Type(ScalarType(x), ScalarType(y), 1)
     }
 }
 

@@ -9,26 +9,26 @@
 import QuartzCore
 import simd
 
-extension float3x3 {
-    static let addColumn : float4x3 =  {
-        var m = float4x3(diagonal:float3(1,1,0))
+extension Matrix3x3Type {
+    static let addColumn : Matrix4x3Type =  {
+        var m = Matrix4x3Type(diagonal:Vector3Type(1,1,0))
         m[3,2] = 1
         return m
     }()
 
-    static let addRow : float3x4 =  {
-        var m = float3x4(diagonal:float3(1,1,0))
+    static let addRow : Matrix3x4Type =  {
+        var m = Matrix3x4Type(diagonal:Vector3Type(1,1,0))
         m[2,3] = 1
         return m
     }()
 
-    func to3d() -> float4x4 {
-        var result = float3x3.addRow * self * float3x3.addColumn
+    func to3d() -> Matrix4x4Type {
+        var result = Matrix3x3Type.addRow * self * Matrix3x3Type.addColumn
         result[2,2] = 1
         return result
     }
 
-    func zNormalized() -> float3x3 {
-        return (Float(1) / self[2,2]) * self
+    func zNormalized() -> Matrix3x3Type {
+        return (ScalarType(1) / self[2,2]) * self
     }
 }
