@@ -13,7 +13,6 @@ class BasisSpec: QuickSpec {
             )
         )
 
-
         context("multiply adj by vector") {
             it("should match expected") {
                 let adjM = float3x3([-122, -152, 18544, 122, 0, 0, 0, 152, 0])
@@ -27,13 +26,13 @@ class BasisSpec: QuickSpec {
         context("basis") {
             it("should match fiddle") {
                 let startBasis = normalize(float3x3([0, 2818688, 0, 0, 0, 2262368, -18544, 18544, 18544]))
-                let result = basis(start)
+                let result = start.basisVector()
                 expect(result) ≈ startBasis ± 0.5
             }
 
             it("should work for destination") {
                 let destBasis = normalize(float3x3([-4000000, 12000000, 4000000, -4000000, 4000000, 12000000, -40000, 40000, 40000]))
-                let result = basis(destination)
+                let result = destination.basisVector()
                 expect(result) ≈ destBasis ± 0.5
             }
         }

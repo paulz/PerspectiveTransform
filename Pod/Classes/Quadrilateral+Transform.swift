@@ -10,10 +10,19 @@ import UIKit
 import simd
 
 public extension Quadrilateral {
+    func basisVector() -> float3x3 {
+        let m = first3(self)
+        let v4 = float3(p4)
+        let v = m.inverse * v4
+        let diag = float3x3(diagonal: v)
+        let result = m * diag
+        return result
+    }
+
     func general2DProjection(to:Quadrilateral) -> float3x3 {
-        var source = basis(self)
+        var source = basisVector()
         source = normalize(source)
-        var destination = basis(to)
+        var destination = to.basisVector()
         destination = normalize(destination)
         var result = destination * source.inverse
         result = normalize(result)
@@ -78,15 +87,6 @@ func first3(quad:Quadrilateral) -> float3x3 {
     let v2 = float3(quad.p2)
     let v3 = float3(quad.p3)
     return float3x3([v1, v2, v3])
-}
-
-func basis(quad:Quadrilateral) -> float3x3 {
-    let m = first3(quad)
-    let v4 = float3(quad.p4)
-    let v = m.inverse * v4
-    let diag = float3x3(diagonal: v)
-    let result = m * diag
-    return result
 }
 
 func normalize(input:float3x3) -> float3x3 {
