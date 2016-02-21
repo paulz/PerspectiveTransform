@@ -8,7 +8,7 @@
 
 import simd
 
-#if CGFLOAT_IS_DOUBLE
+#if arch(arm64) || arch(x86_64)
     typealias ScalarType = Double
     typealias Vector3Type = double3
     typealias Matrix3x3Type = double3x3

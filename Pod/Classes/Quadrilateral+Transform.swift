@@ -10,13 +10,14 @@ import UIKit
 import simd
 
 public extension Quadrilateral {
+
     internal func basisVectorsToPointsMap() -> Matrix3x3Type {
         let m = Matrix3x3Type([
             p1.homogeneous3dvector,
             p2.homogeneous3dvector,
             p3.homogeneous3dvector]
         )
-        let v = m.inverse * p4.homogeneous3dvector
+        let v = m.homogeneousInverse() * p4.homogeneous3dvector
         let diag = Matrix3x3Type(diagonal: v)
         let result = m * diag
         return result.zNormalized()
@@ -25,7 +26,7 @@ public extension Quadrilateral {
     internal func general2DProjection(to:Quadrilateral) -> Matrix3x3Type {
         let source = basisVectorsToPointsMap()
         let destination = to.basisVectorsToPointsMap()
-        let result = destination * source.inverse
+        let result = destination * source.homogeneousInverse()
         return result.zNormalized()
     }
 

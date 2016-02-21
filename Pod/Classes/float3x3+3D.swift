@@ -29,6 +29,46 @@ extension Matrix3x3Type {
     }
 
     func zNormalized() -> Matrix3x3Type {
+        #if arch(arm64) || arch(x86_64)
+            return zNormalizedUnsafe()
+        #else
+            return zNormalizedSafe()
+        #endif
+    }
+
+    func homogeneousInverse() -> Matrix3x3Type {
+        #if arch(arm64) || arch(x86_64)
+            return self.inverse
+        #else
+            return adjugate()
+        #endif
+    }
+
+    private func zNormalizedUnsafe() -> Matrix3x3Type {
         return (ScalarType(1) / self[2,2]) * self
+    }
+
+    private func zNormalizedSafe() -> Matrix3x3Type {
+        return self[2,2]==0 ? self : zNormalizedUnsafe()
+    }
+
+    private func adjugate()-> Matrix3x3Type {
+        return Matrix3x3Type(rows:[
+            Vector3Type(
+                ScalarType(self[1,1]*self[2,2]-self[2,1]*self[1,2]),
+                ScalarType(self[2,0]*self[1,2]-self[1,0]*self[2,2]),
+                ScalarType(self[1,0]*self[2,1]-self[2,0]*self[1,1])
+            ),
+            Vector3Type(
+                ScalarType(self[2,1]*self[0,2]-self[0,1]*self[2,2]),
+                ScalarType(self[0,0]*self[2,2]-self[2,0]*self[0,2]),
+                ScalarType(self[2,0]*self[0,1]-self[0,0]*self[2,1])
+            ),
+            Vector3Type(
+                ScalarType(self[0,1]*self[1,2]-self[1,1]*self[0,2]),
+                ScalarType(self[1,0]*self[0,2]-self[0,0]*self[1,2]),
+                ScalarType(self[0,0]*self[1,1]-self[1,0]*self[0,1])
+            )
+            ]).zNormalized()
     }
 }
