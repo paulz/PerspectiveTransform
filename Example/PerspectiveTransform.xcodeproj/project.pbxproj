@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4226E76D5782BCFD7E16A726 /* Pods_PerspectiveTransform_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94A16A8706A6E84494068BCA /* Pods_PerspectiveTransform_Tests.framework */; };
-		4BA3D17B1C771B2E0009B690 /* AdjugateSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA3D17A1C771B2E0009B690 /* AdjugateSpec.swift */; };
+		4BA3D17B1C771B2E0009B690 /* ProjectionSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA3D17A1C771B2E0009B690 /* ProjectionSpec.swift */; };
 		4BA3D17D1C771B560009B690 /* SpecHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA3D17C1C771B560009B690 /* SpecHelper.swift */; };
 		4BA3D1811C77230A0009B690 /* VectorProjectionSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA3D1801C77230A0009B690 /* VectorProjectionSpec.swift */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
@@ -38,7 +38,7 @@
 		4B3FE4F41C76F57000E6EB40 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Quick.framework; sourceTree = "<group>"; };
 		4BA3D1781C77010D0009B690 /* Gemfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Gemfile; sourceTree = "<group>"; };
 		4BA3D1791C77010D0009B690 /* Gemfile.lock */ = {isa = PBXFileReference; lastKnownFileType = text; path = Gemfile.lock; sourceTree = "<group>"; };
-		4BA3D17A1C771B2E0009B690 /* AdjugateSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = AdjugateSpec.swift; sourceTree = "<group>"; tabWidth = 4; };
+		4BA3D17A1C771B2E0009B690 /* ProjectionSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = ProjectionSpec.swift; sourceTree = "<group>"; tabWidth = 4; };
 		4BA3D17C1C771B560009B690 /* SpecHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecHelper.swift; sourceTree = "<group>"; };
 		4BA3D1801C77230A0009B690 /* VectorProjectionSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VectorProjectionSpec.swift; sourceTree = "<group>"; };
 		4BA3D1871C7995630009B690 /* Visual.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Visual.playground; sourceTree = "<group>"; };
@@ -142,7 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				607FACEB1AFB9204008FA782 /* MatrixSpec.swift */,
-				4BA3D17A1C771B2E0009B690 /* AdjugateSpec.swift */,
+				4BA3D17A1C771B2E0009B690 /* ProjectionSpec.swift */,
 				4BA3D1801C77230A0009B690 /* VectorProjectionSpec.swift */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
 			);
@@ -394,7 +394,7 @@
 				4BA3D1811C77230A0009B690 /* VectorProjectionSpec.swift in Sources */,
 				607FACEC1AFB9204008FA782 /* MatrixSpec.swift in Sources */,
 				4BA3D17D1C771B560009B690 /* SpecHelper.swift in Sources */,
-				4BA3D17B1C771B2E0009B690 /* AdjugateSpec.swift in Sources */,
+				4BA3D17B1C771B2E0009B690 /* ProjectionSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
