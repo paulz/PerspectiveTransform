@@ -41,6 +41,7 @@
 		4BA3D17A1C771B2E0009B690 /* AdjugateSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = AdjugateSpec.swift; sourceTree = "<group>"; tabWidth = 4; };
 		4BA3D17C1C771B560009B690 /* SpecHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecHelper.swift; sourceTree = "<group>"; };
 		4BA3D1801C77230A0009B690 /* VectorProjectionSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VectorProjectionSpec.swift; sourceTree = "<group>"; };
+		4BA3D1871C7995630009B690 /* Visual.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Visual.playground; sourceTree = "<group>"; };
 		4EA2244D76A3BF4D89D92FD5 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		54239BF346BDA1A204452D96 /* Pods_PerspectiveTransform_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PerspectiveTransform_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD01AFB9204008FA782 /* PerspectiveTransform_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PerspectiveTransform_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -123,6 +124,7 @@
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
+				4BA3D1871C7995630009B690 /* Visual.playground */,
 			);
 			name = Example;
 			path = PerspectiveTransform;

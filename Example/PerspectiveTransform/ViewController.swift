@@ -37,11 +37,9 @@ class ViewController: UIViewController {
         updatePosition()
     }
 
-
     // MARK: - private
 
     var startQuadrilateral : Quadrilateral!
-
 
     func anchorAtZeroPoint() {
         let rect = transView.frame
