@@ -53,22 +53,9 @@ extension Matrix3x3Type {
     }
 
     private func adjugate()-> Matrix3x3Type {
-        return Matrix3x3Type(rows:[
-            Vector3Type(
-                ScalarType(self[1,1]*self[2,2]-self[2,1]*self[1,2]),
-                ScalarType(self[2,0]*self[1,2]-self[1,0]*self[2,2]),
-                ScalarType(self[1,0]*self[2,1]-self[2,0]*self[1,1])
-            ),
-            Vector3Type(
-                ScalarType(self[2,1]*self[0,2]-self[0,1]*self[2,2]),
-                ScalarType(self[0,0]*self[2,2]-self[2,0]*self[0,2]),
-                ScalarType(self[2,0]*self[0,1]-self[0,0]*self[2,1])
-            ),
-            Vector3Type(
-                ScalarType(self[0,1]*self[1,2]-self[1,1]*self[0,2]),
-                ScalarType(self[1,0]*self[0,2]-self[0,0]*self[1,2]),
-                ScalarType(self[0,0]*self[1,1]-self[1,0]*self[0,1])
-            )
-            ]).zNormalized()
+        let c1 = self[0]
+        let c2 = self[1]
+        let c3 = self[2]
+        return Matrix3x3Type([cross(c2, c3), cross(c3, c1), cross(c1, c2)]).transpose.zNormalized()
     }
 }
