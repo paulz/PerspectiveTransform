@@ -8,10 +8,10 @@ class CATransform3Dfrom2DSpec: QuickSpec {
         describe("weak perspective projection") {
             context("2D to 3D") {
                 it("should preserve z values") {
-                    let projection2D = float3x3([
-                        float3(11,12,13),
-                        float3(21,22,23),
-                        float3(31,32,33),
+                    let projection2D = Matrix3x3Type([
+                        Vector3Type(11,12,13),
+                        Vector3Type(21,22,23),
+                        Vector3Type(31,32,33),
                         ])
                     let projection3D = CATransform3D(
                         m11: 11, m12: 12, m13: 0, m14: 13,
