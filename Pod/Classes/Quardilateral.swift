@@ -8,12 +8,6 @@
 
 import simd
 
-public func adjugateViaInverse(matrix:float3x3) -> float3x3 {
-    let det = matrix_determinant(matrix.cmatrix)
-    let adjugate = det * matrix.inverse
-    return adjugate
-}
-
 extension float3x3 {
     init(_ array:[Float]) {
         let row1 = float3(Array(array[0...2]))
@@ -67,8 +61,7 @@ func first3(quad:Quadrilateral) -> float3x3 {
 func basis(quad:Quadrilateral) -> float3x3 {
     let m = first3(quad)
     let v4 = float3(quad.p4)
-    let adjM = adjugateViaInverse(m)
-    let v = adjM * v4
+    let v = m.inverse * v4
     let diag = float3x3(diagonal: v)
     let result = m * diag
     return result
@@ -83,7 +76,7 @@ func general2DProjection(from:Quadrilateral, to:Quadrilateral) -> float3x3 {
     source = normalize(source)
     var destination = basis(to)
     destination = normalize(destination)
-    var result = destination * adjugateViaInverse(source)
+    var result = destination * source.inverse
     result = normalize(result)
     print(result.toA())
     return result

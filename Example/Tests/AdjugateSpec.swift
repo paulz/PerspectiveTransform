@@ -85,53 +85,16 @@ class BasisSpec: QuickSpec {
 
         context("basis") {
             it("should match fiddle") {
-                let startBasis = float3x3([0, 2818688, 0, 0, 0, 2262368, -18544, 18544, 18544])
+                let startBasis = normalize(float3x3([0, 2818688, 0, 0, 0, 2262368, -18544, 18544, 18544]))
                 let result = basis(start)
                 expect(result) ≈ startBasis ± 0.5
             }
 
             it("should work for destination") {
-                let destBasis = float3x3([-4000000, 12000000, 4000000, -4000000, 4000000, 12000000, -40000, 40000, 40000])
+                let destBasis = normalize(float3x3([-4000000, 12000000, 4000000, -4000000, 4000000, 12000000, -40000, 40000, 40000]))
                 let result = basis(destination)
                 expect(result) ≈ destBasis ± 0.5
             }
         }
-
-
-        context("perspective") {
-            it("should match expected") {
-
-            }
-
-        }
-    }
-}
-
-class AdjugateSpec: QuickSpec {
-    override func spec() {
-        context("adjugateViaInverse") {
-            // http://www.mathwords.com/a/adjoint.htm
-            it("should match expected") {
-                let a = float3x3(rows: [
-                    float3(  1,  2,  3),
-                    float3(  0,  4,  5),
-                    float3(  1,  0,  6)
-                    ])
-                let b = float3x3(rows: [
-                    float3(  24, -12,  -2),
-                    float3(   5,   3,  -5),
-                    float3(  -4,   2,   4)
-                    ])
-                expect(adjugateViaInverse(a)) == b
-            }
-
-            it("should match fiddle") {
-                // http://jsfiddle.net/dFrHS/3/
-                let input = float3x3([0, 152, 0, 0, 0, 122, 1, 1, 1])
-                let output = float3x3([-122, -152, 18544, 122, 0, 0, 0, 152, 0])
-                expect(adjugateViaInverse(input)) == output
-            }
-        }
-        
     }
 }
