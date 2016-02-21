@@ -11,7 +11,11 @@ import simd
 
 public extension Quadrilateral {
     func basisVector() -> float3x3 {
-        let m = float3x3([float3(p1), float3(p2), float3(p3)])
+        let m = float3x3([
+            float3(p1),
+            float3(p2),
+            float3(p3)]
+        )
         let v4 = float3(p4)
         let v = m.inverse * v4
         let diag = float3x3(diagonal: v)
@@ -30,7 +34,7 @@ public extension Quadrilateral {
     public func projectiveTransform(quad:Quadrilateral) -> CATransform3D {
         let projection = general2DProjection(quad)
         let expanded = expandNoZ(expandNoZ(projection))
-        return transform(expanded)
+        return CATransform3D(expanded)
     }
 }
 
@@ -100,15 +104,3 @@ func expandNoZ(matrix:float4x3) -> float4x4 {
     result[2,2] = 1
     return result
 }
-
-
-func transform(matrix:float4x4) -> CATransform3D {
-    let c = matrix.transpose.toAA().map{$0.map{CGFloat($0)}}
-    return CATransform3D(
-        m11: c[0][0], m12: c[0][1], m13: c[0][2], m14: c[0][3],
-        m21: c[1][0], m22: c[1][1], m23: c[1][2], m24: c[1][3],
-        m31: c[2][0], m32: c[2][1], m33: c[2][2], m34: c[2][3],
-        m41: c[3][0], m42: c[3][1], m43: c[3][2], m44: c[3][3]
-    )
-}
-
