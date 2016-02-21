@@ -19,7 +19,7 @@ class ProjectionSpec: QuickSpec {
                         )
                     )
 
-                    let projection = general2DProjection(start, to: destination)
+                    let projection = start.general2DProjection(destination)
                     let expectedNormalized = normalize(expected)
                     expect(projection) == expectedNormalized
                 }

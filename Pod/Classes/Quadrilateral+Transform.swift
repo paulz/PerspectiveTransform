@@ -10,8 +10,19 @@ import UIKit
 import simd
 
 public extension Quadrilateral {
+    func general2DProjection(to:Quadrilateral) -> float3x3 {
+        var source = basis(self)
+        source = normalize(source)
+        var destination = basis(to)
+        destination = normalize(destination)
+        var result = destination * source.inverse
+        result = normalize(result)
+        print(result.toA())
+        return result
+    }
+
     public func transformToQuadrilateral(quad:Quadrilateral) -> CATransform3D {
-        let projection = general2DProjection(self, to: quad)
+        let projection = general2DProjection(quad)
         let expanded = expandNoZ(expandNoZ(projection))
         return transform(expanded)
     }
@@ -80,17 +91,6 @@ func basis(quad:Quadrilateral) -> float3x3 {
 
 func normalize(input:float3x3) -> float3x3 {
     return (Float(1) / input[2,2]) * input
-}
-
-func general2DProjection(from:Quadrilateral, to:Quadrilateral) -> float3x3 {
-    var source = basis(from)
-    source = normalize(source)
-    var destination = basis(to)
-    destination = normalize(destination)
-    var result = destination * source.inverse
-    result = normalize(result)
-    print(result.toA())
-    return result
 }
 
 func expandNoZ(matrix:float3x3) -> float4x3 {
