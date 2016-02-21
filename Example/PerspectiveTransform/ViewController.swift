@@ -50,10 +50,7 @@ class ViewController: UIViewController {
         let centers = cornerViews.map{$0.center}
         let quad = Quadrilateral(centers)
         let start = Quadrilateral(startView.frame)
-        let projection = general2DProjection(start, to: quad)
-        let expanded = expandNoZ(expandNoZ(projection))
-        let transform3D = transform(expanded)
-        transView.layer.transform = transform3D
+        transView.layer.transform = start.transformToQuadrilateral(quad)
     }
 }
 

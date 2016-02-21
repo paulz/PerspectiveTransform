@@ -133,6 +133,10 @@ public class Quadrilateral {
     public convenience init(_ rect:CGRect) {
         self.init(rect.origin, rect.size)
     }
+
+    public func transformToQuadrilateral(quad:Quadrilateral) -> CATransform3D {
+        let projection = general2DProjection(self, to: quad)
+        let expanded = expandNoZ(expandNoZ(projection))
+        return transform(expanded)
+    }
 }
-
-
