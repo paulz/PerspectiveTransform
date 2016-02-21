@@ -16,16 +16,13 @@ public extension Quadrilateral {
         let v = m.inverse * v4
         let diag = float3x3(diagonal: v)
         let result = m * diag
-        return result
+        return normalize(result)
     }
 
     func general2DProjection(to:Quadrilateral) -> float3x3 {
-        var source = basisVector()
-        source = normalize(source)
-        var destination = to.basisVector()
-        destination = normalize(destination)
-        var result = destination * source.inverse
-        result = normalize(result)
+        let source = basisVector()
+        let destination = to.basisVector()
+        let result = destination * source.inverse
         print(result.toA())
         return result
     }
