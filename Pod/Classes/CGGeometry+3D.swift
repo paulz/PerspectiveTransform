@@ -10,7 +10,7 @@ import CoreGraphics
 import simd
 
 extension CGPoint {
-    var vector3d : float3 {
+    var homogeneous3dvector : float3 {
         return float3(Float(x), Float(y), 1)
     }
 }

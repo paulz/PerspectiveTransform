@@ -12,11 +12,11 @@ import simd
 public extension Quadrilateral {
     func basisVectorsToPointsMap() -> float3x3 {
         let m = float3x3([
-            p1.vector3d,
-            p2.vector3d,
-            p3.vector3d]
+            p1.homogeneous3dvector,
+            p2.homogeneous3dvector,
+            p3.homogeneous3dvector]
         )
-        let v = m.inverse * p4.vector3d
+        let v = m.inverse * p4.homogeneous3dvector
         let diag = float3x3(diagonal: v)
         let result = m * diag
         return result.zNormalized()
