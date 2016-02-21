@@ -10,7 +10,7 @@ import UIKit
 import simd
 
 public extension Quadrilateral {
-    func basisVector() -> float3x3 {
+    func basisVectorsToPointsMap() -> float3x3 {
         let m = float3x3([
             p1.vector3d,
             p2.vector3d,
@@ -23,8 +23,8 @@ public extension Quadrilateral {
     }
 
     func general2DProjection(to:Quadrilateral) -> float3x3 {
-        let source = basisVector()
-        let destination = to.basisVector()
+        let source = basisVectorsToPointsMap()
+        let destination = to.basisVectorsToPointsMap()
         let result = destination * source.inverse
         return result.zNormalized()
     }
