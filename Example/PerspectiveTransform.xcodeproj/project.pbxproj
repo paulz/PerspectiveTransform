@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4226E76D5782BCFD7E16A726 /* Pods_PerspectiveTransform_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94A16A8706A6E84494068BCA /* Pods_PerspectiveTransform_Tests.framework */; };
 		4B58ECEF1C799C2A00F1BC00 /* BasisVectorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B58ECEE1C799C2A00F1BC00 /* BasisVectorSpec.swift */; };
+		4B58ECF71C79C3C200F1BC00 /* CATransform3Dfrom2DSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B58ECF61C79C3C200F1BC00 /* CATransform3Dfrom2DSpec.swift */; };
 		4BA3D17B1C771B2E0009B690 /* ProjectionSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA3D17A1C771B2E0009B690 /* ProjectionSpec.swift */; };
 		4BA3D17D1C771B560009B690 /* SpecHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA3D17C1C771B560009B690 /* SpecHelper.swift */; };
 		4BA3D1811C77230A0009B690 /* VectorProjectionSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA3D1801C77230A0009B690 /* VectorProjectionSpec.swift */; };
@@ -38,6 +39,7 @@
 		4B3FE4F31C76F57000E6EB40 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Nimble.framework; sourceTree = "<group>"; };
 		4B3FE4F41C76F57000E6EB40 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Quick.framework; sourceTree = "<group>"; };
 		4B58ECEE1C799C2A00F1BC00 /* BasisVectorSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasisVectorSpec.swift; sourceTree = "<group>"; };
+		4B58ECF61C79C3C200F1BC00 /* CATransform3Dfrom2DSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CATransform3Dfrom2DSpec.swift; sourceTree = "<group>"; };
 		4BA3D1781C77010D0009B690 /* Gemfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Gemfile; sourceTree = "<group>"; };
 		4BA3D1791C77010D0009B690 /* Gemfile.lock */ = {isa = PBXFileReference; lastKnownFileType = text; path = Gemfile.lock; sourceTree = "<group>"; };
 		4BA3D17A1C771B2E0009B690 /* ProjectionSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = ProjectionSpec.swift; sourceTree = "<group>"; tabWidth = 4; };
@@ -144,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				607FACEB1AFB9204008FA782 /* MatrixSpec.swift */,
+				4B58ECF61C79C3C200F1BC00 /* CATransform3Dfrom2DSpec.swift */,
 				4BA3D17A1C771B2E0009B690 /* ProjectionSpec.swift */,
 				4B58ECEE1C799C2A00F1BC00 /* BasisVectorSpec.swift */,
 				4BA3D1801C77230A0009B690 /* VectorProjectionSpec.swift */,
@@ -398,6 +401,7 @@
 				4B58ECEF1C799C2A00F1BC00 /* BasisVectorSpec.swift in Sources */,
 				607FACEC1AFB9204008FA782 /* MatrixSpec.swift in Sources */,
 				4BA3D17D1C771B560009B690 /* SpecHelper.swift in Sources */,
+				4B58ECF71C79C3C200F1BC00 /* CATransform3Dfrom2DSpec.swift in Sources */,
 				4BA3D17B1C771B2E0009B690 /* ProjectionSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -24,29 +24,10 @@ class ProjectionSpec: QuickSpec {
                     expect(projection) == expectedNormalized
                 }
 
-                context("expandNoZ") {
-                    let expectedNormalized = normalize(expected)
-
-                    it("should add empty space") {
-                        let expanded = expandNoZ(expectedNormalized)
-                        expect(expanded[0]) == expectedNormalized[0]
-                        expect(expanded[1]) == expectedNormalized[1]
-                        expect(expanded[2]) == float3()
-                        expect(expanded[3]) == expectedNormalized[2]
-                    }
-
-                    it("should expand to 4x4") {
-                        let expanded = expandNoZ(expandNoZ(expectedNormalized))
-                        var withZ1 = float4()
-                        withZ1[2] = 1
-                        expect(expanded[2]) == withZ1
-                    }
-                }
                 context("transform") {
                     it("should create 3D transformation") {
                         let expectedNormalized = normalize(expected)
-                        let expanded = expandNoZ(expandNoZ(expectedNormalized))
-                        let transform3D = CATransform3D(expanded)
+                        let transform3D = CATransform3D(expectedNormalized)
                         expect(CATransform3DIsAffine(transform3D)) == true
                         let translate = CATransform3DMakeTranslation(100, 100, 0)
                         let scale = CATransform3DMakeScale(200.0/152, 200.0/122, 1)

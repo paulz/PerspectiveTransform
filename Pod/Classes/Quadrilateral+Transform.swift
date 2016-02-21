@@ -33,8 +33,7 @@ public extension Quadrilateral {
 
     public func projectiveTransform(quad:Quadrilateral) -> CATransform3D {
         let projection = general2DProjection(quad)
-        let expanded = expandNoZ(expandNoZ(projection))
-        return CATransform3D(expanded)
+        return CATransform3D(projection)
     }
 }
 
@@ -85,22 +84,4 @@ extension float3 {
 
 func normalize(input:float3x3) -> float3x3 {
     return (Float(1) / input[2,2]) * input
-}
-
-func expandNoZ(matrix:float3x3) -> float4x3 {
-    var noZ = float4x3()
-    noZ[0,0]=1
-    noZ[1,1]=1
-    noZ[3,2]=1
-    return matrix * noZ
-}
-
-func expandNoZ(matrix:float4x3) -> float4x4 {
-    var noZ = float3x4()
-    noZ[0,0]=1
-    noZ[1,1]=1
-    noZ[2,3]=1
-    var result = noZ * matrix
-    result[2,2] = 1
-    return result
 }
