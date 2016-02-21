@@ -27,7 +27,7 @@ class BasisSpec: QuickSpec {
             it("should match fiddle") {
                 let startBasis = Matrix3x3Type([0, 2818688, 0, 0, 0, 2262368, -18544, 18544, 18544]).zNormalized()
                 let result = start.basisVectorsToPointsMap()
-                expect(result).to(beCloseTo(startBasis,within:0.5))
+                expect(result).to(beCloseTo(startBasis, within:0.5))
             }
 
             it("should work for destination") {

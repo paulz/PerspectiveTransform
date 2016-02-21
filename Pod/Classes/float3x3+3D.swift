@@ -38,10 +38,11 @@ extension Matrix3x3Type {
 
     func homogeneousInverse() -> Matrix3x3Type {
         #if arch(arm64) || arch(x86_64)
-            return self.inverse
+            let result = self.inverse
         #else
-            return adjugate()
+            let result = adjugate()
         #endif
+        return result.zNormalizedSafe()
     }
 
     private func zNormalizedUnsafe() -> Matrix3x3Type {
@@ -56,6 +57,6 @@ extension Matrix3x3Type {
         let c1 = self[0]
         let c2 = self[1]
         let c3 = self[2]
-        return Matrix3x3Type([cross(c2, c3), cross(c3, c1), cross(c1, c2)]).transpose.zNormalized()
+        return Matrix3x3Type([cross(c2, c3), cross(c3, c1), cross(c1, c2)]).transpose
     }
 }
