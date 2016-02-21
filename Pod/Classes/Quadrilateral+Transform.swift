@@ -27,12 +27,12 @@ public extension Quadrilateral {
         let source = basisVector()
         let destination = to.basisVector()
         let result = destination * source.inverse
-        print(result.toA())
-        return result
+        return normalize(result)
     }
 
     public func projectiveTransform(quad:Quadrilateral) -> CATransform3D {
         let projection = general2DProjection(quad)
+        print(projection)
         return CATransform3D(projection)
     }
 }
