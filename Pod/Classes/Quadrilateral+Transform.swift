@@ -35,15 +35,3 @@ public extension Quadrilateral {
         return CATransform3D(projection)
     }
 }
-
-extension CGPoint {
-    var vector3d : float3 {
-        return float3(Float(x), Float(y), 1)
-    }
-}
-
-extension float3x3 {
-    func zNormalized() -> float3x3 {
-        return (Float(1) / self[2,2]) * self
-    }
-}
