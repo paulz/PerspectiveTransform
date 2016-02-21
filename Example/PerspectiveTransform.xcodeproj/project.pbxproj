@@ -11,6 +11,7 @@
 		4B1B1C081C7A64BF003F8165 /* ProjectionSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA3D17A1C771B2E0009B690 /* ProjectionSpec.swift */; };
 		4B1B1C091C7A64F7003F8165 /* CATransform3Dfrom2DSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B58ECF61C79C3C200F1BC00 /* CATransform3Dfrom2DSpec.swift */; };
 		4B1B1C0B1C7A687E003F8165 /* HomogeneousInverseSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1B1C0A1C7A687E003F8165 /* HomogeneousInverseSpec.swift */; };
+		4B1B1C0D1C7A76C8003F8165 /* PerformanceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1B1C0C1C7A76C8003F8165 /* PerformanceTest.swift */; };
 		4B58ECEF1C799C2A00F1BC00 /* BasisVectorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B58ECEE1C799C2A00F1BC00 /* BasisVectorSpec.swift */; };
 		4BA3D17D1C771B560009B690 /* SpecHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA3D17C1C771B560009B690 /* SpecHelper.swift */; };
 		4BA3D1811C77230A0009B690 /* VectorProjectionSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA3D1801C77230A0009B690 /* VectorProjectionSpec.swift */; };
@@ -38,6 +39,7 @@
 		3C01DBA2314872F457E9DADD /* Pods-PerspectiveTransform_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PerspectiveTransform_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PerspectiveTransform_Tests/Pods-PerspectiveTransform_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		49D74FF71C76808F6942EAE3 /* Pods-PerspectiveTransform_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PerspectiveTransform_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-PerspectiveTransform_Example/Pods-PerspectiveTransform_Example.release.xcconfig"; sourceTree = "<group>"; };
 		4B1B1C0A1C7A687E003F8165 /* HomogeneousInverseSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomogeneousInverseSpec.swift; sourceTree = "<group>"; };
+		4B1B1C0C1C7A76C8003F8165 /* PerformanceTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerformanceTest.swift; sourceTree = "<group>"; };
 		4B3FE4F31C76F57000E6EB40 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Nimble.framework; sourceTree = "<group>"; };
 		4B3FE4F41C76F57000E6EB40 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Quick.framework; sourceTree = "<group>"; };
 		4B58ECEE1C799C2A00F1BC00 /* BasisVectorSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasisVectorSpec.swift; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 				4BA3D17A1C771B2E0009B690 /* ProjectionSpec.swift */,
 				4B58ECEE1C799C2A00F1BC00 /* BasisVectorSpec.swift */,
 				4B1B1C0A1C7A687E003F8165 /* HomogeneousInverseSpec.swift */,
+				4B1B1C0C1C7A76C8003F8165 /* PerformanceTest.swift */,
 				4BA3D1801C77230A0009B690 /* VectorProjectionSpec.swift */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
 			);
@@ -401,6 +404,7 @@
 			files = (
 				4BA3D1811C77230A0009B690 /* VectorProjectionSpec.swift in Sources */,
 				4B58ECEF1C799C2A00F1BC00 /* BasisVectorSpec.swift in Sources */,
+				4B1B1C0D1C7A76C8003F8165 /* PerformanceTest.swift in Sources */,
 				607FACEC1AFB9204008FA782 /* MatrixSpec.swift in Sources */,
 				4BA3D17D1C771B560009B690 /* SpecHelper.swift in Sources */,
 				4B1B1C091C7A64F7003F8165 /* CATransform3Dfrom2DSpec.swift in Sources */,

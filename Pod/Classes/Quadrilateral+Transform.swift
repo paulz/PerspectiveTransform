@@ -31,8 +31,6 @@ public extension Quadrilateral {
     }
 
     public func projectiveTransform(quad:Quadrilateral) -> CATransform3D {
-        let projection = general2DProjection(quad)
-        print(projection)
-        return CATransform3D(projection.to3d())
+        return CATransform3D(general2DProjection(quad).to3d())
     }
 }
