@@ -27,7 +27,7 @@ public extension Quadrilateral {
         return result
     }
 
-    public func transformToQuadrilateral(quad:Quadrilateral) -> CATransform3D {
+    public func projectiveTransform(quad:Quadrilateral) -> CATransform3D {
         let projection = general2DProjection(quad)
         let expanded = expandNoZ(expandNoZ(projection))
         return transform(expanded)

@@ -24,7 +24,7 @@ containerView.addSubview(destinationView)
 containerView.addSubview(view)
 
 let quad = Quadrilateral(view.frame)
-let transform = quad.transformToQuadrilateral(Quadrilateral(destinationView.frame))
+let transform = quad.projectiveTransform(Quadrilateral(destinationView.frame))
 
 UIView.animateWithDuration(1.0,
     delay: 0,

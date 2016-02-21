@@ -51,7 +51,7 @@ class ViewController: UIViewController {
     func updatePosition() {
         let centers = cornerViews.map{$0.center}
         let destination = Quadrilateral(centers)
-        transView.layer.transform = startQuadrilateral.transformToQuadrilateral(destination)
+        transView.layer.transform = startQuadrilateral.projectiveTransform(destination)
     }
 }
 
