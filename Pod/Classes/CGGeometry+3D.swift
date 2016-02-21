@@ -15,8 +15,3 @@ extension CGPoint {
     }
 }
 
-extension float3x3 {
-    func zNormalized() -> float3x3 {
-        return (Float(1) / self[2,2]) * self
-    }
-}
