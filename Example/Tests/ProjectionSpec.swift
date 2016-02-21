@@ -25,7 +25,7 @@ class ProjectionSpec: QuickSpec {
 
                 context("transform") {
                     it("should create 3D transformation") {
-                        let transform3D = CATransform3D(expected.zNormalized())
+                        let transform3D = CATransform3D(expected.zNormalized().to3d())
                         expect(CATransform3DIsAffine(transform3D)) == true
                         let translate = CATransform3DMakeTranslation(100, 100, 0)
                         let scale = CATransform3DMakeScale(200.0/152, 200.0/122, 1)

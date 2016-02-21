@@ -9,7 +9,7 @@
 import QuartzCore
 import simd
 
-extension CATransform3D {
+extension float3x3 {
     static let addColumn : float4x3 =  {
         var m = float4x3(diagonal:float3(1,1,0))
         m[3,2] = 1
@@ -22,9 +22,9 @@ extension CATransform3D {
         return m
     }()
 
-    init(_ m: float3x3) {
-        var result = CATransform3D.addRow * m * CATransform3D.addColumn
+    func to3d() -> float4x4 {
+        var result = float3x3.addRow * self * float3x3.addColumn
         result[2,2] = 1
-        self.init(result)
+        return result
     }
 }
