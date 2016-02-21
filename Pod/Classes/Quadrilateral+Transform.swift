@@ -39,49 +39,11 @@ public extension Quadrilateral {
 
 import simd
 
-extension float3x3 {
-    init(_ array:[Float]) {
-        let row1 = float3(Array(array[0...2]))
-        let row2 = float3(Array(array[3...5]))
-        let row3 = float3(Array(array[6...8]))
-        let rows = [row1, row2, row3]
-        self.init(rows: rows)
-    }
-
-    func toA() -> [Float] {
-        let t = transpose
-        return t[0].toA() + t[1].toA() + t[2].toA()
-    }
-}
-
-extension float4 {
-    func toA() -> [Float] {
-        return [x,y,z,w]
-    }
-}
-
-extension float4x4 {
-    func toA() -> [Float] {
-        let t = transpose
-        return t[0].toA() + t[1].toA() + t[2].toA() + t[3].toA()
-    }
-    func toAA() -> [[Float]] {
-        let t = transpose
-        return [t[0].toA(), t[1].toA(), t[2].toA(), t[3].toA()]
-    }
-}
-
-
 extension float3 {
     init(_ point:CGPoint) {
         self.init(Float(point.x), Float(point.y), 1)
     }
-
-    func toA() -> [Float] {
-        return [x, y, z]
-    }
 }
-
 func normalize(input:float3x3) -> float3x3 {
     return (Float(1) / input[2,2]) * input
 }

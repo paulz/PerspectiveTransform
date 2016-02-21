@@ -46,3 +46,43 @@ public func ≈(lhs: Expectation<float3x3>, rhs: (expected: float3x3, delta: Dou
 public func ±(lhs: float3x3, rhs: Double) -> (expected: float3x3, delta: Double) {
   return (expected: lhs, delta: rhs)
 }
+
+extension float3x3 {
+    init(_ array:[Float]) {
+        let row1 = float3(Array(array[0...2]))
+        let row2 = float3(Array(array[3...5]))
+        let row3 = float3(Array(array[6...8]))
+        let rows = [row1, row2, row3]
+        self.init(rows: rows)
+    }
+
+    func toA() -> [Float] {
+        let t = transpose
+        return t[0].toA() + t[1].toA() + t[2].toA()
+    }
+}
+
+extension float4 {
+    func toA() -> [Float] {
+        return [x,y,z,w]
+    }
+}
+
+extension float4x4 {
+    func toA() -> [Float] {
+        let t = transpose
+        return t[0].toA() + t[1].toA() + t[2].toA() + t[3].toA()
+    }
+    func toAA() -> [[Float]] {
+        let t = transpose
+        return [t[0].toA(), t[1].toA(), t[2].toA(), t[3].toA()]
+    }
+}
+
+
+extension float3 {
+    func toA() -> [Float] {
+        return [x, y, z]
+    }
+}
+
