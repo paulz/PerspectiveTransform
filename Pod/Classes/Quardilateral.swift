@@ -12,6 +12,7 @@ public final class Quadrilateral {
     public let corners : [CGPoint]
 
     public init(_ points:[CGPoint]) {
+        assert(points.count == 4, "exactly 4 corners required")
         corners = points
     }
     public convenience init(_ origin:CGPoint, _ size:CGSize) {

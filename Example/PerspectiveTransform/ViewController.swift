@@ -39,19 +39,18 @@ class ViewController: UIViewController {
 
     // MARK: - private
 
-    var startQuadrilateral : Quadrilateral!
+    var startingPerspective : Perspective!
 
     func anchorAtZeroPoint() {
         let rect = transView.frame
         transView.layer.anchorPoint = CGPointZero
         transView.frame = rect
-        startQuadrilateral = Quadrilateral(transView.frame)
+        startingPerspective = Perspective(transView.frame)
     }
 
     func updatePosition() {
         let centers = cornerViews.map{$0.center}
-        let destination = Quadrilateral(centers)
-        transView.layer.transform = Perspective(startQuadrilateral).projectiveTransform(Perspective(destination))
+        transView.layer.transform = startingPerspective.projectiveTransform(Perspective(centers))
     }
 }
 

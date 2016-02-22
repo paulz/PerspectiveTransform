@@ -8,11 +8,11 @@
 
 public extension Perspective {
 
-    public convenience init(points:[CGPoint]) {
+    public convenience init(_ points:[CGPoint]) {
         self.init(Quadrilateral(points))
     }
 
-    public convenience init(rect:CGRect) {
+    public convenience init(_ rect:CGRect) {
         self.init(Quadrilateral(rect))
     }
 

@@ -23,8 +23,8 @@ containerView.addSubview(startView)
 containerView.addSubview(destinationView)
 containerView.addSubview(view)
 
-let start = Perspective(Quadrilateral(view.frame))
-let transform = start.projectiveTransform(Perspective(Quadrilateral(destinationView.frame)))
+let start = Perspective(view.frame)
+let transform = start.projectiveTransform(Perspective(destinationView.frame))
 
 UIView.animateWithDuration(1.0,
     delay: 0,
