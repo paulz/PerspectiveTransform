@@ -31,4 +31,7 @@ public final class Perspective {
         self.basisVectorsToPointsMap.homogeneousInverse()
     }()
 
+    internal func projection(to:Perspective) -> Matrix3x3Type {
+        return (to.basisVectorsToPointsMap * pointsToBasisVectorsMap).zNormalized()
+    }
 }

@@ -6,13 +6,14 @@
 //
 //
 
-import UIKit
-import simd
-
 public extension Perspective {
 
-    internal func projection(to:Perspective) -> Matrix3x3Type {
-        return (to.basisVectorsToPointsMap * pointsToBasisVectorsMap).zNormalized()
+    public convenience init(points:[CGPoint]) {
+        self.init(Quadrilateral(points))
+    }
+
+    public convenience init(rect:CGRect) {
+        self.init(Quadrilateral(rect))
     }
 
     public func projectiveTransform(destination:Perspective) -> CATransform3D {
