@@ -9,7 +9,7 @@
 import UIKit
 import QuartzCore
 
-@testable import PerspectiveTransform
+import PerspectiveTransform
 
 class ViewController: UIViewController {
 
@@ -51,7 +51,7 @@ class ViewController: UIViewController {
     func updatePosition() {
         let centers = cornerViews.map{$0.center}
         let destination = Quadrilateral(centers)
-        transView.layer.transform = startQuadrilateral.projectiveTransform(destination)
+        transView.layer.transform = Perspective(startQuadrilateral).projectiveTransform(Perspective(destination))
     }
 }
 

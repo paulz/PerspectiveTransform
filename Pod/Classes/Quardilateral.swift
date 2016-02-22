@@ -8,12 +8,13 @@
 
 import UIKit
 
-public class Quadrilateral {
+public final class Quadrilateral {
     public let p1 : CGPoint
     public let p2 : CGPoint
     public let p3 : CGPoint
     public let p4 : CGPoint
-    init(_ points:[CGPoint]) {
+
+    public init(_ points:[CGPoint]) {
         p1 = points[0]
         p2 = points[1]
         p3 = points[2]

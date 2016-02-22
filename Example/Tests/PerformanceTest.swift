@@ -12,13 +12,13 @@ import XCTest
 class PerformanceTest: XCTestCase {
     
     func testProjectiveTransformPerformance() {
-        let start = Quadrilateral(CGRect(origin: CGPointZero, size: CGSize(width: 152, height: 122)))
-        let destination = Quadrilateral(
+        let start = Perspective(Quadrilateral(CGRect(origin: CGPointZero, size: CGSize(width: 152, height: 122))))
+        let destination = Perspective(Quadrilateral(
             CGRect(
                 origin: CGPoint(x: 100, y: 100),
                 size: CGSize(width: 200, height: 200)
             )
-        )
+        ))
 
         self.measureBlock {
             0.stride(to: 100000, by: 1).forEach({ (_) -> () in

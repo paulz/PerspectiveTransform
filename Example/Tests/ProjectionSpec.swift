@@ -11,15 +11,15 @@ class ProjectionSpec: QuickSpec {
                 let expected = Matrix3x3Type([-335626817536000000, 0, -25507638132736000000, 0, -418158002176000000, -25507638132736000000, 0, 0, -255076381327360000])
 
                 it("should match") {
-                    let start = Quadrilateral(CGRect(origin: CGPointZero, size: CGSize(width: 152, height: 122)))
-                    let destination = Quadrilateral(
+                    let start = Perspective(Quadrilateral(CGRect(origin: CGPointZero, size: CGSize(width: 152, height: 122))))
+                    let destination = Perspective(Quadrilateral(
                         CGRect(
                             origin: CGPoint(x: 100, y: 100),
                             size: CGSize(width: 200, height: 200)
                         )
-                    )
+                    ))
 
-                    let projection = start.general2DProjection(destination)
+                    let projection = start.projection(destination)
                     expect(projection).to(beCloseTo(expected.zNormalized()))
                 }
 
