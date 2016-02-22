@@ -9,19 +9,19 @@
 import simd
 
 public final class Perspective {
-    let quadrilateral : Quadrilateral
+    let vectors : [Vector3Type]
 
     public init(_ q: Quadrilateral) {
-        quadrilateral = q
+        vectors = q.corners.map{$0.homogeneous3dvector}
     }
 
     lazy var basisVectorsToPointsMap: Matrix3x3Type! = {
         let m = Matrix3x3Type([
-            self.quadrilateral.p1.homogeneous3dvector,
-            self.quadrilateral.p2.homogeneous3dvector,
-            self.quadrilateral.p3.homogeneous3dvector]
+            self.vectors[0],
+            self.vectors[1],
+            self.vectors[2]]
         )
-        let solution = m.homogeneousInverse() * self.quadrilateral.p4.homogeneous3dvector
+        let solution = m.homogeneousInverse() * self.vectors[3]
         let scale = Matrix3x3Type(diagonal: solution)
         let basisToPoints = m * scale
         return basisToPoints.zNormalized()
