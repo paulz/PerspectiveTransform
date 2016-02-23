@@ -4,3 +4,17 @@ language: objective-c
 xcode_workspace: PerspectiveTransform.xcworkspace
 xcode_scheme: Example
 xcode_sdk: iphonesimulator9.2
+before_deploy:
+  - brew update
+  - brew outdated carthage || brew upgrade carthage
+  - carthage build fake-depency-name-to-build-current-only --no-skip-current --platform iOS
+  - carthage archive PerspectiveTransform
+deploy:
+  provider: releases
+  skip_cleanup: true
+  api_key:
+  secure: "m81JSAnVQg8Q3JxuhqYZz6wzb4QooF11RrI6Ul9VqExuWFCxCi7JWtihI15RgNA3dbVt/Uk0ZgS3ztB5N1tuagrFKyMDBYnKgsMGHfWSZ4Mfe8OQUVvYfF6GonOOuIFIs+AnfDM9qjKyrkU12n9wZEeuobko4vm1Fx7wws6d3yKXyc+3JKF7sN0wn/yEZTUmGatq8mIuDe8G3gyJujpRmdfP3roiHPX4sJii/B5u4iB1+QLfQApQrzTbnGcUtzJyBYY8DZw4exuvaxIZkR0K1si5iCeaeZltvfGeqkcQYOYjsu8coxjWh8gazmKzulKX9frPiIvRTvwXqgRNeXYEkpRYznMlsPLwybXwJqana5ZaPYmqP1JavX86ybzznHTxnrIDQIKhjn7WWTQBKEK3EJ7Ff3e8KlkaP85ODhQT3DEN1DR5OIfdCLX4ovm0UExSKHED4DkrwYWQrt44m8WDX1pxgMPHdRREwRnJPre6Rg3ajnU4AuVTiImIX/Tu2KMs9Fpr/EOH/S8AymSWE+CJIfH/dDEDnNl6k4i6tznEpwg34/UmKEvJBwniNiy24wZCrKdxPoBLxTrKi3AkSkp1ck5s5I0+hQid1qsAVorAuPTa4ACRwuX5xqGQ7/5HWWqd1tobgpcTweiuVoBqSguagO+H8xs6iEKm3JtNkkzU1U4="
+  file: "PerspectiveTransform.framework.zip"
+  on:
+    tags: true
+    all_branches: true
