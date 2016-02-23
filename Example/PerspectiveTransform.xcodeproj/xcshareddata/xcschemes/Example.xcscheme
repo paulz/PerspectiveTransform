@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-               BuildableName = "PerspectiveTransform_Example.app"
-               BlueprintName = "PerspectiveTransform_Example"
+               BuildableName = "Example.app"
+               BlueprintName = "Example"
                ReferencedContainer = "container:PerspectiveTransform.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -29,8 +29,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "607FACE41AFB9204008FA782"
-               BuildableName = "PerspectiveTransform_Tests.xctest"
-               BlueprintName = "PerspectiveTransform_Tests"
+               BuildableName = "Tests.xctest"
+               BlueprintName = "Tests"
                ReferencedContainer = "container:PerspectiveTransform.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -47,8 +47,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "607FACE41AFB9204008FA782"
-               BuildableName = "PerspectiveTransform_Tests.xctest"
-               BlueprintName = "PerspectiveTransform_Tests"
+               BuildableName = "Tests.xctest"
+               BlueprintName = "Tests"
                ReferencedContainer = "container:PerspectiveTransform.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -57,8 +57,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-            BuildableName = "PerspectiveTransform_Example.app"
-            BlueprintName = "PerspectiveTransform_Example"
+            BuildableName = "Example.app"
+            BlueprintName = "Example"
             ReferencedContainer = "container:PerspectiveTransform.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -80,8 +80,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-            BuildableName = "PerspectiveTransform_Example.app"
-            BlueprintName = "PerspectiveTransform_Example"
+            BuildableName = "Example.app"
+            BlueprintName = "Example"
             ReferencedContainer = "container:PerspectiveTransform.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -99,8 +99,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-            BuildableName = "PerspectiveTransform_Example.app"
-            BlueprintName = "PerspectiveTransform_Example"
+            BuildableName = "Example.app"
+            BlueprintName = "Example"
             ReferencedContainer = "container:PerspectiveTransform.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
