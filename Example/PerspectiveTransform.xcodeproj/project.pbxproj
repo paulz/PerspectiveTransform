@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4226E76D5782BCFD7E16A726 /* Pods_PerspectiveTransform_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94A16A8706A6E84494068BCA /* Pods_PerspectiveTransform_Tests.framework */; };
 		4B1B1C081C7A64BF003F8165 /* ProjectionSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA3D17A1C771B2E0009B690 /* ProjectionSpec.swift */; };
 		4B1B1C091C7A64F7003F8165 /* CATransform3Dfrom2DSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B58ECF61C79C3C200F1BC00 /* CATransform3Dfrom2DSpec.swift */; };
 		4B1B1C0B1C7A687E003F8165 /* HomogeneousInverseSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1B1C0A1C7A687E003F8165 /* HomogeneousInverseSpec.swift */; };
@@ -23,7 +22,6 @@
 		607FACEC1AFB9204008FA782 /* MatrixSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* MatrixSpec.swift */; };
 		BD175ED324E474203371CD76 /* Pods_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C02503EFB5B7621552FF2795 /* Pods_Tests.framework */; };
 		CAEE5DA8ED296B803FB2B4F7 /* Pods_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1ED5B1F7BCF3AC7E6E4D7F0 /* Pods_Example.framework */; };
-		E07EA3BCFC98AA747795E895 /* Pods_PerspectiveTransform_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54239BF346BDA1A204452D96 /* Pods_PerspectiveTransform_Example.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,7 +79,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E07EA3BCFC98AA747795E895 /* Pods_PerspectiveTransform_Example.framework in Frameworks */,
 				CAEE5DA8ED296B803FB2B4F7 /* Pods_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -90,7 +87,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4226E76D5782BCFD7E16A726 /* Pods_PerspectiveTransform_Tests.framework in Frameworks */,
 				BD175ED324E474203371CD76 /* Pods_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
