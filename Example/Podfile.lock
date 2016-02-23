@@ -15,13 +15,16 @@ PODS:
 DEPENDENCIES:
   - FBSnapshotTestCase (from `https://github.com/neonichu/ios-snapshot-test-case`)
   - Nimble (= 3.0.0)
-  - Nimble-Snapshots
+  - Nimble-Snapshots (from `https://github.com/paulz/Nimble-Snapshots.git`, branch `fix-rendering`)
   - PerspectiveTransform (from `../`)
   - Quick (~> 0.8.0)
 
 EXTERNAL SOURCES:
   FBSnapshotTestCase:
     :git: https://github.com/neonichu/ios-snapshot-test-case
+  Nimble-Snapshots:
+    :branch: fix-rendering
+    :git: https://github.com/paulz/Nimble-Snapshots.git
   PerspectiveTransform:
     :path: "../"
 
@@ -29,6 +32,9 @@ CHECKOUT OPTIONS:
   FBSnapshotTestCase:
     :commit: 9e88da88a7a3df2f80838449a5f1e71830179218
     :git: https://github.com/neonichu/ios-snapshot-test-case
+  Nimble-Snapshots:
+    :commit: a92031f8c98d47c7a3a484a33769d5d35a80cfe8
+    :git: https://github.com/paulz/Nimble-Snapshots.git
 
 SPEC CHECKSUMS:
   FBSnapshotTestCase: a89bbc6ea786ef38c2d4e313b3374177c8597b8f
@@ -37,6 +43,6 @@ SPEC CHECKSUMS:
   PerspectiveTransform: 228d918e462bd85feabd7559031fe63f2971e2fe
   Quick: 563d0f6ec5f72e394645adb377708639b7dd38ab
 
-PODFILE CHECKSUM: 8a40b72ea098dd65c0fccbb65a2e2d81801a9899
+PODFILE CHECKSUM: 56a12bd447c45ab08e187f670d6e76f4acf4e9f7
 
 COCOAPODS: 1.0.0.beta.3

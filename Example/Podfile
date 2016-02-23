@@ -11,5 +11,5 @@ target 'Tests' do
   pod 'Quick', '~> 0.8.0'
   pod 'Nimble', '3.0.0'
   pod 'FBSnapshotTestCase', :git => 'https://github.com/neonichu/ios-snapshot-test-case'
-  pod 'Nimble-Snapshots'
+  pod 'Nimble-Snapshots', :git => 'https://github.com/paulz/Nimble-Snapshots.git', :branch => 'fix-rendering'
 end

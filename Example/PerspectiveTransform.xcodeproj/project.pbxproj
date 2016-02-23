@@ -11,6 +11,10 @@
 		4B1B1C091C7A64F7003F8165 /* CATransform3Dfrom2DSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B58ECF61C79C3C200F1BC00 /* CATransform3Dfrom2DSpec.swift */; };
 		4B1B1C0B1C7A687E003F8165 /* HomogeneousInverseSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1B1C0A1C7A687E003F8165 /* HomogeneousInverseSpec.swift */; };
 		4B1B1C0D1C7A76C8003F8165 /* PerformanceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1B1C0C1C7A76C8003F8165 /* PerformanceTest.swift */; };
+		4B2D2E871C7C2AD10045FD11 /* SnapshotSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2D2E861C7C2AD10045FD11 /* SnapshotSpec.swift */; };
+		4B2D2E8A1C7C2E620045FD11 /* container.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4B2D2E881C7C2E620045FD11 /* container.jpg */; };
+		4B2D2E8B1C7C2E620045FD11 /* with-overlay.svg in Resources */ = {isa = PBXBuildFile; fileRef = 4B2D2E891C7C2E620045FD11 /* with-overlay.svg */; };
+		4B2D2E8D1C7C323D0045FD11 /* sky.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4B2D2E8C1C7C323D0045FD11 /* sky.jpg */; };
 		4B58ECEF1C799C2A00F1BC00 /* BasisVectorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B58ECEE1C799C2A00F1BC00 /* BasisVectorSpec.swift */; };
 		4BA3D17D1C771B560009B690 /* SpecHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA3D17C1C771B560009B690 /* SpecHelper.swift */; };
 		4BA3D1811C77230A0009B690 /* VectorProjectionSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA3D1801C77230A0009B690 /* VectorProjectionSpec.swift */; };
@@ -41,6 +45,10 @@
 		49D74FF71C76808F6942EAE3 /* Pods-PerspectiveTransform_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PerspectiveTransform_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-PerspectiveTransform_Example/Pods-PerspectiveTransform_Example.release.xcconfig"; sourceTree = "<group>"; };
 		4B1B1C0A1C7A687E003F8165 /* HomogeneousInverseSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomogeneousInverseSpec.swift; sourceTree = "<group>"; };
 		4B1B1C0C1C7A76C8003F8165 /* PerformanceTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerformanceTest.swift; sourceTree = "<group>"; };
+		4B2D2E861C7C2AD10045FD11 /* SnapshotSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotSpec.swift; sourceTree = "<group>"; };
+		4B2D2E881C7C2E620045FD11 /* container.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = container.jpg; sourceTree = "<group>"; };
+		4B2D2E891C7C2E620045FD11 /* with-overlay.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "with-overlay.svg"; sourceTree = "<group>"; };
+		4B2D2E8C1C7C323D0045FD11 /* sky.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sky.jpg; sourceTree = "<group>"; };
 		4B3FE4F31C76F57000E6EB40 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Nimble.framework; sourceTree = "<group>"; };
 		4B3FE4F41C76F57000E6EB40 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Quick.framework; sourceTree = "<group>"; };
 		4B58ECEE1C799C2A00F1BC00 /* BasisVectorSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasisVectorSpec.swift; sourceTree = "<group>"; };
@@ -158,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				607FACEB1AFB9204008FA782 /* MatrixSpec.swift */,
+				4B2D2E861C7C2AD10045FD11 /* SnapshotSpec.swift */,
 				4B58ECF61C79C3C200F1BC00 /* CATransform3Dfrom2DSpec.swift */,
 				4BA3D17A1C771B2E0009B690 /* ProjectionSpec.swift */,
 				4B58ECEE1C799C2A00F1BC00 /* BasisVectorSpec.swift */,
@@ -172,6 +181,9 @@
 		607FACE91AFB9204008FA782 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4B2D2E881C7C2E620045FD11 /* container.jpg */,
+				4B2D2E8C1C7C323D0045FD11 /* sky.jpg */,
+				4B2D2E891C7C2E620045FD11 /* with-overlay.svg */,
 				607FACEA1AFB9204008FA782 /* Info.plist */,
 				4BA3D17C1C771B560009B690 /* SpecHelper.swift */,
 			);
@@ -265,6 +277,7 @@
 					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
 				};
 			};
@@ -302,6 +315,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B2D2E8D1C7C323D0045FD11 /* sky.jpg in Resources */,
+				4B2D2E8A1C7C2E620045FD11 /* container.jpg in Resources */,
+				4B2D2E8B1C7C2E620045FD11 /* with-overlay.svg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -417,6 +433,7 @@
 				4BA3D1811C77230A0009B690 /* VectorProjectionSpec.swift in Sources */,
 				4B58ECEF1C799C2A00F1BC00 /* BasisVectorSpec.swift in Sources */,
 				4B1B1C0D1C7A76C8003F8165 /* PerformanceTest.swift in Sources */,
+				4B2D2E871C7C2AD10045FD11 /* SnapshotSpec.swift in Sources */,
 				607FACEC1AFB9204008FA782 /* MatrixSpec.swift in Sources */,
 				4BA3D17D1C771B560009B690 /* SpecHelper.swift in Sources */,
 				4B1B1C091C7A64F7003F8165 /* CATransform3Dfrom2DSpec.swift in Sources */,
@@ -561,6 +578,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DABD958C579A5AC1BF7B468E /* Pods-Tests.debug.xcconfig */;
 			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -569,6 +587,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Example.app/Example";
 			};
 			name = Debug;
 		};
@@ -576,10 +595,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CA0ACCC22E20AE139320DFD2 /* Pods-Tests.release.xcconfig */;
 			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Example.app/Example";
 			};
 			name = Release;
 		};
