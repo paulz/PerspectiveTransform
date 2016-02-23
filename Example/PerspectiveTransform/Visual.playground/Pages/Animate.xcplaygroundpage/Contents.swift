@@ -1,4 +1,6 @@
-//: Playground - noun: a place where people can play
+//: Animation to show tranformation of subview
+
+//: open Playground timeline to see it
 
 import UIKit
 import PerspectiveTransform
@@ -25,6 +27,7 @@ containerView.addSubview(view)
 
 let start = Perspective(view.frame)
 let transform = start.projectiveTransform(Perspective(destinationView.frame))
+print(transform)
 
 UIView.animateWithDuration(1.0,
     delay: 0,
