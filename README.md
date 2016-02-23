@@ -1,6 +1,6 @@
 # PerspectiveTransform
 
-[![CI Status](http://img.shields.io/travis/Paul Zabelin/PerspectiveTransform.svg?style=flat)](https://travis-ci.org/Paul Zabelin/PerspectiveTransform)
+[![CI Status](http://img.shields.io/travis/paulz/PerspectiveTransform.svg?style=flat)](https://travis-ci.org/paulz/PerspectiveTransform)
 [![Version](https://img.shields.io/cocoapods/v/PerspectiveTransform.svg?style=flat)](http://cocoapods.org/pods/PerspectiveTransform)
 [![License](https://img.shields.io/cocoapods/l/PerspectiveTransform.svg?style=flat)](http://cocoapods.org/pods/PerspectiveTransform)
 [![Platform](https://img.shields.io/cocoapods/p/PerspectiveTransform.svg?style=flat)](http://cocoapods.org/pods/PerspectiveTransform)
@@ -17,12 +17,12 @@ PerspectiveTransform is available through [CocoaPods](http://cocoapods.org). To 
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod "PerspectiveTransform"
+pod 'PerspectiveTransform'
 ```
 
 ## Author
 
-Paul Zabelin, pzabelin+git@gmail.com
+Paul Zabelin, http://github.com/paulz
 
 ## License
 

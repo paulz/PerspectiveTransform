@@ -48,40 +48,4 @@ extension Matrix3x3Type {
         let rows = [row1, row2, row3]
         self.init(rows: rows)
     }
-
-    func toA() -> [ScalarType] {
-        let t = transpose
-        return t[0].toA() + t[1].toA() + t[2].toA()
-    }
 }
-
-#if arch(arm64) || arch(x86_64)
-    typealias Vector4Type = double4
-#else
-    typealias Vector4Type = float4
-#endif
-
-extension Vector4Type {
-    func toA() -> [ScalarType] {
-        return [x,y,z,w]
-    }
-}
-
-extension Matrix4x4Type {
-    func toA() -> [ScalarType] {
-        let t = transpose
-        return t[0].toA() + t[1].toA() + t[2].toA() + t[3].toA()
-    }
-    func toAA() -> [[ScalarType]] {
-        let t = transpose
-        return [t[0].toA(), t[1].toA(), t[2].toA(), t[3].toA()]
-    }
-}
-
-
-extension Vector3Type {
-    func toA() -> [ScalarType] {
-        return [x, y, z]
-    }
-}
-
