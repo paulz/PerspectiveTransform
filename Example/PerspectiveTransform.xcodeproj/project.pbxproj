@@ -24,16 +24,17 @@
 		4B74DB42203BDA070030F41B /* BasisVectorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B58ECEE1C799C2A00F1BC00 /* BasisVectorSpec.swift */; };
 		4B74DB43203BDA070030F41B /* HomogeneousInverseSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1B1C0A1C7A687E003F8165 /* HomogeneousInverseSpec.swift */; };
 		4B74DB45203BDA070030F41B /* VectorProjectionSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA3D1801C77230A0009B690 /* VectorProjectionSpec.swift */; };
-		4B74DB46203BDA7A0030F41B /* NimbleSpecHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA3D17C1C771B560009B690 /* NimbleSpecHelper.swift */; };
 		4B74DB47203BDA9C0030F41B /* PerformanceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1B1C0C1C7A76C8003F8165 /* PerformanceTest.swift */; };
 		4B74DB48203BDAD70030F41B /* ReferenceImages in Resources */ = {isa = PBXBuildFile; fileRef = 4BA7B14D1C7D710D00933779 /* ReferenceImages */; };
-		4BA3D17D1C771B560009B690 /* NimbleSpecHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA3D17C1C771B560009B690 /* NimbleSpecHelper.swift */; };
+		4B97C3C92047B9EF004C9782 /* NimbleSpecHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA3D17C1C771B560009B690 /* NimbleSpecHelper.swift */; };
+		4B97C3CA2047B9F0004C9782 /* NimbleSpecHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA3D17C1C771B560009B690 /* NimbleSpecHelper.swift */; };
+		4B97C3CB2047BA5F004C9782 /* NimbleSpecHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA3D17C1C771B560009B690 /* NimbleSpecHelper.swift */; };
+		4B97C3CE2047BAD3004C9782 /* AccelerateSolvePerfTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B97C3CC2047BAC1004C9782 /* AccelerateSolvePerfTest.swift */; };
 		4BA7B1521C816DCE00933779 /* container.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4B2D2E881C7C2E620045FD11 /* container.jpg */; };
 		4BA7B1531C816DCE00933779 /* sky.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4B2D2E8C1C7C323D0045FD11 /* sky.jpg */; };
 		4BD09EAE2046B05A006D2FA4 /* OpenCV_Spec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD09EAD2046B05A006D2FA4 /* OpenCV_Spec.swift */; };
 		4BD09EB220478E5C006D2FA4 /* PerspectiveTransformSpecHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD09EB120478E5C006D2FA4 /* PerspectiveTransformSpecHelper.swift */; };
 		4BD09EB320478E5C006D2FA4 /* PerspectiveTransformSpecHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD09EB120478E5C006D2FA4 /* PerspectiveTransformSpecHelper.swift */; };
-		4BD09EB520478F17006D2FA4 /* NimbleSpecHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA3D17C1C771B560009B690 /* NimbleSpecHelper.swift */; };
 		4BDEE37320004185007214F1 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDEE37220004185007214F1 /* PhotoViewController.swift */; };
 		4BDEE374200049CD007214F1 /* with-overlay.svg in Resources */ = {isa = PBXBuildFile; fileRef = 4B2D2E891C7C2E620045FD11 /* with-overlay.svg */; };
 		4BDEE37620005B6D007214F1 /* resetAnchorPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDEE37520005B6D007214F1 /* resetAnchorPoint.swift */; };
@@ -81,6 +82,7 @@
 		4B74DB34203BD9C70030F41B /* Framework Unit Specs.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Framework Unit Specs.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B74DB38203BD9C70030F41B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4B84138A201DD90D00D17FE2 /* PerspectiveSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerspectiveSpec.swift; sourceTree = "<group>"; };
+		4B97C3CC2047BAC1004C9782 /* AccelerateSolvePerfTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccelerateSolvePerfTest.swift; sourceTree = "<group>"; };
 		4BA3D1781C77010D0009B690 /* Gemfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; name = Gemfile; path = ../Gemfile; sourceTree = "<group>"; };
 		4BA3D1791C77010D0009B690 /* Gemfile.lock */ = {isa = PBXFileReference; lastKnownFileType = text; name = Gemfile.lock; path = ../Gemfile.lock; sourceTree = "<group>"; };
 		4BA3D17A1C771B2E0009B690 /* ProjectionSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = ProjectionSpec.swift; sourceTree = "<group>"; tabWidth = 4; };
@@ -250,6 +252,7 @@
 			children = (
 				4BA7B14D1C7D710D00933779 /* ReferenceImages */,
 				4B2D2E861C7C2AD10045FD11 /* SnapshotSpec.swift */,
+				4B97C3CC2047BAC1004C9782 /* AccelerateSolvePerfTest.swift */,
 				4B1B1C0C1C7A76C8003F8165 /* PerformanceTest.swift */,
 				4B4009942042575A00B7CE37 /* QuadrilateralCalc.swift */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
@@ -730,11 +733,11 @@
 				4B74DB42203BDA070030F41B /* BasisVectorSpec.swift in Sources */,
 				4B74DB41203BDA070030F41B /* PerspectiveSpec.swift in Sources */,
 				4B74DB3E203BDA070030F41B /* CATransform3Dfrom2DSpec.swift in Sources */,
+				4B97C3C92047B9EF004C9782 /* NimbleSpecHelper.swift in Sources */,
 				4B74DB45203BDA070030F41B /* VectorProjectionSpec.swift in Sources */,
 				4B74DB3D203BDA070030F41B /* MatrixAdjugateSpec.swift in Sources */,
 				4B74DB40203BDA070030F41B /* ProjectionSpec.swift in Sources */,
 				4B74DB3C203BDA070030F41B /* MatrixSpec.swift in Sources */,
-				4B74DB46203BDA7A0030F41B /* NimbleSpecHelper.swift in Sources */,
 				4B74DB3F203BDA070030F41B /* CALayerTransformSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -746,8 +749,8 @@
 				4BDF64AC2046A1830022C5F8 /* QuadrilateralCalc.swift in Sources */,
 				4BDF64A620469B350022C5F8 /* OpenCVWrapper.mm in Sources */,
 				4BD09EAE2046B05A006D2FA4 /* OpenCV_Spec.swift in Sources */,
-				4BD09EB520478F17006D2FA4 /* NimbleSpecHelper.swift in Sources */,
 				4BDF64AE2046A9ED0022C5F8 /* OpenCVPerformanceTest.swift in Sources */,
+				4B97C3CA2047B9F0004C9782 /* NimbleSpecHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -766,12 +769,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B97C3CB2047BA5F004C9782 /* NimbleSpecHelper.swift in Sources */,
 				4B2D2E871C7C2AD10045FD11 /* SnapshotSpec.swift in Sources */,
-				4BA3D17D1C771B560009B690 /* NimbleSpecHelper.swift in Sources */,
 				4BD09EB220478E5C006D2FA4 /* PerspectiveTransformSpecHelper.swift in Sources */,
 				4B74DB47203BDA9C0030F41B /* PerformanceTest.swift in Sources */,
 				4BDEE37720005B6D007214F1 /* resetAnchorPoint.swift in Sources */,
 				4B4009952042575A00B7CE37 /* QuadrilateralCalc.swift in Sources */,
+				4B97C3CE2047BAD3004C9782 /* AccelerateSolvePerfTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
