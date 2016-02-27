@@ -11,7 +11,7 @@ import QuartzCore
 
 import PerspectiveTransform
 
-class ViewController: UIViewController {
+class PanViewController: UIViewController {
 
     // MARK: - Outlets
 

@@ -5,10 +5,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Pan View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="Example" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="PanViewController" customModule="Example" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -95,5 +95,35 @@
             </objects>
             <point key="canvasLocation" x="392" y="206"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="hHO-To-AcP">
+            <objects>
+                <viewController id="m8X-JV-0C5" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3Q0-A6-ux3"/>
+                        <viewControllerLayoutGuide type="bottom" id="KJh-jd-AO7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="OAe-Sl-oWH">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="container.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Sat-yN-TXs">
+                                <rect key="frame" x="23" y="82" width="555" height="435"/>
+                            </imageView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="sky.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="ESD-2C-OL5">
+                                <rect key="frame" x="140" y="180" width="320" height="240"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2GI-up-7H8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="681" y="583"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="container.jpg" width="555" height="370"/>
+        <image name="sky.jpg" width="320" height="240"/>
+    </resources>
 </document>
