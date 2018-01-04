@@ -1,5 +1,7 @@
 source 'https://github.com/CocoaPods/Specs.git'
 use_frameworks!
+platform :ios, '11.0'
+inhibit_all_warnings!
 
 target 'Example' do
   pod 'PerspectiveTransform', :path => '../'
@@ -10,5 +12,5 @@ target 'Tests' do
 
   pod 'Quick'
   pod 'Nimble'
-  pod 'Nimble-Snapshots'
+  pod 'Nimble-Snapshots', :inhibit_warnings => true
 end

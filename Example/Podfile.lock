@@ -24,12 +24,12 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
+  FBSnapshotTestCase: '094f9f314decbabe373b87cc339bea235a63e07a'
   Nimble: 7f5a9c447a33002645a071bddafbfb24ea70e0ac
   Nimble-Snapshots: f5459b5b091678dc942d03ec4741cacb58ba4a52
   PerspectiveTransform: 228d918e462bd85feabd7559031fe63f2971e2fe
   Quick: 58d203b1c5e27fff7229c4c1ae445ad7069a7a08
 
-PODFILE CHECKSUM: 9a270d5c3d811374adaf98a9b56d30259d0a1c63
+PODFILE CHECKSUM: b790bcb0c0b95de622078e49688f1f4dd6894fe0
 
 COCOAPODS: 1.0.1
