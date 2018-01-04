@@ -20,7 +20,7 @@ class PerformanceTest: XCTestCase {
             )
         )
 
-        self.measure {
+        measure {
             stride(from:0, to: 100000, by: 1).forEach { _ in
                 _ = start.projectiveTransform(destination: destination)
             }

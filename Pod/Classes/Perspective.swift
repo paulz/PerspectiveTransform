@@ -17,18 +17,18 @@ public final class Perspective {
 
     lazy var basisVectorsToPointsMap: Matrix3x3Type! = {
         let m = Matrix3x3Type([
-            self.vectors[0],
-            self.vectors[1],
-            self.vectors[2]]
+            vectors[0],
+            vectors[1],
+            vectors[2]]
         )
-        let solution = m.homogeneousInverse() * self.vectors[3]
+        let solution = m.homogeneousInverse() * vectors[3]
         let scale = Matrix3x3Type(diagonal: solution)
         let basisToPoints = m * scale
         return basisToPoints.zNormalized()
     }()
 
     lazy var pointsToBasisVectorsMap: Matrix3x3Type! = {
-        self.basisVectorsToPointsMap.homogeneousInverse()
+        basisVectorsToPointsMap.homogeneousInverse()
     }()
 
     internal func projection(to:Perspective) -> Matrix3x3Type {

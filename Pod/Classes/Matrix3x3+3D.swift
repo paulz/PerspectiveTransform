@@ -38,7 +38,7 @@ extension Matrix3x3Type {
 
     func homogeneousInverse() -> Matrix3x3Type {
         #if arch(arm64) || arch(x86_64)
-            let result = self.inverse
+            let result = inverse
         #else
             let result = adjugate()
         #endif
