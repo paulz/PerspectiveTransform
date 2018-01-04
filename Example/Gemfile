@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
 
-ruby '2.2.4'
+ruby '2.4.1'
 
 gem 'cocoapods', '~>1.0.0.beta'       # https://cocoapods.org dependency manager for Swift and Objective-C Cocoa projects.
