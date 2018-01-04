@@ -16,12 +16,17 @@ public final class Quadrilateral {
         corners = points
     }
     public convenience init(_ origin:CGPoint, _ size:CGSize) {
-        self.init([
-            origin,
-            origin.applying(CGAffineTransform(translationX: size.width, y: 0)),
-            origin.applying(CGAffineTransform(translationX: 0, y: size.height)),
-            origin.applying(CGAffineTransform(translationX: size.width, y: size.height)),
-            ])
+        let topLeft = CGAffineTransform.identity
+        let topRight = CGAffineTransform(translationX: size.width, y: 0)
+        let bottomLeft = CGAffineTransform(translationX: 0, y: size.height)
+        let bottomRight = CGAffineTransform(translationX: size.width, y: size.height)
+        let transforms = [
+            topLeft,
+            topRight,
+            bottomLeft,
+            bottomRight
+        ]
+        self.init(transforms.map{origin.applying($0)})
     }
     public convenience init(_ rect:CGRect) {
         self.init(rect.origin, rect.size)
