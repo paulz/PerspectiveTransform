@@ -17,6 +17,6 @@ public extension Perspective {
     }
 
     public func projectiveTransform(destination:Perspective) -> CATransform3D {
-        return CATransform3D(projection(destination).to3d())
+        return CATransform3D(projection(to: destination).to3d())
     }
 }

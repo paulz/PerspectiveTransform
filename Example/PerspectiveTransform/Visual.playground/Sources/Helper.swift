@@ -3,7 +3,7 @@ import UIKit
 public extension UIView {
     public func resetAnchorPoint() {
         let rect = frame
-        layer.anchorPoint = CGPointZero
+        layer.anchorPoint = CGPoint.zero
         frame = rect
     }
 }

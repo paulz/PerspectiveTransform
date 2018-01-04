@@ -11,7 +11,7 @@ class ProjectionSpec: QuickSpec {
                 let expected = Matrix3x3Type([-335626817536000000, 0, -25507638132736000000, 0, -418158002176000000, -25507638132736000000, 0, 0, -255076381327360000])
 
                 it("should match") {
-                    let start = Perspective(CGRect(origin: CGPointZero, size: CGSize(width: 152, height: 122)))
+                    let start = Perspective(CGRect(origin: CGPoint.zero, size: CGSize(width: 152, height: 122)))
                     let destination = Perspective(
                         CGRect(
                             origin: CGPoint(x: 100, y: 100),
@@ -19,7 +19,7 @@ class ProjectionSpec: QuickSpec {
                         )
                     )
 
-                    let projection = start.projection(destination)
+                    let projection = start.projection(to: destination)
                     expect(projection).to(beCloseTo(expected.zNormalized()))
                 }
 
@@ -33,7 +33,7 @@ class ProjectionSpec: QuickSpec {
                         expect(CATransform3DEqualToTransform(combined, transform3D)) == false
                         let expAffine = CATransform3DGetAffineTransform(scale)
                         let affine = CATransform3DGetAffineTransform(transform3D)
-                        expect(CGAffineTransformEqualToTransform(affine, expAffine)) != true
+                        expect(affine) != expAffine
                     }
                 }
             }

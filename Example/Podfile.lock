@@ -1,48 +1,35 @@
 PODS:
-  - FBSnapshotTestCase (2.0.7):
-    - FBSnapshotTestCase/SwiftSupport (= 2.0.7)
-  - FBSnapshotTestCase/Core (2.0.7)
-  - FBSnapshotTestCase/SwiftSupport (2.0.7):
+  - FBSnapshotTestCase (2.1.4):
+    - FBSnapshotTestCase/SwiftSupport (= 2.1.4)
+  - FBSnapshotTestCase/Core (2.1.4)
+  - FBSnapshotTestCase/SwiftSupport (2.1.4):
     - FBSnapshotTestCase/Core
-  - Nimble (3.0.0)
-  - Nimble-Snapshots (3.0.0):
-    - FBSnapshotTestCase (~> 2.0.7)
-    - Nimble
-    - Quick
+  - Nimble (7.0.3)
+  - Nimble-Snapshots (6.3.0):
+    - Nimble-Snapshots/Core (= 6.3.0)
+  - Nimble-Snapshots/Core (6.3.0):
+    - FBSnapshotTestCase (~> 2.0)
+    - Nimble (~> 7.0)
   - PerspectiveTransform (0.1.0)
-  - Quick (0.8.0)
+  - Quick (1.2.0)
 
 DEPENDENCIES:
-  - FBSnapshotTestCase (from `https://github.com/neonichu/ios-snapshot-test-case`)
-  - Nimble (= 3.0.0)
-  - Nimble-Snapshots (from `https://github.com/paulz/Nimble-Snapshots.git`, branch `fix-rendering`)
+  - Nimble
+  - Nimble-Snapshots
   - PerspectiveTransform (from `../`)
-  - Quick (~> 0.8.0)
+  - Quick
 
 EXTERNAL SOURCES:
-  FBSnapshotTestCase:
-    :git: https://github.com/neonichu/ios-snapshot-test-case
-  Nimble-Snapshots:
-    :branch: fix-rendering
-    :git: https://github.com/paulz/Nimble-Snapshots.git
   PerspectiveTransform:
     :path: "../"
 
-CHECKOUT OPTIONS:
-  FBSnapshotTestCase:
-    :commit: 9e88da88a7a3df2f80838449a5f1e71830179218
-    :git: https://github.com/neonichu/ios-snapshot-test-case
-  Nimble-Snapshots:
-    :commit: a92031f8c98d47c7a3a484a33769d5d35a80cfe8
-    :git: https://github.com/paulz/Nimble-Snapshots.git
-
 SPEC CHECKSUMS:
-  FBSnapshotTestCase: a89bbc6ea786ef38c2d4e313b3374177c8597b8f
-  Nimble: 4c353d43735b38b545cbb4cb91504588eb5de926
-  Nimble-Snapshots: ab41dd737dcd33a0b0cb005a30465fef70b7207a
+  FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
+  Nimble: 7f5a9c447a33002645a071bddafbfb24ea70e0ac
+  Nimble-Snapshots: f5459b5b091678dc942d03ec4741cacb58ba4a52
   PerspectiveTransform: 228d918e462bd85feabd7559031fe63f2971e2fe
-  Quick: 563d0f6ec5f72e394645adb377708639b7dd38ab
+  Quick: 58d203b1c5e27fff7229c4c1ae445ad7069a7a08
 
-PODFILE CHECKSUM: 56a12bd447c45ab08e187f670d6e76f4acf4e9f7
+PODFILE CHECKSUM: 9a270d5c3d811374adaf98a9b56d30259d0a1c63
 
-COCOAPODS: 1.0.0.beta.3
+COCOAPODS: 1.0.1

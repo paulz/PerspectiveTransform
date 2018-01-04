@@ -12,7 +12,7 @@ import XCTest
 class PerformanceTest: XCTestCase {
     
     func testProjectiveTransformPerformance() {
-        let start = Perspective(CGRect(origin: CGPointZero, size: CGSize(width: 152, height: 122)))
+        let start = Perspective(CGRect(origin: CGPoint.zero, size: CGSize(width: 152, height: 122)))
         let destination = Perspective(
             CGRect(
                 origin: CGPoint(x: 100, y: 100),
@@ -20,11 +20,10 @@ class PerformanceTest: XCTestCase {
             )
         )
 
-        self.measureBlock {
-            0.stride(to: 100000, by: 1).forEach({ (_) -> () in
-                start.projectiveTransform(destination)
-            })
+        self.measure {
+            stride(from:0, to: 100000, by: 1).forEach { _ in
+                _ = start.projectiveTransform(destination: destination)
+            }
         }
     }
-
 }

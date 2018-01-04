@@ -5,7 +5,7 @@ import simd
 
 class BasisSpec: QuickSpec {
     override func spec() {
-        let start = Quadrilateral(CGRect(origin: CGPointZero, size: CGSize(width: 152, height: 122)))
+        let start = Quadrilateral(CGRect(origin: CGPoint.zero, size: CGSize(width: 152, height: 122)))
         let destination = Quadrilateral(
             CGRect(
                 origin: CGPoint(x: 100, y: 100),

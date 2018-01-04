@@ -7,7 +7,7 @@ import Foundation
 public extension UIView {
     public func resetAnchorPoint() {
         let rect = frame
-        layer.anchorPoint = CGPointZero
+        layer.anchorPoint = CGPoint.zero
         frame = rect
     }
 }
@@ -19,10 +19,10 @@ class SnapshotSpec: QuickSpec {
             var overlayView : UIView!
 
             beforeEach {
-                let bundle = NSBundle(forClass: SnapshotSpec.self)
-                let containerImage = UIImage(named: "container.jpg", inBundle: bundle, compatibleWithTraitCollection: nil)
+                let bundle = Bundle(for: SnapshotSpec.self)
+                let containerImage = UIImage(named: "container.jpg", in: bundle, compatibleWith: nil)
                 containerView = UIImageView(image: containerImage)
-                let overlayImage = UIImage(named: "sky.jpg", inBundle: bundle, compatibleWithTraitCollection: nil)
+                let overlayImage = UIImage(named: "sky.jpg", in: bundle, compatibleWith: nil)
                 overlayView = UIImageView(image: overlayImage)
                 containerView.addSubview(overlayView)
             }
@@ -39,11 +39,11 @@ class SnapshotSpec: QuickSpec {
                         CGPoint(x: 193.321418, y: 330.023027),
                         CGPoint(x: 459.781253, y: 251.836131),
                         ])
-                    overlayView.layer.transform = start.projectiveTransform(destination)
+                    overlayView.layer.transform = start.projectiveTransform(destination: destination)
                 }
 
                 it("should look as expected") {
-                    expect(containerView).to(haveValidSnapshot())
+                    expect(containerView).to(haveValidSnapshot(usesDrawRect:true))
                 }
             }
         }

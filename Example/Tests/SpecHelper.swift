@@ -12,17 +12,19 @@ import Nimble
 
 
 public func ==(lhs: float2x2, rhs: float2x2) -> Bool {
-    return matrix_almost_equal_elements(lhs.cmatrix, rhs.cmatrix, 0.001)
+    return matrix_equal(lhs, rhs)
+//    return matrix_almost_equal_elements(lhs.cmatrix, rhs.cmatrix, 0.001)
 }
 extension float2x2 : Equatable {}
 
-func beCloseTo(expectedValue: Matrix3x3Type, within delta: Double = 0.00001) -> NonNilMatcherFunc<Matrix3x3Type> {
+func beCloseTo(_ expectedValue: Matrix3x3Type, within delta: Double = 0.00001) -> NonNilMatcherFunc<Matrix3x3Type> {
   return NonNilMatcherFunc<Matrix3x3Type> { (actualExpression:Expression<Matrix3x3Type>, failureMessage:FailureMessage) in
     let actualValue = try! actualExpression.evaluate()!.cmatrix
     failureMessage.actualValue = "\(actualValue)"
     failureMessage.expected = "\(expectedValue.cmatrix)"
     failureMessage.to = "be close"
-    return matrix_almost_equal_elements(actualValue, expectedValue.cmatrix, ScalarType(delta))
+    return matrix_equal(actualValue, expectedValue.cmatrix)
+//    return matrix_almost_equal_elements(actualValue, expectedValue.cmatrix, ScalarType(delta))
   }
 }
 
