@@ -27,7 +27,6 @@ class MatrixSpec: QuickSpec {
                             float2(  4.0/3,  -1)
                             ])
                     #endif
-
                 }
 
                 it("should multiply with original and result identity") {

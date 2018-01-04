@@ -20,7 +20,7 @@ class ProjectionSpec: QuickSpec {
                     )
 
                     let projection = start.projection(to: destination)
-                    expect(projection).to(beCloseTo(expected.zNormalized()))
+                    expect(projection) ≈ expected.zNormalized()
                 }
 
                 context("transform") {
@@ -30,7 +30,7 @@ class ProjectionSpec: QuickSpec {
                         let translate = CATransform3DMakeTranslation(100, 100, 0)
                         let scale = CATransform3DMakeScale(200.0/152, 200.0/122, 1)
                         let combined = CATransform3DConcat(translate, scale)
-                        expect(CATransform3DEqualToTransform(combined, transform3D)) == false
+                        expect(combined) != transform3D
                         let expAffine = CATransform3DGetAffineTransform(scale)
                         let affine = CATransform3DGetAffineTransform(transform3D)
                         expect(affine) != expAffine

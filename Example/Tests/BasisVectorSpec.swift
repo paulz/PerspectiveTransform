@@ -24,16 +24,16 @@ class BasisSpec: QuickSpec {
         }
 
         context("basis") {
-            it("should match fiddle") {
+            it("should match expected") {
                 let startBasis = Matrix3x3Type([0, 2818688, 0, 0, 0, 2262368, -18544, 18544, 18544]).zNormalized()
-                let result = Perspective(start).basisVectorsToPointsMap
-                expect(result).to(beCloseTo(startBasis, within:0.5))
+                expect(Perspective(start).basisVectorsToPointsMap) ≈ (startBasis, delta:0.5)
             }
 
             it("should work for destination") {
-                let destBasis = Matrix3x3Type([-4000000, 12000000, 4000000, -4000000, 4000000, 12000000, -40000, 40000, 40000]).zNormalized()
-                let result = Perspective(destination).basisVectorsToPointsMap
-                expect(result).to(beCloseTo(destBasis,within:0.5))
+                let destBasis = Matrix3x3Type([-4000000, 12000000, 4000000,
+                                               -4000000, 4000000, 12000000,
+                                               -40000, 40000, 40000]).zNormalized()
+                expect(Perspective(destination).basisVectorsToPointsMap) ≈ (destBasis, delta:0.5)
             }
         }
     }

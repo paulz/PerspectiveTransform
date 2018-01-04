@@ -20,6 +20,21 @@ func beCloseTo(_ expectedValue: Matrix3x3Type, within delta: Double = 0.00001) -
     }
 }
 
+public func ≈(lhs: Expectation<Matrix3x3Type>, rhs: Matrix3x3Type) {
+    lhs.to(beCloseTo(rhs))
+}
+
+public func ≈(lhs: Expectation<Matrix3x3Type>, rhs: (expected: Matrix3x3Type, delta: Double)) {
+    lhs.to(beCloseTo(rhs.expected, within: rhs.delta))
+}
+
+
+extension CATransform3D: Equatable {
+    public static func ==(lhs: CATransform3D, rhs: CATransform3D) -> Bool {
+        return CATransform3DEqualToTransform(lhs, rhs)
+    }
+}
+
 extension Matrix3x3Type {
     init(_ array:[ScalarType]) {
         let row1 = Vector3Type(Array(array[0...2]))

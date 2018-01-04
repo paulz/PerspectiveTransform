@@ -18,8 +18,7 @@ class CATransform3Dfrom2DSpec: QuickSpec {
                         m21: 21, m22: 22, m23: 0, m24: 23,
                         m31: 0,  m32: 0,  m33: 1, m34: 0,
                         m41: 31, m42: 32, m43: 0, m44: 33)
-                    let constructed = CATransform3D(projection2D.to3d())
-                    expect(CATransform3DEqualToTransform(constructed, projection3D)) == true
+                    expect(CATransform3D(projection2D.to3d())) == projection3D
                 }
             }
         }
