@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "PerspectiveTransform"
-  s.version          = "0.1.0"
+  s.version          = "0.2.0"
   s.summary          = "Perspective Transform calculates CATransform3D"
   s.description      = <<-DESC
   Calculates CATransform3D to transform rectangular frame to convex quadrilateral
@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
   s.source           = { :git => "https://github.com/paulz/PerspectiveTransform.git", :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/iospaulz'
 
-  s.platform     = :ios, '8.0'
+  s.platform     = :ios, '10.0'
   s.requires_arc = true
 
   s.source_files = 'Pod/Classes/**/*'

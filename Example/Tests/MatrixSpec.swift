@@ -47,7 +47,7 @@ class MatrixSpec: QuickSpec {
             }
             context("determinant") {
                 it("should match expected") {
-                    expect(matrix_determinant(m.cmatrix)) == -1
+                    expect(m.determinant) == -1
                 }
             }
         }
