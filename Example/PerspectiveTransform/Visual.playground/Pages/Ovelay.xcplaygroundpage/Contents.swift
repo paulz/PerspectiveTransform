@@ -1,20 +1,20 @@
 //: [Previous](@previous)
 
 import PerspectiveTransform
-import XCPlayground
+import PlaygroundSupport
 
-let page = XCPlaygroundPage.currentPage
+let page = PlaygroundPage.current
 
-let containerImage = [#Image(imageLiteral: "container.jpg")#]
-let skyImage = [#Image(imageLiteral: "sky.jpg")#]
+let containerImage = #imageLiteral(resourceName: "container.jpg")
+let skyImage = #imageLiteral(resourceName: "sky.jpg")
 
 let containerView = UIImageView(image: containerImage)
 page.liveView = containerView
 let overlayView = UIImageView(image: skyImage)
 containerView.addSubview(overlayView)
 
-overlayView.frame = CGRect(origin: CGPointZero,
-    size: CGSize(width: 1, height: 1))
+overlayView.frame = CGRect(origin: CGPoint.zero,
+                           size: CGSize(width: 1, height: 1))
 overlayView.resetAnchorPoint()
 let start = Perspective(overlayView.frame)
 let destination = Perspective([
@@ -24,13 +24,13 @@ let destination = Perspective([
     CGPoint(x: 459.781253, y: 251.836131),
     ])
 
-UIView.animateWithDuration(1.0,
-    delay: 0,
-    options: [],
-    animations: {
-        overlayView.layer.transform = start.projectiveTransform(destination)
-    },
-    completion:nil)
+UIView.animate(withDuration:1.0,
+               delay: 0,
+               options: [.repeat, .autoreverse],
+               animations: {
+                overlayView.layer.transform = start.projectiveTransform(destination: destination)
+},
+               completion:nil)
 
 
 //: [Next](@next)
