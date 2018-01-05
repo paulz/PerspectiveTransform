@@ -28,10 +28,17 @@ public func ≈(lhs: Expectation<Matrix3x3Type>, rhs: (expected: Matrix3x3Type, 
     lhs.to(beCloseTo(rhs.expected, within: rhs.delta))
 }
 
-
 extension CATransform3D: Equatable {
     public static func ==(lhs: CATransform3D, rhs: CATransform3D) -> Bool {
         return CATransform3DEqualToTransform(lhs, rhs)
+    }
+}
+
+extension Int {
+    func times(block: ()->Void) {
+        for _ in 1...self {
+            block()
+        }
     }
 }
 
