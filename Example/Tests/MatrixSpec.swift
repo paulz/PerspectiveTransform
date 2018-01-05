@@ -1,6 +1,7 @@
 import Quick
 import Nimble
 import simd
+@testable import PerspectiveTransform
 
 class MatrixSpec: QuickSpec {
     override func spec() {
@@ -42,6 +43,17 @@ class MatrixSpec: QuickSpec {
                             ])
                     #endif
                 }
+
+                #if arch(arm64) || arch(x86_64)
+                    context(String(describing: Matrix3x3Type.adjugate)) {
+                        it("should be result of adjugate when z-normalized") {
+                            let before = Matrix3x3Type(diagonal: Vector3Type(5))
+                            let adjugate = before.adjugate()
+                            let inverse = before.inverse
+                            expect(adjugate.zNormalized()) == inverse.zNormalized()
+                        }
+                    }
+                #endif
 
             }
             context("determinant") {

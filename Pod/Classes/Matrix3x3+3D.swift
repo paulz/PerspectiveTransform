@@ -53,7 +53,7 @@ extension Matrix3x3Type {
         return self[2,2]==0 ? self : zNormalizedUnsafe()
     }
 
-    private func adjugate()-> Matrix3x3Type {
+    func adjugate()-> Matrix3x3Type {
         let c1 = self[0]
         let c2 = self[1]
         let c3 = self[2]
