@@ -24,7 +24,9 @@ class PanViewController: UIViewController {
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        anchorAtZeroPoint()
+        if startingPerspective == nil {
+            anchorAtZeroPoint()
+        }
         updatePosition()
     }
 
