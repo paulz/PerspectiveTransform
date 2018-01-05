@@ -23,9 +23,9 @@ extension Matrix3x3Type {
     }()
 
     func to3d() -> Matrix4x4Type {
-        var result = Matrix3x3Type.addRow * self * Matrix3x3Type.addColumn
-        result[2,2] = 1
-        return result
+        var stretch = Matrix3x3Type.addRow * self * Matrix3x3Type.addColumn
+        stretch[2,2] = 1
+        return stretch
     }
 
     func zNormalized() -> Matrix3x3Type {
@@ -50,7 +50,7 @@ extension Matrix3x3Type {
     }
 
     private func zNormalizedSafe() -> Matrix3x3Type {
-        return self[2,2]==0 ? self : zNormalizedUnsafe()
+        return self[2,2] == 0 ? self : zNormalizedUnsafe()
     }
 
     func adjugate()-> Matrix3x3Type {

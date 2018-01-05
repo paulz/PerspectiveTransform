@@ -51,6 +51,8 @@ class MatrixSpec: QuickSpec {
                             let adjugate = before.adjugate()
                             let inverse = before.inverse
                             expect(adjugate.zNormalized()) == inverse.zNormalized()
+                            expect(inverse.inverse) == before
+                            expect(simd_quaternion(adjugate.zNormalized())) == simd_quaternion(inverse.zNormalized())
                         }
                     }
                 #endif
