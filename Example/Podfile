@@ -5,6 +5,7 @@ inhibit_all_warnings!
 
 target 'Example' do
     pod 'PerspectiveTransform', :path => '../'
+    pod 'ImageCoordinateSpace'
 
     target 'Tests' do
         pod 'Quick'
