@@ -4,13 +4,11 @@ platform :ios, '11.0'
 inhibit_all_warnings!
 
 target 'Example' do
-  pod 'PerspectiveTransform', :path => '../'
-end
+    pod 'PerspectiveTransform', :path => '../'
 
-target 'Tests' do
-  pod 'PerspectiveTransform', :path => '../'
-
-  pod 'Quick'
-  pod 'Nimble'
-  pod 'Nimble-Snapshots', :inhibit_warnings => true
+    target 'Tests' do
+        pod 'Quick'
+        pod 'Nimble'
+        pod 'Nimble-Snapshots'
+    end
 end
