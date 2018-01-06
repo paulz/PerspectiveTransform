@@ -107,10 +107,10 @@
             </objects>
             <point key="canvasLocation" x="-570" y="887"/>
         </scene>
-        <!--View Controller-->
+        <!--Photo View Controller-->
         <scene sceneID="hHO-To-AcP">
             <objects>
-                <viewController storyboardIdentifier="fix me" id="m8X-JV-0C5" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="fix me" id="m8X-JV-0C5" customClass="PhotoViewController" customModule="Example" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3Q0-A6-ux3"/>
                         <viewControllerLayoutGuide type="bottom" id="KJh-jd-AO7"/>
@@ -129,10 +129,24 @@
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="h5q-E4-AbS" appends="YES" id="bob-eg-BCl"/>
+                        </connections>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="recents" id="4su-cd-VAb"/>
+                    <connections>
+                        <outlet property="containerImageView" destination="Sat-yN-TXs" id="UEb-XP-qt8"/>
+                        <outlet property="overlayImageView" destination="ESD-2C-OL5" id="0nN-MB-icA"/>
+                        <outlet property="tapGesture" destination="h5q-E4-AbS" id="qbQ-ea-Bs6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2GI-up-7H8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="h5q-E4-AbS">
+                    <connections>
+                        <action selector="didTap:" destination="m8X-JV-0C5" id="euB-gL-0xV"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="393" y="887"/>
         </scene>
