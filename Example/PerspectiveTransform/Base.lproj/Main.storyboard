@@ -6,6 +6,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -119,17 +121,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="container.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Sat-yN-TXs">
-                                <rect key="frame" x="23" y="82" width="555" height="435"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="sky.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="ESD-2C-OL5">
-                                <rect key="frame" x="140" y="180" width="320" height="240"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OtV-dV-2YR">
+                                <rect key="frame" x="3" y="62" width="555" height="475"/>
+                                <subviews>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="container.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Sat-yN-TXs">
+                                        <rect key="frame" x="0.0" y="0.0" width="555" height="475"/>
+                                    </imageView>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="sky.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="ESD-2C-OL5">
+                                        <rect key="frame" x="117" y="118" width="320" height="240"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="320" id="0EV-Mr-hdE"/>
+                                            <constraint firstAttribute="width" secondItem="ESD-2C-OL5" secondAttribute="height" multiplier="4:3" id="j2Z-Tv-m3a"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="ESD-2C-OL5" firstAttribute="centerY" secondItem="OtV-dV-2YR" secondAttribute="centerY" id="IkS-PJ-yYe"/>
+                                    <constraint firstAttribute="trailing" secondItem="Sat-yN-TXs" secondAttribute="trailing" id="Jvf-6f-Rks"/>
+                                    <constraint firstItem="ESD-2C-OL5" firstAttribute="centerX" secondItem="OtV-dV-2YR" secondAttribute="centerX" id="djC-ah-Y45"/>
+                                    <constraint firstAttribute="bottom" secondItem="Sat-yN-TXs" secondAttribute="bottom" id="eXt-2Z-BPW"/>
+                                    <constraint firstItem="Sat-yN-TXs" firstAttribute="top" secondItem="OtV-dV-2YR" secondAttribute="top" id="k2f-nw-pDt"/>
+                                    <constraint firstItem="Sat-yN-TXs" firstAttribute="leading" secondItem="OtV-dV-2YR" secondAttribute="leading" id="muK-uI-ikl"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="OtV-dV-2YR" firstAttribute="leading" secondItem="OAe-Sl-oWH" secondAttribute="leadingMargin" constant="-13" id="04D-lL-4Bd"/>
+                            <constraint firstItem="OtV-dV-2YR" firstAttribute="top" secondItem="3Q0-A6-ux3" secondAttribute="bottom" constant="42" id="Twg-Zm-U00"/>
+                            <constraint firstItem="KJh-jd-AO7" firstAttribute="top" secondItem="OtV-dV-2YR" secondAttribute="bottom" constant="81" id="Xmh-R3-m3Z"/>
+                        </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="h5q-E4-AbS" appends="YES" id="bob-eg-BCl"/>
                         </connections>
@@ -156,6 +179,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="GDb-qn-IKv" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="PIL-7H-als">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>

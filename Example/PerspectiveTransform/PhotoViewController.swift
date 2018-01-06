@@ -26,6 +26,7 @@ class FittingPolygon {
         }
         assert(points.count == 4, "should have 4 point")
         points = [points[3], points[0], points[2], points[1]]
+        print("points:", points)
     }
 
     class func loadFromSvgFile() -> FittingPolygon {
@@ -44,9 +45,6 @@ class PolygonLoader: NSObject {
         let fileName: String = String(name.first!)
         let fileExtension: String = String(name.last!)
         svgFileUrl = bundle.url(forResource: fileName, withExtension: fileExtension)!
-        let contents = try! String(contentsOf: svgFileUrl)
-        print(contents)
-        assert(contents.count > 10, "too short content")
     }
 
     func load() -> FittingPolygon {
@@ -81,8 +79,12 @@ class PhotoViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        overlayImageView.center = containerImageView.center
-        applyTranformation()
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        overlayImageView.resetAnchorPoint()
+        toggleTransform()
     }
 
     @IBAction func didTap(_ sender: UITapGestureRecognizer) {
@@ -103,9 +105,7 @@ class PhotoViewController: UIViewController {
     func tranformation() -> CATransform3D {
         let start = Perspective(overlayImageView.frame)
         let transform = FittingPolygon.loadFromSvgFile()
-        var destination = Perspective(overlayImageView.frame)
-        print("transform.points:", transform.points)
-        destination = Perspective(transform.points)
+        let destination = Perspective(transform.points)
         return start.projectiveTransform(destination: destination)
     }
 

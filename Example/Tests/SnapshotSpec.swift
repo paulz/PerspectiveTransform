@@ -4,14 +4,6 @@ import Nimble_Snapshots
 import PerspectiveTransform
 import Foundation
 
-public extension UIView {
-    public func resetAnchorPoint() {
-        let rect = frame
-        layer.anchorPoint = CGPoint.zero
-        frame = rect
-    }
-}
-
 class SnapshotSpec: QuickSpec {
     override func spec() {
         describe("overlay placement") {
