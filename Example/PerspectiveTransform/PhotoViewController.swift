@@ -25,6 +25,7 @@ class FittingPolygon {
             points.append(CGPoint(x: x, y: y))
         }
         assert(points.count == 4, "should have 4 point")
+        points = [points[3], points[0], points[2], points[1]]
     }
 
     class func loadFromSvgFile() -> FittingPolygon {
@@ -52,11 +53,10 @@ class PolygonLoader: NSObject {
         let parser = XMLParser(contentsOf: svgFileUrl)!
         parser.delegate = self
         parser.parse()
-        print(pointStrings!)
-        return FittingPolygon(svgPointsString: pointStrings!)
+        return FittingPolygon(svgPointsString: pointString!)
     }
 
-    var pointStrings: String?
+    var pointString: String?
 }
 
 extension PolygonLoader: XMLParserDelegate {
@@ -66,7 +66,7 @@ extension PolygonLoader: XMLParserDelegate {
                 qualifiedName qName: String?,
                 attributes attributeDict: [String : String] = [:]) {
         if elementName == "polygon" {
-            pointStrings = attributeDict["points"]?.trimmingCharacters(in: .whitespacesAndNewlines)
+            pointString = attributeDict["points"]?.trimmingCharacters(in: .whitespacesAndNewlines)
         }
     }
 }
@@ -76,25 +76,41 @@ class PhotoViewController: UIViewController {
     @IBOutlet var containerImageView: UIImageView!
     @IBOutlet var overlayImageView: UIImageView!
     @IBOutlet var tapGesture: UITapGestureRecognizer!
+    var applied = false
+    var transform: CATransform3D!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        overlayImageView.center = containerImageView.center
         applyTranformation()
     }
 
     @IBAction func didTap(_ sender: UITapGestureRecognizer) {
         UIView.animate(withDuration: 0.5) {
-            self.overlayImageView.layer.transform = CATransform3DIdentity
+            self.toggleTransform()
         }
     }
 
-    func applyTranformation() {
+    func toggleTransform() {
+        applied = !applied
+        if applied {
+            overlayImageView.layer.transform = CATransform3DIdentity
+        } else {
+            applyTranformation()
+        }
+    }
+
+    func tranformation() -> CATransform3D {
         let start = Perspective(overlayImageView.frame)
         let transform = FittingPolygon.loadFromSvgFile()
         var destination = Perspective(overlayImageView.frame)
         print("transform.points:", transform.points)
         destination = Perspective(transform.points)
-        overlayImageView.layer.transform = start.projectiveTransform(destination: destination)
+        return start.projectiveTransform(destination: destination)
+    }
+
+    func applyTranformation() {
+        overlayImageView.layer.transform = tranformation()
     }
 
 }
