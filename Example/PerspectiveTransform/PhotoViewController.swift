@@ -8,6 +8,7 @@
 
 import UIKit
 import PerspectiveTransform
+import ImageCoordinateSpace
 
 class FittingPolygon {
     var points: [CGPoint] = []
@@ -83,7 +84,6 @@ class PhotoViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        overlayImageView.resetAnchorPoint()
         toggleTransform()
     }
 
@@ -95,17 +95,24 @@ class PhotoViewController: UIViewController {
 
     func toggleTransform() {
         applied = !applied
-        if applied {
-            overlayImageView.layer.transform = CATransform3DIdentity
-        } else {
-            applyTranformation()
-        }
+        overlayImageView.layer.transform = applied ? CATransform3DIdentity : tranformation()
     }
 
     func tranformation() -> CATransform3D {
-        let start = Perspective(overlayImageView.frame)
+        overlayImageView.contentMode = .scaleToFill
+        overlayImageView.frame = CGRect(origin: CGPoint.zero, size: overlayImageView.frame.size)
+        overlayImageView.resetAnchorPoint()
+        let imageSpace = overlayImageView.contentSpace()
+        let size = containerImageView.bounds.size.applying(CGAffineTransform(scaleX: 1/1.17, y: 1/2.85))
+//        let size = containerImageView.bounds.size.applying(CGAffineTransform(scaleX: 1/2.55, y: 1/1.35))
+        let start = Perspective(CGRect(origin: CGPoint.zero, size: size))
         let transform = FittingPolygon.loadFromSvgFile()
-        let destination = Perspective(transform.points)
+        let points = transform.points.map {
+            return imageSpace.convert($0, from: containerImageView.contentSpace())
+        }
+        let destination = Perspective(points)
+        print("start:", start)
+        print("destination:", destination)
         return start.projectiveTransform(destination: destination)
     }
 
