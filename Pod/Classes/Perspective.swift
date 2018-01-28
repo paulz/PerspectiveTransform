@@ -16,11 +16,7 @@ public final class Perspective {
     }
 
     lazy var basisVectorsToPointsMap: Matrix3x3Type! = {
-        let m = Matrix3x3Type([
-            vectors[0],
-            vectors[1],
-            vectors[2]]
-        )
+        let m = Matrix3x3Type(Array(vectors[0...2]))
         let solution = m.homogeneousInverse() * vectors[3]
         let scale = Matrix3x3Type(diagonal: solution)
         let basisToPoints = m * scale
