@@ -44,9 +44,7 @@ class PanViewController: UIViewController {
     var startingPerspective : Perspective!
 
     func anchorAtZeroPoint() {
-        let rect = transView.frame
-        transView.layer.anchorPoint = CGPoint.zero
-        transView.frame = rect
+        transView.resetAnchorPoint()
         startingPerspective = Perspective(transView.frame)
     }
 
