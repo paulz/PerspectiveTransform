@@ -31,7 +31,6 @@
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* MatrixSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* MatrixSpec.swift */; };
 		A188B43E51CB8DF55FBDEB26 /* Pods_Example_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3582F04A676BBF031D05BFAF /* Pods_Example_Tests.framework */; };
-		BD175ED324E474203371CD76 /* Pods_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C02503EFB5B7621552FF2795 /* Pods_Tests.framework */; };
 		CAEE5DA8ED296B803FB2B4F7 /* Pods_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1ED5B1F7BCF3AC7E6E4D7F0 /* Pods_Example.framework */; };
 /* End PBXBuildFile section */
 
@@ -101,7 +100,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BD175ED324E474203371CD76 /* Pods_Tests.framework in Frameworks */,
 				A188B43E51CB8DF55FBDEB26 /* Pods_Example_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -642,10 +640,6 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_IDENTITY = "";
 				COPY_PHASE_STRIP = NO;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
