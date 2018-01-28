@@ -10,15 +10,15 @@ import QuartzCore
 import simd
 
 extension Matrix3x3Type {
-    static let multiplier: Vector3Type = Vector3Type(1, 1, 0)
+    internal static let multiplier: Vector3Type = Vector3Type(1, 1, 0)
 
-    static let addColumn : Matrix4x3Type =  {
+    internal static let addColumn : Matrix4x3Type =  {
         var m = Matrix4x3Type(diagonal:multiplier)
         m[3, 2] = 1
         return m
     }()
 
-    static let addRow : Matrix3x4Type =  {
+    internal static let addRow : Matrix3x4Type =  {
         var m = Matrix3x4Type(diagonal:multiplier)
         m[2, 3] = 1
         return m
@@ -48,12 +48,5 @@ extension Matrix3x3Type {
 
     private func zNormalizedSafe() -> Matrix3x3Type {
         return normalizationFactor() == 0 ? self : zNormalizedUnsafe()
-    }
-
-    func adjugate()-> Matrix3x3Type {
-        let c1 = self[0]
-        let c2 = self[1]
-        let c3 = self[2]
-        return Matrix3x3Type([cross(c2, c3), cross(c3, c1), cross(c1, c2)]).transpose
     }
 }

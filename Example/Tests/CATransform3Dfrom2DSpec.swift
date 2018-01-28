@@ -7,7 +7,7 @@ class CATransform3Dfrom2DSpec: QuickSpec {
     override func spec() {
         describe("weak perspective projection") {
             context("2D to 3D") {
-                it("should preserve z values") {
+                it("should add row and column and set 1 for z") {
                     let projection2D = Matrix3x3Type([
                         Vector3Type(11,12,13),
                         Vector3Type(21,22,23),
