@@ -35,3 +35,11 @@ public final class Perspective {
         return (to.basisVectorsToPointsMap * pointsToBasisVectorsMap).zNormalized()
     }
 }
+
+extension Perspective: CustomDebugStringConvertible {
+    public var debugDescription: String {
+        return "Perspective: [\n" +
+            vectors.map {String(describing: $0)}.joined(separator: "\n") +
+        "\n]"
+    }
+}
