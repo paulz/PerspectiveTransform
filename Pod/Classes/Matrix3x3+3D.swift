@@ -31,20 +31,11 @@ extension Matrix3x3Type {
     }
 
     func zNormalized() -> Matrix3x3Type {
-        #if arch(arm64) || arch(x86_64)
-            return zNormalizedUnsafe()
-        #else
-            return zNormalizedSafe()
-        #endif
+        return zNormalizedUnsafe()
     }
 
     func homogeneousInverse() -> Matrix3x3Type {
-        #if arch(arm64) || arch(x86_64)
-            let result = inverse
-        #else
-            let result = adjugate()
-        #endif
-        return result.zNormalizedSafe()
+        return inverse.zNormalizedSafe()
     }
 
     private func zNormalizedUnsafe() -> Matrix3x3Type {
