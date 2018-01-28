@@ -7,8 +7,10 @@ class ProjectionSpec: QuickSpec {
     override func spec() {
 
         describe("general2DProjection") {
-            context("fiddle") {
-                let expected = Matrix3x3Type([-335626817536000000, 0, -25507638132736000000, 0, -418158002176000000, -25507638132736000000, 0, 0, -255076381327360000])
+            context("scale and translate") {
+                let expected = Matrix3x3Type([200.0/152, 0, 100,
+                                              0, 200.0/122, 100,
+                                              0, 0, 1])
 
                 it("should match") {
                     let start = Perspective(CGRect(origin: CGPoint.zero, size: CGSize(width: 152, height: 122)))
@@ -20,20 +22,44 @@ class ProjectionSpec: QuickSpec {
                     )
 
                     let projection = start.projection(to: destination)
-                    expect(projection) ≈ expected.zNormalized()
+                    expect(projection) ≈ expected
                 }
 
-                context("transform") {
-                    it("should create 3D transformation") {
-                        let transform3D = CATransform3D(expected.zNormalized().to3d())
-                        expect(CATransform3DIsAffine(transform3D)) == true
-                        let translate = CATransform3DMakeTranslation(100, 100, 0)
-                        let scale = CATransform3DMakeScale(200.0/152, 200.0/122, 1)
-                        let combined = CATransform3DConcat(translate, scale)
-                        expect(combined) != transform3D
-                        let expAffine = CATransform3DGetAffineTransform(scale)
-                        let affine = CATransform3DGetAffineTransform(transform3D)
-                        expect(affine) != expAffine
+                context("concat") {
+                    var expected3D: CATransform3D!
+                    var translate3D: CATransform3D!
+                    var scale3D: CATransform3D!
+
+                    beforeEach {
+                        expected3D = CATransform3D(expected.to3d())
+                        translate3D = CATransform3DMakeTranslation(100, 100, 0)
+                        scale3D = CATransform3DMakeScale(200.0/152, 200.0/122, 1)
+                    }
+
+                    it("should create 3D transformation scale + translate, in that order only") {
+                        expect(CATransform3DConcat(scale3D, translate3D)) == expected3D
+                        expect(CATransform3DConcat(translate3D, scale3D)) != expected3D
+                    }
+
+                    context("affine 2D") {
+                        var scale2D: CGAffineTransform!
+                        var translate2D: CGAffineTransform!
+                        var expected2D: CGAffineTransform!
+
+                        beforeEach {
+                            scale2D = CATransform3DGetAffineTransform(scale3D)
+                            translate2D = CATransform3DGetAffineTransform(translate3D)
+                            expected2D = CATransform3DGetAffineTransform(expected3D)
+                        }
+
+                        it("should all be affine") {
+                            let isAffine = [scale3D, translate3D, expected3D].map {CATransform3DIsAffine($0)}
+                            expect(isAffine).to(allPass(beTrue()))
+                        }
+
+                        it("should create 2D affine tranformation") {
+                            expect(scale2D.concatenating(translate2D)) == expected2D
+                        }
                     }
                 }
             }
