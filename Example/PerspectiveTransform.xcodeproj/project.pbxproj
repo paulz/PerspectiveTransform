@@ -605,7 +605,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E995B2887EFE603CA3E1920A /* Pods-Example.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 35KC7LV9BL;
 				INFOPLIST_FILE = PerspectiveTransform/Info.plist;
@@ -621,7 +620,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 228B48512798F0994ED8E8A0 /* Pods-Example.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 35KC7LV9BL;
 				INFOPLIST_FILE = PerspectiveTransform/Info.plist;
@@ -637,7 +635,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8CB538BB314A073B69DF6F19 /* Pods-Example-Tests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -657,7 +654,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4FCC3D4EC42E87C052F97765 /* Pods-Example-Tests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
