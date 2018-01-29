@@ -3,11 +3,15 @@
     <!-- Generator: Sketch 3.5.2 (25235) - http://www.bohemiancoding.com/sketch -->
     <title>Group</title>
     <desc>Created with Sketch.</desc>
-    <defs></defs>
+<defs>
+  <pattern id="sky" patternUnits="userSpaceOnUse" width="320" height="240">
+    <image xlink:href="sky.jpg" x="0" y="0" width="320" height="240" />
+  </pattern>
+</defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
         <g id="Group" sketch:type="MSLayerGroup">
             <image id="container" sketch:type="MSBitmapLayer" x="0" y="0" width="555" height="370" xlink:href="container.jpg"></image>
-            <polygon id="placeholder" stroke="#979797" fill="#7ED321" sketch:type="MSShapeGroup" points="377.282671 41.4352201 459.781253 251.836131 193.321418 330.023027 108.315837 80.1687782 "></polygon>
+            <polygon id="placeholder" stroke="#979797" fill="url(#sky)" sketch:type="MSShapeGroup" points="377.282671 41.4352201 459.781253 251.836131 193.321418 330.023027 108.315837 80.1687782 "></polygon>
         </g>
     </g>
 </svg>
