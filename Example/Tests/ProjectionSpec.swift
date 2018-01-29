@@ -11,18 +11,43 @@ class ProjectionSpec: QuickSpec {
                 let expected = Matrix3x3Type([200.0/152, 0, 100,
                                               0, 200.0/122, 100,
                                               0, 0, 1])
+                var start: Perspective!
+                var destination: Perspective!
 
-                it("should match") {
-                    let start = Perspective(CGRect(origin: CGPoint.zero, size: CGSize(width: 152, height: 122)))
-                    let destination = Perspective(
+                beforeEach {
+                    start = Perspective(CGRect(origin: CGPoint.zero, size: CGSize(width: 152, height: 122)))
+                    destination = Perspective(
                         CGRect(
                             origin: CGPoint(x: 100, y: 100),
                             size: CGSize(width: 200, height: 200)
                         )
                     )
+                }
 
+                it("should match expected") {
                     let projection = start.projection(to: destination)
                     expect(projection) ≈ expected
+                }
+
+                context("rotation") {
+                    var from: Perspective!
+                    var to: Perspective!
+
+                    beforeEach {
+                        var points = Quadrilateral(CGRect(origin: CGPoint.zero, size: CGSize(width: 10, height: 10))).corners
+                        from = Perspective(points)
+                        let turnedRight = [points[1], points[3], points[0], points[2]]
+                        to = Perspective(turnedRight)
+                    }
+
+                    it("should match rotate and translate") {
+                        let rotate3D = CATransform3DMakeRotation(.pi / 2, 0, 0, 1)
+                        let translate3D = CATransform3DMakeTranslation(10, 0, 0)
+                        let combined = CATransform3DConcat(rotate3D, translate3D)
+
+                        let projection = from.projection(to: to)
+                        expect(CATransform3D(projection.to3d())) == combined
+                    }
                 }
 
                 context("concat") {
