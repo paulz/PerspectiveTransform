@@ -7,6 +7,44 @@ class ProjectionSpec: QuickSpec {
     override func spec() {
 
         describe("general2DProjection") {
+            context("to the same perspective") {
+                var from: Perspective!
+                var to: Perspective!
+
+                beforeEach {
+                    from = Perspective(CGRect(origin: CGPoint.zero, size: CGSize(width: 10, height: 10)))
+                    to = from
+                }
+
+                it("should be identity") {
+                    let projection = from.projection(to: to)
+                    expect(CATransform3DIsIdentity(CATransform3D(projection.to3d()))) == true
+                }
+            }
+
+            context("rotation") {
+                // Image showing 3D transform matrix values
+                // https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/CoreAnimation_guide/Art/transform_manipulations_2x.png
+                var from: Perspective!
+                var to: Perspective!
+
+                beforeEach {
+                    var points = Quadrilateral(CGRect(origin: CGPoint.zero, size: CGSize(width: 10, height: 10))).corners
+                    from = Perspective(points)
+                    let turnedRight = [points[1], points[3], points[0], points[2]]
+                    to = Perspective(turnedRight)
+                }
+
+                it("should match rotate around 0,0 and translate back to 0") {
+                    let rotate3D = CATransform3DMakeRotation(.pi / 2, 0, 0, 1)
+                    let translate3D = CATransform3DMakeTranslation(10, 0, 0)
+                    let combined = CATransform3DConcat(rotate3D, translate3D)
+
+                    let projection = from.projection(to: to)
+                    expect(CATransform3D(projection.to3d())) == combined
+                }
+            }
+
             context("scale and translate") {
                 let expected = Matrix3x3Type([200.0/152, 0, 100,
                                               0, 200.0/122, 100,
@@ -27,27 +65,6 @@ class ProjectionSpec: QuickSpec {
                 it("should match expected") {
                     let projection = start.projection(to: destination)
                     expect(projection) ≈ expected
-                }
-
-                context("rotation") {
-                    var from: Perspective!
-                    var to: Perspective!
-
-                    beforeEach {
-                        var points = Quadrilateral(CGRect(origin: CGPoint.zero, size: CGSize(width: 10, height: 10))).corners
-                        from = Perspective(points)
-                        let turnedRight = [points[1], points[3], points[0], points[2]]
-                        to = Perspective(turnedRight)
-                    }
-
-                    it("should match rotate and translate") {
-                        let rotate3D = CATransform3DMakeRotation(.pi / 2, 0, 0, 1)
-                        let translate3D = CATransform3DMakeTranslation(10, 0, 0)
-                        let combined = CATransform3DConcat(rotate3D, translate3D)
-
-                        let projection = from.projection(to: to)
-                        expect(CATransform3D(projection.to3d())) == combined
-                    }
                 }
 
                 context("concat") {
