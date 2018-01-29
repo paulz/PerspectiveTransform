@@ -24,3 +24,8 @@ DerivedData
 
 # Release output
 PerspectiveTransform.framework.zip
+
+## See https://raw.githubusercontent.com/github/gitignore/master/Swift.gitignore
+## Playgrounds
+timeline.xctimeline
+playground.xcworkspace
