@@ -5,8 +5,27 @@ import simd
 
 class ProjectionSpec: QuickSpec {
     override func spec() {
-
         describe("general2DProjection") {
+            context("isosceles trapezoid") {
+                var from: Perspective!
+                var to: Perspective!
+
+                beforeEach {
+                    from = Perspective(CGRect(origin: CGPoint.zero, size: CGSize(width: 1, height: 1)))
+                    to = Perspective([
+                        CGPoint(x: -1, y: 0), // shifted left by 1
+                        CGPoint(x: 2, y: 0), // shifted right by 1
+                        CGPoint(x: 1, y: 1),
+                        CGPoint(x: 0, y: 1),
+                        ])
+                }
+
+                it("should be non affine and have 3D rotation") {
+                    let transform = from.projectiveTransform(destination: to)
+                    expect(CATransform3DIsIdentity(transform)) == false
+                    expect(CATransform3DIsAffine(transform)) == false
+                }
+            }
             context("to the same perspective") {
                 var from: Perspective!
                 var to: Perspective!
