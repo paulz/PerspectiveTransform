@@ -12,12 +12,12 @@ class ProjectionSpec: QuickSpec {
 
                 beforeEach {
                     from = Perspective(CGRect(origin: CGPoint.zero, size: CGSize(width: 1, height: 1)))
-                    to = Perspective([
+                    to = Perspective(
                         CGPoint(x: -1, y: 0), // shifted left by 1
                         CGPoint(x: 2, y: 0), // shifted right by 1
                         CGPoint(x: 1, y: 1),
-                        CGPoint(x: 0, y: 1),
-                        ])
+                        CGPoint(x: 0, y: 1)
+                    )
                 }
 
                 it("should be non affine and have 3D rotation") {
