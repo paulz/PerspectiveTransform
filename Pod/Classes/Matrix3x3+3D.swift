@@ -6,7 +6,6 @@
 //
 //
 
-import QuartzCore
 import simd
 
 extension Matrix3x3Type {
@@ -47,6 +46,6 @@ extension Matrix3x3Type {
     }
 
     private func zNormalizedSafe() -> Matrix3x3Type {
-        return normalizationFactor() == 0 ? self : zNormalizedUnsafe()
+        return normalizationFactor().isZero ? self : zNormalizedUnsafe()
     }
 }

@@ -7,7 +7,6 @@
 //
 
 import QuartzCore
-import simd
 
 extension CATransform3D {
     init(_ m: Matrix4x4Type) {

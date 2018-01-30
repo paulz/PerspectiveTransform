@@ -6,7 +6,7 @@
 //
 //
 
-import UIKit
+import CoreGraphics
 
 public final class Quadrilateral {
     public let corners : [CGPoint]
