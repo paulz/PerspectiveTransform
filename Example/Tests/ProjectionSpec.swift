@@ -102,6 +102,45 @@ class ProjectionSpec: QuickSpec {
                         expect(CATransform3DConcat(translate3D, scale3D)) != expected3D
                     }
 
+                    context("expected 3d matrix") {
+                        it("should contain scale values on the diagonal") {
+                            [expected3D, scale3D].forEach { transform3d in
+                                let matrix = transform3d!
+                                expect(matrix.m11) == 200.0/152
+                                expect(matrix.m22) == 200.0/122
+                                expect(matrix.m33) == 1
+                                expect(matrix.m44) == 1
+                            }
+                        }
+
+                        it("should contain translate values in row 4") {
+                            [expected3D, translate3D].forEach { transform3d in
+                                let matrix = transform3d!
+                                expect(matrix.m41) == 100
+                                expect(matrix.m42) == 100
+                                expect(matrix.m43) == 0
+                                expect(matrix.m44) == 1
+                            }
+                        }
+
+                        context("without scale and translate") {
+                            var matrix: CATransform3D!
+
+                            beforeEach {
+                                matrix = expected3D!
+                                matrix.m11 = 1
+                                matrix.m22 = 1
+                                matrix.m41 = 0
+                                matrix.m42 = 0
+                            }
+
+                            it("should have no other value and thus be identity") {
+                                expect(CATransform3DIsIdentity(matrix)) == true
+                            }
+                        }
+                    }
+
+
                     context("affine 2D") {
                         var scale2D: CGAffineTransform!
                         var translate2D: CGAffineTransform!
