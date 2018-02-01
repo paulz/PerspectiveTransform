@@ -5,6 +5,7 @@
 import UIKit
 import PerspectiveTransform
 import PlaygroundSupport
+import Nimble
 
 func viewWithFrame(origin: CGPoint = CGPoint.zero, size: CGSize) -> UIView {
     return UIView(frame: CGRect(origin: origin, size: size))
@@ -41,3 +42,11 @@ UIView.animate(withDuration:1.0,
         view.layer.transform = transform
     },
     completion: nil)
+
+transform.m11 == destinationView.frame.size.width / startView.frame.size.width
+expect(transform.m22) ≈ destinationView.frame.size.height / startView.frame.size.height
+transform.m33 == 1
+transform.m41 == 100
+transform.m42 == 100
+transform.m43 == 0
+
