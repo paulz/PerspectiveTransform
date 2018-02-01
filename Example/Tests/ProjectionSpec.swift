@@ -62,6 +62,26 @@ class ProjectionSpec: QuickSpec {
                     let projection = from.projection(to: to)
                     expect(CATransform3D(projection.to3d())) == combined
                 }
+
+                context("matrix values") {
+                    var matrix: CATransform3D!
+
+                    beforeEach {
+                        let projection = from.projection(to: to)
+                        matrix = CATransform3D(projection.to3d())
+                    }
+
+                    it("should contain rotation around z axis") {
+                        let angle = CGFloat.pi / 2
+                        expect(matrix.m11) ≈ cos(angle)
+                        expect(matrix.m22) ≈ cos(angle)
+                        expect(matrix.m33) == 1
+                        expect(matrix.m12) ≈ sin(angle)
+                        expect(matrix.m21) ≈ -sin(angle)
+                        expect(matrix.m13) == 0
+                        expect(matrix.m31) == 0
+                    }
+                }
             }
 
             context("scale and translate") {
