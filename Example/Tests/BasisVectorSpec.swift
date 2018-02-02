@@ -25,14 +25,12 @@ class BasisSpec: QuickSpec {
 
         context("basis") {
             it("should match expected") {
-                let startBasis = Matrix3x3Type([0, 2818688, 0, 0, 0, 2262368, -18544, 18544, 18544]).zNormalized()
+                let startBasis = Matrix3x3Type([[0.0, 0.0, -1.0], [152.0, 0.0, 1.0], [0.0, 122.0, 1.0]])
                 expect(Perspective(start).basisVectorsToPointsMap) ≈ (startBasis, delta:0.5)
             }
 
             it("should work for destination") {
-                let destBasis = Matrix3x3Type([-4000000, 12000000, 4000000,
-                                               -4000000, 4000000, 12000000,
-                                               -40000, 40000, 40000]).zNormalized()
+                let destBasis = Matrix3x3Type([[-100.0, -100.0, -1.0], [300.0, 100.0, 1.0], [100.0, 300.0, 1.0]])
                 expect(Perspective(destination).basisVectorsToPointsMap) ≈ (destBasis, delta:0.5)
             }
         }
