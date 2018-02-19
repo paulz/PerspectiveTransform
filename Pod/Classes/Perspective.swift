@@ -23,7 +23,7 @@ public final class Perspective {
     }
 
     private func calculateBasisVectorsToPointsMap() -> Matrix3x3Type {
-        let baseVectors = Matrix3x3Type(Array(vectors[0...Vector3Type.lastIndex]))
+        let baseVectors = Matrix3x3Type(Array(vectors[Vector3Type.indexSlice]))
         let solution = baseVectors.homogeneousInverse() * vectors[Vector3Type.lastIndex + 1]
         let scale = Matrix3x3Type(diagonal: solution)
         let basisToPoints = baseVectors * scale

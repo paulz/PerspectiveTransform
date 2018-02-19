@@ -4,8 +4,8 @@ import Nimble
 import simd
 import GameKit
 
-func threeValues<S>(_ factory: (()->S)) -> [S] {
-    return Array(0...2).map{_ in factory()}
+func arrayWith<S>(_ factory: (()->S)) -> [S] {
+    return Array(Vector3Type.indexSlice).map{_ in factory()}
 }
 
 extension GKRandomSource {
@@ -13,10 +13,10 @@ extension GKRandomSource {
         return Double(nextUniform())
     }
     func nextVector() -> Vector3Type {
-        return Vector3Type(threeValues(nextDouble))
+        return Vector3Type(arrayWith(nextDouble))
     }
     func nextMatrix() -> Matrix3x3Type {
-        return Matrix3x3Type(threeValues(nextVector))
+        return Matrix3x3Type(arrayWith(nextVector))
     }
 }
 
