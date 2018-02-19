@@ -9,23 +9,22 @@
 import simd
 
 extension Matrix3x3Type {
-    internal static let multiplier: Vector3Type = Vector3Type(1, 1, 0)
+    static let lastIndex = 2
 
-    internal static let addColumn : Matrix4x3Type =  {
-        var m = Matrix4x3Type(diagonal:multiplier)
-        m[3, 2] = 1
-        return m
+    internal static let insertColumn : Matrix4x3Type =  {
+        let identity = Matrix3x3Type(diagonal: Vector3Type(1))
+        var rows = [identity[0], identity[1], identity[2]]
+        rows.insert(Vector3Type(0), at: lastIndex)
+        return Matrix4x3Type(rows)
     }()
 
-    internal static let addRow : Matrix3x4Type =  {
-        var m = Matrix3x4Type(diagonal:multiplier)
-        m[2, 3] = 1
-        return m
+    internal static let insertRow : Matrix3x4Type =  {
+        return insertColumn.transpose
     }()
 
     func to3d() -> Matrix4x4Type {
-        var stretch = Matrix3x3Type.addRow * self * Matrix3x3Type.addColumn
-        stretch[2, 2] = 1
+        var stretch = Matrix3x3Type.insertRow * self * Matrix3x3Type.insertColumn
+        stretch[Matrix3x3Type.lastIndex, Matrix3x3Type.lastIndex] = ScalarType(1)
         return stretch
     }
 
@@ -42,7 +41,7 @@ extension Matrix3x3Type {
     }
 
     private func normalizationFactor() -> ScalarType {
-        return self[2,2]
+        return self[Matrix3x3Type.lastIndex, Matrix3x3Type.lastIndex]
     }
 
     private func zNormalizedSafe() -> Matrix3x3Type {
