@@ -7,9 +7,12 @@ target 'Example' do
     pod 'PerspectiveTransform', :path => '../'
     pod 'ImageCoordinateSpace'
 
-    target 'Tests' do
+    target 'Framework Unit Specs' do
         pod 'Quick'
         pod 'Nimble'
-        pod 'Nimble-Snapshots'
+
+        target 'Application Specs' do
+            pod 'Nimble-Snapshots'
+        end
     end
 end

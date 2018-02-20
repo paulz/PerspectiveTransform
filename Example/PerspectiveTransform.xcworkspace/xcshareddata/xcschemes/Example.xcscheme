@@ -29,8 +29,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "607FACE41AFB9204008FA782"
-               BuildableName = "Tests.xctest"
-               BlueprintName = "Tests"
+               BuildableName = "Application Specs.xctest"
+               BlueprintName = "Application Specs"
                ReferencedContainer = "container:PerspectiveTransform.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -49,8 +49,18 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "607FACE41AFB9204008FA782"
-               BuildableName = "Tests.xctest"
-               BlueprintName = "Tests"
+               BuildableName = "Application Specs.xctest"
+               BlueprintName = "Application Specs"
+               ReferencedContainer = "container:PerspectiveTransform.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "4B74DB33203BD9C70030F41B"
+               BuildableName = "Framework Unit Specs.xctest"
+               BlueprintName = "Framework Unit Specs"
                ReferencedContainer = "container:PerspectiveTransform.xcodeproj">
             </BuildableReference>
          </TestableReference>
