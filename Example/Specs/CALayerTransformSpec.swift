@@ -3,19 +3,6 @@ import Nimble
 import QuartzCore
 @testable import PerspectiveTransform
 
-extension CATransform3D {
-    func layerRotation() -> Vector3Type {
-        let layer = CALayer()
-        layer.transform = self
-
-        var rotate = Vector3Type()
-        rotate.x = layer.value(forKeyPath: "transform.rotation.x") as! Double
-        rotate.y = layer.value(forKeyPath: "transform.rotation.y") as! Double
-        rotate.z = layer.value(forKeyPath: "transform.rotation.z") as! Double
-        return rotate
-    }
-}
-
 class CALayerTransformSpec: QuickSpec {
     override func spec() {
         describe("CALayer.transform") {

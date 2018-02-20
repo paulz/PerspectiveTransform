@@ -93,10 +93,10 @@ class ProjectionSpec: QuickSpec {
                         layer.transform = matrix
                         expect(layer.value(forKeyPath: "transform.scale") as? Double) == 1
                         expect(layer.value(forKeyPath: "transform.translation") as? CGSize) == CGSize(width: 10, height: 0)
-                        expect(layer.value(forKeyPath: "transform.rotation") as? Double) ≈ Double.pi / 2
-                        expect(layer.value(forKeyPath: "transform.rotation.z") as? Double) ≈ Double.pi / 2
                         expect(layer.value(forKeyPath: "transform.rotation.x") as? Double) == 0
                         expect(layer.value(forKeyPath: "transform.rotation.y") as? Double) == 0
+                        expect(layer.value(forKeyPath: "transform.rotation.z") as? Double) ≈ Double.pi / 2
+                        expect(layer.value(forKeyPath: "transform.rotation") as? Double) == layer.value(forKeyPath: "transform.rotation.z") as! Double
                     }
                 }
             }

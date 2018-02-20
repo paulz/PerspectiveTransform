@@ -80,10 +80,7 @@ class CATransform3Dfrom2DSpec: QuickSpec {
                             let madeTranslation = CATransform3DMakeTranslation(CGFloat(translate.x), CGFloat(translate.y), CGFloat(translate.z))
                             print("madeTranslation:",madeTranslation)
 
-                            var rotate = Vector3Type()
-                            rotate.x = layer.value(forKeyPath: "transform.rotation.x") as! Double
-                            rotate.y = layer.value(forKeyPath: "transform.rotation.y") as! Double
-                            rotate.z = layer.value(forKeyPath: "transform.rotation.z") as! Double
+                            let rotate = transform.layerRotation()
                             print("scale, translate, rotate = ", scale, translate, rotate)
                             let b = atan(transform.m12/transform.m22)
                             let p = asin(transform.m32)
