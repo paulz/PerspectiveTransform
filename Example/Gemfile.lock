@@ -8,6 +8,7 @@ GEM
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
     claide (1.0.2)
+    clamp (0.6.5)
     cocoapods (1.4.0)
       activesupport (>= 4.0.2, < 5)
       claide (>= 1.0.2, < 2.0)
@@ -49,12 +50,21 @@ GEM
     gh_inspector (1.0.3)
     i18n (0.9.3)
       concurrent-ruby (~> 1.0)
+    mini_portile2 (2.3.0)
     minitest (5.11.3)
     molinillo (0.6.4)
     nanaimo (0.2.3)
     nap (1.1.0)
     netrc (0.11.0)
+    nokogiri (1.8.2)
+      mini_portile2 (~> 2.3.0)
     ruby-macho (1.1.0)
+    slather (2.4.5)
+      CFPropertyList (~> 2.2)
+      activesupport (>= 4.0.2)
+      clamp (~> 0.6)
+      nokogiri (~> 1.8.2)
+      xcodeproj (~> 1.4)
     thread_safe (0.3.6)
     tzinfo (1.2.4)
       thread_safe (~> 0.1)
@@ -69,6 +79,7 @@ PLATFORMS
 
 DEPENDENCIES
   cocoapods
+  slather
 
 RUBY VERSION
    ruby 2.4.1p111
