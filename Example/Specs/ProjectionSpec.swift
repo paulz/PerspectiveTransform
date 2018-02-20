@@ -96,7 +96,7 @@ class ProjectionSpec: QuickSpec {
                         expect(layer.value(forKeyPath: "transform.rotation.x") as? Double) == 0
                         expect(layer.value(forKeyPath: "transform.rotation.y") as? Double) == 0
                         expect(layer.value(forKeyPath: "transform.rotation.z") as? Double) ≈ Double.pi / 2
-                        expect(layer.value(forKeyPath: "transform.rotation") as? Double) == layer.value(forKeyPath: "transform.rotation.z") as! Double
+                        expect(layer.value(forKeyPath: "transform.rotation") as? Double) == (layer.value(forKeyPath: "transform.rotation.z") as! Double)
                     }
                 }
             }
@@ -121,6 +121,14 @@ class ProjectionSpec: QuickSpec {
                 it("should match expected") {
                     let projection = start.projection(to: destination)
                     expect(projection) ≈ expected
+                }
+
+                context("reverse") {
+                    it("should be invert of original") {
+                        let projection = start.projection(to: destination)
+                        let reverse = destination.projection(to: start)
+                        expect(projection.inverse) ≈ (reverse, 0.001)
+                    }
                 }
 
                 context("concat") {
