@@ -20,11 +20,32 @@ func beCloseTo(_ expectedValue: Matrix3x3Type, within delta: Double = 0.00001) -
     }
 }
 
+func beCloseTo(_ expectedValue: Vector3Type, within delta: Double = 0.00001) -> Predicate<Vector3Type> {
+    return Predicate<Vector3Type> { actualExpression in
+        let actualValue = try! actualExpression.evaluate()!
+        let isClose = (abs(actualValue.x - expectedValue.x) < delta) &&
+        (abs(actualValue.y - expectedValue.y) < delta) &&
+        (abs(actualValue.z - expectedValue.z) < delta)
+        return PredicateResult(
+            bool: isClose,
+            message: ExpectationMessage.expectedActualValueTo("be close to \(expectedValue)")
+        )
+    }
+}
+
 public func ≈(lhs: Expectation<Matrix3x3Type>, rhs: Matrix3x3Type) {
     lhs.to(beCloseTo(rhs))
 }
 
 public func ≈(lhs: Expectation<Matrix3x3Type>, rhs: (expected: Matrix3x3Type, delta: Double)) {
+    lhs.to(beCloseTo(rhs.expected, within: rhs.delta))
+}
+
+public func ≈(lhs: Expectation<Vector3Type>, rhs: Vector3Type) {
+    lhs.to(beCloseTo(rhs))
+}
+
+public func ≈(lhs: Expectation<Vector3Type>, rhs: (expected: Vector3Type, delta: Double)) {
     lhs.to(beCloseTo(rhs.expected, within: rhs.delta))
 }
 
