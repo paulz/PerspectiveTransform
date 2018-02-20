@@ -20,6 +20,11 @@ it, simply add the following line to your Podfile:
 pod 'PerspectiveTransform'
 ```
 
+## Perspective Transform
+
+### Useful Links
+ * [Explaining Homogeneous Coordinates & Projective Geometry](https://www.tomdalling.com/blog/modern-opengl/explaining-homogenous-coordinates-and-projective-geometry/)
+
 ## Author
 
 Paul Zabelin, http://github.com/paulz

@@ -37,7 +37,13 @@ class ProjectionSpec: QuickSpec {
 
                 it("should be identity") {
                     let projection = from.projection(to: to)
-                    expect(CATransform3DIsIdentity(CATransform3D(projection.to3d()))) == true
+                    let transform3D = CATransform3D(projection.to3d())
+                    expect(CATransform3DIsIdentity(transform3D)) == true
+                    let layer = CALayer()
+                    layer.transform = transform3D
+                    expect(layer.value(forKeyPath: "transform.scale") as? Double) == 1
+                    expect(layer.value(forKeyPath: "transform.translation") as? CGSize) == CGSize.zero
+                    expect(layer.value(forKeyPath: "transform.rotation") as? Double) == 0
                 }
             }
 
@@ -80,6 +86,17 @@ class ProjectionSpec: QuickSpec {
                         expect(matrix.m21) ≈ -sin(angle)
                         expect(matrix.m13) == 0
                         expect(matrix.m31) == 0
+                    }
+
+                    it("should have key path components of rotation and translation") {
+                        let layer = CALayer()
+                        layer.transform = matrix
+                        expect(layer.value(forKeyPath: "transform.scale") as? Double) == 1
+                        expect(layer.value(forKeyPath: "transform.translation") as? CGSize) == CGSize(width: 10, height: 0)
+                        expect(layer.value(forKeyPath: "transform.rotation") as? Double) ≈ Double.pi / 2
+                        expect(layer.value(forKeyPath: "transform.rotation.z") as? Double) ≈ Double.pi / 2
+                        expect(layer.value(forKeyPath: "transform.rotation.x") as? Double) == 0
+                        expect(layer.value(forKeyPath: "transform.rotation.y") as? Double) == 0
                     }
                 }
             }
