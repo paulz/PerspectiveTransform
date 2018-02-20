@@ -4,7 +4,7 @@
     <title>Group</title>
     <desc>Created with Sketch.</desc>
 <defs>
-  <pattern id="sky" patternUnits="userSpaceOnUse" width="320" height="240">
+  <pattern id="sky" patternUnits="userSpaceOnUse" width="320" height="240" patternTransform="rotate(-15) skewX(3) skewY(5) scale(1.1 1.1)" x="75" y="90">
     <image xlink:href="sky.jpg" x="0" y="0" width="320" height="240" />
   </pattern>
 </defs>
