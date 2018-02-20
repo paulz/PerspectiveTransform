@@ -1,7 +1,7 @@
 language: objective-c
 osx_image: xcode9.2
 xcode_workspace: Example/PerspectiveTransform.xcworkspace
-xcode_scheme: Example
+xcode_scheme: Framework Unit Specs
 xcode_sdk: iphonesimulator11.2
 gemfile: Example/Gemfile
 before_install:
