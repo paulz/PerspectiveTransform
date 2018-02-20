@@ -23,3 +23,8 @@ deploy:
     all_branches: true
 script:
   - xcodebuild test -workspace "$TRAVIS_XCODE_WORKSPACE" -scheme "$TRAVIS_XCODE_SCHEME" -destination "platform=iOS Simulator,name=iPhone X" | xcpretty
+after_success:
+  - pushd Example
+  - slather -x
+  - popd
+  - bash <(curl -s https://codecov.io/bash)

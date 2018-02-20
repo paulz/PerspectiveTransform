@@ -32,3 +32,4 @@ playground.xcworkspace
 
 # slather reports
 html
+cobertura.xml

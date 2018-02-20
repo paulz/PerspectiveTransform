@@ -2,6 +2,5 @@ coverage_service: html
 xcodeproj: PerspectiveTransform.xcodeproj
 workspace: PerspectiveTransform.xcworkspace
 scheme: Framework Unit Specs
-source_directory: ../Pod
 binary_basename:
   - PerspectiveTransform
