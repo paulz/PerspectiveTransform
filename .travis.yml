@@ -4,6 +4,7 @@ xcode_workspace: Example/PerspectiveTransform.xcworkspace
 xcode_scheme: Framework Unit Specs
 xcode_sdk: iphonesimulator11.2
 gemfile: Example/Gemfile
+cache: bundler
 before_install:
   - carthage version
   - bundle install
