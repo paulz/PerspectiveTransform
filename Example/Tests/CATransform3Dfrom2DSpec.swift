@@ -41,10 +41,14 @@ class CATransform3Dfrom2DSpec: QuickSpec {
 
                 context("random matrix") {
                     let source = GKRandomSource.sharedRandom()
+                    var matrix: Matrix3x3Type!
+
+                    beforeEach {
+                        matrix = source.nextMatrix()
+                    }
 
                     it("should have zeros in third column and row") {
-                        let projection2D = source.nextMatrix()
-                        let projection3D = projection2D.to3d()
+                        let projection3D = matrix.to3d()
                         let third = 2
                         expect(projection3D[0,third]) == 0
                         expect(projection3D[1,third]) == 0
@@ -55,6 +59,39 @@ class CATransform3Dfrom2DSpec: QuickSpec {
                         expect(projection3D[third,1]) == 0
                         expect(projection3D[third,2]) == 1
                         expect(projection3D[third,3]) == 0
+                    }
+
+                    context("layer") {
+                        it("should have components") {
+                            let transform = CATransform3D(matrix.to3d())
+                            let layer = CALayer()
+                            layer.transform = transform
+                            var scale = Vector3Type()
+                            scale.x = layer.value(forKeyPath: "transform.scale.x") as! Double
+                            scale.y = layer.value(forKeyPath: "transform.scale.y") as! Double
+                            scale.z = layer.value(forKeyPath: "transform.scale.z") as! Double
+                            let madeScale = CATransform3DMakeScale(CGFloat(scale.x), CGFloat(scale.y), CGFloat(scale.z))
+                            print("madeScale:",madeScale)
+
+                            var translate = Vector3Type()
+                            translate.x = layer.value(forKeyPath: "transform.translation.x") as! Double
+                            translate.y = layer.value(forKeyPath: "transform.translation.y") as! Double
+                            translate.z = layer.value(forKeyPath: "transform.translation.z") as! Double
+                            let madeTranslation = CATransform3DMakeTranslation(CGFloat(translate.x), CGFloat(translate.y), CGFloat(translate.z))
+                            print("madeTranslation:",madeTranslation)
+
+                            var rotate = Vector3Type()
+                            rotate.x = layer.value(forKeyPath: "transform.rotation.x") as! Double
+                            rotate.y = layer.value(forKeyPath: "transform.rotation.y") as! Double
+                            rotate.z = layer.value(forKeyPath: "transform.rotation.z") as! Double
+                            print("scale, translate, rotate = ", scale, translate, rotate)
+                            let b = atan(transform.m12/transform.m22)
+                            let p = asin(transform.m32)
+                            let h = atan(transform.m31/transform.m33)
+                            let angle = b*b + p*p + h*h
+                            let madeRotation = CATransform3DMakeRotation(angle, b, p, h)
+                            print("madeRotation:",madeRotation)
+                        }
                     }
                 }
             }
