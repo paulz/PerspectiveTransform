@@ -10,7 +10,8 @@
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
-[![Example With Overlay](https://raw.githubusercontent.com/paulz/PerspectiveTransform/master/Example/Tests/container.jpg)](https://raw.githubusercontent.com/paulz/PerspectiveTransform/master/Example/Tests/with-overlay.svg)
+![Container](https://raw.githubusercontent.com/paulz/PerspectiveTransform/master/Example/Tests/container.jpg)
+![Overlay](https://raw.githubusercontent.com/paulz/PerspectiveTransform/master/Example/Tests/sky.jpg)
 
 ## Requirements
 
