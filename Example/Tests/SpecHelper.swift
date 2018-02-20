@@ -7,6 +7,7 @@
 //
 
 import simd
+import GameKit
 import Nimble
 @testable import PerspectiveTransform
 
@@ -87,5 +88,29 @@ extension CATransform3D {
         rotate.y = layer.value(forKeyPath: "transform.rotation.y") as! Double
         rotate.z = layer.value(forKeyPath: "transform.rotation.z") as! Double
         return rotate
+    }
+}
+
+func arrayWith<S>(_ factory: (()->S)) -> [S] {
+    return Array(Vector3Type.indexSlice).map{_ in factory()}
+}
+
+extension GKRandomSource {
+    func nextDouble() -> Double {
+        return Double(nextUniform())
+    }
+    func nextVector() -> Vector3Type {
+        return Vector3Type(arrayWith(nextDouble))
+    }
+    func nextMatrix() -> Matrix3x3Type {
+        return Matrix3x3Type(arrayWith(nextVector))
+    }
+
+    func nextPoint() -> CGPoint {
+        return CGPoint(x: nextDouble(), y: nextDouble())
+    }
+
+    func nextQuadrilateral() -> Quadrilateral {
+        return Quadrilateral(Array(0...3).map {_ in nextPoint()})
     }
 }

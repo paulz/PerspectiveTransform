@@ -4,23 +4,6 @@ import Nimble
 import simd
 import GameKit
 
-func arrayWith<S>(_ factory: (()->S)) -> [S] {
-    return Array(Vector3Type.indexSlice).map{_ in factory()}
-}
-
-extension GKRandomSource {
-    func nextDouble() -> Double {
-        return Double(nextUniform())
-    }
-    func nextVector() -> Vector3Type {
-        return Vector3Type(arrayWith(nextDouble))
-    }
-    func nextMatrix() -> Matrix3x3Type {
-        return Matrix3x3Type(arrayWith(nextVector))
-    }
-}
-
-
 class CATransform3Dfrom2DSpec: QuickSpec {
     override func spec() {
         describe("weak perspective projection") {

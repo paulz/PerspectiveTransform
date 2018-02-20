@@ -1,11 +1,31 @@
 import Quick
 import Nimble
 import simd
+import GameKit
+
 @testable import PerspectiveTransform
 
 class ProjectionSpec: QuickSpec {
     override func spec() {
         describe("general2DProjection") {
+            context("2 random Quadrilateral") {
+                let source = GKRandomSource.sharedRandom()
+                var a: Perspective!
+                var b: Perspective!
+
+                beforeEach {
+                    a = Perspective(source.nextQuadrilateral())
+                    b = Perspective(source.nextQuadrilateral())
+                }
+
+                context("reverse projection") {
+                    it("should be invert of original") {
+                        let forward = a.projection(to: b)
+                        let reverse = b.projection(to: a)
+                        expect(forward.homogeneousInverse()) ≈ (reverse, 0.0001)
+                    }
+                }
+            }
             context("isosceles trapezoid") {
                 var from: Perspective!
                 var to: Perspective!
