@@ -6,14 +6,92 @@
 [![License](https://img.shields.io/cocoapods/l/PerspectiveTransform.svg?style=flat)](http://cocoapods.org/pods/PerspectiveTransform)
 [![Platform](https://img.shields.io/cocoapods/p/PerspectiveTransform.svg?style=flat)](http://cocoapods.org/pods/PerspectiveTransform)
 
-## Usage
+PerspectiveTransform caclulates Core Animation `CATransform3D` matrix for view projection in 3D. It can be used to place views within given image visual perspective.
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
+## [CATransform3D](https://developer.apple.com/documentation/quartzcore/catransform3d)
 
-![Container](https://raw.githubusercontent.com/paulz/PerspectiveTransform/master/Example/Tests/container.jpg)
-![Overlay](https://raw.githubusercontent.com/paulz/PerspectiveTransform/master/Example/Tests/sky.jpg)
+To place an overlay image on top of a container image with matching persperctive we can use Core Animation transform matrix. `CATransform3D` is a tranformation matrix that is used to rotate, scale, translate, skew, and project the layer content. It can also be used to describe a perspective projectection of 2D shape in 3D space.
 
-## Requirements
+| Container  | Overlay | Combination |
+| ------------- | ------------- | --- |
+| <img src="https://raw.githubusercontent.com/paulz/PerspectiveTransform/master/Example/Tests/container.jpg" alt="Container"/>  | <img src="https://raw.githubusercontent.com/paulz/PerspectiveTransform/master/Example/Tests/sky.jpg" alt="Overlay"/>  | <img src="https://github.com/paulz/PerspectiveTransform/wiki/images/withOverlay-example.png" alt="Combined image"/> |
+
+Core Animation allow applying `CATransform3D` to `CALayer` via `transform` property: 
+
+```swift
+let layer = UIView().layer
+layer.transform = CATransform3D(m11: sX,  m12: r12, m13: r13, m14: 0,
+                                m21: r21, m22: sY,  m23: r23, m24: 0,
+                                m31: r31, m32: r32, m33: 0,   m34: 0,
+                                m41: tX,  m42: tY,  m43: 0,   m44: 1)
+```
+In detail `CATransform3D` is a 4 x 4 matrix which takes 16 parameters to build. 
+
+Translation and scale are represented by their axis components: (tX, tY) and (sX, sY) within the matrix.  While 3D rotation is represented by multiple values: r12, r21, r13, r31, r32, r23.
+
+## Perspective Transform based on 4 corners
+
+We can easily see 4 points with container image where the corners of the overlay image should be. In general it is a 4 point polygon. Using an SVG editor we can draw that polygon using container image as a background. Here is preview of the SVG file desribing placement of iPad screen corners
+
+<img src="https://github.com/paulz/PerspectiveTransform/wiki/images/svgAsVisibleOnGitHub.png" alt="SVG polygon" width=50%/>
+
+See [SVG image here](Example/Tests/with-overlay.svg). From those 4 points we can calculate nessesary `CATransform3D` matrix using this `PerspectiveTransform` library.
+
+## Visual Example
+
+We can see how 4 points polygon fits on the background image:
+
+<img src="https://github.com/paulz/PerspectiveTransform/wiki/images/container-with-green-polygon.png" alt="SVG polygon" width=50%/>
+
+### SVG Points
+We can even take coordinates of those 4 points from SVG file:
+
+```xml
+<polygon points="377.282671 41.4352201 459.781253 251.836131 193.321418 330.023027 108.315837 80.1687782 "></polygon>
+```
+
+Those are 4 pairs of X and Y coordinates:
+
+```
+377.282671 41.4352201
+459.781253 251.836131
+193.321418 330.023027
+108.315837 80.1687782
+```
+### Swift Code Example
+Here is complete example of placing overlay view using those coordinates:
+
+```swift
+import PerspectiveTransform
+
+// note order: top left, top right, bottom left, bottom right
+let destination = Perspective(
+    CGPoint(x: 108.315837, y: 80.1687782),
+    CGPoint(x: 377.282671, y: 41.4352201),
+    CGPoint(x: 193.321418, y: 330.023027),
+    CGPoint(x: 459.781253, y: 251.836131)
+)
+
+// Starting perspective is the current overlay frame
+let start = Perspective(overlayView.frame)
+
+// Caclulate CATransform3D from start to destination
+overlayView.layer.transform = start.projectiveTransform(destination: destination)
+
+```
+
+### `CALayer` transform
+Since `CALayer` transform is animatable property we can easily define smooth transition:
+
+<img src="https://github.com/paulz/PerspectiveTransform/wiki/images/perspective-transform-animated.gif" alt="SVG polygon" width=50%/>
+
+
+## Example Project
+
+See [Example iOS project](https://github.com/paulz/PerspectiveTransform/tree/master/Example) illustating animation and interactive tranform within view controllers. 
+
+It also includes [Swift Playground](https://github.com/paulz/PerspectiveTransform/tree/master/Example/PerspectiveTransform/Visual.playground) with couple of live examples.
+
 
 ## Installation
 
@@ -23,8 +101,6 @@ it, simply add the following line to your Podfile:
 ```ruby
 pod 'PerspectiveTransform'
 ```
-
-## Perspective Transform
 
 ### Useful Links
  * [Explaining Homogeneous Coordinates & Projective Geometry](https://www.tomdalling.com/blog/modern-opengl/explaining-homogenous-coordinates-and-projective-geometry/)
