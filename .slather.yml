@@ -1,6 +1,6 @@
 coverage_service: html
 xcodeproj: Example/PerspectiveTransform.xcodeproj
 workspace: Example/PerspectiveTransform.xcworkspace
-scheme: Framework Unit Specs
+scheme: Example
 binary_basename:
   - PerspectiveTransform
