@@ -22,6 +22,34 @@ class PerformanceTest: XCTestCase {
         }
     }
 
+    func testAlgrbaic() {
+        let points = [
+            CGPoint(x: 108.315837, y: 80.1687782),
+            CGPoint(x: 377.282671, y: 41.4352201),
+            CGPoint(x: 193.321418, y: 330.023027),
+            CGPoint(x: 459.781253, y: 251.836131),
+            ]
+
+        let destination = QuadrilateralCalc()
+        destination.topLeft = points[0]
+        destination.topRight = points[1]
+        destination.bottomLeft = points[2]
+        destination.bottomRight = points[3]
+
+        let start = QuadrilateralCalc()
+        let overlayFrame = CGRect(x: 0, y: 0, width: 1, height: 1)
+        start.topLeft = CGPoint(x: overlayFrame.minX, y: overlayFrame.minY)
+        start.topRight = CGPoint(x: overlayFrame.maxX, y: overlayFrame.minY)
+        start.bottomLeft = CGPoint(x: overlayFrame.minX, y: overlayFrame.maxY)
+        start.topLeft = CGPoint(x: overlayFrame.maxX, y: overlayFrame.maxY)
+
+        measure {
+            repeatTimes.times {
+                _ = start.rectToQuad(rect: start.box(), quad: destination)
+            }
+        }
+    }
+
     func testProjectiveTransformFromPoints() {
         let createNewPerspectivesTimes = 10_000
         repeatTimes /= createNewPerspectivesTimes
