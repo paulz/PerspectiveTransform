@@ -9,14 +9,13 @@ Pod::Spec.new do |s|
   authorPage         = 'https://github.com/paulz'
   s.homepage         = "#{authorPage}/#{s.name}"
   s.screenshots      = "#{s.homepage}/wiki/images/container-with-green-polygon.png"
-  s.license          = 'MIT'
+  s.license          = { :type => 'MIT' }
   s.author           = { 'Paul Zabelin' => authorPage }
   s.source           = { :git => "#{s.homepage}.git", :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/iospaulz'
 
   s.platform     = :ios, '11.0'
   s.requires_arc = true
-
   s.source_files = 'Pod/Classes/**/*'
-  s.frameworks = 'UIKit'
+  s.frameworks   = 'UIKit', 'CoreGraphics', 'QuartzCore'
 end
