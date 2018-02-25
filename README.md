@@ -5,6 +5,8 @@
 [![Version](https://img.shields.io/cocoapods/v/PerspectiveTransform.svg?style=flat)](http://cocoapods.org/pods/PerspectiveTransform)
 [![License](https://img.shields.io/cocoapods/l/PerspectiveTransform.svg?style=flat)](http://cocoapods.org/pods/PerspectiveTransform)
 [![Platform](https://img.shields.io/cocoapods/p/PerspectiveTransform.svg?style=flat)](http://cocoapods.org/pods/PerspectiveTransform)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+
 
 PerspectiveTransform caclulates Core Animation `CATransform3D` matrix for view projection in 3D. It can be used to place views within given image visual perspective.
 
