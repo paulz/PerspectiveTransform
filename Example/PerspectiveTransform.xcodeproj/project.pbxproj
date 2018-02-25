@@ -13,6 +13,7 @@
 		4B2D2E8A1C7C2E620045FD11 /* container.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4B2D2E881C7C2E620045FD11 /* container.jpg */; };
 		4B2D2E8B1C7C2E620045FD11 /* with-overlay.svg in Resources */ = {isa = PBXBuildFile; fileRef = 4B2D2E891C7C2E620045FD11 /* with-overlay.svg */; };
 		4B2D2E8D1C7C323D0045FD11 /* sky.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4B2D2E8C1C7C323D0045FD11 /* sky.jpg */; };
+		4B4009952042575A00B7CE37 /* QuadrilateralCalc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4009942042575A00B7CE37 /* QuadrilateralCalc.swift */; };
 		4B74DB3C203BDA070030F41B /* MatrixSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* MatrixSpec.swift */; };
 		4B74DB3D203BDA070030F41B /* MatrixAdjugateSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B314158201E96F400A98A03 /* MatrixAdjugateSpec.swift */; };
 		4B74DB3E203BDA070030F41B /* CATransform3Dfrom2DSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B58ECF61C79C3C200F1BC00 /* CATransform3Dfrom2DSpec.swift */; };
@@ -61,6 +62,7 @@
 		4B2D2E891C7C2E620045FD11 /* with-overlay.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "with-overlay.svg"; sourceTree = "<group>"; };
 		4B2D2E8C1C7C323D0045FD11 /* sky.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sky.jpg; sourceTree = "<group>"; };
 		4B314158201E96F400A98A03 /* MatrixAdjugateSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatrixAdjugateSpec.swift; sourceTree = "<group>"; };
+		4B4009942042575A00B7CE37 /* QuadrilateralCalc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuadrilateralCalc.swift; sourceTree = "<group>"; };
 		4B58ECEE1C799C2A00F1BC00 /* BasisVectorSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasisVectorSpec.swift; sourceTree = "<group>"; };
 		4B58ECF61C79C3C200F1BC00 /* CATransform3Dfrom2DSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CATransform3Dfrom2DSpec.swift; sourceTree = "<group>"; };
 		4B74DB2C203BAA1A0030F41B /* CALayerTransformSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CALayerTransformSpec.swift; sourceTree = "<group>"; };
@@ -199,6 +201,7 @@
 				4BA7B14D1C7D710D00933779 /* ReferenceImages */,
 				4B2D2E861C7C2AD10045FD11 /* SnapshotSpec.swift */,
 				4B1B1C0C1C7A76C8003F8165 /* PerformanceTest.swift */,
+				4B4009942042575A00B7CE37 /* QuadrilateralCalc.swift */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
 			);
 			path = Tests;
@@ -609,6 +612,7 @@
 				4BA3D17D1C771B560009B690 /* SpecHelper.swift in Sources */,
 				4B74DB47203BDA9C0030F41B /* PerformanceTest.swift in Sources */,
 				4BDEE37720005B6D007214F1 /* resetAnchorPoint.swift in Sources */,
+				4B4009952042575A00B7CE37 /* QuadrilateralCalc.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
