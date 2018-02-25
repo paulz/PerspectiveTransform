@@ -26,7 +26,6 @@ public final class Quadrilateral {
     }
 
     public convenience init(_ points:[CGPoint]) {
-        assert(points.count == 4, "exactly 4 corners required")
         self.init(points[0], points[1], points[2], points[3])
     }
 
