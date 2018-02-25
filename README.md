@@ -1,6 +1,6 @@
 # PerspectiveTransform
 
-[![CI Status](http://img.shields.io/travis/paulz/PerspectiveTransform.svg?style=flat)](https://travis-ci.org/paulz/PerspectiveTransform)
+[![CI Status](http://img.shields.io/travis/paulz/PerspectiveTransform.svg?style=flat&branch=master)](https://travis-ci.org/paulz/PerspectiveTransform)
 [![codecov](https://codecov.io/gh/paulz/PerspectiveTransform/branch/master/graph/badge.svg)](https://codecov.io/gh/paulz/PerspectiveTransform)
 [![Version](https://img.shields.io/cocoapods/v/PerspectiveTransform.svg?style=flat)](http://cocoapods.org/pods/PerspectiveTransform)
 [![License](https://img.shields.io/cocoapods/l/PerspectiveTransform.svg?style=flat)](http://cocoapods.org/pods/PerspectiveTransform)
