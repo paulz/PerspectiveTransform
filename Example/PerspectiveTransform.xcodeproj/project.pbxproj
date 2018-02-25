@@ -69,8 +69,8 @@
 		4B74DB34203BD9C70030F41B /* Framework Unit Specs.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Framework Unit Specs.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B74DB38203BD9C70030F41B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4B84138A201DD90D00D17FE2 /* PerspectiveSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerspectiveSpec.swift; sourceTree = "<group>"; };
-		4BA3D1781C77010D0009B690 /* Gemfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; path = Gemfile; sourceTree = "<group>"; };
-		4BA3D1791C77010D0009B690 /* Gemfile.lock */ = {isa = PBXFileReference; lastKnownFileType = text; path = Gemfile.lock; sourceTree = "<group>"; };
+		4BA3D1781C77010D0009B690 /* Gemfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; name = Gemfile; path = ../Gemfile; sourceTree = "<group>"; };
+		4BA3D1791C77010D0009B690 /* Gemfile.lock */ = {isa = PBXFileReference; lastKnownFileType = text; name = Gemfile.lock; path = ../Gemfile.lock; sourceTree = "<group>"; };
 		4BA3D17A1C771B2E0009B690 /* ProjectionSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = ProjectionSpec.swift; sourceTree = "<group>"; tabWidth = 4; };
 		4BA3D17C1C771B560009B690 /* SpecHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecHelper.swift; sourceTree = "<group>"; };
 		4BA3D1801C77230A0009B690 /* VectorProjectionSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VectorProjectionSpec.swift; sourceTree = "<group>"; };
