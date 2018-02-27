@@ -25,8 +25,10 @@ deploy:
   on:
     tags: true
     all_branches: true
+before_script:
+  - gem install xcpretty-travis-formatter
 script:
-  - xcodebuild test -workspace "$TRAVIS_XCODE_WORKSPACE" -scheme "$TRAVIS_XCODE_SCHEME" -destination "platform=iOS Simulator,name=iPhone X" 2>&1 | xcpretty --color | test $PIPESTATUS -eq 0
+  - set -o pipefail && xcodebuild test -workspace "$TRAVIS_XCODE_WORKSPACE" -scheme "$TRAVIS_XCODE_SCHEME" -destination "platform=iOS Simulator,name=iPhone X" | xcpretty -f `xcpretty-travis-formatter`
 after_success:
   - slather coverage -x
   - bash <(curl -s https://codecov.io/bash)
