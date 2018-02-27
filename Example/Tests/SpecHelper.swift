@@ -34,6 +34,41 @@ func beCloseTo(_ expectedValue: Vector3Type, within delta: Double = 0.00001) -> 
     }
 }
 
+
+extension CATransform3D {
+    func flattened() -> [CGFloat] {
+        return [
+            m11, m12, m13, m14,
+            m21, m22, m23, m24,
+            m31, m32, m33, m34,
+            m41, m42, m43, m44,
+        ]
+    }
+}
+
+public func beCloseTo(_ expectedValue: CATransform3D, within delta: CGFloat = CGFloat(DefaultDelta)) -> Predicate<CATransform3D> {
+    let errorMessage = "be close to <\(stringify(expectedValue))> (each within \(stringify(delta)))"
+    return Predicate.simple(errorMessage) { actualExpression in
+        if let actual = try actualExpression.evaluate() {
+            if CATransform3DEqualToTransform(actual, expectedValue) {
+                return .matches
+            } else {
+                let expected = expectedValue.flattened()
+                for (index, m) in actual.flattened().enumerated() {
+                    if fabs(m - expected[index]) > delta {
+                        return .doesNotMatch
+                    }
+                }
+                return .matches
+            }
+        }
+        return .doesNotMatch
+    }
+}
+
+public func ≈(lhs: Expectation<CATransform3D>, rhs: CATransform3D) {
+    lhs.to(beCloseTo(rhs))
+}
 public func ≈(lhs: Expectation<Matrix3x3Type>, rhs: Matrix3x3Type) {
     lhs.to(beCloseTo(rhs))
 }
@@ -110,7 +145,7 @@ extension GKRandomSource {
         return CGPoint(x: nextDouble(), y: nextDouble())
     }
 
-    func nextQuadrilateral() -> Quadrilateral {
-        return Quadrilateral(Array(0...3).map {_ in nextPoint()})
+    func nextQuadrilateral() -> PerspectiveTransform.Quadrilateral {
+        return PerspectiveTransform.Quadrilateral(Array(0...3).map {_ in nextPoint()})
     }
 }
