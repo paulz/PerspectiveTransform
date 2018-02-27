@@ -21,7 +21,7 @@ extension ScalarType {
 }
 
 extension Matrix4x3Type {
-    static let insertColumnBeforeLast : Matrix4x3Type =  {
+    static let zeroColumnBeforeLast : Matrix4x3Type =  {
         let identity = Matrix3x3Type(diagonal: Vector3Type.one)
         var columns = Vector3Type.indexArray.map{identity[$0]}
         columns.insert(Vector3Type.zero, at: Vector3Type.lastIndex)
@@ -30,16 +30,24 @@ extension Matrix4x3Type {
 }
 
 extension Matrix3x4Type {
-    static let insertRowBeforeLast : Matrix3x4Type =  {
-        return Matrix4x3Type.insertColumnBeforeLast.transpose
+    static let zeroRowBeforeLast : Matrix3x4Type =  {
+        return Matrix4x3Type.zeroColumnBeforeLast.transpose
     }()
+
+    func insertColumnBeforeLast() -> Matrix4x4Type {
+        return self * Matrix4x3Type.zeroColumnBeforeLast
+    }
 }
 
 extension Matrix3x3Type {
+    func insertRowBeforeLast() -> Matrix3x4Type {
+        return Matrix3x4Type.zeroRowBeforeLast * self
+    }
+
     func to3d() -> Matrix4x4Type {
-        var stretch = Matrix3x4Type.insertRowBeforeLast * self * Matrix4x3Type.insertColumnBeforeLast
-        stretch[Vector3Type.lastIndex, Vector3Type.lastIndex] = ScalarType.one
-        return stretch
+        var m4x4 = insertRowBeforeLast().insertColumnBeforeLast()
+        m4x4[Vector3Type.lastIndex, Vector3Type.lastIndex] = ScalarType.one
+        return m4x4
     }
 
     func zNormalized() -> Matrix3x3Type {
