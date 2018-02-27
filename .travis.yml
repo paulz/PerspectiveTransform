@@ -26,7 +26,7 @@ deploy:
     tags: true
     all_branches: true
 script:
-  - xcodebuild test -workspace "$TRAVIS_XCODE_WORKSPACE" -scheme "$TRAVIS_XCODE_SCHEME" -destination "platform=iOS Simulator,name=iPhone X" | xcpretty
+  - xcodebuild test -workspace "$TRAVIS_XCODE_WORKSPACE" -scheme "$TRAVIS_XCODE_SCHEME" -destination "platform=iOS Simulator,name=iPhone X" 2>&1 | xcpretty --color --test | test $PIPESTATUS -eq 0
 after_success:
   - slather coverage -x
   - bash <(curl -s https://codecov.io/bash)
