@@ -11,17 +11,7 @@
 				<key>com.apple.XCTPerformanceMetric_WallClockTime</key>
 				<dict>
 					<key>baselineAverage</key>
-					<real>0.10327</real>
-					<key>baselineIntegrationDisplayName</key>
-					<string>Example Bot – Integration 2</string>
-				</dict>
-			</dict>
-			<key>testProjectiveTransformFromPoints()</key>
-			<dict>
-				<key>com.apple.XCTPerformanceMetric_WallClockTime</key>
-				<dict>
-					<key>baselineAverage</key>
-					<real>0.19685</real>
+					<real>0.091495</real>
 					<key>baselineIntegrationDisplayName</key>
 					<string>Example Bot – Integration 2</string>
 				</dict>
@@ -31,11 +21,9 @@
 				<key>com.apple.XCTPerformanceMetric_WallClockTime</key>
 				<dict>
 					<key>baselineAverage</key>
-					<real>0.061859</real>
+					<real>0.066534</real>
 					<key>baselineIntegrationDisplayName</key>
 					<string>Example Bot – Integration 2</string>
-					<key>maxPercentRelativeStandardDeviation</key>
-					<real>20</real>
 				</dict>
 			</dict>
 		</dict>
