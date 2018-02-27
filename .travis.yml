@@ -4,6 +4,8 @@ xcode_scheme: Example
 xcode_workspace: Example/PerspectiveTransform.xcworkspace
 xcode_sdk: iphonesimulator11.2
 gemfile: Example/Gemfile
+git:
+  depth: false
 cache:
   bundler: true
   cocoapods: true
