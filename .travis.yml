@@ -6,6 +6,7 @@ xcode_sdk: iphonesimulator11.2
 gemfile: Example/Gemfile
 cache:
   bundler: true
+  cocoapods: true
 before_install:
   - carthage version
   - bundle install
