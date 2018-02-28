@@ -9,18 +9,6 @@
 import XCTest
 
 class OpenCVMacTests: XCTestCase {
-    func testSimpleTransform() {
-        let start = Quadrilateral(upperLeft: CGPoint.zero,
-                                  upperRight: CGPoint(x: 10, y: 0),
-                                  lowerRight: CGPoint(x: 0, y: 10),
-                                  lowerLeft: CGPoint(x: 10, y: 10))
-        let desination = start
-        var transform = OpenCVWrapper.transform(start, to: desination)
-        transform.m41 = transform.m41.rounded(.towardZero)
-        transform.m42 = transform.m42.rounded(.towardZero)
-        XCTAssert(CATransform3DIsIdentity(transform), "should be identity")
-    }
-
     let points = [
         CGPoint(x: 108.315837, y: 80.1687782),
         CGPoint(x: 377.282671, y: 41.4352201),
