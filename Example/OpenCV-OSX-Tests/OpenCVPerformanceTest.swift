@@ -1,6 +1,6 @@
 //
 //  OpenCVPerformanceTest.swift
-//  OpenCV Mac Tests
+//  OpenCV OSX Tests
 //
 //  Created by Paul Zabelin on 2/28/18.
 //  Copyright © 2018 CocoaPods. All rights reserved.
