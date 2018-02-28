@@ -6,9 +6,6 @@
 //  Copyright © 2018 CocoaPods. All rights reserved.
 //
 
-#ifndef OpenCV_Spec_h
-#define OpenCV_Spec_h
-
 #import <Foundation/Foundation.h>
 #import <CoreGraphics/CoreGraphics.h>
 #import <QuartzCore/QuartzCore.h>
@@ -21,12 +18,8 @@ typedef struct Quadrilateral {
 } Quadrilateral;
 
 
-@interface OpenCVWrapper : NSObject
+@interface OpenCVWrapper: NSObject
 - (BOOL)canBeCalledFromSwift;
-+ (CATransform3D)transformQuadrilateral:(Quadrilateral)origin toQuadrilateral:(Quadrilateral)destination;
++ (CATransform3D)transformQuadrilateral:(Quadrilateral)origin
+                        toQuadrilateral:(Quadrilateral)destination;
     @end
-
-
-
-#endif /* OpenCV_Spec_h */
-

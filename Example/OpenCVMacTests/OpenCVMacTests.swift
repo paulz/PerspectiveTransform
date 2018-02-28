@@ -9,10 +9,11 @@
 import XCTest
 
 class OpenCVMacTests: XCTestCase {
-    
+    var wrapper: OpenCVWrapper!
+
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        wrapper = OpenCVWrapper()
     }
     
     override func tearDown() {
@@ -21,8 +22,21 @@ class OpenCVMacTests: XCTestCase {
     }
     
     func testExample() {
+        XCTAssert(wrapper.canBeCalledFromSwift())
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+    }
+
+    func testIdentity() {
+        let start = Quadrilateral(upperLeft: CGPoint.zero,
+                                  upperRight: CGPoint(x: 10, y: 0),
+                                  lowerRight: CGPoint(x: 0, y: 10),
+                                  lowerLeft: CGPoint(x: 10, y: 10))
+        let desination = start
+        var transform = OpenCVWrapper.transform(start, to: desination)
+        transform.m41 = transform.m41.rounded(.towardZero)
+        transform.m42 = transform.m42.rounded(.towardZero)
+        XCTAssert(CATransform3DIsIdentity(transform))
     }
     
     func testPerformanceExample() {
