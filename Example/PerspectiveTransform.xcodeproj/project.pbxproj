@@ -34,6 +34,7 @@
 		4BDEE37620005B6D007214F1 /* resetAnchorPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDEE37520005B6D007214F1 /* resetAnchorPoint.swift */; };
 		4BDEE37720005B6D007214F1 /* resetAnchorPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDEE37520005B6D007214F1 /* resetAnchorPoint.swift */; };
 		4BDF6470204691090022C5F8 /* OpenCV_Spec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDF646F204691090022C5F8 /* OpenCV_Spec.swift */; };
+		4BDF649E20469AB60022C5F8 /* OpenCVMacTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDF649D20469AB60022C5F8 /* OpenCVMacTests.swift */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* PanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* PanViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
@@ -81,6 +82,9 @@
 		4BDEE37220004185007214F1 /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		4BDEE37520005B6D007214F1 /* resetAnchorPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = resetAnchorPoint.swift; sourceTree = "<group>"; };
 		4BDF646F204691090022C5F8 /* OpenCV_Spec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenCV_Spec.swift; sourceTree = "<group>"; };
+		4BDF649B20469AB60022C5F8 /* OpenCV Mac Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "OpenCV Mac Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4BDF649D20469AB60022C5F8 /* OpenCVMacTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenCVMacTests.swift; sourceTree = "<group>"; };
+		4BDF649F20469AB60022C5F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4EA2244D76A3BF4D89D92FD5 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		54B21BF309BC78C5CEC00411 /* Pods-Example-Framework Unit Specs-Application Specs.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example-Framework Unit Specs-Application Specs.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Example-Framework Unit Specs-Application Specs/Pods-Example-Framework Unit Specs-Application Specs.debug.xcconfig"; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -108,6 +112,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				7DFCD2649A44BD8BA5C18016 /* Pods_Example_Framework_Unit_Specs.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4BDF649820469AB60022C5F8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,6 +158,15 @@
 			path = Specs;
 			sourceTree = "<group>";
 		};
+		4BDF649C20469AB60022C5F8 /* OpenCVMacTests */ = {
+			isa = PBXGroup;
+			children = (
+				4BDF649D20469AB60022C5F8 /* OpenCVMacTests.swift */,
+				4BDF649F20469AB60022C5F8 /* Info.plist */,
+			);
+			path = OpenCVMacTests;
+			sourceTree = "<group>";
+		};
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
@@ -154,6 +174,7 @@
 				607FACD21AFB9204008FA782 /* Example */,
 				607FACE81AFB9204008FA782 /* Tests */,
 				4B74DB35203BD9C70030F41B /* Specs */,
+				4BDF649C20469AB60022C5F8 /* OpenCVMacTests */,
 				607FACD11AFB9204008FA782 /* Products */,
 				F7FF9E304AB4C0C160499BEB /* Pods */,
 				A699BE3B02CE1C68EC25633C /* Frameworks */,
@@ -168,6 +189,7 @@
 				607FACD01AFB9204008FA782 /* Example.app */,
 				607FACE51AFB9204008FA782 /* Application Specs.xctest */,
 				4B74DB34203BD9C70030F41B /* Framework Unit Specs.xctest */,
+				4BDF649B20469AB60022C5F8 /* OpenCV Mac Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -281,6 +303,23 @@
 			productReference = 4B74DB34203BD9C70030F41B /* Framework Unit Specs.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		4BDF649A20469AB60022C5F8 /* OpenCV Mac Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4BDF64A220469AB60022C5F8 /* Build configuration list for PBXNativeTarget "OpenCV Mac Tests" */;
+			buildPhases = (
+				4BDF649720469AB60022C5F8 /* Sources */,
+				4BDF649820469AB60022C5F8 /* Frameworks */,
+				4BDF649920469AB60022C5F8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "OpenCV Mac Tests";
+			productName = OpenCVMacTests;
+			productReference = 4BDF649B20469AB60022C5F8 /* OpenCV Mac Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		607FACCF1AFB9204008FA782 /* Example */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "Example" */;
@@ -337,6 +376,11 @@
 						DevelopmentTeam = 35KC7LV9BL;
 						ProvisioningStyle = Automatic;
 					};
+					4BDF649A20469AB60022C5F8 = {
+						CreatedOnToolsVersion = 9.2;
+						DevelopmentTeam = 35KC7LV9BL;
+						ProvisioningStyle = Automatic;
+					};
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
 						DevelopmentTeam = 35KC7LV9BL;
@@ -366,12 +410,20 @@
 				607FACCF1AFB9204008FA782 /* Example */,
 				607FACE41AFB9204008FA782 /* Application Specs */,
 				4B74DB33203BD9C70030F41B /* Framework Unit Specs */,
+				4BDF649A20469AB60022C5F8 /* OpenCV Mac Tests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		4B74DB32203BD9C70030F41B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4BDF649920469AB60022C5F8 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -596,6 +648,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4BDF649720469AB60022C5F8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4BDF649E20469AB60022C5F8 /* OpenCVMacTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		607FACCC1AFB9204008FA782 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -697,6 +757,57 @@
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4BDF64A020469AB60022C5F8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 35KC7LV9BL;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = OpenCVMacTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				PRODUCT_BUNDLE_IDENTIFIER = paulz.github.io.OpenCVMacTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		4BDF64A120469AB60022C5F8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 35KC7LV9BL;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = OpenCVMacTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				PRODUCT_BUNDLE_IDENTIFIER = paulz.github.io.OpenCVMacTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -870,6 +981,15 @@
 			buildConfigurations = (
 				4B74DB3A203BD9C70030F41B /* Debug */,
 				4B74DB3B203BD9C70030F41B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4BDF64A220469AB60022C5F8 /* Build configuration list for PBXNativeTarget "OpenCV Mac Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4BDF64A020469AB60022C5F8 /* Debug */,
+				4BDF64A120469AB60022C5F8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
