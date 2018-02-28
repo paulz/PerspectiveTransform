@@ -2,10 +2,6 @@
 #import "OpenCVWrapper.h"
 
 @implementation OpenCVWrapper
-- (BOOL) canBeCalledFromSwift {
-    return TRUE;
-}
-
 + (CATransform3D)transformQuadrilateral:(Quadrilateral)origin toQuadrilateral:(Quadrilateral)destination {
 
     CvPoint2D32f *cvsrc = [self openCVMatrixWithQuadrilateral:origin];

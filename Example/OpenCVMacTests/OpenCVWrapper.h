@@ -19,7 +19,6 @@ typedef struct Quadrilateral {
 
 
 @interface OpenCVWrapper: NSObject
-- (BOOL)canBeCalledFromSwift;
 + (CATransform3D)transformQuadrilateral:(Quadrilateral)origin
                         toQuadrilateral:(Quadrilateral)destination;
     @end

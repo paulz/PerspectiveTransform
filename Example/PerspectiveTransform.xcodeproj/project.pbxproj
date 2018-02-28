@@ -38,6 +38,8 @@
 		4BDF64A620469B350022C5F8 /* OpenCVWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4BDF64A520469B350022C5F8 /* OpenCVWrapper.mm */; };
 		4BDF64A820469D140022C5F8 /* libopencv_core.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BDF64A720469D140022C5F8 /* libopencv_core.dylib */; };
 		4BDF64AA20469D670022C5F8 /* libopencv_calib3d.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BDF64A920469D670022C5F8 /* libopencv_calib3d.dylib */; };
+		4BDF64AC2046A1830022C5F8 /* QuadrilateralCalc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4009942042575A00B7CE37 /* QuadrilateralCalc.swift */; };
+		4BDF64AE2046A9ED0022C5F8 /* OpenCVPerformanceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDF64AD2046A9ED0022C5F8 /* OpenCVPerformanceTest.swift */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* PanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* PanViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
@@ -93,6 +95,7 @@
 		4BDF64A720469D140022C5F8 /* libopencv_core.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_core.dylib; path = ../../../../../usr/local/lib/libopencv_core.dylib; sourceTree = "<group>"; };
 		4BDF64A920469D670022C5F8 /* libopencv_calib3d.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_calib3d.dylib; path = ../../../../../usr/local/lib/libopencv_calib3d.dylib; sourceTree = "<group>"; };
 		4BDF64AB2046A0D70022C5F8 /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		4BDF64AD2046A9ED0022C5F8 /* OpenCVPerformanceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenCVPerformanceTest.swift; sourceTree = "<group>"; };
 		4EA2244D76A3BF4D89D92FD5 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		54B21BF309BC78C5CEC00411 /* Pods-Example-Framework Unit Specs-Application Specs.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example-Framework Unit Specs-Application Specs.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Example-Framework Unit Specs-Application Specs/Pods-Example-Framework Unit Specs-Application Specs.debug.xcconfig"; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -172,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				4BDF649D20469AB60022C5F8 /* OpenCVMacTests.swift */,
+				4BDF64AD2046A9ED0022C5F8 /* OpenCVPerformanceTest.swift */,
 				4BDF649F20469AB60022C5F8 /* Info.plist */,
 				4BDF64A420469B350022C5F8 /* OpenCVWrapper.h */,
 				4BDF64A520469B350022C5F8 /* OpenCVWrapper.mm */,
@@ -668,8 +672,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BDF64AC2046A1830022C5F8 /* QuadrilateralCalc.swift in Sources */,
 				4BDF64A620469B350022C5F8 /* OpenCVWrapper.mm in Sources */,
 				4BDF649E20469AB60022C5F8 /* OpenCVMacTests.swift in Sources */,
+				4BDF64AE2046A9ED0022C5F8 /* OpenCVPerformanceTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
