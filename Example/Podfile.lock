@@ -30,7 +30,7 @@ SPEC CHECKSUMS:
   ImageCoordinateSpace: fe599bab8787a7263b3704e185ddb86e63e4b682
   Nimble: 7f5a9c447a33002645a071bddafbfb24ea70e0ac
   Nimble-Snapshots: f5459b5b091678dc942d03ec4741cacb58ba4a52
-  PerspectiveTransform: 06cb3fc8dcdf2af541d1b8fca5027767d5e8a54c
+  PerspectiveTransform: 24320eaa6197a6e68a002ff66147454a90591192
   Quick: 58d203b1c5e27fff7229c4c1ae445ad7069a7a08
 
 PODFILE CHECKSUM: bc5819946423c49b45c66464c4cd744bcbd8378f
