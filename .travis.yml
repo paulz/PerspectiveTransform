@@ -11,6 +11,7 @@ cache:
   cocoapods: true
 before_install:
   - carthage version
+  - /usr/bin/yes | pip2 uninstall numpy && brew install opencv
   - bundle install
 before_deploy:
   - brew update
@@ -29,7 +30,6 @@ deploy:
     tags: true
     all_branches: true
 before_script:
-  - brew install opencv
   - gem install xcpretty-travis-formatter
 script:
   - set -o pipefail && xcodebuild test -workspace "$TRAVIS_XCODE_WORKSPACE" -scheme "$TRAVIS_XCODE_SCHEME" -destination "platform=iOS Simulator,name=iPhone X" | xcpretty -f `xcpretty-travis-formatter`
