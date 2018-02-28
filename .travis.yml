@@ -11,7 +11,7 @@ cache:
   cocoapods: true
 before_install:
   - carthage version
-  - /usr/bin/yes | pip2 uninstall numpy && brew install opencv
+  - /usr/bin/yes | pip2 uninstall numpy > /dev/null && brew install opencv
   - bundle install
 before_deploy:
   - brew update
