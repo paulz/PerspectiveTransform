@@ -225,15 +225,12 @@
 		607FACD21AFB9204008FA782 /* Example */ = {
 			isa = PBXGroup;
 			children = (
-				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
-				4BDEE37520005B6D007214F1 /* resetAnchorPoint.swift */,
-				4BDEE37220004185007214F1 /* PhotoViewController.swift */,
-				607FACD71AFB9204008FA782 /* PanViewController.swift */,
-				607FACD91AFB9204008FA782 /* Main.storyboard */,
-				607FACDC1AFB9204008FA782 /* Images.xcassets */,
-				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
-				607FACD31AFB9204008FA782 /* Supporting Files */,
 				4BA3D1871C7995630009B690 /* Visual.playground */,
+				607FACD71AFB9204008FA782 /* PanViewController.swift */,
+				4BDEE37220004185007214F1 /* PhotoViewController.swift */,
+				4BDEE37520005B6D007214F1 /* resetAnchorPoint.swift */,
+				607FACD91AFB9204008FA782 /* Main.storyboard */,
+				607FACD31AFB9204008FA782 /* Supporting Files */,
 			);
 			name = Example;
 			path = PerspectiveTransform;
@@ -242,6 +239,9 @@
 		607FACD31AFB9204008FA782 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				607FACDC1AFB9204008FA782 /* Images.xcassets */,
+				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
+				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD41AFB9204008FA782 /* Info.plist */,
 			);
 			name = "Supporting Files";
