@@ -23,7 +23,10 @@ DerivedData
 .bundle
 
 # Install Cocoapods dependencies as opencv library > 270 Mb
-Pods
+Example/Pods/*
+!Example/Pods/Pods.xcodeproj/
+Example/Pods/Pods.xcodeproj/*
+!Example/Pods/Pods.xcodeproj/xcshareddata
 
 # Release output
 PerspectiveTransform.framework.zip
