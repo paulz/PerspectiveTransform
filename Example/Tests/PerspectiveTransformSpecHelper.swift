@@ -1,14 +1,14 @@
 //
-//  SpecHelper.swift
+//  PerspectiveTransformSpecHelper.swift
 //  PerspectiveTransform
 //
-//  Created by Paul Zabelin on 2/19/16.
-//  Copyright © 2016 CocoaPods. All rights reserved.
+//  Created by Paul Zabelin on 2/28/18.
+//  Copyright © 2018 CocoaPods. All rights reserved.
 //
 
-import simd
 import GameKit
 import Nimble
+
 @testable import PerspectiveTransform
 
 func beCloseTo(_ expectedValue: Matrix3x3Type, within delta: Double = 0.00001) -> Predicate<Matrix3x3Type> {
@@ -25,8 +25,8 @@ func beCloseTo(_ expectedValue: Vector3Type, within delta: Double = 0.00001) -> 
     return Predicate<Vector3Type> { actualExpression in
         let actualValue = try! actualExpression.evaluate()!
         let isClose = (abs(actualValue.x - expectedValue.x) < delta) &&
-        (abs(actualValue.y - expectedValue.y) < delta) &&
-        (abs(actualValue.z - expectedValue.z) < delta)
+            (abs(actualValue.y - expectedValue.y) < delta) &&
+            (abs(actualValue.z - expectedValue.z) < delta)
         return PredicateResult(
             bool: isClose,
             message: ExpectationMessage.expectedActualValueTo("be close to \(expectedValue)")
@@ -34,41 +34,6 @@ func beCloseTo(_ expectedValue: Vector3Type, within delta: Double = 0.00001) -> 
     }
 }
 
-
-extension CATransform3D {
-    func flattened() -> [CGFloat] {
-        return [
-            m11, m12, m13, m14,
-            m21, m22, m23, m24,
-            m31, m32, m33, m34,
-            m41, m42, m43, m44,
-        ]
-    }
-}
-
-public func beCloseTo(_ expectedValue: CATransform3D, within delta: CGFloat = CGFloat(DefaultDelta)) -> Predicate<CATransform3D> {
-    let errorMessage = "be close to <\(stringify(expectedValue))> (each within \(stringify(delta)))"
-    return Predicate.simple(errorMessage) { actualExpression in
-        if let actual = try actualExpression.evaluate() {
-            if CATransform3DEqualToTransform(actual, expectedValue) {
-                return .matches
-            } else {
-                let expected = expectedValue.flattened()
-                for (index, m) in actual.flattened().enumerated() {
-                    if fabs(m - expected[index]) > delta {
-                        return .doesNotMatch
-                    }
-                }
-                return .matches
-            }
-        }
-        return .doesNotMatch
-    }
-}
-
-public func ≈(lhs: Expectation<CATransform3D>, rhs: CATransform3D) {
-    lhs.to(beCloseTo(rhs))
-}
 public func ≈(lhs: Expectation<Matrix3x3Type>, rhs: Matrix3x3Type) {
     lhs.to(beCloseTo(rhs))
 }
@@ -83,20 +48,6 @@ public func ≈(lhs: Expectation<Vector3Type>, rhs: Vector3Type) {
 
 public func ≈(lhs: Expectation<Vector3Type>, rhs: (expected: Vector3Type, delta: Double)) {
     lhs.to(beCloseTo(rhs.expected, within: rhs.delta))
-}
-
-extension CATransform3D: Equatable {
-    public static func ==(lhs: CATransform3D, rhs: CATransform3D) -> Bool {
-        return CATransform3DEqualToTransform(lhs, rhs)
-    }
-}
-
-extension Int {
-    func times(block: ()->Void) {
-        for _ in 1...self {
-            block()
-        }
-    }
 }
 
 extension Matrix3x3Type {
@@ -131,21 +82,10 @@ func arrayWith<S>(_ factory: (()->S)) -> [S] {
 }
 
 extension GKRandomSource {
-    func nextDouble() -> Double {
-        return Double(nextUniform())
-    }
     func nextVector() -> Vector3Type {
         return Vector3Type(arrayWith(nextDouble))
     }
     func nextMatrix() -> Matrix3x3Type {
         return Matrix3x3Type(arrayWith(nextVector))
-    }
-
-    func nextPoint() -> CGPoint {
-        return CGPoint(x: nextDouble(), y: nextDouble())
-    }
-
-    func nextQuadrilateral() -> PerspectiveTransform.Quadrilateral {
-        return PerspectiveTransform.Quadrilateral(Array(0...3).map {_ in nextPoint()})
     }
 }

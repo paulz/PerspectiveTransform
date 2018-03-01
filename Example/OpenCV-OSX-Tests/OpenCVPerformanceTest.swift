@@ -35,10 +35,3 @@ class OpenCVPerformanceTest: XCTestCase {
     }
 }
 
-extension Int {
-    func times(block: ()->Void) {
-        for _ in 1...self {
-            block()
-        }
-    }
-}

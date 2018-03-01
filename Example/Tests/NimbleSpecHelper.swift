@@ -1,11 +1,13 @@
 //
-//  OpenCVMacTests.swift
-//  OpenCVMacTests
+//  NimbleSpecHelper.swift
+//  PerspectiveTransform
 //
-//  Created by Paul Zabelin on 2/28/18.
-//  Copyright © 2018 CocoaPods. All rights reserved.
+//  Created by Paul Zabelin on 2/19/16.
+//  Copyright © 2016 CocoaPods. All rights reserved.
 //
 
+import simd
+import GameKit
 import Nimble
 
 extension CATransform3D {
@@ -41,4 +43,32 @@ public func beCloseTo(_ expectedValue: CATransform3D, within delta: CGFloat = CG
 
 public func ≈(lhs: Expectation<CATransform3D>, rhs: CATransform3D) {
     lhs.to(beCloseTo(rhs))
+}
+
+extension CATransform3D: Equatable {
+    public static func ==(lhs: CATransform3D, rhs: CATransform3D) -> Bool {
+        return CATransform3DEqualToTransform(lhs, rhs)
+    }
+}
+
+extension Int {
+    func times(block: ()->Void) {
+        for _ in 1...self {
+            block()
+        }
+    }
+}
+
+extension GKRandomSource {
+    func nextDouble() -> Double {
+        return Double(nextUniform())
+    }
+
+    func nextPoint() -> CGPoint {
+        return CGPoint(x: nextDouble(), y: nextDouble())
+    }
+
+    func nextFourPoints() -> [CGPoint] {
+        return Array(0...3).map {_ in nextPoint()}
+    }
 }

@@ -14,8 +14,8 @@ class ProjectionSpec: QuickSpec {
                 var b: Perspective!
 
                 beforeEach {
-                    a = Perspective(source.nextQuadrilateral())
-                    b = Perspective(source.nextQuadrilateral())
+                    a = Perspective(source.nextFourPoints())
+                    b = Perspective(source.nextFourPoints())
                 }
 
                 context("reverse projection") {
