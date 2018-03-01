@@ -12,7 +12,7 @@ before_install:
   - carthage version
   - /usr/bin/yes | pip2 uninstall numpy > /dev/null && brew install opencv
   - bundle install --with=travis
-  - pod install --project-directory=Example
+  - pod install --project-directory=Example --repo-update
 before_deploy:
   - brew update
   - brew outdated carthage || brew upgrade carthage
