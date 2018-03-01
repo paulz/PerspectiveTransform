@@ -8,12 +8,11 @@ git:
 cache:
   bundler: true
   cocoapods: true
-bundler_args: --with=travis
 podfile: "$TRAVIS_XCODE_SCHEME"/Podfile
 before_install:
   - carthage version
   - /usr/bin/yes | pip2 uninstall numpy > /dev/null && brew install opencv
-  - bundle install
+  - bundle install --with=travis
   - pod install
 before_deploy:
   - brew update
