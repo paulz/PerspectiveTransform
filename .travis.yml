@@ -3,6 +3,7 @@ osx_image: xcode9.2
 xcode_scheme: Example
 xcode_workspace: Example/PerspectiveTransform.xcworkspace
 xcode_sdk: iphonesimulator11.2
+rvm: 2.4.2
 notifications:
   email: true
 git:
@@ -15,9 +16,8 @@ before_install:
   - carthage version
   - /usr/bin/yes | pip2 uninstall numpy > /dev/null && brew install opencv
   - gem install bundler -N
+  - pod repo update
 bundler_args: --with=travis
-before_script:
-  - pod install --project-directory=Example --repo-update
 script:
   - pod lib lint
   - set -o pipefail && xcodebuild test -workspace "$TRAVIS_XCODE_WORKSPACE" -scheme 'OpenCV Tests' | xcpretty -f `xcpretty-travis-formatter`
