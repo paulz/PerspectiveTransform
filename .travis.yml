@@ -13,6 +13,7 @@ cache:
 before_install:
   - carthage version
   - /usr/bin/yes | pip2 uninstall numpy > /dev/null && brew install opencv
+  - gem install bundler -N
 bundler_args: --with=travis
 before_script:
   - pod install --project-directory=Example --repo-update
