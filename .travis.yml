@@ -8,12 +8,11 @@ git:
 cache:
   bundler: true
   cocoapods: true
-podfile: Example/Podfile
 before_install:
   - carthage version
   - /usr/bin/yes | pip2 uninstall numpy > /dev/null && brew install opencv
   - bundle install --with=travis
-  - pod install
+  - pod install --project-directory=Example
 before_deploy:
   - brew update
   - brew outdated carthage || brew upgrade carthage
