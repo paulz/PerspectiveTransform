@@ -4,6 +4,19 @@
 <dict>
 	<key>classNames</key>
 	<dict>
+		<key>AccelerateSolvePerfTest</key>
+		<dict>
+			<key>testSolvePerformance()</key>
+			<dict>
+				<key>com.apple.XCTPerformanceMetric_WallClockTime</key>
+				<dict>
+					<key>baselineAverage</key>
+					<real>0.097147</real>
+					<key>baselineIntegrationDisplayName</key>
+					<string>Mar 1, 2018 at 12:54:29 AM</string>
+				</dict>
+			</dict>
+		</dict>
 		<key>PerformanceTest</key>
 		<dict>
 			<key>testAlgrbaic()</key>
@@ -11,9 +24,9 @@
 				<key>com.apple.XCTPerformanceMetric_WallClockTime</key>
 				<dict>
 					<key>baselineAverage</key>
-					<real>0.10327</real>
+					<real>0.063848</real>
 					<key>baselineIntegrationDisplayName</key>
-					<string>Example Bot – Integration 2</string>
+					<string>Mar 1, 2018 at 12:54:29 AM</string>
 				</dict>
 			</dict>
 			<key>testProjectiveTransformFromPoints()</key>
@@ -21,9 +34,9 @@
 				<key>com.apple.XCTPerformanceMetric_WallClockTime</key>
 				<dict>
 					<key>baselineAverage</key>
-					<real>0.19685</real>
+					<real>0.14434</real>
 					<key>baselineIntegrationDisplayName</key>
-					<string>Example Bot – Integration 2</string>
+					<string>Mar 1, 2018 at 12:54:29 AM</string>
 				</dict>
 			</dict>
 			<key>testProjectiveTransformPerformance()</key>
@@ -31,9 +44,9 @@
 				<key>com.apple.XCTPerformanceMetric_WallClockTime</key>
 				<dict>
 					<key>baselineAverage</key>
-					<real>0.061859</real>
+					<real>0.059905</real>
 					<key>baselineIntegrationDisplayName</key>
-					<string>Example Bot – Integration 2</string>
+					<string>Mar 1, 2018 at 12:54:29 AM</string>
 					<key>maxPercentRelativeStandardDeviation</key>
 					<real>20</real>
 				</dict>

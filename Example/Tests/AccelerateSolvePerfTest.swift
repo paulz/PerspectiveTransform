@@ -38,6 +38,9 @@ func solve(_ A:[Double], _ B:[Double] ) -> [Double] {
 }
 
 class AccelerateSolvePerfTest: XCTestCase {
+    static let reasonableTestDurationMs = 100
+    var repeatTimes = AccelerateSolvePerfTest.reasonableTestDurationMs * 200
+
     var A: [Double]?
     var B: [Double]?
 
@@ -92,8 +95,8 @@ class AccelerateSolvePerfTest: XCTestCase {
 
     func testSolvePerformance() {
         preparePerspective()
-        self.measure {
-            stride(from: 0, to: 100000, by: 1).forEach { _ in
+        measure {
+            repeatTimes.times {
                 solve( self.A!, self.B! )
             }
         }
