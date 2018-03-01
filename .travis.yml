@@ -21,8 +21,8 @@ script:
   - set -o pipefail && xcodebuild test -workspace "$TRAVIS_XCODE_WORKSPACE" -scheme "OpenCV Tests" | xcpretty -f `xcpretty-travis-formatter`
   - set -o pipefail && xcodebuild test -workspace "$TRAVIS_XCODE_WORKSPACE" -scheme "$TRAVIS_XCODE_SCHEME" -destination "platform=iOS Simulator,name=iPhone X" | xcpretty -f `xcpretty-travis-formatter`
 after_success:
-  - slather coverage -x
-  - bash <(curl -s https://codecov.io/bash)
+  - bundle exec slather coverage -x
+  - bash <(curl -s https://codecov.io/bash) -Z -v -J '^PerspectiveTransform$'
 before_deploy:
   - brew update
   - brew outdated carthage || brew upgrade carthage
