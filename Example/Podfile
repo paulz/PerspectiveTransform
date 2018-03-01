@@ -8,10 +8,13 @@ target 'Example' do
     pod 'PerspectiveTransform', :path => '../'
     pod 'ImageCoordinateSpace'
 
-    target 'Framework Unit Specs' do
+    def SwiftTestingPods
         pod 'Quick'
         pod 'Nimble'
+    end
 
+    target 'Framework Unit Specs' do
+        SwiftTestingPods()
         target 'Application Specs' do
             pod 'Nimble-Snapshots'
         end
@@ -19,7 +22,6 @@ target 'Example' do
 
     target 'OpenCV OSX Tests' do
         platform :osx, '10.13'
-        pod 'Quick'
-        pod 'Nimble'
+        SwiftTestingPods()
     end
 end
