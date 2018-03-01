@@ -1,3 +1,5 @@
+// OpenCV needs to be installed
+// brew install opencv
 #import <opencv2/opencv.hpp>
 #import "OpenCVWrapper.h"
 
