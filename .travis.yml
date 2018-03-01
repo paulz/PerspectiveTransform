@@ -11,10 +11,12 @@ git:
 cache:
   bundler: true
   cocoapods: true
+  directories:
+    - /usr/local/Cellar/opencv
 podfile: Example/Podfile
 before_install:
   - carthage version
-  - /usr/bin/yes | pip2 uninstall numpy > /dev/null && brew install opencv
+  - /usr/bin/yes | pip2 uninstall numpy > /dev/null && (brew link opencv || brew install opencv)
   - gem install bundler -N
   - pod repo update
 bundler_args: --with=travis
