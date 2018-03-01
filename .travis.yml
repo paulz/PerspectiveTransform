@@ -3,17 +3,18 @@ osx_image: xcode9.2
 xcode_scheme: Example
 xcode_workspace: Example/PerspectiveTransform.xcworkspace
 xcode_sdk: iphonesimulator11.2
-gemfile: Gemfile.travis.rb
 git:
   depth: false
 cache:
   bundler: true
   cocoapods: true
+bundler_args: --with=travis
+podfile: "$TRAVIS_XCODE_SCHEME"/Podfile
 before_install:
   - carthage version
   - /usr/bin/yes | pip2 uninstall numpy > /dev/null && brew install opencv
   - bundle install
-  - pod install --project-directory="$TRAVIS_XCODE_SCHEME"
+  - pod install
 before_deploy:
   - brew update
   - brew outdated carthage || brew upgrade carthage

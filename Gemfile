@@ -1,4 +1,8 @@
 source 'https://rubygems.org'
 
-gem 'cocoapods'            # https://cocoapods.org dependency manager for Swift and Objective-C Cocoa projects.
-gem 'slather'              # test coverage reports
+gem 'cocoapods'                       # Dependency manager
+gem 'slather'                         # test coverage reports
+
+group :travis do
+    gem 'xcpretty-travis-formatter'   # xcpretty with sections: Build and Test
+end

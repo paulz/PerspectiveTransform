@@ -88,7 +88,6 @@
 		4BA7B1481C7C7A0600933779 /* .travis.yml */ = {isa = PBXFileReference; lastKnownFileType = text; name = .travis.yml; path = ../.travis.yml; sourceTree = "<group>"; };
 		4BA7B14D1C7D710D00933779 /* ReferenceImages */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ReferenceImages; sourceTree = "<group>"; };
 		4BD09EAD2046B05A006D2FA4 /* OpenCV_Spec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenCV_Spec.swift; sourceTree = "<group>"; };
-		4BD09EAF2046D0C8006D2FA4 /* Gemfile.travis.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; name = Gemfile.travis.rb; path = ../Gemfile.travis.rb; sourceTree = "<group>"; };
 		4BD09EB120478E5C006D2FA4 /* PerspectiveTransformSpecHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerspectiveTransformSpecHelper.swift; sourceTree = "<group>"; };
 		4BDEE37220004185007214F1 /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		4BDEE37520005B6D007214F1 /* resetAnchorPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = resetAnchorPoint.swift; sourceTree = "<group>"; };
@@ -274,7 +273,6 @@
 			children = (
 				4BA3D1781C77010D0009B690 /* Gemfile */,
 				4BA3D1791C77010D0009B690 /* Gemfile.lock */,
-				4BD09EAF2046D0C8006D2FA4 /* Gemfile.travis.rb */,
 				8E6BB167377E7674273158F4 /* PerspectiveTransform.podspec */,
 				4EA2244D76A3BF4D89D92FD5 /* README.md */,
 				4BA7B1481C7C7A0600933779 /* .travis.yml */,
