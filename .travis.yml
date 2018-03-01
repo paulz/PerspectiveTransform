@@ -3,22 +3,30 @@ osx_image: xcode9.2
 xcode_scheme: Example
 xcode_workspace: Example/PerspectiveTransform.xcworkspace
 xcode_sdk: iphonesimulator11.2
+notifications:
+  email: true
 git:
   depth: false
 cache:
   bundler: true
   cocoapods: true
-bundler_args: --with=travis
 before_install:
   - carthage version
   - /usr/bin/yes | pip2 uninstall numpy > /dev/null && brew install opencv
+bundler_args: --with=travis
+before_script:
+  - pod install --project-directory=Example --repo-update
+script:
+  - set -o pipefail && xcodebuild test -workspace "$TRAVIS_XCODE_WORKSPACE" -scheme "OpenCV Tests" | xcpretty -f `xcpretty-travis-formatter`
+  - set -o pipefail && xcodebuild test -workspace "$TRAVIS_XCODE_WORKSPACE" -scheme "$TRAVIS_XCODE_SCHEME" -destination "platform=iOS Simulator,name=iPhone X" | xcpretty -f `xcpretty-travis-formatter`
+after_success:
+  - slather coverage -x
+  - bash <(curl -s https://codecov.io/bash)
 before_deploy:
   - brew update
   - brew outdated carthage || brew upgrade carthage
   - carthage build --no-skip-current --platform iOS
   - carthage archive PerspectiveTransform
-notifications:
-  email: true
 deploy:
   provider: releases
   skip_cleanup: true
@@ -28,11 +36,3 @@ deploy:
   on:
     tags: true
     all_branches: true
-before_script:
-  - pod install --project-directory=Example --repo-update
-script:
-  - set -o pipefail && xcodebuild test -workspace "$TRAVIS_XCODE_WORKSPACE" -scheme "OpenCV Tests" | xcpretty -f `xcpretty-travis-formatter`
-  - set -o pipefail && xcodebuild test -workspace "$TRAVIS_XCODE_WORKSPACE" -scheme "$TRAVIS_XCODE_SCHEME" -destination "platform=iOS Simulator,name=iPhone X" | xcpretty -f `xcpretty-travis-formatter`
-after_success:
-  - slather coverage -x
-  - bash <(curl -s https://codecov.io/bash)

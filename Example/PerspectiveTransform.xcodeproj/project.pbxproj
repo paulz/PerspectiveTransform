@@ -85,7 +85,7 @@
 		4BA3D17C1C771B560009B690 /* NimbleSpecHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NimbleSpecHelper.swift; sourceTree = "<group>"; };
 		4BA3D1801C77230A0009B690 /* VectorProjectionSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VectorProjectionSpec.swift; sourceTree = "<group>"; };
 		4BA3D1871C7995630009B690 /* Visual.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Visual.playground; sourceTree = "<group>"; };
-		4BA7B1481C7C7A0600933779 /* .travis.yml */ = {isa = PBXFileReference; lastKnownFileType = text; name = .travis.yml; path = ../.travis.yml; sourceTree = "<group>"; };
+		4BA7B1481C7C7A0600933779 /* .travis.yml */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = text; name = .travis.yml; path = ../.travis.yml; sourceTree = "<group>"; tabWidth = 2; };
 		4BA7B14D1C7D710D00933779 /* ReferenceImages */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ReferenceImages; sourceTree = "<group>"; };
 		4BD09EAD2046B05A006D2FA4 /* OpenCV_Spec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenCV_Spec.swift; sourceTree = "<group>"; };
 		4BD09EB120478E5C006D2FA4 /* PerspectiveTransformSpecHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerspectiveTransformSpecHelper.swift; sourceTree = "<group>"; };
