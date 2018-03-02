@@ -18,7 +18,7 @@ before_install:
   - carthage version
   - /usr/bin/yes | pip2 uninstall numpy > /dev/null && (brew link opencv || brew install opencv)
   - gem install bundler -N
-  - git -C ~/.cocoapods/repos/cocoapods/ pull
+  - git -C ~/.cocoapods/repos/master/ pull
 bundler_args: --with=travis
 script:
   - pod lib lint
