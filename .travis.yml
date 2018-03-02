@@ -16,7 +16,9 @@ cache:
 podfile: Example/Podfile
 before_install:
   - carthage version
-  - yes | pip2 uninstall numpy > /dev/null && (brew link opencv || brew install opencv)
+  - yes | pip2 uninstall numpy > /dev/null
+  - brew link opencv || brew install opencv
+  - for dep in $(brew deps opencv); do brew link $dep || brew install $dep; done
   - gem install bundler --no-document
   - git -C ~/.cocoapods/repos/master/ pull --quiet
 bundler_args: --with=travis
