@@ -33,10 +33,9 @@ cache:
     - /usr/local/Cellar/xz
 podfile: Example/Podfile
 before_install:
+  - git -C ~/.cocoapods/repos/master/ pull --quiet & echo "Start cocoapods repo update on the background"
   - yes | pip2 uninstall numpy > /dev/null
-  - brew link opencv || brew install opencv
-  - for dep in xz $(brew deps opencv); do brew link $dep || brew install $dep; done
-  - git -C ~/.cocoapods/repos/master/ pull --quiet
+  - for package in opencv xz $(brew deps opencv); do brew link $package || brew install $package; done
 script:
   - pod lib lint
   - set -o pipefail && xcodebuild test -workspace "$TRAVIS_XCODE_WORKSPACE" -scheme 'OpenCV Tests' | xcpretty -f `xcpretty-travis-formatter`
