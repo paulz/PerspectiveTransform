@@ -3,13 +3,11 @@ osx_image: xcode9.2
 xcode_scheme: Example
 xcode_workspace: Example/PerspectiveTransform.xcworkspace
 xcode_sdk: iphonesimulator11.2
-rvm: 2.4.2
 notifications:
   email: true
 git:
   depth: false
 cache:
-  bundler: true
   cocoapods: true
   directories:
     - /usr/local/Cellar/opencv
@@ -35,13 +33,10 @@ cache:
     - /usr/local/Cellar/xz
 podfile: Example/Podfile
 before_install:
-  - carthage version
   - yes | pip2 uninstall numpy > /dev/null
   - brew link opencv || brew install opencv
   - for dep in xz $(brew deps opencv); do brew link $dep || brew install $dep; done
-  - gem install bundler --no-document
   - git -C ~/.cocoapods/repos/master/ pull --quiet
-bundler_args: --with=travis
 script:
   - pod lib lint
   - set -o pipefail && xcodebuild test -workspace "$TRAVIS_XCODE_WORKSPACE" -scheme 'OpenCV Tests' | xcpretty -f `xcpretty-travis-formatter`
@@ -49,6 +44,7 @@ script:
 after_success:
   - bash <(curl -s 'https://codecov.io/bash') -Z -J '^PerspectiveTransform$' -X gcov -X fix
 before_deploy:
+  - carthage version
   - brew update
   - brew outdated carthage || brew upgrade carthage
   - carthage build --no-skip-current --platform iOS

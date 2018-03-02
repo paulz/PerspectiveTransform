@@ -1,5 +1,5 @@
 Pod::Spec.new do |s|
-  s.cocoapods_version = '>=1.4.0'
+  s.cocoapods_version = '>= 1.3.1'
   s.name              = 'PerspectiveTransform'
   s.version           = '0.2.0'
   s.summary           = 'Perspective Transform calculates CATransform3D'
@@ -16,7 +16,6 @@ Pod::Spec.new do |s|
   s.social_media_url  = 'https://twitter.com/iospaulz'
 
   s.platform      = :ios, '11.0'
-  s.swift_version = '4.0'
   s.source_files  = 'Pod/Classes/**/*'
   s.frameworks    = 'UIKit', 'CoreGraphics', 'QuartzCore'
 end

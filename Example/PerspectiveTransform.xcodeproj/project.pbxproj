@@ -82,8 +82,6 @@
 		4B74DB38203BD9C70030F41B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4B84138A201DD90D00D17FE2 /* PerspectiveSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerspectiveSpec.swift; sourceTree = "<group>"; };
 		4B97C3CC2047BAC1004C9782 /* AccelerateSolvePerfTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccelerateSolvePerfTest.swift; sourceTree = "<group>"; };
-		4BA3D1781C77010D0009B690 /* Gemfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; name = Gemfile; path = ../Gemfile; sourceTree = "<group>"; };
-		4BA3D1791C77010D0009B690 /* Gemfile.lock */ = {isa = PBXFileReference; lastKnownFileType = text; name = Gemfile.lock; path = ../Gemfile.lock; sourceTree = "<group>"; };
 		4BA3D17A1C771B2E0009B690 /* ProjectionSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = ProjectionSpec.swift; sourceTree = "<group>"; tabWidth = 4; };
 		4BA3D17C1C771B560009B690 /* NimbleSpecHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NimbleSpecHelper.swift; sourceTree = "<group>"; };
 		4BA3D1801C77230A0009B690 /* VectorProjectionSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VectorProjectionSpec.swift; sourceTree = "<group>"; };
@@ -275,13 +273,11 @@
 		607FACF51AFB993E008FA782 /* Podspec Metadata */ = {
 			isa = PBXGroup;
 			children = (
-				4B42173E2047AA4100BA73C2 /* codecov.yml */,
-				4BA3D1781C77010D0009B690 /* Gemfile */,
-				4BA3D1791C77010D0009B690 /* Gemfile.lock */,
 				8E6BB167377E7674273158F4 /* PerspectiveTransform.podspec */,
 				4EA2244D76A3BF4D89D92FD5 /* README.md */,
-				4BA7B1481C7C7A0600933779 /* .travis.yml */,
 				11CFEB20812B9CCCF8BF46FE /* LICENSE */,
+				4BA7B1481C7C7A0600933779 /* .travis.yml */,
+				4B42173E2047AA4100BA73C2 /* codecov.yml */,
 			);
 			name = "Podspec Metadata";
 			sourceTree = "<group>";
