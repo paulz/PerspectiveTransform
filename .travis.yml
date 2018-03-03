@@ -17,14 +17,12 @@ matrix:
       - brew update > /dev/null
       - brew outdated carthage || brew upgrade carthage
       - carthage build --no-skip-current --platform iOS
-      - carthage archive
+      - carthage archive PerspectiveTransform
     deploy:
       provider: releases
-      draft: true
       prerelease: true
-      name: "Based on $TRAVIS_TAG tag"
-      body: "Released by Travis ${TRAVIS_EVENT_TYPE} after successful build.\n
-See https://travis-ci.org/${TRAVIS_REPO_SLUG}/jobs/${TRAVIS_JOB_ID}"
+      name: "Release $TRAVIS_TAG"
+      body: "Travis build: https://travis-ci.org/${TRAVIS_REPO_SLUG}/jobs/${TRAVIS_JOB_ID} started by ${TRAVIS_EVENT_TYPE}"
       skip_cleanup: true
       api_key:
         secure: ExLdab+b683kS0ctKKvkT0TeAFWccr+J1l58KnqIcYJdYntd66DhHsPM3p3v3fNDpfGZRycYKEn7X7Twdwl9mxDn0m4FSDQabKXgOm0J9h+zb56NGsEGXlAbOx+1yNuud+DGQ8sYiyHzERpCwfIHifT07/0Joax19+oxava3bjU+jfRa8Gt1HduV6gHYOY6ttUw22+G+5YI0sswKCd5cE3LvXBcuk3ApLW0mIn+AXLvTZonGHsuIK7Yd9yJ8MxsbdM+vXIL6b63mlPXCdL4EfmVK0VoRSsrgoq5ntV2xZJ2rhV74OifdADzqNv+TMZ+Gjy4dfMaOFI5BvoZumS5PZX2iMLHPSsgodWyb6al4NeDbglZB/DXk6I94ZrGi9cmljF1A44kAA4+TYazwE7qccffiNiCc7VHFsyDAWVrHWhCRSXmEOVMyl+FhhVv7UVJ7ZDQK5C6vPIyF6FESWv1WFiH8M/viKFD2cvW8agbas9L+CCo0Y/2TUNN2qQYUWFkzUDUDt+IgufjLCAKaosZgU7gtuGvDAYsqIgo0wyWD0+j0LMcRVn+Ply8xxKCTPXzf5RnOGu0LiW1p7ASGv+0z7wU0pGsXActqya/emDwwpNhgJ2htdYw0QLttScR8pmfRQQguOwRoDrcOR1ic8j3gTE9E4ljpYfpVfZo4dRi0a7c=
