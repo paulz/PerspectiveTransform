@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>classNames</key>
+	<dict>
+		<key>AccelerateSolvePerfTest</key>
+		<dict>
+			<key>testSolvePerformance()</key>
+			<dict>
+				<key>com.apple.XCTPerformanceMetric_WallClockTime</key>
+				<dict>
+					<key>baselineAverage</key>
+					<real>0.16451</real>
+					<key>baselineIntegrationDisplayName</key>
+					<string>Bot On Server – Integration 49</string>
+				</dict>
+			</dict>
+		</dict>
+		<key>PerformanceTest</key>
+		<dict>
+			<key>testAlgrbaic()</key>
+			<dict>
+				<key>com.apple.XCTPerformanceMetric_WallClockTime</key>
+				<dict>
+					<key>baselineAverage</key>
+					<real>0.11675</real>
+					<key>baselineIntegrationDisplayName</key>
+					<string>Bot On Server – Integration 49</string>
+				</dict>
+			</dict>
+			<key>testProjectiveTransformFromPoints()</key>
+			<dict>
+				<key>com.apple.XCTPerformanceMetric_WallClockTime</key>
+				<dict>
+					<key>baselineAverage</key>
+					<real>0.27101</real>
+					<key>baselineIntegrationDisplayName</key>
+					<string>Bot On Server – Integration 49</string>
+				</dict>
+			</dict>
+			<key>testProjectiveTransformPerformance()</key>
+			<dict>
+				<key>com.apple.XCTPerformanceMetric_WallClockTime</key>
+				<dict>
+					<key>baselineAverage</key>
+					<real>0.096875</real>
+					<key>baselineIntegrationDisplayName</key>
+					<string>Bot On Server – Integration 49</string>
+				</dict>
+			</dict>
+		</dict>
+	</dict>
+</dict>
+</plist>
