@@ -14,7 +14,7 @@ matrix:
     after_success:
       - bash <(curl -s 'https://codecov.io/bash') -Z -J '^PerspectiveTransform$' -X gcov -X fix
     before_deploy:
-      - brew update
+      - brew update > /dev/null
       - brew outdated carthage || brew upgrade carthage
       - carthage build --no-skip-current --platform iOS
       - carthage archive
