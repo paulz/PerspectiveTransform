@@ -39,8 +39,8 @@
 		4BDEE37620005B6D007214F1 /* resetAnchorPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDEE37520005B6D007214F1 /* resetAnchorPoint.swift */; };
 		4BDEE37720005B6D007214F1 /* resetAnchorPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDEE37520005B6D007214F1 /* resetAnchorPoint.swift */; };
 		4BDF64A620469B350022C5F8 /* OpenCVWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4BDF64A520469B350022C5F8 /* OpenCVWrapper.mm */; };
-		4BDF64A820469D140022C5F8 /* libopencv_core.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BDF64A720469D140022C5F8 /* libopencv_core.dylib */; };
-		4BDF64AA20469D670022C5F8 /* libopencv_calib3d.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BDF64A920469D670022C5F8 /* libopencv_calib3d.dylib */; };
+		4BDF64A820469D140022C5F8 /* libopencv_core.3.4.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BDF64A720469D140022C5F8 /* libopencv_core.3.4.1.dylib */; };
+		4BDF64AA20469D670022C5F8 /* libopencv_calib3d.3.4.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BDF64A920469D670022C5F8 /* libopencv_calib3d.3.4.1.dylib */; };
 		4BDF64AC2046A1830022C5F8 /* QuadrilateralCalc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4009942042575A00B7CE37 /* QuadrilateralCalc.swift */; };
 		4BDF64AE2046A9ED0022C5F8 /* OpenCVPerformanceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDF64AD2046A9ED0022C5F8 /* OpenCVPerformanceTest.swift */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
@@ -96,8 +96,8 @@
 		4BDF649F20469AB60022C5F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4BDF64A420469B350022C5F8 /* OpenCVWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenCVWrapper.h; sourceTree = "<group>"; };
 		4BDF64A520469B350022C5F8 /* OpenCVWrapper.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = OpenCVWrapper.mm; sourceTree = "<group>"; };
-		4BDF64A720469D140022C5F8 /* libopencv_core.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_core.dylib; path = ../../../../../usr/local/lib/libopencv_core.dylib; sourceTree = "<group>"; };
-		4BDF64A920469D670022C5F8 /* libopencv_calib3d.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_calib3d.dylib; path = ../../../../../usr/local/lib/libopencv_calib3d.dylib; sourceTree = "<group>"; };
+		4BDF64A720469D140022C5F8 /* libopencv_core.3.4.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_core.3.4.1.dylib; path = /usr/local/Cellar/opencv/3.4.1_1/lib/libopencv_core.3.4.1.dylib; sourceTree = "<absolute>"; };
+		4BDF64A920469D670022C5F8 /* libopencv_calib3d.3.4.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_calib3d.3.4.1.dylib; path = /usr/local/Cellar/opencv/3.4.1_1/lib/libopencv_calib3d.3.4.1.dylib; sourceTree = "<absolute>"; };
 		4BDF64AB2046A0D70022C5F8 /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		4BDF64AD2046A9ED0022C5F8 /* OpenCVPerformanceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenCVPerformanceTest.swift; sourceTree = "<group>"; };
 		4EA2244D76A3BF4D89D92FD5 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
@@ -137,8 +137,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4BDF64A820469D140022C5F8 /* libopencv_core.dylib in Frameworks */,
-				4BDF64AA20469D670022C5F8 /* libopencv_calib3d.dylib in Frameworks */,
+				4BDF64A820469D140022C5F8 /* libopencv_core.3.4.1.dylib in Frameworks */,
+				4BDF64AA20469D670022C5F8 /* libopencv_calib3d.3.4.1.dylib in Frameworks */,
 				EDFF5BFF5BF59ECA4F6FDB15 /* Pods_OpenCV_OSX_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -285,8 +285,8 @@
 		A699BE3B02CE1C68EC25633C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4BDF64A920469D670022C5F8 /* libopencv_calib3d.dylib */,
-				4BDF64A720469D140022C5F8 /* libopencv_core.dylib */,
+				4BDF64A920469D670022C5F8 /* libopencv_calib3d.3.4.1.dylib */,
+				4BDF64A720469D140022C5F8 /* libopencv_core.3.4.1.dylib */,
 				93D7504B2DA9FA64B67B1FF4 /* Pods_Example.framework */,
 				83E8529039B8B24F81FDEC9A /* Pods_Example_Framework_Unit_Specs.framework */,
 				A903F3AA6E48FB09A52BB12C /* Pods_Example_Framework_Unit_Specs_Application_Specs.framework */,
