@@ -4,16 +4,49 @@
 <dict>
 	<key>classNames</key>
 	<dict>
+		<key>AccelerateSolvePerfTest</key>
+		<dict>
+			<key>testSolvePerformance()</key>
+			<dict>
+				<key>com.apple.XCTPerformanceMetric_WallClockTime</key>
+				<dict>
+					<key>baselineAverage</key>
+					<real>0.18989</real>
+					<key>baselineIntegrationDisplayName</key>
+					<string>Example Bot – Integration 49</string>
+				</dict>
+			</dict>
+		</dict>
 		<key>PerformanceTest</key>
 		<dict>
+			<key>testAlgrbaic()</key>
+			<dict>
+				<key>com.apple.XCTPerformanceMetric_WallClockTime</key>
+				<dict>
+					<key>baselineAverage</key>
+					<real>0.11859</real>
+					<key>baselineIntegrationDisplayName</key>
+					<string>Example Bot – Integration 49</string>
+				</dict>
+			</dict>
+			<key>testProjectiveTransformFromPoints()</key>
+			<dict>
+				<key>com.apple.XCTPerformanceMetric_WallClockTime</key>
+				<dict>
+					<key>baselineAverage</key>
+					<real>0.26667</real>
+					<key>baselineIntegrationDisplayName</key>
+					<string>Example Bot – Integration 49</string>
+				</dict>
+			</dict>
 			<key>testProjectiveTransformPerformance()</key>
 			<dict>
 				<key>com.apple.XCTPerformanceMetric_WallClockTime</key>
 				<dict>
 					<key>baselineAverage</key>
-					<real>0.036409</real>
+					<real>0.087663</real>
 					<key>baselineIntegrationDisplayName</key>
-					<string>Feb 22, 2016, 12:25:25 AM</string>
+					<string>Example Bot – Integration 49</string>
 				</dict>
 			</dict>
 		</dict>
