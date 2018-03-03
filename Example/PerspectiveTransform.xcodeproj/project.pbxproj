@@ -8,7 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		0C2127A14E6BBF3D70826AA1 /* Pods_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93D7504B2DA9FA64B67B1FF4 /* Pods_Example.framework */; };
-		223AEE7D2D72E5D957107FA7 /* Pods_Example_Framework_Unit_Specs_Application_Specs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A903F3AA6E48FB09A52BB12C /* Pods_Example_Framework_Unit_Specs_Application_Specs.framework */; };
+		0DCEBD262132FF228D2F614D /* Pods_OpenCV_OSX_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC2906A4BDCD866CC05F3E5D /* Pods_OpenCV_OSX_Tests.framework */; };
+		0FBFF0B72B0E8FADBFAA3EEC /* Pods_Example_Framework_Unit_Specs_Application_Specs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11113536029990C3837DC464 /* Pods_Example_Framework_Unit_Specs_Application_Specs.framework */; };
+		40FB77B26CB82E490407BE45 /* Pods_Example_Framework_Unit_Specs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 778C4CCAD09A3033463205E6 /* Pods_Example_Framework_Unit_Specs.framework */; };
 		4B2D2E871C7C2AD10045FD11 /* SnapshotSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2D2E861C7C2AD10045FD11 /* SnapshotSpec.swift */; };
 		4B2D2E8A1C7C2E620045FD11 /* container.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4B2D2E881C7C2E620045FD11 /* container.jpg */; };
 		4B2D2E8B1C7C2E620045FD11 /* with-overlay.svg in Resources */ = {isa = PBXBuildFile; fileRef = 4B2D2E891C7C2E620045FD11 /* with-overlay.svg */; };
@@ -48,8 +50,6 @@
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
-		7DFCD2649A44BD8BA5C18016 /* Pods_Example_Framework_Unit_Specs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83E8529039B8B24F81FDEC9A /* Pods_Example_Framework_Unit_Specs.framework */; };
-		EDFF5BFF5BF59ECA4F6FDB15 /* Pods_OpenCV_OSX_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FAD59BEDD94996DCB50CFC8 /* Pods_OpenCV_OSX_Tests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +63,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		11113536029990C3837DC464 /* Pods_Example_Framework_Unit_Specs_Application_Specs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Example_Framework_Unit_Specs_Application_Specs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		11CFEB20812B9CCCF8BF46FE /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		228B48512798F0994ED8E8A0 /* Pods-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-Example/Pods-Example.release.xcconfig"; sourceTree = "<group>"; };
 		34FA62AB6B569D9A52F448AA /* Pods-Example-Framework Unit Specs.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example-Framework Unit Specs.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Example-Framework Unit Specs/Pods-Example-Framework Unit Specs.debug.xcconfig"; sourceTree = "<group>"; };
@@ -113,13 +114,12 @@
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* MatrixSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatrixSpec.swift; sourceTree = "<group>"; };
 		617247F9B099C3D5CB91A2ED /* Pods-OpenCV OSX Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenCV OSX Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-OpenCV OSX Tests/Pods-OpenCV OSX Tests.release.xcconfig"; sourceTree = "<group>"; };
-		6FAD59BEDD94996DCB50CFC8 /* Pods_OpenCV_OSX_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OpenCV_OSX_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		83E8529039B8B24F81FDEC9A /* Pods_Example_Framework_Unit_Specs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Example_Framework_Unit_Specs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		778C4CCAD09A3033463205E6 /* Pods_Example_Framework_Unit_Specs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Example_Framework_Unit_Specs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E6BB167377E7674273158F4 /* PerspectiveTransform.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = PerspectiveTransform.podspec; path = ../PerspectiveTransform.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		93D7504B2DA9FA64B67B1FF4 /* Pods_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A903F3AA6E48FB09A52BB12C /* Pods_Example_Framework_Unit_Specs_Application_Specs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Example_Framework_Unit_Specs_Application_Specs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C038AB749DD1F81E4EFD31B4 /* Pods-Example-Framework Unit Specs-Application Specs.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example-Framework Unit Specs-Application Specs.release.xcconfig"; path = "Pods/Target Support Files/Pods-Example-Framework Unit Specs-Application Specs/Pods-Example-Framework Unit Specs-Application Specs.release.xcconfig"; sourceTree = "<group>"; };
 		C69F7B0CA2E10977992AE6A5 /* Pods-Example-Framework Unit Specs.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example-Framework Unit Specs.release.xcconfig"; path = "Pods/Target Support Files/Pods-Example-Framework Unit Specs/Pods-Example-Framework Unit Specs.release.xcconfig"; sourceTree = "<group>"; };
+		DC2906A4BDCD866CC05F3E5D /* Pods_OpenCV_OSX_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OpenCV_OSX_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E995B2887EFE603CA3E1920A /* Pods-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Example/Pods-Example.debug.xcconfig"; sourceTree = "<group>"; };
 		F60BDD4F7314FB618651526D /* Pods-OpenCV OSX Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenCV OSX Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OpenCV OSX Tests/Pods-OpenCV OSX Tests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -129,7 +129,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7DFCD2649A44BD8BA5C18016 /* Pods_Example_Framework_Unit_Specs.framework in Frameworks */,
+				40FB77B26CB82E490407BE45 /* Pods_Example_Framework_Unit_Specs.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,7 +139,7 @@
 			files = (
 				4BDF64A820469D140022C5F8 /* libopencv_core.3.4.1.dylib in Frameworks */,
 				4BDF64AA20469D670022C5F8 /* libopencv_calib3d.3.4.1.dylib in Frameworks */,
-				EDFF5BFF5BF59ECA4F6FDB15 /* Pods_OpenCV_OSX_Tests.framework in Frameworks */,
+				0DCEBD262132FF228D2F614D /* Pods_OpenCV_OSX_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -155,7 +155,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				223AEE7D2D72E5D957107FA7 /* Pods_Example_Framework_Unit_Specs_Application_Specs.framework in Frameworks */,
+				0FBFF0B72B0E8FADBFAA3EEC /* Pods_Example_Framework_Unit_Specs_Application_Specs.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,9 +288,9 @@
 				4BDF64A920469D670022C5F8 /* libopencv_calib3d.3.4.1.dylib */,
 				4BDF64A720469D140022C5F8 /* libopencv_core.3.4.1.dylib */,
 				93D7504B2DA9FA64B67B1FF4 /* Pods_Example.framework */,
-				83E8529039B8B24F81FDEC9A /* Pods_Example_Framework_Unit_Specs.framework */,
-				A903F3AA6E48FB09A52BB12C /* Pods_Example_Framework_Unit_Specs_Application_Specs.framework */,
-				6FAD59BEDD94996DCB50CFC8 /* Pods_OpenCV_OSX_Tests.framework */,
+				778C4CCAD09A3033463205E6 /* Pods_Example_Framework_Unit_Specs.framework */,
+				11113536029990C3837DC464 /* Pods_Example_Framework_Unit_Specs_Application_Specs.framework */,
+				DC2906A4BDCD866CC05F3E5D /* Pods_OpenCV_OSX_Tests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

@@ -1,9 +1,9 @@
 source 'https://github.com/CocoaPods/Specs.git'
+use_frameworks!
 
 target 'Example' do
-    use_frameworks!
     platform :ios, '11.0'
-    inhibit_all_warnings!
+    inhibit_all_warnings!  # mute warnings from pod dependencies
 
     pod 'PerspectiveTransform', :path => '../'
     pod 'ImageCoordinateSpace'
