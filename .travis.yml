@@ -14,8 +14,6 @@ matrix:
   - xcode_scheme: Example
     env:
       - XCODE_DESNITATION='platform=iOS Simulator,name=iPhone X'
-    before_install:
-      - git -C ~/.cocoapods/repos/master/ pull --quiet
     after_success:
       - bash <(curl -s 'https://codecov.io/bash') -Z -J '^PerspectiveTransform$' -X gcov -X fix
     before_deploy:
@@ -36,10 +34,9 @@ matrix:
     env:
       - XCODE_DESNITATION='platform=macos'
     before_install:
-      - git -C ~/.cocoapods/repos/master/ pull --quiet &
+      - git -C ~/.cocoapods/repos/master/ pull --quiet
       - yes | pip2 uninstall numpy > /dev/null
       - for package in opencv xz $(brew deps opencv); do brew link $package || brew install $package; done
-      - fg || echo Cocoapds repository update has already finished
     before_script:
       - pod lib lint
     cache:
@@ -65,5 +62,7 @@ matrix:
         - /usr/local/Cellar/x264
         - /usr/local/Cellar/xvid
         - /usr/local/Cellar/xz
+before_install:
+  - git -C ~/.cocoapods/repos/master/ pull --quiet
 script:
   - set -o pipefail && xcodebuild test -workspace "$TRAVIS_XCODE_WORKSPACE" -scheme "$TRAVIS_XCODE_SCHEME" -destination "$XCODE_DESNITATION" | xcpretty -f `xcpretty-travis-formatter`
