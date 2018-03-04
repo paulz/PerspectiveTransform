@@ -21,4 +21,6 @@ typedef struct Quadrilateral {
 @interface OpenCVWrapper: NSObject
 + (CATransform3D)findHomographyFromQuadrilateral:(Quadrilateral)origin
                                  toQuadrilateral:(Quadrilateral)destination;
-    @end
++ (CATransform3D)perspectiveTransform:(Quadrilateral)origin
+                      toQuadrilateral:(Quadrilateral)destination;
+@end

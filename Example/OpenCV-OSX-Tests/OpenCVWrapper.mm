@@ -24,6 +24,26 @@
     return transform;
 }
 
++ (CATransform3D)perspectiveTransform:(Quadrilateral)origin toQuadrilateral:(Quadrilateral)destination {
+    CvPoint2D32f *cvsrc = [self openCVMatrixWithQuadrilateral:origin];
+    CvMat *src_mat = cvCreateMat( 4, 2, CV_32FC1 );
+    cvSetData(src_mat, cvsrc, sizeof(CvPoint2D32f));
+
+    CvPoint2D32f *cvdst = [self openCVMatrixWithQuadrilateral:destination];
+    CvMat *dst_mat = cvCreateMat( 4, 2, CV_32FC1 );
+    cvSetData(dst_mat, cvdst, sizeof(CvPoint2D32f));
+
+    CvMat *H = cvCreateMat(3,3,CV_32FC1);
+    cvGetPerspectiveTransform(cvsrc, cvdst, H);
+    cvReleaseMat(&src_mat);
+    cvReleaseMat(&dst_mat);
+
+    CATransform3D transform = [self transform3DWithCMatrix:H->data.fl];
+    cvReleaseMat(&H);
+
+    return transform;
+}
+
 + (CvPoint2D32f *)openCVMatrixWithQuadrilateral:(Quadrilateral)origin {
 
     CvPoint2D32f *cvsrc = (CvPoint2D32f *)malloc(4*sizeof(CvPoint2D32f));
