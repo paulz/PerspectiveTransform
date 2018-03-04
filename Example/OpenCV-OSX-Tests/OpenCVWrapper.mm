@@ -4,8 +4,7 @@
 #import "OpenCVWrapper.h"
 
 @implementation OpenCVWrapper
-+ (CATransform3D)transformQuadrilateral:(Quadrilateral)origin toQuadrilateral:(Quadrilateral)destination {
-
++ (CATransform3D)findHomographyFromQuadrilateral:(Quadrilateral)origin toQuadrilateral:(Quadrilateral)destination {
     CvPoint2D32f *cvsrc = [self openCVMatrixWithQuadrilateral:origin];
     CvMat *src_mat = cvCreateMat( 4, 2, CV_32FC1 );
     cvSetData(src_mat, cvsrc, sizeof(CvPoint2D32f));

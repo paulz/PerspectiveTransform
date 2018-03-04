@@ -29,7 +29,7 @@ class OpenCVPerformanceTest: XCTestCase {
 
         measure {
             self.repeatTimes.times {
-                _ = OpenCVWrapper.transform(start, to: destination)
+                _ = OpenCVWrapper.findHomography(from: start, to: destination)
             }
         }
     }

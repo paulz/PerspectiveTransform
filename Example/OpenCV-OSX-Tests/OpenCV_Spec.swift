@@ -5,22 +5,15 @@ class OpenCV_Spec: QuickSpec {
     override func spec() {
         describe("OpenCV") {
             context("OpenCVWrapper") {
-                context("transform") {
+                context("findHomography") {
                     it("should be identity for same start and destination") {
                         let start = Quadrilateral(upperLeft: CGPoint.zero,
                                                   upperRight: CGPoint(x: 10, y: 0),
                                                   lowerRight: CGPoint(x: 0, y: 10),
                                                   lowerLeft: CGPoint(x: 10, y: 10))
-                        let desination = start
-                        var transform = OpenCVWrapper.transform(start, to: desination)
-                        expect(transform.m41.exponent) <= -40
-                        expect(transform.m42.exponent) <= -40
-                        transform.m41 = transform.m41.rounded(.towardZero)
-                        transform.m42 = transform.m42.rounded(.towardZero)
-
-                        expect(CATransform3DIsIdentity(transform)) == true
+                        var transform = OpenCVWrapper.findHomography(from: start, to: start)
+                        expect(transform) ≈ CATransform3DIdentity
                     }
-
 
                     context("compare with algebraic solution") {
                         let points = [
@@ -32,7 +25,7 @@ class OpenCV_Spec: QuickSpec {
                         let frame = CGRect(origin: CGPoint.zero,
                                            size: CGSize(width: 20, height: 10))
 
-                        func openCVTransform() -> CATransform3D {
+                        func openCVHomographyTransform() -> CATransform3D {
                             let start = Quadrilateral(upperLeft: CGPoint(x: frame.minX, y: frame.minY),
                                                       upperRight: CGPoint(x: frame.maxX, y: frame.minY),
                                                       lowerRight: CGPoint(x: frame.maxX, y: frame.maxY),
@@ -41,7 +34,7 @@ class OpenCV_Spec: QuickSpec {
                                                             upperRight: points[1],
                                                             lowerRight: points[3],
                                                             lowerLeft: points[2])
-                            return OpenCVWrapper.transform(start, to: destination)
+                            return OpenCVWrapper.findHomography(from: start, to: destination)
                         }
 
                         func algebraTransform() -> CATransform3D {
@@ -60,8 +53,8 @@ class OpenCV_Spec: QuickSpec {
                             return start.rectToQuad(rect: start.box(), quad: destination)
                         }
 
-                        it("should be same") {
-                            let openCV = openCVTransform()
+                        it("should produce same result within precision") {
+                            let openCV = openCVHomographyTransform()
                             let algebra = algebraTransform()
                             expect(openCV) ≈ algebra
                         }
