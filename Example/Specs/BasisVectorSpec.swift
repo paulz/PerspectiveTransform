@@ -23,7 +23,20 @@ class BasisSpec: QuickSpec {
             }
         }
 
-        context("basis") {
+        context("basisVectorsToPointsMap") {
+            let basisVectors = [Vector3Type(0, 0, 0),
+                                Vector3Type(0, 1, 0),
+                                Vector3Type(0, 0, 1),
+                                Vector3Type(1, 1, 1)]
+
+            it("should map base vectors to points") {
+                let basis = Perspective(start).basisVectorsToPointsMap
+                for (index, vector) in basisVectors.enumerated() {
+                    let tranformed = basis * vector
+                    expect(tranformed.dehomogenized) == start.corners[index]
+                }
+            }
+
             it("should match expected") {
                 let startBasis = Matrix3x3Type([[0.0, 0.0, -1.0], [152.0, 0.0, 1.0], [0.0, 122.0, 1.0]])
                 expect(Perspective(start).basisVectorsToPointsMap) ≈ (startBasis, delta:0.5)

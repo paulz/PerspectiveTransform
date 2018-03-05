@@ -29,7 +29,26 @@
       language = ""
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "4B74DB33203BD9C70030F41B"
+               BuildableName = "Framework Unit Specs.xctest"
+               BlueprintName = "Framework Unit Specs"
+               ReferencedContainer = "container:../PerspectiveTransform.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "6CB0C222AAD7622F2BA8441A2633076A"
+            BuildableName = "PerspectiveTransform.framework"
+            BlueprintName = "PerspectiveTransform"
+            ReferencedContainer = "container:Pods.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -62,6 +81,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "6CB0C222AAD7622F2BA8441A2633076A"
+            BuildableName = "PerspectiveTransform.framework"
+            BlueprintName = "PerspectiveTransform"
+            ReferencedContainer = "container:Pods.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

@@ -77,6 +77,10 @@ extension CATransform3D {
     }
 }
 
+extension Vector3Type {
+    var dehomogenized: CGPoint {return CGPoint(x: z.isZero ? 0 : x/z, y: z.isZero ? 0 : y/z)}
+}
+
 func arrayWith<S>(_ factory: (()->S)) -> [S] {
     return Array(Vector3Type.indexSlice).map{_ in factory()}
 }
