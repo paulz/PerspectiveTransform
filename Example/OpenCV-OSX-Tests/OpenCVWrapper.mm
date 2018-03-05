@@ -1,8 +1,11 @@
-// OpenCV needs to be installed
-// brew install opencv
 #import <opencv2/opencv.hpp>
 #import "OpenCVWrapper.h"
 
+/**
+ OpenCV library is dynamically linked, to install OpenCV:
+
+     brew install opencv
+ */
 @implementation OpenCVWrapper
 + (CATransform3D)findHomographyFromQuadrilateral:(Quadrilateral)origin toQuadrilateral:(Quadrilateral)destination {
     CvPoint2D32f *cvsrc = [self openCVMatrixWithQuadrilateral:origin];
