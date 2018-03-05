@@ -8,7 +8,7 @@
 
 import simd
 import GameKit
-import Nimble
+@testable import Nimble
 
 extension CATransform3D {
     func flattened() -> [CGFloat] {
@@ -41,7 +41,25 @@ public func beCloseTo(_ expectedValue: CATransform3D, within delta: CGFloat = CG
     }
 }
 
+public func beCloseTo(_ expectedValue: CGPoint, within delta: CGFloat = CGFloat(DefaultDelta)) -> Predicate<CGPoint> {
+    let errorMessage = "be close to <\(stringify(expectedValue))> (each within \(stringify(delta)))"
+    return Predicate.simple(errorMessage) { actualExpression in
+        if let actual = try actualExpression.evaluate() {
+            if actual == expectedValue {
+                return .matches
+            } else {
+                let eachCoordinate = beCloseTo([expectedValue.x, expectedValue.y].map{Double($0)})
+                return try! eachCoordinate.satisfies(actualExpression.cast{[$0!.x,$0!.y].map{Double($0)}}).status
+            }
+        }
+        return .doesNotMatch
+    }
+}
 public func ≈(lhs: Expectation<CATransform3D>, rhs: CATransform3D) {
+    lhs.to(beCloseTo(rhs))
+}
+
+public func ≈(lhs: Expectation<CGPoint>, rhs: CGPoint) {
     lhs.to(beCloseTo(rhs))
 }
 

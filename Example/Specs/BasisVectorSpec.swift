@@ -1,6 +1,7 @@
 import Quick
 import Nimble
 import simd
+import GameKit
 @testable import PerspectiveTransform
 
 class BasisSpec: QuickSpec {
@@ -24,16 +25,27 @@ class BasisSpec: QuickSpec {
         }
 
         context("basisVectorsToPointsMap") {
-            let basisVectors = [Vector3Type(0, 0, 0),
-                                Vector3Type(0, 1, 0),
-                                Vector3Type(0, 0, 1),
-                                Vector3Type(1, 1, 1)]
+            context("any 4 points") {
+                var points: [CGPoint]!
+                var subject: Matrix3x3Type!
 
-            it("should map base vectors to points") {
-                let basis = Perspective(start).basisVectorsToPointsMap
-                for (index, vector) in basisVectors.enumerated() {
-                    let tranformed = basis * vector
-                    expect(tranformed.dehomogenized) == start.corners[index]
+                let basisVectors = [Vector3Type(1, 0, 0),
+                                    Vector3Type(0, 1, 0),
+                                    Vector3Type(0, 0, 1),
+                                    Vector3Type(1, 1, 1)]
+
+                let source = GKRandomSource.sharedRandom()
+
+                beforeEach {
+                    points = source.nextFourPoints()
+                    subject = Perspective(points).basisVectorsToPointsMap
+                }
+
+                it("should map base vectors to points") {
+                    for (index, vector) in basisVectors.enumerated() {
+                        let tranformed = subject * vector
+                        expect(tranformed.dehomogenized) ≈ points[index]
+                    }
                 }
             }
 
