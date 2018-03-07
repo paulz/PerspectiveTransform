@@ -8,7 +8,7 @@
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
 
-PerspectiveTransform caclulates Core Animation `CATransform3D` matrix for view projection in 3D. It can be used to place views within given image visual perspective.
+PerspectiveTransform caclulates homogeneous transformation matrix for a view 3D projection in 2D. It can be used to place views within given image visual perspective using Core Animation `CATransform3D` and [`CALayer.tranform`](https://developer.apple.com/documentation/quartzcore/calayer/1410836-transform). Projection is caclulated between source and destination perspectives that are defined by 4 corners, assuming they form a [Quadrilateral](https://en.wikipedia.org/wiki/Quadrilateral).
 
 ## [CATransform3D](https://developer.apple.com/documentation/quartzcore/catransform3d)
 
