@@ -1,1 +1,0 @@
-\begin{bmatrix} a & b \\ c & d \end{bmatrix}\times \begin{bmatrix} 1 & 0 & 0 \\ 0 & 0 & 1 \end{bmatrix}=\begin{bmatrix} a & 0 & b \\ c & 0 & d \end{bmatrix}
