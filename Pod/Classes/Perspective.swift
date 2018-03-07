@@ -19,7 +19,7 @@ public final class Perspective {
     lazy var pointsToBasisVectorsMap: Matrix3x3Type = basisVectorsToPointsMap.inverse
 
     internal func projection(to:Perspective) -> Matrix3x3Type {
-        return (to.basisVectorsToPointsMap * pointsToBasisVectorsMap).zNormalized()
+        return (to.basisVectorsToPointsMap * pointsToBasisVectorsMap)
     }
 
     private func calculateBasisVectorsToPointsMap() -> Matrix3x3Type {

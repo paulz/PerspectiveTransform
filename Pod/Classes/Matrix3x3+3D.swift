@@ -45,12 +45,12 @@ extension Matrix3x3Type {
     }
 
     func to3d() -> Matrix4x4Type {
-        var m4x4 = insertRowBeforeLast().insertColumnBeforeLast()
+        var m4x4 = zNormalized().insertRowBeforeLast().insertColumnBeforeLast()
         m4x4[Vector3Type.lastIndex, Vector3Type.lastIndex] = ScalarType.one
         return m4x4
     }
 
-    func zNormalized() -> Matrix3x3Type {
+    private func zNormalized() -> Matrix3x3Type {
         return normalizationFactor.isZero ? self : (ScalarType.one / normalizationFactor) * self
     }
 
