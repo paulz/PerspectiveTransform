@@ -22,7 +22,7 @@ class ProjectionSpec: QuickSpec {
                     it("should be invert of original") {
                         let forward = a.projection(to: b)
                         let reverse = b.projection(to: a)
-                        expect(forward.homogeneousInverse()) ≈ (reverse, 0.0001)
+                        expect(forward.inverse.zNormalized()) ≈ (reverse, 0.0001)
                     }
                 }
             }

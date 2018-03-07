@@ -24,7 +24,6 @@
 		4B74DB40203BDA070030F41B /* ProjectionSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA3D17A1C771B2E0009B690 /* ProjectionSpec.swift */; };
 		4B74DB41203BDA070030F41B /* PerspectiveSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B84138A201DD90D00D17FE2 /* PerspectiveSpec.swift */; };
 		4B74DB42203BDA070030F41B /* BasisVectorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B58ECEE1C799C2A00F1BC00 /* BasisVectorSpec.swift */; };
-		4B74DB43203BDA070030F41B /* HomogeneousInverseSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1B1C0A1C7A687E003F8165 /* HomogeneousInverseSpec.swift */; };
 		4B74DB45203BDA070030F41B /* VectorProjectionSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA3D1801C77230A0009B690 /* VectorProjectionSpec.swift */; };
 		4B74DB47203BDA9C0030F41B /* PerformanceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1B1C0C1C7A76C8003F8165 /* PerformanceTest.swift */; };
 		4B74DB48203BDAD70030F41B /* ReferenceImages in Resources */ = {isa = PBXBuildFile; fileRef = 4BA7B14D1C7D710D00933779 /* ReferenceImages */; };
@@ -68,7 +67,6 @@
 		11CFEB20812B9CCCF8BF46FE /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		228B48512798F0994ED8E8A0 /* Pods-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-Example/Pods-Example.release.xcconfig"; sourceTree = "<group>"; };
 		34FA62AB6B569D9A52F448AA /* Pods-Example-Framework Unit Specs.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example-Framework Unit Specs.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Example-Framework Unit Specs/Pods-Example-Framework Unit Specs.debug.xcconfig"; sourceTree = "<group>"; };
-		4B1B1C0A1C7A687E003F8165 /* HomogeneousInverseSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomogeneousInverseSpec.swift; sourceTree = "<group>"; };
 		4B1B1C0C1C7A76C8003F8165 /* PerformanceTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerformanceTest.swift; sourceTree = "<group>"; };
 		4B2D2E861C7C2AD10045FD11 /* SnapshotSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotSpec.swift; sourceTree = "<group>"; };
 		4B2D2E881C7C2E620045FD11 /* container.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = container.jpg; sourceTree = "<group>"; };
@@ -175,7 +173,6 @@
 				4BA3D17A1C771B2E0009B690 /* ProjectionSpec.swift */,
 				4B84138A201DD90D00D17FE2 /* PerspectiveSpec.swift */,
 				4B58ECEE1C799C2A00F1BC00 /* BasisVectorSpec.swift */,
-				4B1B1C0A1C7A687E003F8165 /* HomogeneousInverseSpec.swift */,
 				4BA3D1801C77230A0009B690 /* VectorProjectionSpec.swift */,
 				4B74DB38203BD9C70030F41B /* Info.plist */,
 			);
@@ -726,7 +723,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4BD09EB320478E5C006D2FA4 /* PerspectiveTransformSpecHelper.swift in Sources */,
-				4B74DB43203BDA070030F41B /* HomogeneousInverseSpec.swift in Sources */,
 				4B74DB42203BDA070030F41B /* BasisVectorSpec.swift in Sources */,
 				4B74DB41203BDA070030F41B /* PerspectiveSpec.swift in Sources */,
 				4B74DB3E203BDA070030F41B /* CATransform3Dfrom2DSpec.swift in Sources */,
@@ -878,7 +874,7 @@
 				HEADER_SEARCH_PATHS = /usr/local/include;
 				INFOPLIST_FILE = "OpenCV-OSX-Tests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-                LIBRARY_SEARCH_PATHS = /usr/local/lib/;
+				LIBRARY_SEARCH_PATHS = /usr/local/lib/;
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = paulz.github.io.OpenCVMacTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -913,7 +909,7 @@
 				HEADER_SEARCH_PATHS = /usr/local/include;
 				INFOPLIST_FILE = "OpenCV-OSX-Tests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-                LIBRARY_SEARCH_PATHS = /usr/local/lib/;
+				LIBRARY_SEARCH_PATHS = /usr/local/lib/;
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = paulz.github.io.OpenCVMacTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";

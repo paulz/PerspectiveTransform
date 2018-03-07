@@ -53,9 +53,6 @@ extension Matrix3x3Type {
     func zNormalized() -> Matrix3x3Type {
         return normalizationFactor.isZero ? self : (ScalarType.one / normalizationFactor) * self
     }
-    func homogeneousInverse() -> Matrix3x3Type {
-        return inverse.zNormalized()
-    }
 
     private var normalizationFactor: ScalarType {
         get { return self[Vector3Type.lastIndex, Vector3Type.lastIndex] }
