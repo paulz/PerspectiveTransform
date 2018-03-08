@@ -314,6 +314,68 @@
 				<string>com.apple.platform.iphonesimulator</string>
 			</dict>
 		</dict>
+		<key>6D49659F-89DE-4E8A-A2E5-52DE8004E0BA</key>
+		<dict>
+			<key>localComputer</key>
+			<dict>
+				<key>busSpeedInMHz</key>
+				<integer>4294</integer>
+				<key>cpuCount</key>
+				<integer>1</integer>
+				<key>cpuKind</key>
+				<string>Intel Core i7</string>
+				<key>cpuSpeedInMHz</key>
+				<integer>2800</integer>
+				<key>logicalCPUCoresPerPackage</key>
+				<integer>8</integer>
+				<key>modelCode</key>
+				<string>iMac11,1</string>
+				<key>physicalCPUCoresPerPackage</key>
+				<integer>4</integer>
+				<key>platformIdentifier</key>
+				<string>com.apple.platform.macosx</string>
+			</dict>
+			<key>targetArchitecture</key>
+			<string>x86_64</string>
+			<key>targetDevice</key>
+			<dict>
+				<key>modelCode</key>
+				<string>iPhone8,2</string>
+				<key>platformIdentifier</key>
+				<string>com.apple.platform.iphonesimulator</string>
+			</dict>
+		</dict>
+		<key>73CBF442-707C-4EB2-A87E-CA543C95EF96</key>
+		<dict>
+			<key>localComputer</key>
+			<dict>
+				<key>busSpeedInMHz</key>
+				<integer>4294</integer>
+				<key>cpuCount</key>
+				<integer>1</integer>
+				<key>cpuKind</key>
+				<string>Intel Core i7</string>
+				<key>cpuSpeedInMHz</key>
+				<integer>2800</integer>
+				<key>logicalCPUCoresPerPackage</key>
+				<integer>8</integer>
+				<key>modelCode</key>
+				<string>iMac11,1</string>
+				<key>physicalCPUCoresPerPackage</key>
+				<integer>4</integer>
+				<key>platformIdentifier</key>
+				<string>com.apple.platform.macosx</string>
+			</dict>
+			<key>targetArchitecture</key>
+			<string>x86_64</string>
+			<key>targetDevice</key>
+			<dict>
+				<key>modelCode</key>
+				<string>iPhone7,1</string>
+				<key>platformIdentifier</key>
+				<string>com.apple.platform.iphonesimulator</string>
+			</dict>
+		</dict>
 		<key>88A29B2B-19C4-45E9-9FB2-8E3FDCDFDBAC</key>
 		<dict>
 			<key>localComputer</key>
@@ -345,6 +407,37 @@
 				<string>com.apple.platform.iphonesimulator</string>
 			</dict>
 		</dict>
+		<key>8D56AF8E-80BC-4E98-AEF6-5AE78D1E4609</key>
+		<dict>
+			<key>localComputer</key>
+			<dict>
+				<key>busSpeedInMHz</key>
+				<integer>4294</integer>
+				<key>cpuCount</key>
+				<integer>1</integer>
+				<key>cpuKind</key>
+				<string>Intel Core i7</string>
+				<key>cpuSpeedInMHz</key>
+				<integer>2800</integer>
+				<key>logicalCPUCoresPerPackage</key>
+				<integer>8</integer>
+				<key>modelCode</key>
+				<string>iMac11,1</string>
+				<key>physicalCPUCoresPerPackage</key>
+				<integer>4</integer>
+				<key>platformIdentifier</key>
+				<string>com.apple.platform.macosx</string>
+			</dict>
+			<key>targetArchitecture</key>
+			<string>x86_64</string>
+			<key>targetDevice</key>
+			<dict>
+				<key>modelCode</key>
+				<string>iPhone9,1</string>
+				<key>platformIdentifier</key>
+				<string>com.apple.platform.iphonesimulator</string>
+			</dict>
+		</dict>
 		<key>8EC8B9C9-1B4E-4917-BEBE-6FFFDC20454D</key>
 		<dict>
 			<key>localComputer</key>
@@ -372,6 +465,37 @@
 			<dict>
 				<key>modelCode</key>
 				<string>iPad6,8</string>
+				<key>platformIdentifier</key>
+				<string>com.apple.platform.iphonesimulator</string>
+			</dict>
+		</dict>
+		<key>A11DF9E6-A813-45CF-BF8B-CF5BB49D010D</key>
+		<dict>
+			<key>localComputer</key>
+			<dict>
+				<key>busSpeedInMHz</key>
+				<integer>4294</integer>
+				<key>cpuCount</key>
+				<integer>1</integer>
+				<key>cpuKind</key>
+				<string>Intel Core i7</string>
+				<key>cpuSpeedInMHz</key>
+				<integer>2800</integer>
+				<key>logicalCPUCoresPerPackage</key>
+				<integer>8</integer>
+				<key>modelCode</key>
+				<string>iMac11,1</string>
+				<key>physicalCPUCoresPerPackage</key>
+				<integer>4</integer>
+				<key>platformIdentifier</key>
+				<string>com.apple.platform.macosx</string>
+			</dict>
+			<key>targetArchitecture</key>
+			<string>x86_64</string>
+			<key>targetDevice</key>
+			<dict>
+				<key>modelCode</key>
+				<string>iPad6,12</string>
 				<key>platformIdentifier</key>
 				<string>com.apple.platform.iphonesimulator</string>
 			</dict>
@@ -620,6 +744,37 @@
 			<dict>
 				<key>modelCode</key>
 				<string>iPhone8,1</string>
+				<key>platformIdentifier</key>
+				<string>com.apple.platform.iphonesimulator</string>
+			</dict>
+		</dict>
+		<key>F0728743-05DA-4CB9-BE24-03179F65B14B</key>
+		<dict>
+			<key>localComputer</key>
+			<dict>
+				<key>busSpeedInMHz</key>
+				<integer>4294</integer>
+				<key>cpuCount</key>
+				<integer>1</integer>
+				<key>cpuKind</key>
+				<string>Intel Core i7</string>
+				<key>cpuSpeedInMHz</key>
+				<integer>2800</integer>
+				<key>logicalCPUCoresPerPackage</key>
+				<integer>8</integer>
+				<key>modelCode</key>
+				<string>iMac11,1</string>
+				<key>physicalCPUCoresPerPackage</key>
+				<integer>4</integer>
+				<key>platformIdentifier</key>
+				<string>com.apple.platform.macosx</string>
+			</dict>
+			<key>targetArchitecture</key>
+			<string>x86_64</string>
+			<key>targetDevice</key>
+			<dict>
+				<key>modelCode</key>
+				<string>iPad7,1</string>
 				<key>platformIdentifier</key>
 				<string>com.apple.platform.iphonesimulator</string>
 			</dict>
