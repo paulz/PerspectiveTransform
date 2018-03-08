@@ -19,14 +19,30 @@ class PerspectiveSpec: QuickSpec {
             }
 
             context("CGRect.zero") {
+                let perspective = Perspective(CGRect.zero)
+
                 it("should have Not A Number vectors") {
-                    let perspective = Perspective(CGRect.zero)
                     for row in stride(from: 0, to: 2, by: 1) {
                         for col in stride(from: 0, to: 2, by: 1) {
                             expect(perspective.basisVectorsToPointsMap[row][col].isNaN) == true
                             expect(perspective.pointsToBasisVectorsMap[row][col].isNaN) == true
                         }
                     }
+                }
+
+                it("should create Not A Number matrix to itself") {
+                    var values = perspective.projectiveTransform(destination: perspective).flattened()
+                    expect(values[10]) == 1.0
+                    values.remove(at: 10)
+                    expect(values).to(allPass{$0!.isNaN})
+                }
+
+                it("should create Not A Number matrix to a valid perspective") {
+                    let destination = Perspective(CGRect(x: 0, y: 0, width: 1, height: 1))
+                    var values = perspective.projectiveTransform(destination: destination).flattened()
+                    expect(values[10]) == 1.0
+                    values.remove(at: 10)
+                    expect(values).to(allPass{$0!.isNaN})
                 }
             }
 

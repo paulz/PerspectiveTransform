@@ -51,10 +51,14 @@ extension Matrix3x3Type {
     }
 
     private func zNormalized() -> Matrix3x3Type {
-        return normalizationFactor.isZero ? self : (ScalarType.one / normalizationFactor) * self
+        return normalizationFactor * self
     }
 
     private var normalizationFactor: ScalarType {
-        get { return self[Vector3Type.lastIndex, Vector3Type.lastIndex] }
+        get {
+            let zScale = self[Vector3Type.lastIndex, Vector3Type.lastIndex]
+            assert(zScale.isZero == false, "since we use homogenized vectors, z != 0")
+            return ScalarType.one / zScale
+        }
     }
 }
