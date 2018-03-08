@@ -22,7 +22,7 @@ class PerformanceTest: XCTestCase {
         }
     }
 
-    func testAlgrbaic() {
+    func testAlgebraicSolution() {
         let points = [
             CGPoint(x: 108.315837, y: 80.1687782),
             CGPoint(x: 377.282671, y: 41.4352201),

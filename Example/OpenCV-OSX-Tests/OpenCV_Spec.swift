@@ -3,7 +3,7 @@ import Nimble
 
 typealias Transformer = (Quadrilateral,Quadrilateral)->CATransform3D
 
-class OmadaRouterSpecConfiguration: QuickConfiguration {
+class CompareTransformSpecConfiguration: QuickConfiguration {
     override class func configure(_ configuration: Configuration) {
         sharedExamples("transformer") { context in
             var transformer: Transformer!
