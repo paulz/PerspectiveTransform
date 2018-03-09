@@ -99,16 +99,12 @@ class PhotoViewController: UIViewController {
     }
 
     func tranformation() -> CATransform3D {
-        overlayImageView.contentMode = .scaleToFill
-        overlayImageView.frame = CGRect(origin: CGPoint.zero, size: overlayImageView.frame.size)
+        overlayImageView.frame = overlayImageView.bounds
         overlayImageView.resetAnchorPoint()
-        let imageSpace = overlayImageView.contentSpace()
-        let size = containerImageView.bounds.size.applying(CGAffineTransform(scaleX: 1/1.17, y: 1/2.85))
-//        let size = containerImageView.bounds.size.applying(CGAffineTransform(scaleX: 1/2.55, y: 1/1.35))
-        let start = Perspective(CGRect(origin: CGPoint.zero, size: size))
+        let start = Perspective(overlayImageView.frame)
         let transform = FittingPolygon.loadFromSvgFile()
         let points = transform.points.map {
-            return imageSpace.convert($0, from: containerImageView.contentSpace())
+            return containerImageView.contentSpace().convert($0, to: view)
         }
         let destination = Perspective(points)
         print("start:", start)
@@ -119,5 +115,4 @@ class PhotoViewController: UIViewController {
     func applyTranformation() {
         overlayImageView.layer.transform = tranformation()
     }
-
 }

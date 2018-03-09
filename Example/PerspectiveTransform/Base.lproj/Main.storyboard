@@ -123,10 +123,10 @@
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="container.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Sat-yN-TXs">
                                 <rect key="frame" x="0.0" y="20" width="375" height="598"/>
                             </imageView>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="TopLeft" image="sky.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="ESD-2C-OL5">
-                                <rect key="frame" x="302" y="180" width="320" height="240"/>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" image="sky.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="ESD-2C-OL5">
+                                <rect key="frame" x="0.0" y="20" width="200" height="150"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="320" id="0EV-Mr-hdE"/>
+                                    <constraint firstAttribute="width" constant="200" id="0EV-Mr-hdE"/>
                                     <constraint firstAttribute="width" secondItem="ESD-2C-OL5" secondAttribute="height" multiplier="4:3" id="j2Z-Tv-m3a"/>
                                 </constraints>
                             </imageView>
@@ -137,9 +137,9 @@
                             <constraint firstItem="KJh-jd-AO7" firstAttribute="top" secondItem="Sat-yN-TXs" secondAttribute="bottom" id="2yQ-Pf-bYw"/>
                             <constraint firstItem="Sat-yN-TXs" firstAttribute="leading" secondItem="OAe-Sl-oWH" secondAttribute="leading" id="6DQ-pE-dm2"/>
                             <constraint firstItem="Sat-yN-TXs" firstAttribute="top" secondItem="3Q0-A6-ux3" secondAttribute="bottom" id="EpG-ua-7AR"/>
-                            <constraint firstItem="ESD-2C-OL5" firstAttribute="top" secondItem="3Q0-A6-ux3" secondAttribute="bottom" constant="160" id="Jg5-l3-3Oe"/>
+                            <constraint firstItem="ESD-2C-OL5" firstAttribute="top" secondItem="3Q0-A6-ux3" secondAttribute="bottom" id="Jg5-l3-3Oe"/>
                             <constraint firstAttribute="trailing" secondItem="Sat-yN-TXs" secondAttribute="trailing" id="Vsy-h7-i6P"/>
-                            <constraint firstItem="ESD-2C-OL5" firstAttribute="leading" secondItem="OAe-Sl-oWH" secondAttribute="leading" constant="302" id="eB9-rY-jqr"/>
+                            <constraint firstItem="ESD-2C-OL5" firstAttribute="leading" secondItem="OAe-Sl-oWH" secondAttribute="leading" id="eB9-rY-jqr"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="h5q-E4-AbS" appends="YES" id="bob-eg-BCl"/>
