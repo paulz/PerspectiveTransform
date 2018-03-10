@@ -34,11 +34,10 @@ class PanViewController: UIViewController {
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        if startingPerspective == nil {
-            anchorAtZeroPoint()
-        }
         updatePosition()
     }
+
+    // MARK: - Actions
 
     @IBAction func didPan(_ recognizer: UIPanGestureRecognizer) {
         recognizer.panView()
@@ -46,17 +45,24 @@ class PanViewController: UIViewController {
     }
 
     // MARK: - private
-
-    var startingPerspective : Perspective!
-
-    func anchorAtZeroPoint() {
-        transView.resetAnchorPoint()
-        startingPerspective = Perspective(transView.frame)
+    private func updatePosition() {
+        transView.layer.transform = transformToCorners()
     }
 
-    func updatePosition() {
-        let destination = Perspective(cornerViews.map{$0.center})
-        transView.layer.transform = startingPerspective.projectiveTransform(destination: destination)
+    private func transformToCorners() -> CATransform3D {
+        return start.projectiveTransform(destination: destination)
+    }
+
+    private lazy var start : Perspective = createStartingPerspective()
+
+    private func createStartingPerspective() -> Perspective {
+        transView.resetAnchorPoint()
+        return Perspective(transView.frame)
+    }
+
+    private var destination: Perspective {
+        get {
+            return Perspective(cornerViews.map{$0.center})
+        }
     }
 }
-

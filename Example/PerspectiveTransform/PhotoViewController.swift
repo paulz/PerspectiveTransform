@@ -99,8 +99,8 @@ class PhotoViewController: UIViewController {
     }
 
     func tranformation() -> CATransform3D {
-        overlayImageView.frame = overlayImageView.bounds
         overlayImageView.resetAnchorPoint()
+        overlayImageView.frame = overlayImageView.bounds
         let start = Perspective(overlayImageView.frame)
         let transform = FittingPolygon.loadFromSvgFile()
         let points = transform.points.map {
