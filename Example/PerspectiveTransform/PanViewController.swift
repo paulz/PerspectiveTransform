@@ -11,6 +11,16 @@ import QuartzCore
 
 import PerspectiveTransform
 
+extension UIPanGestureRecognizer {
+    func panView() {
+        let controlPoint = view!
+        let pan = translation(in: controlPoint.superview)
+        let transform = CGAffineTransform(translationX: pan.x, y: pan.y)
+        controlPoint.center = controlPoint.center.applying(transform)
+        setTranslation(CGPoint.zero, in:controlPoint.superview)
+    }
+}
+
 class PanViewController: UIViewController {
 
     // MARK: - Outlets
@@ -31,11 +41,7 @@ class PanViewController: UIViewController {
     }
 
     @IBAction func didPan(_ recognizer: UIPanGestureRecognizer) {
-        let controlPoint = recognizer.view!
-        let translation = recognizer.translation(in: controlPoint.superview)
-        let transform = CGAffineTransform(translationX: translation.x, y: translation.y)
-        controlPoint.center = controlPoint.center.applying(transform)
-        recognizer.setTranslation(CGPoint.zero, in:controlPoint.superview)
+        recognizer.panView()
         updatePosition()
     }
 
@@ -49,8 +55,8 @@ class PanViewController: UIViewController {
     }
 
     func updatePosition() {
-        let centers = cornerViews.map{$0.center}
-        transView.layer.transform = startingPerspective.projectiveTransform(destination: Perspective(centers))
+        let destination = Perspective(cornerViews.map{$0.center})
+        transView.layer.transform = startingPerspective.projectiveTransform(destination: destination)
     }
 }
 
