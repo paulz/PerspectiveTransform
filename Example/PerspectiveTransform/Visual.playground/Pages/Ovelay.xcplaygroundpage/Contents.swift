@@ -45,13 +45,23 @@ for (index, point) in points.enumerated() {
 
 let transform = start.projectiveTransform(destination: destination)
 
-UIView.animate(withDuration:1.0,
-               delay: 0,
-               options: [.repeat, .autoreverse],
-               animations: {
-                overlayView.layer.transform = transform
-},
-               completion:nil)
+let frames = 3.0
+let durationOfEach = 1.0 / frames
+var startTime = 0.0
+UIView.animateKeyframes(withDuration: 2, delay: 0, options: [.autoreverse, .repeat], animations: {
+    UIView.addKeyframe(withRelativeStartTime: startTime, relativeDuration: durationOfEach) {
+        overlayView.layer.transform = transform.translateComponent
+    }
+    startTime += durationOfEach
+    UIView.addKeyframe(withRelativeStartTime: startTime, relativeDuration: durationOfEach) {
+        overlayView.layer.transform = transform.translateAndScale
+    }
+    startTime += durationOfEach
+    UIView.addKeyframe(withRelativeStartTime: startTime, relativeDuration: durationOfEach) {
+        overlayView.layer.transform = transform
+    }
+}, completion: nil)
+
 print(transform)
 transform.m13 == 0
 transform.m23 == 0
