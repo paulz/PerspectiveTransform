@@ -27,6 +27,8 @@
 		4B74DB45203BDA070030F41B /* VectorProjectionSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA3D1801C77230A0009B690 /* VectorProjectionSpec.swift */; };
 		4B74DB47203BDA9C0030F41B /* PerformanceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1B1C0C1C7A76C8003F8165 /* PerformanceTest.swift */; };
 		4B74DB48203BDAD70030F41B /* ReferenceImages in Resources */ = {isa = PBXBuildFile; fileRef = 4BA7B14D1C7D710D00933779 /* ReferenceImages */; };
+		4B76EDD8205674CF009492EC /* FittingPolygon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B76EDD7205674CF009492EC /* FittingPolygon.swift */; };
+		4B76EDDA205674F3009492EC /* PolygonLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B76EDD9205674F3009492EC /* PolygonLoader.swift */; };
 		4B97C3C92047B9EF004C9782 /* NimbleSpecHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA3D17C1C771B560009B690 /* NimbleSpecHelper.swift */; };
 		4B97C3CA2047B9F0004C9782 /* NimbleSpecHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA3D17C1C771B560009B690 /* NimbleSpecHelper.swift */; };
 		4B97C3CB2047BA5F004C9782 /* NimbleSpecHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA3D17C1C771B560009B690 /* NimbleSpecHelper.swift */; };
@@ -81,6 +83,8 @@
 		4B74DB2C203BAA1A0030F41B /* CALayerTransformSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CALayerTransformSpec.swift; sourceTree = "<group>"; };
 		4B74DB34203BD9C70030F41B /* Framework Unit Specs.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Framework Unit Specs.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B74DB38203BD9C70030F41B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4B76EDD7205674CF009492EC /* FittingPolygon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FittingPolygon.swift; sourceTree = "<group>"; };
+		4B76EDD9205674F3009492EC /* PolygonLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolygonLoader.swift; sourceTree = "<group>"; };
 		4B84138A201DD90D00D17FE2 /* PerspectiveSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerspectiveSpec.swift; sourceTree = "<group>"; };
 		4B97C3CC2047BAC1004C9782 /* AccelerateSolvePerfTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccelerateSolvePerfTest.swift; sourceTree = "<group>"; };
 		4BA3D17A1C771B2E0009B690 /* ProjectionSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = ProjectionSpec.swift; sourceTree = "<group>"; tabWidth = 4; };
@@ -225,6 +229,8 @@
 				607FACD71AFB9204008FA782 /* PanViewController.swift */,
 				4BDEE37220004185007214F1 /* PhotoViewController.swift */,
 				4BDEE37520005B6D007214F1 /* resetAnchorPoint.swift */,
+				4B76EDD7205674CF009492EC /* FittingPolygon.swift */,
+				4B76EDD9205674F3009492EC /* PolygonLoader.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
 			);
@@ -751,10 +757,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B76EDD8205674CF009492EC /* FittingPolygon.swift in Sources */,
 				607FACD81AFB9204008FA782 /* PanViewController.swift in Sources */,
 				4BDEE37620005B6D007214F1 /* resetAnchorPoint.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 				4BDEE37320004185007214F1 /* PhotoViewController.swift in Sources */,
+				4B76EDDA205674F3009492EC /* PolygonLoader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
