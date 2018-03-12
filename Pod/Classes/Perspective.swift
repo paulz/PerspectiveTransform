@@ -8,15 +8,18 @@
 
 import simd
 
+/**
+    3D Perspective represented on 2D by 4 corners polygon
+ */
 public final class Perspective {
     let vectors : [Vector3Type]
 
-    public init(_ q: Quadrilateral) {
+    init(_ q: Quadrilateral) {
         vectors = q.corners.map{$0.homogeneous3dvector}
     }
 
-    lazy var basisVectorsToPointsMap: Matrix3x3Type = calculateBasisVectorsToPointsMap()
-    lazy var pointsToBasisVectorsMap: Matrix3x3Type = basisVectorsToPointsMap.inverse
+    internal lazy var basisVectorsToPointsMap = calculateBasisVectorsToPointsMap()
+    internal lazy var pointsToBasisVectorsMap = basisVectorsToPointsMap.inverse
 
     internal func projection(to:Perspective) -> Matrix3x3Type {
         return to.basisVectorsToPointsMap * pointsToBasisVectorsMap
@@ -32,6 +35,9 @@ public final class Perspective {
 }
 
 extension Perspective: CustomDebugStringConvertible {
+    /**
+     returns String listing perspective vectors
+     */
     public var debugDescription: String {
         return "Perspective: [\n" +
             vectors.map {String(describing: $0)}.joined(separator: "\n") +

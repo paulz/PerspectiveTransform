@@ -8,7 +8,7 @@
 
 import XCTest
 import Accelerate
-import PerspectiveTransform
+@testable import PerspectiveTransform
 
 @discardableResult
 func solve(_ A:[Double], _ B:[Double] ) -> [Double] {
