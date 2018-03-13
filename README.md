@@ -35,9 +35,9 @@ Translation and scale are represented by their axis components: (tX, tY) and (sX
 
 We can easily see 4 points with container image where the corners of the overlay image should be. In general it is a 4 point polygon. Using an SVG editor we can draw that polygon using container image as a background. Here is preview of the SVG file desribing placement of iPad screen corners
 
-<img src="https://github.com/paulz/PerspectiveTransform/wiki/images/svgAsVisibleOnGitHub.png" alt="SVG polygon" width=50%/>
+[<img src="https://github.com/paulz/PerspectiveTransform/blob/master/Example/Tests/with-overlay.svg" alt="SVG polygon"  width="50%"/>](https://github.com/paulz/PerspectiveTransform/blob/master/Example/Tests/with-overlay.svg)
 
-See [SVG image here](Example/Tests/with-overlay.svg). From those 4 points we can calculate nessesary `CATransform3D` matrix using this `PerspectiveTransform` library.
+Click image to see original SVG file defining `polygon` with `points`. From those 4 points we can calculate nessesary `CATransform3D` matrix using this `PerspectiveTransform` library.
 
 ## Visual Example
 
