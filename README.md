@@ -1,11 +1,12 @@
-# PerspectiveTransform
+# Perspective Transform
 
 [![Build Status](https://travis-ci.org/paulz/PerspectiveTransform.svg?branch=master)](https://travis-ci.org/paulz/PerspectiveTransform)
 [![codecov](https://codecov.io/gh/paulz/PerspectiveTransform/branch/master/graph/badge.svg)](https://codecov.io/gh/paulz/PerspectiveTransform)
 [![Version](https://img.shields.io/cocoapods/v/PerspectiveTransform.svg?style=flat)](http://cocoapods.org/pods/PerspectiveTransform)
 [![License](https://img.shields.io/cocoapods/l/PerspectiveTransform.svg?style=flat)](http://cocoapods.org/pods/PerspectiveTransform)
 [![Platform](https://img.shields.io/cocoapods/p/PerspectiveTransform.svg?style=flat)](http://cocoapods.org/pods/PerspectiveTransform)
-[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+[![Carthage compatible][carthage-badge]](https://github.com/Carthage/Carthage)
+[![Swift][swift-badge]][swift-url]
 
 
 PerspectiveTransform caclulates homogeneous transformation matrix for a view 3D projection in 2D. It can be used to place views within given image visual perspective using Core Animation `CATransform3D` and [`CALayer.tranform`](https://developer.apple.com/documentation/quartzcore/calayer/1410836-transform). Projection is caclulated between source and destination perspectives that are defined by 4 corners, assuming they form a [Quadrilateral](https://en.wikipedia.org/wiki/Quadrilateral).
@@ -114,3 +115,7 @@ Paul Zabelin, http://github.com/paulz
 ## License
 
 PerspectiveTransform is available under the MIT license. See the LICENSE file for more info.
+
+[swift-badge]: https://img.shields.io/badge/Swift-4.0-orange.svg?style=flat
+[swift-url]: https://swift.org
+[carthage-badge]: https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat
