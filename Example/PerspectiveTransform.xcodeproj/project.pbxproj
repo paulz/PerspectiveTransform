@@ -18,6 +18,10 @@
 		4B4009952042575A00B7CE37 /* QuadrilateralCalc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4009942042575A00B7CE37 /* QuadrilateralCalc.swift */; };
 		4B4F23C72051068600482ABF /* CompareMethodsSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4F23C62051068600482ABF /* CompareMethodsSpec.swift */; };
 		4B611DD2204BE66F00F67E1E /* libopencv_imgproc.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B611DD1204BE66F00F67E1E /* libopencv_imgproc.dylib */; };
+		4B714006205E16AC004441A8 /* Gemfile in Resources */ = {isa = PBXBuildFile; fileRef = 4B714005205E16AA004441A8 /* Gemfile */; };
+		4B714008205E16E9004441A8 /* Gemfile.lock in Resources */ = {isa = PBXBuildFile; fileRef = 4B714007205E16E8004441A8 /* Gemfile.lock */; };
+		4B71400A205E21C9004441A8 /* Podfile.lock in Resources */ = {isa = PBXBuildFile; fileRef = 4B714009205E21C9004441A8 /* Podfile.lock */; };
+		4B71400B205E2554004441A8 /* resetAnchorPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDEE37520005B6D007214F1 /* resetAnchorPoint.swift */; };
 		4B74DB3C203BDA070030F41B /* MatrixSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* MatrixSpec.swift */; };
 		4B74DB3E203BDA070030F41B /* CATransform3Dfrom2DSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B58ECF61C79C3C200F1BC00 /* CATransform3Dfrom2DSpec.swift */; };
 		4B74DB3F203BDA070030F41B /* CALayerTransformSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B74DB2C203BAA1A0030F41B /* CALayerTransformSpec.swift */; };
@@ -41,7 +45,6 @@
 		4BDEE37320004185007214F1 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDEE37220004185007214F1 /* PhotoViewController.swift */; };
 		4BDEE374200049CD007214F1 /* with-overlay.svg in Resources */ = {isa = PBXBuildFile; fileRef = 4B2D2E891C7C2E620045FD11 /* with-overlay.svg */; };
 		4BDEE37620005B6D007214F1 /* resetAnchorPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDEE37520005B6D007214F1 /* resetAnchorPoint.swift */; };
-		4BDEE37720005B6D007214F1 /* resetAnchorPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDEE37520005B6D007214F1 /* resetAnchorPoint.swift */; };
 		4BDF64A620469B350022C5F8 /* OpenCVWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4BDF64A520469B350022C5F8 /* OpenCVWrapper.mm */; };
 		4BDF64A820469D140022C5F8 /* libopencv_core.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BDF64A720469D140022C5F8 /* libopencv_core.dylib */; };
 		4BDF64AA20469D670022C5F8 /* libopencv_calib3d.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BDF64A920469D670022C5F8 /* libopencv_calib3d.dylib */; };
@@ -80,6 +83,9 @@
 		4B58ECEE1C799C2A00F1BC00 /* BasisVectorSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasisVectorSpec.swift; sourceTree = "<group>"; };
 		4B58ECF61C79C3C200F1BC00 /* CATransform3Dfrom2DSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CATransform3Dfrom2DSpec.swift; sourceTree = "<group>"; };
 		4B611DD1204BE66F00F67E1E /* libopencv_imgproc.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_imgproc.dylib; path = /usr/local/lib/libopencv_imgproc.dylib; sourceTree = "<absolute>"; };
+		4B714005205E16AA004441A8 /* Gemfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Gemfile; path = ../Gemfile; sourceTree = "<group>"; };
+		4B714007205E16E8004441A8 /* Gemfile.lock */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Gemfile.lock; path = ../Gemfile.lock; sourceTree = "<group>"; };
+		4B714009205E21C9004441A8 /* Podfile.lock */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile.lock; sourceTree = "<group>"; };
 		4B74DB2C203BAA1A0030F41B /* CALayerTransformSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CALayerTransformSpec.swift; sourceTree = "<group>"; };
 		4B74DB34203BD9C70030F41B /* Framework Unit Specs.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Framework Unit Specs.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B74DB38203BD9C70030F41B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -280,10 +286,13 @@
 			isa = PBXGroup;
 			children = (
 				8E6BB167377E7674273158F4 /* PerspectiveTransform.podspec */,
+				4B714009205E21C9004441A8 /* Podfile.lock */,
 				4EA2244D76A3BF4D89D92FD5 /* README.md */,
 				11CFEB20812B9CCCF8BF46FE /* LICENSE */,
 				4BA7B1481C7C7A0600933779 /* .travis.yml */,
 				4B42173E2047AA4100BA73C2 /* codecov.yml */,
+				4B714005205E16AA004441A8 /* Gemfile */,
+				4B714007205E16E8004441A8 /* Gemfile.lock */,
 			);
 			name = "Podspec Metadata";
 			sourceTree = "<group>";
@@ -329,7 +338,6 @@
 				4B74DB31203BD9C70030F41B /* Frameworks */,
 				4B74DB32203BD9C70030F41B /* Resources */,
 				FCE6BFD7A9F24E8CF77EAB98 /* [CP] Embed Pods Frameworks */,
-				BCDEE7876CD4C6760005FFBE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -349,7 +357,6 @@
 				4BDF649820469AB60022C5F8 /* Frameworks */,
 				4BDF649920469AB60022C5F8 /* Resources */,
 				70CD543F2A946479825D6587 /* [CP] Embed Pods Frameworks */,
-				BA22445DE46FCAEE9D82A544 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -369,7 +376,6 @@
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
 				125261E66BB239DB9C4C2C55 /* [CP] Embed Pods Frameworks */,
-				77276E3C570FFFFFC0ABD785 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -389,7 +395,6 @@
 				607FACE21AFB9204008FA782 /* Frameworks */,
 				607FACE31AFB9204008FA782 /* Resources */,
 				36AC9298AFCE04F36DAC2D69 /* [CP] Embed Pods Frameworks */,
-				EE57197235997E705B5FC405 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -414,7 +419,7 @@
 					4B74DB33203BD9C70030F41B = {
 						CreatedOnToolsVersion = 9.2;
 						DevelopmentTeam = 35KC7LV9BL;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 					};
 					4BDF649A20469AB60022C5F8 = {
 						CreatedOnToolsVersion = 9.2;
@@ -423,14 +428,13 @@
 					};
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
-						DevelopmentTeam = 35KC7LV9BL;
 						LastSwiftMigration = 0920;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
 						DevelopmentTeam = 35KC7LV9BL;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
 				};
@@ -475,11 +479,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B71400A205E21C9004441A8 /* Podfile.lock in Resources */,
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
 				4BDEE374200049CD007214F1 /* with-overlay.svg in Resources */,
 				4BA7B1531C816DCE00933779 /* sky.jpg in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
+				4B714008205E16E9004441A8 /* Gemfile.lock in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
+				4B714006205E16AC004441A8 /* Gemfile in Resources */,
 				4BA7B1521C816DCE00933779 /* container.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -565,8 +572,8 @@
 				"${BUILT_PRODUCTS_DIR}/PerspectiveTransform/PerspectiveTransform.framework",
 				"${BUILT_PRODUCTS_DIR}/Nimble-iOS/Nimble.framework",
 				"${BUILT_PRODUCTS_DIR}/Quick-iOS/Quick.framework",
-				"${BUILT_PRODUCTS_DIR}/FBSnapshotTestCase/FBSnapshotTestCase.framework",
 				"${BUILT_PRODUCTS_DIR}/Nimble-Snapshots/Nimble_Snapshots.framework",
+				"${BUILT_PRODUCTS_DIR}/iOSSnapshotTestCase/FBSnapshotTestCase.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -574,8 +581,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PerspectiveTransform.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSnapshotTestCase.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble_Snapshots.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSnapshotTestCase.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -602,21 +609,6 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OpenCV OSX Tests/Pods-OpenCV OSX Tests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		77276E3C570FFFFFC0ABD785 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Example/Pods-Example-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		9B66E136E8DF3B6CAAC69C84 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -635,36 +627,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		BA22445DE46FCAEE9D82A544 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OpenCV OSX Tests/Pods-OpenCV OSX Tests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		BCDEE7876CD4C6760005FFBE /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Example-Framework Unit Specs/Pods-Example-Framework Unit Specs-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		E7809D026223061482F1DD51 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -681,21 +643,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		EE57197235997E705B5FC405 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Example-Framework Unit Specs-Application Specs/Pods-Example-Framework Unit Specs-Application Specs-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FCE6BFD7A9F24E8CF77EAB98 /* [CP] Embed Pods Frameworks */ = {
@@ -729,11 +676,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B97C3C92047B9EF004C9782 /* NimbleSpecHelper.swift in Sources */,
 				4BD09EB320478E5C006D2FA4 /* PerspectiveTransformSpecHelper.swift in Sources */,
 				4B74DB42203BDA070030F41B /* BasisVectorSpec.swift in Sources */,
 				4B74DB41203BDA070030F41B /* PerspectiveSpec.swift in Sources */,
 				4B74DB3E203BDA070030F41B /* CATransform3Dfrom2DSpec.swift in Sources */,
-				4B97C3C92047B9EF004C9782 /* NimbleSpecHelper.swift in Sources */,
 				4B74DB45203BDA070030F41B /* VectorProjectionSpec.swift in Sources */,
 				4B74DB40203BDA070030F41B /* ProjectionSpec.swift in Sources */,
 				4B74DB3C203BDA070030F41B /* MatrixSpec.swift in Sources */,
@@ -771,11 +718,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B97C3CB2047BA5F004C9782 /* NimbleSpecHelper.swift in Sources */,
+				4B71400B205E2554004441A8 /* resetAnchorPoint.swift in Sources */,
 				4B4F23C72051068600482ABF /* CompareMethodsSpec.swift in Sources */,
 				4B2D2E871C7C2AD10045FD11 /* SnapshotSpec.swift in Sources */,
 				4BD09EB220478E5C006D2FA4 /* PerspectiveTransformSpecHelper.swift in Sources */,
 				4B74DB47203BDA9C0030F41B /* PerformanceTest.swift in Sources */,
-				4BDEE37720005B6D007214F1 /* resetAnchorPoint.swift in Sources */,
 				4B4009952042575A00B7CE37 /* QuadrilateralCalc.swift in Sources */,
 				4B97C3CE2047BAD3004C9782 /* AccelerateSolvePerfTest.swift in Sources */,
 			);
@@ -815,10 +762,14 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 34FA62AB6B569D9A52F448AA /* Pods-Example-Framework Unit Specs.debug.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Specs/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = paulz.github.io.Specs;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
@@ -826,10 +777,14 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C69F7B0CA2E10977992AE6A5 /* Pods-Example-Framework Unit Specs.release.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Specs/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = paulz.github.io.Specs;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};
@@ -923,6 +878,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -976,6 +932,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -989,12 +946,16 @@
 			baseConfigurationReference = E995B2887EFE603CA3E1920A /* Pods-Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 35KC7LV9BL;
 				INFOPLIST_FILE = PerspectiveTransform/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
@@ -1003,12 +964,15 @@
 			baseConfigurationReference = 228B48512798F0994ED8E8A0 /* Pods-Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 35KC7LV9BL;
 				INFOPLIST_FILE = PerspectiveTransform/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};
@@ -1016,10 +980,14 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 54B21BF309BC78C5CEC00411 /* Pods-Example-Framework Unit Specs-Application Specs.debug.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Example.app/Example";
 			};
 			name = Debug;
@@ -1028,10 +996,14 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C038AB749DD1F81E4EFD31B4 /* Pods-Example-Framework Unit Specs-Application Specs.release.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Example.app/Example";
 			};
 			name = Release;

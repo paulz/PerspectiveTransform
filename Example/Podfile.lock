@@ -1,18 +1,18 @@
 PODS:
-  - FBSnapshotTestCase (2.1.4):
-    - FBSnapshotTestCase/SwiftSupport (= 2.1.4)
-  - FBSnapshotTestCase/Core (2.1.4)
-  - FBSnapshotTestCase/SwiftSupport (2.1.4):
-    - FBSnapshotTestCase/Core
-  - ImageCoordinateSpace (1.0.4)
-  - Nimble (7.0.3)
-  - Nimble-Snapshots (6.3.0):
-    - Nimble-Snapshots/Core (= 6.3.0)
-  - Nimble-Snapshots/Core (6.3.0):
-    - FBSnapshotTestCase (~> 2.0)
+  - ImageCoordinateSpace (1.0.6)
+  - iOSSnapshotTestCase (3.0.0):
+    - iOSSnapshotTestCase/SwiftSupport (= 3.0.0)
+  - iOSSnapshotTestCase/Core (3.0.0)
+  - iOSSnapshotTestCase/SwiftSupport (3.0.0):
+    - iOSSnapshotTestCase/Core
+  - Nimble (7.1.1)
+  - Nimble-Snapshots (6.7.1):
+    - Nimble-Snapshots/Core (= 6.7.1)
+  - Nimble-Snapshots/Core (6.7.1):
+    - iOSSnapshotTestCase (~> 3.0)
     - Nimble (~> 7.0)
-  - PerspectiveTransform (0.2.0)
-  - Quick (1.2.0)
+  - PerspectiveTransform (0.3.4)
+  - Quick (1.3.0)
 
 DEPENDENCIES:
   - ImageCoordinateSpace
@@ -21,18 +21,26 @@ DEPENDENCIES:
   - PerspectiveTransform (from `../`)
   - Quick
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - ImageCoordinateSpace
+    - iOSSnapshotTestCase
+    - Nimble
+    - Nimble-Snapshots
+    - Quick
+
 EXTERNAL SOURCES:
   PerspectiveTransform:
-    :path: ../
+    :path: "../"
 
 SPEC CHECKSUMS:
-  FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
-  ImageCoordinateSpace: fe599bab8787a7263b3704e185ddb86e63e4b682
-  Nimble: 7f5a9c447a33002645a071bddafbfb24ea70e0ac
-  Nimble-Snapshots: f5459b5b091678dc942d03ec4741cacb58ba4a52
-  PerspectiveTransform: 966b9a8659fcb030c7cb20645482d2e16af78c52
-  Quick: 58d203b1c5e27fff7229c4c1ae445ad7069a7a08
+  ImageCoordinateSpace: 7c527176d9013a04627d9b97366793526a44bb69
+  iOSSnapshotTestCase: 23984ffe05289728d646cbb6a7a10b4fb1c93440
+  Nimble: 391f07782af4b37914f9bd7b2ffbb952731b8202
+  Nimble-Snapshots: 7ab1d5fd4a794b983805c6f6b8091fb00d772754
+  PerspectiveTransform: 74fb4e9fba8d2147476bf8c1591522da4bfb6aeb
+  Quick: 03278013f71aa05fe9ecabc94fbcc6835f1ee76f
 
 PODFILE CHECKSUM: 132430181a4751d5116ba598a0e568bb710e1d1f
 
-COCOAPODS: 1.3.1
+COCOAPODS: 1.5.3
