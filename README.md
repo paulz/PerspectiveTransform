@@ -91,9 +91,9 @@ Since `CALayer` transform is animatable property we can easily define smooth tra
 
 ## Example Project
 
-See [Example iOS project](https://github.com/paulz/PerspectiveTransform/tree/master/Example) illustating animation and interactive tranform within view controllers. 
+See [Example iOS project](https://github.com/paulz/PerspectiveTransform/tree/master/Example) illustating animation and interactive tranform within view controllers. To build Example project run `pod install` within Example folder. 
 
-It also includes [Swift Playground](https://github.com/paulz/PerspectiveTransform/tree/master/Example/PerspectiveTransform/Visual.playground) with couple of live examples.
+Example project also includes [Swift Playground](https://github.com/paulz/PerspectiveTransform/tree/master/Example/PerspectiveTransform/Visual.playground) with couple of live examples.
 
 
 ## Installation
@@ -116,6 +116,6 @@ Paul Zabelin, http://github.com/paulz
 
 PerspectiveTransform is available under the MIT license. See the LICENSE file for more info.
 
-[swift-badge]: https://img.shields.io/badge/Swift-4.0-orange.svg?style=flat
+[swift-badge]: https://img.shields.io/badge/Swift-4.1-orange.svg?style=flat
 [swift-url]: https://swift.org
 [carthage-badge]: https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat
