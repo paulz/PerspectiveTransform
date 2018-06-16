@@ -55,7 +55,7 @@ GEM
     nanaimo (0.2.5)
     nap (1.1.0)
     netrc (0.11.0)
-    ruby-macho (1.1.0)
+    ruby-macho (1.2.0)
     thread_safe (0.3.6)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
@@ -73,4 +73,4 @@ DEPENDENCIES
   cocoapods
 
 BUNDLED WITH
-   1.16.1
+   1.16.2
