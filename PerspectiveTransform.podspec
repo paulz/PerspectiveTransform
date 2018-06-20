@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
   s.author            = { 'Paul Zabelin' => authorPage }
   s.source            = { :git => "#{s.homepage}.git", :tag => s.version.to_s }
   s.social_media_url  = 'https://twitter.com/iospaulz'
-  s.platform          = :ios, '11.0'
+  s.platform          = :ios, '8.0'
   s.swift_version     = '4.0'
   s.source_files      = 'Pod/Classes/**/*'
   s.frameworks        = 'UIKit', 'CoreGraphics', 'QuartzCore'
