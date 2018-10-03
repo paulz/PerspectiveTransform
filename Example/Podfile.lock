@@ -38,7 +38,7 @@ SPEC CHECKSUMS:
   iOSSnapshotTestCase: 23984ffe05289728d646cbb6a7a10b4fb1c93440
   Nimble: 3835ba9f459daa6b347f8a8e110aaae8ca1920a8
   Nimble-Snapshots: 7ab1d5fd4a794b983805c6f6b8091fb00d772754
-  PerspectiveTransform: 74fb4e9fba8d2147476bf8c1591522da4bfb6aeb
+  PerspectiveTransform: 3d6b2162e1cd7db73d75d200290b48a36f7ab853
   Quick: 03278013f71aa05fe9ecabc94fbcc6835f1ee76f
 
 PODFILE CHECKSUM: 132430181a4751d5116ba598a0e568bb710e1d1f
