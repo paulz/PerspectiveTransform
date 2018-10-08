@@ -1,8 +1,7 @@
-language: objective-c
-osx_image: xcode9.4
+language: swift
+osx_image: xcode10
 xcode_workspace: Example/PerspectiveTransform.xcworkspace
 xcode_scheme: Example
-xcode_sdk: iphonesimulator11.4
 git:
   depth: false
 cache:
@@ -11,7 +10,7 @@ bundler_args: --no-deployment
 podfile: Example/Podfile
 matrix:
   include:
-  - env: XCODE_DESNITATION='platform=iOS Simulator,name=iPhone X' CACHE_NAME=iOS
+  - env: XCODE_DESNITATION='platform=iOS Simulator,name=iPhone XS' CACHE_NAME=iOS
     after_success:
       - bash <(curl -s 'https://codecov.io/bash') -Z -J '^PerspectiveTransform$' -X gcov -X fix
     before_deploy:
@@ -74,5 +73,5 @@ script:
   - set -o pipefail && xcodebuild test -workspace "$TRAVIS_XCODE_WORKSPACE" -scheme "$TRAVIS_XCODE_SCHEME" -destination "$XCODE_DESNITATION" | xcpretty -f `xcpretty-travis-formatter`
 env:
   - XCODE_DESNITATION='platform=iOS Simulator,name=iPhone SE' CACHE_NAME=iOS
-  - XCODE_DESNITATION='platform=iOS Simulator,name=iPhone 8 Plus' CACHE_NAME=iOS
-  - XCODE_DESNITATION='platform=iOS Simulator,name=iPhone 8' CACHE_NAME=iOS
+  - XCODE_DESNITATION='platform=iOS Simulator,name=iPhone XS Max' CACHE_NAME=iOS
+  - XCODE_DESNITATION='platform=iOS Simulator,name=iPhone XR' CACHE_NAME=iOS
