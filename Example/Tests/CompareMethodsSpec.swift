@@ -18,7 +18,7 @@ class CompareTransformSpecConfiguration: QuickConfiguration {
             let frame = CGRect(origin: CGPoint.zero,
                                size: CGSize(width: 20, height: 10))
             beforeEach {
-                transformer = context()["method"] as! TransformMatrixCalculator
+                transformer = context()["method"] as? TransformMatrixCalculator
             }
 
             it("should be identity for same start and destination") {

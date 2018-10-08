@@ -9,7 +9,7 @@ class CompareTransformSpecConfiguration: QuickConfiguration {
             var transformer: Transformer!
 
             beforeEach {
-                transformer = context()["method"] as! Transformer
+                transformer = context()["method"] as? Transformer
             }
 
             let start = Quadrilateral(upperLeft: CGPoint.zero,

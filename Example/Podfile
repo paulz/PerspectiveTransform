@@ -1,8 +1,8 @@
 source 'https://github.com/CocoaPods/Specs.git'
 use_frameworks!
+platform :ios, '11.0'
 
 target 'Example' do
-    platform :ios, '11.0'
     inhibit_all_warnings!  # mute warnings from pod dependencies
 
     pod 'PerspectiveTransform', :path => '../'
@@ -14,10 +14,16 @@ target 'Example' do
     end
 
     target 'Framework Unit Specs' do
+        inherit! :search_paths
         SwiftTestingPods()
-        target 'Application Specs' do
-            pod 'Nimble-Snapshots'
-        end
+    end
+
+    target 'Application Specs' do
+        inherit! :search_paths
+        SwiftTestingPods()
+        # use Nimble-Snapshots fork that has Swift 4.2 support
+        pod 'Nimble-Snapshots',
+            :git => 'https://github.com/DRybochkin/Nimble-Snapshots.git'
     end
 
     target 'OpenCV OSX Tests' do
