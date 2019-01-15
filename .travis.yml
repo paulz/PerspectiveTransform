@@ -37,7 +37,7 @@ matrix:
       - for package in opencv xz $(brew deps opencv); do brew link $package || brew install $package; done
       - bundle -v || gem install bundler
     before_script:
-      - pod update --project-directory=Example
+      - bundle exec pod update --project-directory=Example
       - git diff --exit-code # Outdated Cocoapods dependencies found, please run 'pod update' and checkin changes
       - bundle update
       - git diff --exit-code # Outdated Bundle dependencies found, please run 'bundle update' and checkin changes
@@ -70,7 +70,7 @@ matrix:
 before_install:
   - ls -la Example/Pods/Manifest.lock && echo Skipping cocoapods repo update || git -C ~/.cocoapods/repos/master/ pull --quiet
 script:
-  - set -o pipefail && xcodebuild test -workspace "$TRAVIS_XCODE_WORKSPACE" -scheme "$TRAVIS_XCODE_SCHEME" -destination "$XCODE_DESNITATION" | xcpretty -f `xcpretty-travis-formatter`
+  - set -o pipefail && xcodebuild test -workspace "$TRAVIS_XCODE_WORKSPACE" -scheme "$TRAVIS_XCODE_SCHEME" -destination "$XCODE_DESNITATION" | bundle exec xcpretty -f `xcpretty-travis-formatter`
 env:
   - XCODE_DESNITATION='platform=iOS Simulator,name=iPhone SE' CACHE_NAME=iOS
   - XCODE_DESNITATION='platform=iOS Simulator,name=iPhone XS Max' CACHE_NAME=iOS
