@@ -41,7 +41,7 @@ matrix:
       - git diff --exit-code # Outdated Cocoapods dependencies found, please run 'pod update' and checkin changes
       - bundle update
       - git diff --exit-code # Outdated Bundle dependencies found, please run 'bundle update' and checkin changes
-      - pod lib lint
+      - pod lib lint --allow-warnings # To ignore warning Quick/Sources/Quick/Behavior.swift:7:21: warning: static declarations are implicitly 'final'; use 'public' instead of 'open'
     cache:
       bundler: true
       cocoapods: true
