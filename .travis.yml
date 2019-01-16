@@ -41,7 +41,7 @@ matrix:
       - git diff --exit-code # Outdated Cocoapods dependencies found, please run 'pod update' and checkin changes
       - bundle update
       - git diff --exit-code # Outdated Bundle dependencies found, please run 'bundle update' and checkin changes
-      - bundle exec pod lib lint --allow-warnings # To ignore warning Quick/Sources/Quick/Behavior.swift:7:21: warning: static declarations are implicitly 'final'; use 'public' instead of 'open'
+      - bundle exec pod lib lint --allow-warnings || bundle exec pod lib lint --allow-warnings --verbose
     cache:
       bundler: true
       cocoapods: true
@@ -74,4 +74,3 @@ script:
 env:
   - XCODE_DESNITATION='platform=iOS Simulator,name=iPhone SE' CACHE_NAME=iOS
   - XCODE_DESNITATION='platform=iOS Simulator,name=iPhone XS Max' CACHE_NAME=iOS
-  - XCODE_DESNITATION='platform=iOS Simulator,name=iPhone XR' CACHE_NAME=iOS
