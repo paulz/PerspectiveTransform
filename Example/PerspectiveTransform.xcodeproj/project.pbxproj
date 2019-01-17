@@ -84,7 +84,7 @@
 		4B58ECEE1C799C2A00F1BC00 /* BasisVectorSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasisVectorSpec.swift; sourceTree = "<group>"; };
 		4B58ECF61C79C3C200F1BC00 /* CATransform3Dfrom2DSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CATransform3Dfrom2DSpec.swift; sourceTree = "<group>"; };
 		4B611DD1204BE66F00F67E1E /* libopencv_imgproc.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_imgproc.dylib; path = /usr/local/lib/libopencv_imgproc.dylib; sourceTree = "<absolute>"; };
-		4B714005205E16AA004441A8 /* Gemfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Gemfile; path = ../Gemfile; sourceTree = "<group>"; };
+		4B714005205E16AA004441A8 /* Gemfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; fileEncoding = 4; name = Gemfile; path = ../Gemfile; sourceTree = "<group>"; };
 		4B714007205E16E8004441A8 /* Gemfile.lock */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Gemfile.lock; path = ../Gemfile.lock; sourceTree = "<group>"; };
 		4B714009205E21C9004441A8 /* Podfile.lock */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile.lock; sourceTree = "<group>"; };
 		4B74DB2C203BAA1A0030F41B /* CALayerTransformSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CALayerTransformSpec.swift; sourceTree = "<group>"; };
