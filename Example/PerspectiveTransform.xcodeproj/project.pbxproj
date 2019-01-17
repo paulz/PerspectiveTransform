@@ -802,7 +802,10 @@
 					"$(inherited)",
 					/usr/local/lib/,
 				);
-				HEADER_SEARCH_PATHS = /usr/local/include;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/usr/local/include,
+				);
 				INFOPLIST_FILE = "OpenCV-OSX-Tests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				LIBRARY_SEARCH_PATHS = /usr/local/lib/;
@@ -822,7 +825,10 @@
 					"$(inherited)",
 					/usr/local/lib/,
 				);
-				HEADER_SEARCH_PATHS = /usr/local/include;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/usr/local/include,
+				);
 				INFOPLIST_FILE = "OpenCV-OSX-Tests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				LIBRARY_SEARCH_PATHS = /usr/local/lib/;
