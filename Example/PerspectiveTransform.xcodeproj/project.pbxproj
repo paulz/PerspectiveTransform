@@ -526,7 +526,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Example/Pods-Example-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Example/Pods-Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/ImageCoordinateSpace/ImageCoordinateSpace.framework",
 				"${BUILT_PRODUCTS_DIR}/PerspectiveTransform/PerspectiveTransform.framework",
 			);
@@ -537,7 +537,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Example/Pods-Example-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Example/Pods-Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		322B09DBD13B9D13E4388083 /* [CP] Check Pods Manifest.lock */ = {
@@ -582,7 +582,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Application Specs/Pods-Application Specs-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Application Specs/Pods-Application Specs-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Nimble-iOS/Nimble.framework",
 				"${BUILT_PRODUCTS_DIR}/Quick-iOS/Quick.framework",
 				"${BUILT_PRODUCTS_DIR}/Nimble-Snapshots/Nimble_Snapshots.framework",
@@ -597,7 +597,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Application Specs/Pods-Application Specs-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Application Specs/Pods-Application Specs-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		70CD543F2A946479825D6587 /* [CP] Embed Pods Frameworks */ = {
@@ -606,7 +606,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-OpenCV OSX Tests/Pods-OpenCV OSX Tests-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-OpenCV OSX Tests/Pods-OpenCV OSX Tests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Nimble-macOS/Nimble.framework",
 				"${BUILT_PRODUCTS_DIR}/Quick-macOS/Quick.framework",
 			);
@@ -617,7 +617,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OpenCV OSX Tests/Pods-OpenCV OSX Tests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OpenCV OSX Tests/Pods-OpenCV OSX Tests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		9B66E136E8DF3B6CAAC69C84 /* [CP] Check Pods Manifest.lock */ = {
@@ -662,7 +662,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Framework Unit Specs/Pods-Framework Unit Specs-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Framework Unit Specs/Pods-Framework Unit Specs-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Nimble-iOS/Nimble.framework",
 				"${BUILT_PRODUCTS_DIR}/Quick-iOS/Quick.framework",
 			);
@@ -673,7 +673,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Framework Unit Specs/Pods-Framework Unit Specs-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Framework Unit Specs/Pods-Framework Unit Specs-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
