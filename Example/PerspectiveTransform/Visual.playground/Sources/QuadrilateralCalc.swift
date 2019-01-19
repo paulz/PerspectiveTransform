@@ -84,7 +84,7 @@ public class QuadrilateralCalc {
 
         let kEpsilon = CGFloat(0.0001)
 
-        if fabs(i) < kEpsilon {
+        if abs(i) < kEpsilon {
             i = kEpsilon * (i > 0 ? 1.0 : -1.0);
         }
 
