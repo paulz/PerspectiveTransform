@@ -1,7 +1,8 @@
 language: swift
 osx_image: xcode10.1
 xcode_workspace: Example/PerspectiveTransform.xcworkspace
-xcode_scheme: OpenCV Tests
+xcode_scheme: Example
+xcode_sdk: iphonesimulator12.1
 git:
   depth: false
 cache:
@@ -10,6 +11,25 @@ bundler_args: --no-deployment
 podfile: Example/Podfile
 matrix:
   include:
+  - env: XCODE_DESNITATION='platform=iOS Simulator,name=iPhone X' CACHE_NAME=iOS
+    after_success:
+      - bash <(curl -s 'https://codecov.io/bash') -Z -J '^PerspectiveTransform$' -X gcov -X fix
+    before_deploy:
+      - brew update > /dev/null
+      - brew outdated carthage || brew upgrade carthage
+      - carthage build --no-skip-current --platform iOS
+      - carthage archive PerspectiveTransform
+    deploy:
+      provider: releases
+      prerelease: true
+      name: "Release $TRAVIS_TAG"
+      body: "Travis build: https://travis-ci.org/${TRAVIS_REPO_SLUG}/jobs/${TRAVIS_JOB_ID} started by ${TRAVIS_EVENT_TYPE}"
+      skip_cleanup: true
+      api_key:
+        secure: ExLdab+b683kS0ctKKvkT0TeAFWccr+J1l58KnqIcYJdYntd66DhHsPM3p3v3fNDpfGZRycYKEn7X7Twdwl9mxDn0m4FSDQabKXgOm0J9h+zb56NGsEGXlAbOx+1yNuud+DGQ8sYiyHzERpCwfIHifT07/0Joax19+oxava3bjU+jfRa8Gt1HduV6gHYOY6ttUw22+G+5YI0sswKCd5cE3LvXBcuk3ApLW0mIn+AXLvTZonGHsuIK7Yd9yJ8MxsbdM+vXIL6b63mlPXCdL4EfmVK0VoRSsrgoq5ntV2xZJ2rhV74OifdADzqNv+TMZ+Gjy4dfMaOFI5BvoZumS5PZX2iMLHPSsgodWyb6al4NeDbglZB/DXk6I94ZrGi9cmljF1A44kAA4+TYazwE7qccffiNiCc7VHFsyDAWVrHWhCRSXmEOVMyl+FhhVv7UVJ7ZDQK5C6vPIyF6FESWv1WFiH8M/viKFD2cvW8agbas9L+CCo0Y/2TUNN2qQYUWFkzUDUDt+IgufjLCAKaosZgU7gtuGvDAYsqIgo0wyWD0+j0LMcRVn+Ply8xxKCTPXzf5RnOGu0LiW1p7ASGv+0z7wU0pGsXActqya/emDwwpNhgJ2htdYw0QLttScR8pmfRQQguOwRoDrcOR1ic8j3gTE9E4ljpYfpVfZo4dRi0a7c=
+      file: PerspectiveTransform.framework.zip
+      on:
+        tags: true
   - xcode_scheme: OpenCV Tests
     env: XCODE_DESNITATION='platform=macos' CACHE_NAME=macOS
     before_install:
@@ -22,7 +42,7 @@ matrix:
       - git diff --exit-code # Outdated Cocoapods dependencies found, please run 'pod update' and checkin changes
       - bundle update
       - git diff --exit-code # Outdated Bundle dependencies found, please run 'bundle update' and checkin changes
-      - bundle exec pod lib lint --allow-warnings || bundle exec pod lib lint --allow-warnings --verbose
+      - bundle exec pod lib lint --allow-warnings || bundle exec pod lib lint --allow-warnings --verbose --no-clean
     cache:
       bundler: true
       cocoapods: true
@@ -51,4 +71,8 @@ matrix:
 before_install:
   - ls -la Example/Pods/Manifest.lock && echo Skipping cocoapods repo update || git -C ~/.cocoapods/repos/master/ pull --quiet
 script:
-  - set -o pipefail && xcodebuild clean test -workspace "$TRAVIS_XCODE_WORKSPACE" -scheme "$TRAVIS_XCODE_SCHEME" -destination "$XCODE_DESNITATION" | bundle exec xcpretty -f `bundle exec xcpretty-travis-formatter`
+  - set -o pipefail && xcodebuild test -workspace "$TRAVIS_XCODE_WORKSPACE" -scheme "$TRAVIS_XCODE_SCHEME" -destination "$XCODE_DESNITATION" | bundle exec xcpretty -f `bundle exec xcpretty-travis-formatter`
+env:
+  - XCODE_DESNITATION='platform=iOS Simulator,name=iPhone SE' CACHE_NAME=iOS
+  - XCODE_DESNITATION='platform=iOS Simulator,name=iPhone 8 Plus' CACHE_NAME=iOS
+  - XCODE_DESNITATION='platform=iOS Simulator,name=iPhone 8' CACHE_NAME=iOS
