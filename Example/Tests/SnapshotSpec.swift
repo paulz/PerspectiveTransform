@@ -6,7 +6,7 @@ import Foundation
 
 class SnapshotSpec: QuickSpec {
     override func spec() {
-        let runningOnTravisCI = ProcessInfo().environment["TRAVIS"] != nil
+        let runningOnTravisCI = ProcessInfo.processInfo.environment["TRAVIS"] != nil
 
         describe("overlay placement") {
             var containerView : UIView!
@@ -41,13 +41,15 @@ class SnapshotSpec: QuickSpec {
 
                 it("should look as expected") {
                     var tolerance: CGFloat = 0
+                    let toleranceMessage = "\(100 * tolerance)% tolerance"
                     if runningOnTravisCI {
                         // For some unknown reason there is a 30% difference in image when running on Travis CI
                         // TODO: use pixel difference tolerance instead of image percent tolerance when it becomes available
                         // see https://github.com/uber/ios-snapshot-test-case/blob/master/CHANGELOG.md#502
                         tolerance = 0.3
+                        fputs("images compared on travis with \(toleranceMessage)\n".uppercased(), __stderrp)
                     }
-                    expect(containerView).to(haveValidSnapshot(usesDrawRect:true, tolerance:tolerance))
+                    expect(containerView).to(haveValidSnapshot(usesDrawRect:true, tolerance:tolerance), description: "should match with \(toleranceMessage)")
                 }
             }
         }
