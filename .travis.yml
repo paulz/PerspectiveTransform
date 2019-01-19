@@ -36,7 +36,6 @@ matrix:
       - ls -la Example/Pods/Manifest.lock && echo Skipping cocoapods repo update || git -C ~/.cocoapods/repos/master/ pull --quiet
       - yes | pip2 uninstall numpy > /dev/null
       - for package in opencv xz $(brew deps opencv); do brew link $package || brew install $package; done
-      - bundle -v || gem install bundler
     before_script:
       - bundle exec pod update --project-directory=Example
       - git diff --exit-code # Outdated Cocoapods dependencies found, please run 'pod update' and checkin changes
@@ -70,6 +69,8 @@ matrix:
         - /usr/local/Cellar/xz
 before_install:
   - ls -la Example/Pods/Manifest.lock && echo Skipping cocoapods repo update || git -C ~/.cocoapods/repos/master/ pull --quiet
+before_script:
+  - bundle -v || gem install bundler
 script:
   - set -o pipefail && xcodebuild test -workspace "$TRAVIS_XCODE_WORKSPACE" -scheme "$TRAVIS_XCODE_SCHEME" -destination "$XCODE_DESNITATION" | bundle exec xcpretty -f `bundle exec xcpretty-travis-formatter`
 env:
