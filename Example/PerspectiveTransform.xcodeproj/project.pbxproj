@@ -15,9 +15,6 @@
 		4B4009952042575A00B7CE37 /* QuadrilateralCalc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4009942042575A00B7CE37 /* QuadrilateralCalc.swift */; };
 		4B4F23C72051068600482ABF /* CompareMethodsSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4F23C62051068600482ABF /* CompareMethodsSpec.swift */; };
 		4B611DD2204BE66F00F67E1E /* libopencv_imgproc.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B611DD1204BE66F00F67E1E /* libopencv_imgproc.dylib */; };
-		4B714006205E16AC004441A8 /* Gemfile in Resources */ = {isa = PBXBuildFile; fileRef = 4B714005205E16AA004441A8 /* Gemfile */; };
-		4B714008205E16E9004441A8 /* Gemfile.lock in Resources */ = {isa = PBXBuildFile; fileRef = 4B714007205E16E8004441A8 /* Gemfile.lock */; };
-		4B71400A205E21C9004441A8 /* Podfile.lock in Resources */ = {isa = PBXBuildFile; fileRef = 4B714009205E21C9004441A8 /* Podfile.lock */; };
 		4B71400B205E2554004441A8 /* resetAnchorPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDEE37520005B6D007214F1 /* resetAnchorPoint.swift */; };
 		4B74DB3C203BDA070030F41B /* MatrixSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* MatrixSpec.swift */; };
 		4B74DB3E203BDA070030F41B /* CATransform3Dfrom2DSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B58ECF61C79C3C200F1BC00 /* CATransform3Dfrom2DSpec.swift */; };
@@ -491,14 +488,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4B71400A205E21C9004441A8 /* Podfile.lock in Resources */,
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
 				4BDEE374200049CD007214F1 /* with-overlay.svg in Resources */,
 				4BA7B1531C816DCE00933779 /* sky.jpg in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
-				4B714008205E16E9004441A8 /* Gemfile.lock in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
-				4B714006205E16AC004441A8 /* Gemfile in Resources */,
 				4BA7B1521C816DCE00933779 /* container.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
