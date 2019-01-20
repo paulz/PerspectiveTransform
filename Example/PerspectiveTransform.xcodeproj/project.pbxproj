@@ -898,6 +898,7 @@
 				"OTHER_CODE_SIGN_FLAGS[sdk=iphonesimulator*]" = "--dryrun";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 			};
