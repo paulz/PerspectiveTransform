@@ -15,7 +15,7 @@ class SnapshotSpec: QuickSpec {
             func testImage(named imageName: String) -> UIImage {
                 return UIImage(named: imageName,
                                in: Bundle(for: type(of: self)),
-                               compatibleWith: nil)!
+                               compatibleWith: nil) ?? UIImage(named: imageName)!
             }
 
             beforeEach {

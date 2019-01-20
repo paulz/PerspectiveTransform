@@ -12,15 +12,9 @@
 		2730A0B614D13EA1CCE1A00F /* Pods_Application_Specs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D68EC4CFB120A0F67522E682 /* Pods_Application_Specs.framework */; };
 		342B00522DA6D1EFC03A6762 /* Pods_Framework_Unit_Specs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC4D5DEE200A8C3910E7FFEC /* Pods_Framework_Unit_Specs.framework */; };
 		4B2D2E871C7C2AD10045FD11 /* SnapshotSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2D2E861C7C2AD10045FD11 /* SnapshotSpec.swift */; };
-		4B2D2E8A1C7C2E620045FD11 /* container.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4B2D2E881C7C2E620045FD11 /* container.jpg */; };
-		4B2D2E8B1C7C2E620045FD11 /* with-overlay.svg in Resources */ = {isa = PBXBuildFile; fileRef = 4B2D2E891C7C2E620045FD11 /* with-overlay.svg */; };
-		4B2D2E8D1C7C323D0045FD11 /* sky.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4B2D2E8C1C7C323D0045FD11 /* sky.jpg */; };
 		4B4009952042575A00B7CE37 /* QuadrilateralCalc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4009942042575A00B7CE37 /* QuadrilateralCalc.swift */; };
 		4B4F23C72051068600482ABF /* CompareMethodsSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4F23C62051068600482ABF /* CompareMethodsSpec.swift */; };
 		4B611DD2204BE66F00F67E1E /* libopencv_imgproc.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B611DD1204BE66F00F67E1E /* libopencv_imgproc.dylib */; };
-		4B714006205E16AC004441A8 /* Gemfile in Resources */ = {isa = PBXBuildFile; fileRef = 4B714005205E16AA004441A8 /* Gemfile */; };
-		4B714008205E16E9004441A8 /* Gemfile.lock in Resources */ = {isa = PBXBuildFile; fileRef = 4B714007205E16E8004441A8 /* Gemfile.lock */; };
-		4B71400A205E21C9004441A8 /* Podfile.lock in Resources */ = {isa = PBXBuildFile; fileRef = 4B714009205E21C9004441A8 /* Podfile.lock */; };
 		4B71400B205E2554004441A8 /* resetAnchorPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDEE37520005B6D007214F1 /* resetAnchorPoint.swift */; };
 		4B74DB3C203BDA070030F41B /* MatrixSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* MatrixSpec.swift */; };
 		4B74DB3E203BDA070030F41B /* CATransform3Dfrom2DSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B58ECF61C79C3C200F1BC00 /* CATransform3Dfrom2DSpec.swift */; };
@@ -59,6 +53,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		4BDDED4B21F4744A00DBEEC6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 607FACC81AFB9204008FA782 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 607FACCF1AFB9204008FA782;
+			remoteInfo = Example;
+		};
 		607FACE61AFB9204008FA782 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 607FACC81AFB9204008FA782 /* Project object */;
@@ -72,7 +73,6 @@
 		11113536029990C3837DC464 /* Pods_Example_Framework_Unit_Specs_Application_Specs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Example_Framework_Unit_Specs_Application_Specs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		11CFEB20812B9CCCF8BF46FE /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		228B48512798F0994ED8E8A0 /* Pods-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-Example/Pods-Example.release.xcconfig"; sourceTree = "<group>"; };
-		34FA62AB6B569D9A52F448AA /* Pods-Example-Framework Unit Specs.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example-Framework Unit Specs.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Example-Framework Unit Specs/Pods-Example-Framework Unit Specs.debug.xcconfig"; sourceTree = "<group>"; };
 		4B1B1C0C1C7A76C8003F8165 /* PerformanceTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerformanceTest.swift; sourceTree = "<group>"; };
 		4B2D2E861C7C2AD10045FD11 /* SnapshotSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotSpec.swift; sourceTree = "<group>"; };
 		4B2D2E881C7C2E620045FD11 /* container.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = container.jpg; sourceTree = "<group>"; };
@@ -101,30 +101,26 @@
 		4BA3D1871C7995630009B690 /* Visual.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Visual.playground; sourceTree = "<group>"; };
 		4BA7B1481C7C7A0600933779 /* .travis.yml */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = text; name = .travis.yml; path = ../.travis.yml; sourceTree = "<group>"; tabWidth = 2; };
 		4BA7B14D1C7D710D00933779 /* ReferenceImages */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ReferenceImages; sourceTree = "<group>"; };
+		4BB87C3B21F468CA00DABAED /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		4BB87C3C21F468CA00DABAED /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4BD09EAD2046B05A006D2FA4 /* OpenCV_Spec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenCV_Spec.swift; sourceTree = "<group>"; };
 		4BD09EB120478E5C006D2FA4 /* PerspectiveTransformSpecHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerspectiveTransformSpecHelper.swift; sourceTree = "<group>"; };
 		4BDEE37220004185007214F1 /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		4BDEE37520005B6D007214F1 /* resetAnchorPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = resetAnchorPoint.swift; sourceTree = "<group>"; };
 		4BDF649B20469AB60022C5F8 /* OpenCV OSX Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "OpenCV OSX Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		4BDF649F20469AB60022C5F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4BDF64A420469B350022C5F8 /* OpenCVWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenCVWrapper.h; sourceTree = "<group>"; };
 		4BDF64A520469B350022C5F8 /* OpenCVWrapper.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = OpenCVWrapper.mm; sourceTree = "<group>"; };
 		4BDF64A720469D140022C5F8 /* libopencv_core.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_core.dylib; path = /usr/local/lib/libopencv_core.dylib; sourceTree = "<absolute>"; };
 		4BDF64A920469D670022C5F8 /* libopencv_calib3d.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_calib3d.dylib; path = /usr/local/lib/libopencv_calib3d.dylib; sourceTree = "<absolute>"; };
-		4BDF64AB2046A0D70022C5F8 /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		4BDF64AD2046A9ED0022C5F8 /* OpenCVPerformanceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenCVPerformanceTest.swift; sourceTree = "<group>"; };
 		4EA2244D76A3BF4D89D92FD5 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		54B21BF309BC78C5CEC00411 /* Pods-Example-Framework Unit Specs-Application Specs.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example-Framework Unit Specs-Application Specs.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Example-Framework Unit Specs-Application Specs/Pods-Example-Framework Unit Specs-Application Specs.debug.xcconfig"; sourceTree = "<group>"; };
 		57383F949B701D249C213BA5 /* Pods-Framework Unit Specs.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Framework Unit Specs.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Framework Unit Specs/Pods-Framework Unit Specs.debug.xcconfig"; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		607FACD71AFB9204008FA782 /* PanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanViewController.swift; sourceTree = "<group>"; };
-		607FACDA1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		607FACDC1AFB9204008FA782 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		607FACE51AFB9204008FA782 /* Application Specs.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Application Specs.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* MatrixSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatrixSpec.swift; sourceTree = "<group>"; };
 		617247F9B099C3D5CB91A2ED /* Pods-OpenCV OSX Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenCV OSX Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-OpenCV OSX Tests/Pods-OpenCV OSX Tests.release.xcconfig"; sourceTree = "<group>"; };
 		721CC0614FD58A36175FD42A /* Pods-Application Specs.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Application Specs.release.xcconfig"; path = "Pods/Target Support Files/Pods-Application Specs/Pods-Application Specs.release.xcconfig"; sourceTree = "<group>"; };
@@ -132,8 +128,6 @@
 		8E6BB167377E7674273158F4 /* PerspectiveTransform.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = PerspectiveTransform.podspec; path = ../PerspectiveTransform.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		919054717C611905702F21D4 /* Pods-Framework Unit Specs.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Framework Unit Specs.release.xcconfig"; path = "Pods/Target Support Files/Pods-Framework Unit Specs/Pods-Framework Unit Specs.release.xcconfig"; sourceTree = "<group>"; };
 		93D7504B2DA9FA64B67B1FF4 /* Pods_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C038AB749DD1F81E4EFD31B4 /* Pods-Example-Framework Unit Specs-Application Specs.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example-Framework Unit Specs-Application Specs.release.xcconfig"; path = "Pods/Target Support Files/Pods-Example-Framework Unit Specs-Application Specs/Pods-Example-Framework Unit Specs-Application Specs.release.xcconfig"; sourceTree = "<group>"; };
-		C69F7B0CA2E10977992AE6A5 /* Pods-Example-Framework Unit Specs.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example-Framework Unit Specs.release.xcconfig"; path = "Pods/Target Support Files/Pods-Example-Framework Unit Specs/Pods-Example-Framework Unit Specs.release.xcconfig"; sourceTree = "<group>"; };
 		D68EC4CFB120A0F67522E682 /* Pods_Application_Specs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Application_Specs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC2906A4BDCD866CC05F3E5D /* Pods_OpenCV_OSX_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OpenCV_OSX_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1B3ED151E3AD11B7B241E66 /* Pods-Application Specs.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Application Specs.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Application Specs/Pods-Application Specs.debug.xcconfig"; sourceTree = "<group>"; };
@@ -202,10 +196,8 @@
 			children = (
 				4BD09EAD2046B05A006D2FA4 /* OpenCV_Spec.swift */,
 				4BDF64AD2046A9ED0022C5F8 /* OpenCVPerformanceTest.swift */,
-				4BDF649F20469AB60022C5F8 /* Info.plist */,
 				4BDF64A420469B350022C5F8 /* OpenCVWrapper.h */,
 				4BDF64A520469B350022C5F8 /* OpenCVWrapper.mm */,
-				4BDF64AB2046A0D70022C5F8 /* Bridging-Header.h */,
 			);
 			path = "OpenCV-OSX-Tests";
 			sourceTree = "<group>";
@@ -284,7 +276,6 @@
 				4B2D2E881C7C2E620045FD11 /* container.jpg */,
 				4B2D2E8C1C7C323D0045FD11 /* sky.jpg */,
 				4B2D2E891C7C2E620045FD11 /* with-overlay.svg */,
-				607FACEA1AFB9204008FA782 /* Info.plist */,
 				4BA3D17C1C771B560009B690 /* NimbleSpecHelper.swift */,
 				4BD09EB120478E5C006D2FA4 /* PerspectiveTransformSpecHelper.swift */,
 			);
@@ -327,10 +318,6 @@
 			children = (
 				E995B2887EFE603CA3E1920A /* Pods-Example.debug.xcconfig */,
 				228B48512798F0994ED8E8A0 /* Pods-Example.release.xcconfig */,
-				34FA62AB6B569D9A52F448AA /* Pods-Example-Framework Unit Specs.debug.xcconfig */,
-				C69F7B0CA2E10977992AE6A5 /* Pods-Example-Framework Unit Specs.release.xcconfig */,
-				54B21BF309BC78C5CEC00411 /* Pods-Example-Framework Unit Specs-Application Specs.debug.xcconfig */,
-				C038AB749DD1F81E4EFD31B4 /* Pods-Example-Framework Unit Specs-Application Specs.release.xcconfig */,
 				F60BDD4F7314FB618651526D /* Pods-OpenCV OSX Tests.debug.xcconfig */,
 				617247F9B099C3D5CB91A2ED /* Pods-OpenCV OSX Tests.release.xcconfig */,
 				E1B3ED151E3AD11B7B241E66 /* Pods-Application Specs.debug.xcconfig */,
@@ -357,6 +344,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				4BDDED4C21F4744A00DBEEC6 /* PBXTargetDependency */,
 			);
 			name = "Framework Unit Specs";
 			productName = Specs;
@@ -433,8 +421,6 @@
 				TargetAttributes = {
 					4B74DB33203BD9C70030F41B = {
 						CreatedOnToolsVersion = 9.2;
-						DevelopmentTeam = 35KC7LV9BL;
-						ProvisioningStyle = Automatic;
 					};
 					4BDF649A20469AB60022C5F8 = {
 						CreatedOnToolsVersion = 9.2;
@@ -444,12 +430,9 @@
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
 						LastSwiftMigration = 0920;
-						ProvisioningStyle = Automatic;
 					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
-						DevelopmentTeam = 35KC7LV9BL;
-						ProvisioningStyle = Automatic;
 						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
 				};
@@ -460,7 +443,6 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
-				Base,
 			);
 			mainGroup = 607FACC71AFB9204008FA782;
 			productRefGroup = 607FACD11AFB9204008FA782 /* Products */;
@@ -494,14 +476,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4B71400A205E21C9004441A8 /* Podfile.lock in Resources */,
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
 				4BDEE374200049CD007214F1 /* with-overlay.svg in Resources */,
 				4BA7B1531C816DCE00933779 /* sky.jpg in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
-				4B714008205E16E9004441A8 /* Gemfile.lock in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
-				4B714006205E16AC004441A8 /* Gemfile in Resources */,
 				4BA7B1521C816DCE00933779 /* container.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -511,9 +490,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B74DB48203BDAD70030F41B /* ReferenceImages in Resources */,
-				4B2D2E8D1C7C323D0045FD11 /* sky.jpg in Resources */,
-				4B2D2E8A1C7C2E620045FD11 /* container.jpg in Resources */,
-				4B2D2E8B1C7C2E620045FD11 /* with-overlay.svg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -663,11 +639,15 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Framework Unit Specs/Pods-Framework Unit Specs-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ImageCoordinateSpace/ImageCoordinateSpace.framework",
+				"${BUILT_PRODUCTS_DIR}/PerspectiveTransform/PerspectiveTransform.framework",
 				"${BUILT_PRODUCTS_DIR}/Nimble-iOS/Nimble.framework",
 				"${BUILT_PRODUCTS_DIR}/Quick-iOS/Quick.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImageCoordinateSpace.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PerspectiveTransform.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
 			);
@@ -739,6 +719,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		4BDDED4C21F4744A00DBEEC6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 607FACCF1AFB9204008FA782 /* Example */;
+			targetProxy = 4BDDED4B21F4744A00DBEEC6 /* PBXContainerItemProxy */;
+		};
 		607FACE71AFB9204008FA782 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 607FACCF1AFB9204008FA782 /* Example */;
@@ -750,7 +735,7 @@
 		607FACD91AFB9204008FA782 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				607FACDA1AFB9204008FA782 /* Base */,
+				4BB87C3C21F468CA00DABAED /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -758,7 +743,7 @@
 		607FACDE1AFB9204008FA782 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				607FACDF1AFB9204008FA782 /* Base */,
+				4BB87C3B21F468CA00DABAED /* en */,
 			);
 			name = LaunchScreen.xib;
 			sourceTree = "<group>";
@@ -770,13 +755,9 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 57383F949B701D249C213BA5 /* Pods-Framework Unit Specs.debug.xcconfig */;
 			buildSettings = {
-				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Specs/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = paulz.github.io.Specs;
+				PRODUCT_BUNDLE_IDENTIFIER = "paulz.github.io.PerspectiveTransform.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Example.app/Example";
 			};
 			name = Debug;
 		};
@@ -784,13 +765,9 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 919054717C611905702F21D4 /* Pods-Framework Unit Specs.release.xcconfig */;
 			buildSettings = {
-				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Specs/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = paulz.github.io.Specs;
+				PRODUCT_BUNDLE_IDENTIFIER = "paulz.github.io.PerspectiveTransform.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Example.app/Example";
 			};
 			name = Release;
 		};
@@ -798,22 +775,17 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F60BDD4F7314FB618651526D /* Pods-OpenCV OSX Tests.debug.xcconfig */;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					/usr/local/lib/,
-				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/usr/local/include,
 				);
-				INFOPLIST_FILE = "OpenCV-OSX-Tests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				INFOPLIST_FILE = Specs/Info.plist;
 				LIBRARY_SEARCH_PATHS = /usr/local/lib/;
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				PRODUCT_BUNDLE_IDENTIFIER = paulz.github.io.OpenCVMacTests;
+				PRODUCT_BUNDLE_IDENTIFIER = "paulz.github.io.PerspectiveTransform.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
-				SWIFT_OBJC_BRIDGING_HEADER = "OpenCV-OSX-Tests/Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "OpenCV-OSX-Tests/OpenCVWrapper.h";
 			};
 			name = Debug;
 		};
@@ -821,22 +793,17 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 617247F9B099C3D5CB91A2ED /* Pods-OpenCV OSX Tests.release.xcconfig */;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					/usr/local/lib/,
-				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/usr/local/include,
 				);
-				INFOPLIST_FILE = "OpenCV-OSX-Tests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				INFOPLIST_FILE = Specs/Info.plist;
 				LIBRARY_SEARCH_PATHS = /usr/local/lib/;
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				PRODUCT_BUNDLE_IDENTIFIER = paulz.github.io.OpenCVMacTests;
+				PRODUCT_BUNDLE_IDENTIFIER = "paulz.github.io.PerspectiveTransform.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
-				SWIFT_OBJC_BRIDGING_HEADER = "OpenCV-OSX-Tests/Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "OpenCV-OSX-Tests/OpenCVWrapper.h";
 			};
 			name = Release;
 		};
@@ -871,10 +838,6 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphonesimulator*]" = "";
-				"CODE_SIGN_STYLE[sdk=iphonesimulator*]" = Manual;
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -895,9 +858,9 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				ONLY_ACTIVE_ARCH = YES;
-				"OTHER_CODE_SIGN_FLAGS[sdk=iphonesimulator*]" = "--dryrun";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_COMPILATION_MODE = singlefile;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 			};
@@ -934,8 +897,6 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -961,13 +922,10 @@
 			baseConfigurationReference = E995B2887EFE603CA3E1920A /* Pods-Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 35KC7LV9BL;
 				INFOPLIST_FILE = PerspectiveTransform/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = org.rav.PerspectiveTransform.Example;
+				PRODUCT_BUNDLE_IDENTIFIER = "paulz.github.io.PerspectiveTransform.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
@@ -976,13 +934,10 @@
 			baseConfigurationReference = 228B48512798F0994ED8E8A0 /* Pods-Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 35KC7LV9BL;
 				INFOPLIST_FILE = PerspectiveTransform/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = org.rav.PerspectiveTransform.Example;
+				PRODUCT_BUNDLE_IDENTIFIER = "paulz.github.io.PerspectiveTransform.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};
@@ -990,12 +945,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E1B3ED151E3AD11B7B241E66 /* Pods-Application Specs.debug.xcconfig */;
 			buildSettings = {
-				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = Tests/Info.plist;
+				INFOPLIST_FILE = Specs/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = "paulz.github.io.PerspectiveTransform.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Example.app/Example";
 			};
 			name = Debug;
@@ -1004,12 +957,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 721CC0614FD58A36175FD42A /* Pods-Application Specs.release.xcconfig */;
 			buildSettings = {
-				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = Tests/Info.plist;
+				INFOPLIST_FILE = Specs/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = "paulz.github.io.PerspectiveTransform.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Example.app/Example";
 			};
 			name = Release;

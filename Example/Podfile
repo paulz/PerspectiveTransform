@@ -2,20 +2,19 @@ source 'https://github.com/CocoaPods/Specs.git'
 use_frameworks!
 platform :ios, '11.0'
 
-target 'Example' do
-    inhibit_all_warnings!  # mute warnings from pod dependencies
-
+def DevelopmentPodAndDependencies
     pod 'PerspectiveTransform', :path => '../'
     pod 'ImageCoordinateSpace'
+end
+
+
+target 'Example' do
+
+    DevelopmentPodAndDependencies()
 
     def SwiftTestingPods
-        pod 'Quick'
+        pod 'Quick', :inhibit_warnings => true
         pod 'Nimble'
-    end
-
-    target 'Framework Unit Specs' do
-        inherit! :search_paths
-        SwiftTestingPods()
     end
 
     target 'Application Specs' do
@@ -28,4 +27,9 @@ target 'Example' do
         platform :osx, '10.13'
         SwiftTestingPods()
     end
+end
+
+target 'Framework Unit Specs' do
+    DevelopmentPodAndDependencies()
+    SwiftTestingPods()
 end
