@@ -112,7 +112,6 @@
 		4BDF64A520469B350022C5F8 /* OpenCVWrapper.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = OpenCVWrapper.mm; sourceTree = "<group>"; };
 		4BDF64A720469D140022C5F8 /* libopencv_core.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_core.dylib; path = /usr/local/lib/libopencv_core.dylib; sourceTree = "<absolute>"; };
 		4BDF64A920469D670022C5F8 /* libopencv_calib3d.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_calib3d.dylib; path = /usr/local/lib/libopencv_calib3d.dylib; sourceTree = "<absolute>"; };
-		4BDF64AB2046A0D70022C5F8 /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		4BDF64AD2046A9ED0022C5F8 /* OpenCVPerformanceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenCVPerformanceTest.swift; sourceTree = "<group>"; };
 		4EA2244D76A3BF4D89D92FD5 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		57383F949B701D249C213BA5 /* Pods-Framework Unit Specs.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Framework Unit Specs.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Framework Unit Specs/Pods-Framework Unit Specs.debug.xcconfig"; sourceTree = "<group>"; };
@@ -199,7 +198,6 @@
 				4BDF64AD2046A9ED0022C5F8 /* OpenCVPerformanceTest.swift */,
 				4BDF64A420469B350022C5F8 /* OpenCVWrapper.h */,
 				4BDF64A520469B350022C5F8 /* OpenCVWrapper.mm */,
-				4BDF64AB2046A0D70022C5F8 /* Bridging-Header.h */,
 			);
 			path = "OpenCV-OSX-Tests";
 			sourceTree = "<group>";
@@ -787,7 +785,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "paulz.github.io.PerspectiveTransform.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
-				SWIFT_OBJC_BRIDGING_HEADER = "OpenCV-OSX-Tests/Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "OpenCV-OSX-Tests/OpenCVWrapper.h";
 			};
 			name = Debug;
 		};
@@ -805,7 +803,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "paulz.github.io.PerspectiveTransform.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
-				SWIFT_OBJC_BRIDGING_HEADER = "OpenCV-OSX-Tests/Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "OpenCV-OSX-Tests/OpenCVWrapper.h";
 			};
 			name = Release;
 		};
