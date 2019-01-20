@@ -108,7 +108,6 @@
 		4BDEE37220004185007214F1 /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		4BDEE37520005B6D007214F1 /* resetAnchorPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = resetAnchorPoint.swift; sourceTree = "<group>"; };
 		4BDF649B20469AB60022C5F8 /* OpenCV OSX Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "OpenCV OSX Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		4BDF649F20469AB60022C5F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4BDF64A420469B350022C5F8 /* OpenCVWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenCVWrapper.h; sourceTree = "<group>"; };
 		4BDF64A520469B350022C5F8 /* OpenCVWrapper.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = OpenCVWrapper.mm; sourceTree = "<group>"; };
 		4BDF64A720469D140022C5F8 /* libopencv_core.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_core.dylib; path = /usr/local/lib/libopencv_core.dylib; sourceTree = "<absolute>"; };
@@ -123,7 +122,6 @@
 		607FACD71AFB9204008FA782 /* PanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanViewController.swift; sourceTree = "<group>"; };
 		607FACDC1AFB9204008FA782 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		607FACE51AFB9204008FA782 /* Application Specs.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Application Specs.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* MatrixSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatrixSpec.swift; sourceTree = "<group>"; };
 		617247F9B099C3D5CB91A2ED /* Pods-OpenCV OSX Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenCV OSX Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-OpenCV OSX Tests/Pods-OpenCV OSX Tests.release.xcconfig"; sourceTree = "<group>"; };
 		721CC0614FD58A36175FD42A /* Pods-Application Specs.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Application Specs.release.xcconfig"; path = "Pods/Target Support Files/Pods-Application Specs/Pods-Application Specs.release.xcconfig"; sourceTree = "<group>"; };
@@ -199,7 +197,6 @@
 			children = (
 				4BD09EAD2046B05A006D2FA4 /* OpenCV_Spec.swift */,
 				4BDF64AD2046A9ED0022C5F8 /* OpenCVPerformanceTest.swift */,
-				4BDF649F20469AB60022C5F8 /* Info.plist */,
 				4BDF64A420469B350022C5F8 /* OpenCVWrapper.h */,
 				4BDF64A520469B350022C5F8 /* OpenCVWrapper.mm */,
 				4BDF64AB2046A0D70022C5F8 /* Bridging-Header.h */,
@@ -281,7 +278,6 @@
 				4B2D2E881C7C2E620045FD11 /* container.jpg */,
 				4B2D2E8C1C7C323D0045FD11 /* sky.jpg */,
 				4B2D2E891C7C2E620045FD11 /* with-overlay.svg */,
-				607FACEA1AFB9204008FA782 /* Info.plist */,
 				4BA3D17C1C771B560009B690 /* NimbleSpecHelper.swift */,
 				4BD09EB120478E5C006D2FA4 /* PerspectiveTransformSpecHelper.swift */,
 			);
@@ -789,7 +785,7 @@
 					"$(inherited)",
 					/usr/local/include,
 				);
-				INFOPLIST_FILE = "OpenCV-OSX-Tests/Info.plist";
+				INFOPLIST_FILE = Specs/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				LIBRARY_SEARCH_PATHS = /usr/local/lib/;
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
@@ -812,7 +808,7 @@
 					"$(inherited)",
 					/usr/local/include,
 				);
-				INFOPLIST_FILE = "OpenCV-OSX-Tests/Info.plist";
+				INFOPLIST_FILE = Specs/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				LIBRARY_SEARCH_PATHS = /usr/local/lib/;
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
@@ -876,8 +872,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_ENABLE_BATCH_MODE = NO;
+				SWIFT_COMPILATION_MODE = singlefile;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 			};
@@ -928,7 +923,6 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				SDKROOT = iphoneos;
-				SWIFT_ENABLE_BATCH_MODE = NO;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 4.2;
 				VALIDATE_PRODUCT = YES;
@@ -965,7 +959,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E1B3ED151E3AD11B7B241E66 /* Pods-Application Specs.debug.xcconfig */;
 			buildSettings = {
-				INFOPLIST_FILE = Tests/Info.plist;
+				INFOPLIST_FILE = Specs/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -977,7 +971,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 721CC0614FD58A36175FD42A /* Pods-Application Specs.release.xcconfig */;
 			buildSettings = {
-				INFOPLIST_FILE = Tests/Info.plist;
+				INFOPLIST_FILE = Specs/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
