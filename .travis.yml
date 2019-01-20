@@ -10,9 +10,12 @@ cache:
   cocoapods: true
 bundler_args: --no-deployment
 podfile: Example/Podfile
+stages:
+  - test
+  - deploy
 matrix:
   include:
-  - stage: Deploy
+  - stage: deploy
     script:
       - brew update > /dev/null
       - brew outdated carthage || brew upgrade carthage
@@ -30,7 +33,8 @@ matrix:
       on:
         repo: paulz/PerspectiveTransform
         tags: true
-  - name: Check dependencies up-to-date, Lint
+  - stage: test
+    name: Check dependencies up-to-date, Lint
     env: CACHE_NAME=iOS
     script:
         - bundle exec pod update --project-directory=Example
@@ -38,11 +42,13 @@ matrix:
         - bundle update
         - git diff --exit-code # Outdated Bundle dependencies found, please run 'bundle update' and checkin changes
         - bundle exec pod lib lint || bundle exec pod lib lint --verbose --no-clean
-  - name: With coverage report
+  - stage: test
+    name: With coverage report
     env: XCODE_DESNITATION='platform=iOS Simulator,name=iPhone X' CACHE_NAME=iOS
     after_success:
       - bash <(curl -s 'https://codecov.io/bash') -Z -J '^PerspectiveTransform$' -X gcov -X fix
-  - name: Mac OS
+  - stage: test
+    name: Mac OS
     xcode_scheme: OpenCV Tests
     env: XCODE_DESNITATION='platform=macos' CACHE_NAME=macOS
     before_script:
