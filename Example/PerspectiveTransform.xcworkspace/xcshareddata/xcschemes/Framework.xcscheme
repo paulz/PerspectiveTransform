@@ -17,7 +17,7 @@
                BlueprintIdentifier = "506EC09FBBBCE0959C2471EEE770C328"
                BuildableName = "PerspectiveTransform.framework"
                BlueprintName = "PerspectiveTransform"
-               ReferencedContainer = "container:Pods.xcodeproj">
+               ReferencedContainer = "container:Pods/Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -35,7 +35,7 @@
             BlueprintIdentifier = "506EC09FBBBCE0959C2471EEE770C328"
             BuildableName = "PerspectiveTransform.framework"
             BlueprintName = "PerspectiveTransform"
-            ReferencedContainer = "container:Pods.xcodeproj">
+            ReferencedContainer = "container:Pods/Pods.xcodeproj">
          </BuildableReference>
       </CodeCoverageTargets>
       <Testables>
@@ -46,7 +46,7 @@
                BlueprintIdentifier = "4B74DB33203BD9C70030F41B"
                BuildableName = "Framework Unit Specs.xctest"
                BlueprintName = "Framework Unit Specs"
-               ReferencedContainer = "container:../PerspectiveTransform.xcodeproj">
+               ReferencedContainer = "container:PerspectiveTransform.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -56,7 +56,7 @@
             BlueprintIdentifier = "506EC09FBBBCE0959C2471EEE770C328"
             BuildableName = "PerspectiveTransform.framework"
             BlueprintName = "PerspectiveTransform"
-            ReferencedContainer = "container:Pods.xcodeproj">
+            ReferencedContainer = "container:Pods/Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -78,7 +78,7 @@
             BlueprintIdentifier = "506EC09FBBBCE0959C2471EEE770C328"
             BuildableName = "PerspectiveTransform.framework"
             BlueprintName = "PerspectiveTransform"
-            ReferencedContainer = "container:Pods.xcodeproj">
+            ReferencedContainer = "container:Pods/Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -96,7 +96,7 @@
             BlueprintIdentifier = "506EC09FBBBCE0959C2471EEE770C328"
             BuildableName = "PerspectiveTransform.framework"
             BlueprintName = "PerspectiveTransform"
-            ReferencedContainer = "container:Pods.xcodeproj">
+            ReferencedContainer = "container:Pods/Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>
