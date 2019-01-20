@@ -1,0 +1,26 @@
+version: 2
+jobs:
+  build:
+    macos:
+      xcode: '10.1.0'
+    shell: /bin/bash --login -o pipefail
+    environment:
+      DESTINATION: 'platform=iOS Simulator,name=iPhone XS'
+    steps:
+      - checkout
+      - run: xcrun simctl boot "iPhone XS" # Warm up Simulator, see https://circleci.com/blog/xcodebuild-exit-code-65-what-it-is-and-how-to-solve-for-ios-and-macos-builds/
+      - run: open '/Applications/Xcode.app/Contents/Developer/Applications/Simulator.app'
+      - run:
+          name: Install Gems
+          command: bundle install
+      - run:
+          name: Install CocoaPods
+          command: pushd Example && pod install
+      - run:
+          name: Build and run tests
+          command: xcodebuild -workspace PerspectiveTransform.xcworkspace -scheme Example test -destination "$DESTINATION" | xcpretty -r junit
+      - store_test_results:
+          path: build/reports
+      - store_artifacts:
+          path: build/reports
+          destination: xcodebuild-test-results
