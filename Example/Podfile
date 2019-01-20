@@ -21,9 +21,7 @@ target 'Example' do
     target 'Application Specs' do
         inherit! :search_paths
         SwiftTestingPods()
-        # use Nimble-Snapshots fork that has Swift 4.2 support
-        pod 'Nimble-Snapshots',
-            :git => 'https://github.com/DRybochkin/Nimble-Snapshots.git'
+        pod 'Nimble-Snapshots'
     end
 
     target 'OpenCV OSX Tests' do
