@@ -12,7 +12,6 @@
 		2730A0B614D13EA1CCE1A00F /* Pods_Application_Specs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D68EC4CFB120A0F67522E682 /* Pods_Application_Specs.framework */; };
 		342B00522DA6D1EFC03A6762 /* Pods_Framework_Unit_Specs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC4D5DEE200A8C3910E7FFEC /* Pods_Framework_Unit_Specs.framework */; };
 		4B2D2E871C7C2AD10045FD11 /* SnapshotSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2D2E861C7C2AD10045FD11 /* SnapshotSpec.swift */; };
-		4B2D2E8B1C7C2E620045FD11 /* with-overlay.svg in Resources */ = {isa = PBXBuildFile; fileRef = 4B2D2E891C7C2E620045FD11 /* with-overlay.svg */; };
 		4B4009952042575A00B7CE37 /* QuadrilateralCalc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4009942042575A00B7CE37 /* QuadrilateralCalc.swift */; };
 		4B4F23C72051068600482ABF /* CompareMethodsSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4F23C62051068600482ABF /* CompareMethodsSpec.swift */; };
 		4B611DD2204BE66F00F67E1E /* libopencv_imgproc.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B611DD1204BE66F00F67E1E /* libopencv_imgproc.dylib */; };
@@ -509,7 +508,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B74DB48203BDAD70030F41B /* ReferenceImages in Resources */,
-				4B2D2E8B1C7C2E620045FD11 /* with-overlay.svg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
