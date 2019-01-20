@@ -66,7 +66,6 @@
 		11113536029990C3837DC464 /* Pods_Example_Framework_Unit_Specs_Application_Specs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Example_Framework_Unit_Specs_Application_Specs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		11CFEB20812B9CCCF8BF46FE /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		228B48512798F0994ED8E8A0 /* Pods-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-Example/Pods-Example.release.xcconfig"; sourceTree = "<group>"; };
-		34FA62AB6B569D9A52F448AA /* Pods-Example-Framework Unit Specs.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example-Framework Unit Specs.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Example-Framework Unit Specs/Pods-Example-Framework Unit Specs.debug.xcconfig"; sourceTree = "<group>"; };
 		4B1B1C0C1C7A76C8003F8165 /* PerformanceTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerformanceTest.swift; sourceTree = "<group>"; };
 		4B2D2E861C7C2AD10045FD11 /* SnapshotSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotSpec.swift; sourceTree = "<group>"; };
 		4B2D2E881C7C2E620045FD11 /* container.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = container.jpg; sourceTree = "<group>"; };
@@ -110,7 +109,6 @@
 		4BDF64AB2046A0D70022C5F8 /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		4BDF64AD2046A9ED0022C5F8 /* OpenCVPerformanceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenCVPerformanceTest.swift; sourceTree = "<group>"; };
 		4EA2244D76A3BF4D89D92FD5 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		54B21BF309BC78C5CEC00411 /* Pods-Example-Framework Unit Specs-Application Specs.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example-Framework Unit Specs-Application Specs.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Example-Framework Unit Specs-Application Specs/Pods-Example-Framework Unit Specs-Application Specs.debug.xcconfig"; sourceTree = "<group>"; };
 		57383F949B701D249C213BA5 /* Pods-Framework Unit Specs.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Framework Unit Specs.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Framework Unit Specs/Pods-Framework Unit Specs.debug.xcconfig"; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -126,8 +124,6 @@
 		8E6BB167377E7674273158F4 /* PerspectiveTransform.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = PerspectiveTransform.podspec; path = ../PerspectiveTransform.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		919054717C611905702F21D4 /* Pods-Framework Unit Specs.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Framework Unit Specs.release.xcconfig"; path = "Pods/Target Support Files/Pods-Framework Unit Specs/Pods-Framework Unit Specs.release.xcconfig"; sourceTree = "<group>"; };
 		93D7504B2DA9FA64B67B1FF4 /* Pods_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C038AB749DD1F81E4EFD31B4 /* Pods-Example-Framework Unit Specs-Application Specs.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example-Framework Unit Specs-Application Specs.release.xcconfig"; path = "Pods/Target Support Files/Pods-Example-Framework Unit Specs-Application Specs/Pods-Example-Framework Unit Specs-Application Specs.release.xcconfig"; sourceTree = "<group>"; };
-		C69F7B0CA2E10977992AE6A5 /* Pods-Example-Framework Unit Specs.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example-Framework Unit Specs.release.xcconfig"; path = "Pods/Target Support Files/Pods-Example-Framework Unit Specs/Pods-Example-Framework Unit Specs.release.xcconfig"; sourceTree = "<group>"; };
 		D68EC4CFB120A0F67522E682 /* Pods_Application_Specs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Application_Specs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC2906A4BDCD866CC05F3E5D /* Pods_OpenCV_OSX_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OpenCV_OSX_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1B3ED151E3AD11B7B241E66 /* Pods-Application Specs.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Application Specs.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Application Specs/Pods-Application Specs.debug.xcconfig"; sourceTree = "<group>"; };
@@ -321,10 +317,6 @@
 			children = (
 				E995B2887EFE603CA3E1920A /* Pods-Example.debug.xcconfig */,
 				228B48512798F0994ED8E8A0 /* Pods-Example.release.xcconfig */,
-				34FA62AB6B569D9A52F448AA /* Pods-Example-Framework Unit Specs.debug.xcconfig */,
-				C69F7B0CA2E10977992AE6A5 /* Pods-Example-Framework Unit Specs.release.xcconfig */,
-				54B21BF309BC78C5CEC00411 /* Pods-Example-Framework Unit Specs-Application Specs.debug.xcconfig */,
-				C038AB749DD1F81E4EFD31B4 /* Pods-Example-Framework Unit Specs-Application Specs.release.xcconfig */,
 				F60BDD4F7314FB618651526D /* Pods-OpenCV OSX Tests.debug.xcconfig */,
 				617247F9B099C3D5CB91A2ED /* Pods-OpenCV OSX Tests.release.xcconfig */,
 				E1B3ED151E3AD11B7B241E66 /* Pods-Application Specs.debug.xcconfig */,
