@@ -12,15 +12,8 @@ bundler_args: --no-deployment
 podfile: Example/Podfile
 matrix:
   include:
-  - name: Check dependencies up-to-date, Lint, Deploy
-    env: CACHE_NAME=iOS
+  - stage: Deploy
     script:
-        - bundle exec pod update --project-directory=Example
-        - git diff --exit-code # Outdated Cocoapods dependencies found, please run 'pod update' and checkin changes
-        - bundle update
-        - git diff --exit-code # Outdated Bundle dependencies found, please run 'bundle update' and checkin changes
-        - bundle exec pod lib lint || bundle exec pod lib lint --verbose --no-clean
-    before_deploy:
       - brew update > /dev/null
       - brew outdated carthage || brew upgrade carthage
       - carthage build --no-skip-current --platform iOS
@@ -37,6 +30,14 @@ matrix:
       on:
         repo: paulz/PerspectiveTransform
         tags: true
+  - name: Check dependencies up-to-date, Lint
+    env: CACHE_NAME=iOS
+    script:
+        - bundle exec pod update --project-directory=Example
+        - git diff --exit-code # Outdated Cocoapods dependencies found, please run 'pod update' and checkin changes
+        - bundle update
+        - git diff --exit-code # Outdated Bundle dependencies found, please run 'bundle update' and checkin changes
+        - bundle exec pod lib lint || bundle exec pod lib lint --verbose --no-clean
   - name: With coverage report
     env: XCODE_DESNITATION='platform=iOS Simulator,name=iPhone X' CACHE_NAME=iOS
     after_success:
