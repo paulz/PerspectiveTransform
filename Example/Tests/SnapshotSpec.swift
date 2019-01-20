@@ -12,15 +12,9 @@ class SnapshotSpec: QuickSpec {
             var containerView : UIView!
             var overlayView : UIView!
 
-            func testImage(named imageName: String) -> UIImage {
-                return UIImage(named: imageName,
-                               in: Bundle(for: type(of: self)),
-                               compatibleWith: nil)!
-            }
-
             beforeEach {
-                containerView = UIImageView(image: testImage(named: "container.jpg"))
-                overlayView = UIImageView(image: testImage(named: "sky.jpg"))
+                containerView = UIImageView(image: UIImage(named: "container.jpg"))
+                overlayView = UIImageView(image: UIImage(named: "sky.jpg"))
                 containerView.addSubview(overlayView)
             }
 
