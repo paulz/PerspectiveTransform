@@ -6,6 +6,7 @@ xcode_sdk: iphonesimulator12.1
 git:
   depth: false
 cache:
+  bundler: true
   cocoapods: true
 bundler_args: --no-deployment
 podfile: Example/Podfile
@@ -32,17 +33,14 @@ matrix:
         tags: true
   - xcode_scheme: OpenCV Tests
     env: XCODE_DESNITATION='platform=macos' CACHE_NAME=macOS
-    before_install:
-      - bundle -v || gem install bundler
-      - ls -la Example/Pods/Manifest.lock && echo Skipping cocoapods repo update || git -C ~/.cocoapods/repos/master/ pull --quiet
-      - yes | pip2 uninstall numpy > /dev/null # Fix Conflict between numpy installed by pip and brew, see https://github.com/travis-ci/travis-ci/issues/6688
-      - for package in opencv xz $(brew deps opencv); do brew link $package || brew install $package; done
     before_script:
       - bundle exec pod update --project-directory=Example
       - git diff --exit-code # Outdated Cocoapods dependencies found, please run 'pod update' and checkin changes
       - bundle update
       - git diff --exit-code # Outdated Bundle dependencies found, please run 'bundle update' and checkin changes
       - bundle exec pod lib lint || bundle exec pod lib lint --verbose --no-clean
+      - yes | pip2 uninstall numpy > /dev/null # Fix Conflict between numpy installed by pip and brew, see https://github.com/travis-ci/travis-ci/issues/6688
+      - for package in opencv xz $(brew deps opencv); do brew link $package || brew install $package; done
     cache:
       bundler: true
       cocoapods: true
