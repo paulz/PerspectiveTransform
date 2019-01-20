@@ -777,10 +777,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F60BDD4F7314FB618651526D /* Pods-OpenCV OSX Tests.debug.xcconfig */;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					/usr/local/lib/,
-				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/usr/local/include,
@@ -799,10 +795,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 617247F9B099C3D5CB91A2ED /* Pods-OpenCV OSX Tests.release.xcconfig */;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					/usr/local/lib/,
-				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/usr/local/include,
