@@ -16,8 +16,9 @@ stages:
 matrix:
   include:
   - stage: deploy
-    name: Cartage build, archive, deploy
+    name: Cartage build, archive, deploy on tag
     env:
+    cache: false
     script:
       - brew update > /dev/null
       - brew outdated carthage || brew upgrade carthage
