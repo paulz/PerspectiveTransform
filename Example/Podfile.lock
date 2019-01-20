@@ -5,7 +5,7 @@ PODS:
   - iOSSnapshotTestCase/Core (4.0.1)
   - iOSSnapshotTestCase/SwiftSupport (4.0.1):
     - iOSSnapshotTestCase/Core
-  - Nimble (7.3.1)
+  - Nimble (7.3.2)
   - Nimble-Snapshots (6.8.1):
     - Nimble-Snapshots/Core (= 6.8.1)
   - Nimble-Snapshots/Core (6.8.1):
@@ -42,7 +42,7 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   ImageCoordinateSpace: 7c527176d9013a04627d9b97366793526a44bb69
   iOSSnapshotTestCase: f3b2b7e606fe03fdbe49af84316bd235df32dc44
-  Nimble: 04f732da099ea4d153122aec8c2a88fd0c7219ae
+  Nimble: 5e94a8cacb355943c6c87198035dc4adbb0f10e4
   Nimble-Snapshots: 796bcade6eff10804282742947a7901e9be0495d
   PerspectiveTransform: 4e823871c7fde15b776610dbdf102a3b00adb077
   Quick: 2623cb30d7a7f41ca62f684f679586558f483d46
