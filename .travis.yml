@@ -27,9 +27,10 @@ matrix:
       body: "Travis build: https://travis-ci.org/${TRAVIS_REPO_SLUG}/jobs/${TRAVIS_JOB_ID} started by ${TRAVIS_EVENT_TYPE}"
       skip_cleanup: true
       api_key:
-        secure: ExLdab+b683kS0ctKKvkT0TeAFWccr+J1l58KnqIcYJdYntd66DhHsPM3p3v3fNDpfGZRycYKEn7X7Twdwl9mxDn0m4FSDQabKXgOm0J9h+zb56NGsEGXlAbOx+1yNuud+DGQ8sYiyHzERpCwfIHifT07/0Joax19+oxava3bjU+jfRa8Gt1HduV6gHYOY6ttUw22+G+5YI0sswKCd5cE3LvXBcuk3ApLW0mIn+AXLvTZonGHsuIK7Yd9yJ8MxsbdM+vXIL6b63mlPXCdL4EfmVK0VoRSsrgoq5ntV2xZJ2rhV74OifdADzqNv+TMZ+Gjy4dfMaOFI5BvoZumS5PZX2iMLHPSsgodWyb6al4NeDbglZB/DXk6I94ZrGi9cmljF1A44kAA4+TYazwE7qccffiNiCc7VHFsyDAWVrHWhCRSXmEOVMyl+FhhVv7UVJ7ZDQK5C6vPIyF6FESWv1WFiH8M/viKFD2cvW8agbas9L+CCo0Y/2TUNN2qQYUWFkzUDUDt+IgufjLCAKaosZgU7gtuGvDAYsqIgo0wyWD0+j0LMcRVn+Ply8xxKCTPXzf5RnOGu0LiW1p7ASGv+0z7wU0pGsXActqya/emDwwpNhgJ2htdYw0QLttScR8pmfRQQguOwRoDrcOR1ic8j3gTE9E4ljpYfpVfZo4dRi0a7c=
+        secure: FNzPtWJ1wxgE3LITPT4CSTKboxeJF5tO0SznHMC/pswZeJ7KESZFsRZE0BiPalHT58o7sjW5bjI5GjjTnwLNHC1GpHdH1VRtIPqZF0K6WSfjeZoK5uEURWE3nego4J+h0C9DoQLdvjKwkW9Zw4OvIL1ZLhrqzbix6dcL0M1EGcoavDgkx8c5dsrtOAgafI3owp/RO1JQhPIzKrMwtLNNVHVJthU2ZmOrEngnJhN58hOu+tlcvYmIQvcgqF3S/zUAfsTictc5SiVEezH+lXiDKO361vh5InEMv/+Y9qXM/hZGG1PGdLGGwnVQ9jw2U4SfXNGrudnSxDzbyXLUxE0jeTadX+J9QHOQTaHv2uRevZI4Ok1YFQi/8L+/QSOBSQ1hAeLtvpJ2mGCW5iETbW3KhgShgvexF6tCAEePXIZA0bU9YcTTA0N5R6R09AcZA/jkOoOmwveN00vBsEBfgaEuFOshSPXMCsDl/UMiniU0Xmk47U8ABjAUW3381bMBhiA42Mue8S6bSkZdAoZTuQ/FZSOa4CyeOY6b1dv+kk2Y3rcXK5MmuDypcd2HHDNIWMCAa8zxlyFOd9eZZ2+jNf5XGSudiztMVqoUkosa3WY22GX1cWnRQELuzzAXztv1C6Gckxog4rdU1/U47yhCzYTQqjmwm0b5YqM+Fmsi2uQaOew=
       file: PerspectiveTransform.framework.zip
       on:
+        repo: paulz/PerspectiveTransform
         tags: true
   - xcode_scheme: OpenCV Tests
     env: XCODE_DESNITATION='platform=macos' CACHE_NAME=macOS
