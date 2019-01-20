@@ -30,7 +30,7 @@ public func beCloseTo(_ expectedValue: CATransform3D, within delta: CGFloat = CG
             } else {
                 let expected = expectedValue.flattened()
                 for (index, m) in actual.flattened().enumerated() {
-                    if fabs(m - expected[index]) > delta {
+                    if abs(m - expected[index]) > delta {
                         return .doesNotMatch
                     }
                 }

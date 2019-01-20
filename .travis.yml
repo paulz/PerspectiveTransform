@@ -1,8 +1,8 @@
-language: objective-c
-osx_image: xcode9.4
+language: swift
+osx_image: xcode10.1
 xcode_workspace: Example/PerspectiveTransform.xcworkspace
 xcode_scheme: Example
-xcode_sdk: iphonesimulator11.4
+xcode_sdk: iphonesimulator12.1
 git:
   depth: false
 cache:
@@ -33,16 +33,16 @@ matrix:
   - xcode_scheme: OpenCV Tests
     env: XCODE_DESNITATION='platform=macos' CACHE_NAME=macOS
     before_install:
+      - bundle -v || gem install bundler
       - ls -la Example/Pods/Manifest.lock && echo Skipping cocoapods repo update || git -C ~/.cocoapods/repos/master/ pull --quiet
       - yes | pip2 uninstall numpy > /dev/null
       - for package in opencv xz $(brew deps opencv); do brew link $package || brew install $package; done
-      - bundle -v || gem install bundler
     before_script:
-      - pod update --project-directory=Example
+      - bundle exec pod update --project-directory=Example
       - git diff --exit-code # Outdated Cocoapods dependencies found, please run 'pod update' and checkin changes
       - bundle update
       - git diff --exit-code # Outdated Bundle dependencies found, please run 'bundle update' and checkin changes
-      - pod lib lint
+      - bundle exec pod lib lint --allow-warnings || bundle exec pod lib lint --allow-warnings --verbose --no-clean
     cache:
       bundler: true
       cocoapods: true
@@ -69,9 +69,10 @@ matrix:
         - /usr/local/Cellar/xvid
         - /usr/local/Cellar/xz
 before_install:
+  - bundle -v || gem install bundler
   - ls -la Example/Pods/Manifest.lock && echo Skipping cocoapods repo update || git -C ~/.cocoapods/repos/master/ pull --quiet
 script:
-  - set -o pipefail && xcodebuild test -workspace "$TRAVIS_XCODE_WORKSPACE" -scheme "$TRAVIS_XCODE_SCHEME" -destination "$XCODE_DESNITATION" | xcpretty -f `xcpretty-travis-formatter`
+  - set -o pipefail && xcodebuild test -workspace "$TRAVIS_XCODE_WORKSPACE" -scheme "$TRAVIS_XCODE_SCHEME" -destination "$XCODE_DESNITATION" | bundle exec xcpretty -f `bundle exec xcpretty-travis-formatter`
 env:
   - XCODE_DESNITATION='platform=iOS Simulator,name=iPhone SE' CACHE_NAME=iOS
   - XCODE_DESNITATION='platform=iOS Simulator,name=iPhone 8 Plus' CACHE_NAME=iOS
