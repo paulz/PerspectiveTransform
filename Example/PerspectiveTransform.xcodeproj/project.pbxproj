@@ -1024,7 +1024,7 @@
 				4B74DB3B203BD9C70030F41B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		4BDF64A220469AB60022C5F8 /* Build configuration list for PBXNativeTarget "OpenCV OSX Tests" */ = {
 			isa = XCConfigurationList;
@@ -1033,7 +1033,7 @@
 				4BDF64A120469AB60022C5F8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		607FACCB1AFB9204008FA782 /* Build configuration list for PBXProject "PerspectiveTransform" */ = {
 			isa = XCConfigurationList;
@@ -1042,7 +1042,7 @@
 				607FACEE1AFB9204008FA782 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "Example" */ = {
 			isa = XCConfigurationList;
@@ -1051,7 +1051,7 @@
 				607FACF11AFB9204008FA782 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		607FACF21AFB9204008FA782 /* Build configuration list for PBXNativeTarget "Application Specs" */ = {
 			isa = XCConfigurationList;
@@ -1060,7 +1060,7 @@
 				607FACF41AFB9204008FA782 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};
