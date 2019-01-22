@@ -8,17 +8,26 @@ jobs:
       DESTINATION: 'platform=iOS Simulator,name=iPhone XS'
     steps:
       - checkout
-      - run: xcrun simctl boot "iPhone XS" # Warm up Simulator, see https://circleci.com/blog/xcodebuild-exit-code-65-what-it-is-and-how-to-solve-for-ios-and-macos-builds/
-      - run: open '/Applications/Xcode.app/Contents/Developer/Applications/Simulator.app'
-      - run:
-          name: Install Gems
-          command: bundle install
+      - run: gem install bundler
+      - restore_cache:
+          key: 1-gems-{{ checksum "Gemfile.lock" }}
+      - run: bundle check || bundle install --path vendor/bundle
+      - save_cache:
+          key: 1-gems-{{ checksum "Gemfile.lock" }}
+          paths:
+            - vendor/bundle
+      - restore_cache:
+          key: 2-pods-{{ checksum "Podfile.lock" }}
       - run:
           name: Install CocoaPods
-          command: pushd Example && pod install
+          command: pod install --project-directory Example
       - run:
           name: Build and run tests
-          command: xcodebuild -workspace PerspectiveTransform.xcworkspace -scheme Example test -destination "$DESTINATION" | xcpretty -r junit
+          command: xcodebuild -workspace Example/PerspectiveTransform.xcworkspace -scheme Example test -destination "$DESTINATION" | xcpretty -r junit
+      - save_cache:
+          key: 1-pods-{{ checksum "Podfile.lock" }}
+          paths:
+            - Example/Pods
       - store_test_results:
           path: build/reports
       - store_artifacts:
