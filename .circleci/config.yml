@@ -22,7 +22,7 @@ jobs:
           name: Install CocoaPods
           command: |
             ls -la Example/Pods/Manifest.lock && echo Skipping cocoapods repo update || curl https://cocoapods-specs.circleci.com/fetch-cocoapods-repo-from-s3.sh | bash -s cf
-            bundle exec pod install --project-directory=Example
+            cmp Example/Pods/Manifest.lock Example/Podfile.lock && echo Skipping pod install || bundle exec pod install --project-directory=Example
       - save_cache:
           key: 2-pods-{{ checksum "Example/Podfile.lock" }}
           paths:
