@@ -20,7 +20,7 @@ jobs:
           key: 2-pods-{{ checksum "Podfile.lock" }}
       - run:
           name: Install CocoaPods
-          command: pod install --project-directory Example
+          command: pod install --project-directory=Example
       - run:
           name: Build and run tests
           command: xcodebuild -workspace Example/PerspectiveTransform.xcworkspace -scheme Example test -destination "$DESTINATION" | xcpretty -r junit
