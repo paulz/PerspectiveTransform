@@ -9,8 +9,8 @@ class SnapshotSpec: QuickSpec {
         let runningOnIphone5s = ProcessInfo.processInfo.environment["SIMULATOR_DEVICE_NAME"] == "iPhone 5s"
 
         describe("overlay placement") {
-            var containerView : UIView!
-            var overlayView : UIView!
+            var containerView: UIView!
+            var overlayView: UIView!
 
             func testImage(named imageName: String) -> UIImage {
                 return UIImage(named: imageName,
@@ -49,7 +49,7 @@ class SnapshotSpec: QuickSpec {
                         tolerance = 0.3
                         fputs("images compared on iPhone 5s with \(toleranceMessage())\n".uppercased(), __stderrp)
                     }
-                    expect(containerView).to(haveValidSnapshot(usesDrawRect:true, tolerance:tolerance), description: "should match with \(toleranceMessage())")
+                    expect(containerView).to(haveValidSnapshot(usesDrawRect: true, tolerance: tolerance), description: "should match with \(toleranceMessage())")
                 }
             }
         }

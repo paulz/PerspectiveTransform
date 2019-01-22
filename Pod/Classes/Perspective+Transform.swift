@@ -15,7 +15,7 @@ public extension Perspective {
      - parameter bottomLeft: bottom left corner
      - parameter bottomRight: bottom right corner
      */
-    public convenience init(_ topLeft:CGPoint, _ topRight:CGPoint, _ bottomLeft:CGPoint, _ bottomRight:CGPoint) {
+    public convenience init(_ topLeft: CGPoint, _ topRight: CGPoint, _ bottomLeft: CGPoint, _ bottomRight: CGPoint) {
         self.init(Quadrilateral(topLeft, topRight, bottomLeft, bottomRight))
     }
     /**
@@ -23,7 +23,7 @@ public extension Perspective {
 
      - parameter points: corner points, must be size 4
      */
-    public convenience init(_ points:[CGPoint]) {
+    public convenience init(_ points: [CGPoint]) {
         self.init(Quadrilateral(points))
     }
     /**
@@ -31,7 +31,7 @@ public extension Perspective {
 
         - parameter rect: defines the corners
      */
-    public convenience init(_ rect:CGRect) {
+    public convenience init(_ rect: CGRect) {
         self.init(Quadrilateral(rect))
     }
 
@@ -41,7 +41,7 @@ public extension Perspective {
          - parameter destination: perspective to transform to
          - returns: tranformation matrix from this perspective to destination
      */
-    public func projectiveTransform(destination:Perspective) -> CATransform3D {
+    public func projectiveTransform(destination: Perspective) -> CATransform3D {
         return CATransform3D(projection(to: destination).to3d())
     }
 }

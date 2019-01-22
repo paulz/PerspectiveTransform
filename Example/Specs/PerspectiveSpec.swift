@@ -34,7 +34,7 @@ class PerspectiveSpec: QuickSpec {
                     var values = perspective.projectiveTransform(destination: perspective).flattened()
                     expect(values[10]) == 1.0
                     values.remove(at: 10)
-                    expect(values).to(allPass{$0!.isNaN})
+                    expect(values).to(allPass {$0!.isNaN})
                 }
 
                 it("should create Not A Number matrix to a valid perspective") {
@@ -42,7 +42,7 @@ class PerspectiveSpec: QuickSpec {
                     var values = perspective.projectiveTransform(destination: destination).flattened()
                     expect(values[10]) == 1.0
                     values.remove(at: 10)
-                    expect(values).to(allPass{$0!.isNaN})
+                    expect(values).to(allPass {$0!.isNaN})
                 }
             }
 

@@ -205,7 +205,6 @@ class ProjectionSpec: QuickSpec {
                         }
                     }
 
-
                     context("affine 2D") {
                         var scale2D: CGAffineTransform!
                         var translate2D: CGAffineTransform!

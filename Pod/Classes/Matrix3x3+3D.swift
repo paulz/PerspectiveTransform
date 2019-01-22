@@ -21,16 +21,16 @@ extension ScalarType {
 }
 
 extension Matrix4x3Type {
-    static let zeroColumnBeforeLast : Matrix4x3Type =  {
+    static let zeroColumnBeforeLast: Matrix4x3Type =  {
         let identity = Matrix3x3Type(diagonal: Vector3Type.one)
-        var columns = Vector3Type.indexArray.map{identity[$0]}
+        var columns = Vector3Type.indexArray.map {identity[$0]}
         columns.insert(Vector3Type.zero, at: Vector3Type.lastIndex)
         return Matrix4x3Type(columns)
     }()
 }
 
 extension Matrix3x4Type {
-    static let zeroRowBeforeLast : Matrix3x4Type =  {
+    static let zeroRowBeforeLast: Matrix3x4Type =  {
         return Matrix4x3Type.zeroColumnBeforeLast.transpose
     }()
 
@@ -55,10 +55,8 @@ extension Matrix3x3Type {
     }
 
     private var normalizationFactor: ScalarType {
-        get {
-            let zScale = self[Vector3Type.lastIndex, Vector3Type.lastIndex]
-            assert(zScale.isZero == false, "since we use homogenized vectors, z != 0")
-            return ScalarType.one / zScale
-        }
+        let zScale = self[Vector3Type.lastIndex, Vector3Type.lastIndex]
+        assert(zScale.isZero == false, "since we use homogenized vectors, z != 0")
+        return ScalarType.one / zScale
     }
 }

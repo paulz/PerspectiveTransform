@@ -67,8 +67,6 @@ class CALayerTransformSpec: QuickSpec {
                     }
                 }
 
-
-
             }
         }
     }

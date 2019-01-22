@@ -12,14 +12,14 @@ import CoreGraphics
 class FittingPolygon {
     var points: [CGPoint] = []
 
-    init(svgPointsString:String) {
+    init(svgPointsString: String) {
         let formatter = NumberFormatter()
         let eightNumbers: [CGFloat] = svgPointsString.split(separator: " ").map { substring in
             let string = String(substring)
             let number = formatter.number(from: string)
             return CGFloat(truncating: number!)
         }
-        for point in stride(from:0, to: 7, by: 2) {
+        for point in stride(from: 0, to: 7, by: 2) {
             let x = eightNumbers[point]
             let y = eightNumbers[point + 1]
             points.append(CGPoint(x: x, y: y))
@@ -34,4 +34,3 @@ class FittingPolygon {
         return FittingPolygon(svgPointsString: loader.loadPoints())
     }
 }
-
