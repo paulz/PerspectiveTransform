@@ -1,11 +1,16 @@
-version: 2
+version: 2.1
 jobs:
-  build:
+  run-tests:
+    description: Parameterized job by destination
+    parameters:
+      destination:
+        description: Xcode destination to run tests
+        type: string
     macos:
       xcode: '10.1.0'
     shell: /bin/bash --login -o pipefail
     environment:
-      DESTINATION: 'platform=iOS Simulator,name=iPhone XS'
+      DESTINATION: '<< parameters.destination >>'
     steps:
       - checkout
       - run: gem install bundler
@@ -35,3 +40,10 @@ jobs:
       - store_artifacts:
           path: build/reports
           destination: xcodebuild-test-results
+workflows:
+  build:
+    jobs:
+      - run-tests:
+          destination: 'platform=iOS Simulator,name=iPhone XS'
+      - run-tests:
+          destination: 'platform=iOS Simulator,name=iPhone X'
