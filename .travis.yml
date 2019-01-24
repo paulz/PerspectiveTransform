@@ -10,36 +10,28 @@ cache:
   cocoapods: true
 bundler_args: --no-deployment
 podfile: Example/Podfile
+stages:
+  - test
+  - deploy
 matrix:
   include:
-  - env: XCODE_DESNITATION='platform=iOS Simulator,name=iPhone X' CACHE_NAME=iOS
+  - stage: test
+    name: Check dependencies up-to-date, Lint
+    env: CACHE_NAME=iOS
+    script:
+        - bundle exec pod update --project-directory=Example
+        - git diff --exit-code # Outdated Cocoapods dependencies found, please run 'pod update' and checkin changes
+        - bundle update
+        - git diff --exit-code # Outdated Bundle dependencies found, please run 'bundle update' and checkin changes
+        - bundle exec pod lib lint || bundle exec pod lib lint --verbose --no-clean
+  - name: With coverage report
+    env: XCODE_DESNITATION='platform=iOS Simulator,name=iPhone X' CACHE_NAME=iOS
     after_success:
       - bash <(curl -s 'https://codecov.io/bash') -Z -J '^PerspectiveTransform$' -X gcov -X fix
-    before_deploy:
-      - brew update > /dev/null
-      - brew outdated carthage || brew upgrade carthage
-      - carthage build --no-skip-current --platform iOS
-      - carthage archive PerspectiveTransform
-    deploy:
-      provider: releases
-      prerelease: true
-      name: "Release $TRAVIS_TAG"
-      body: "Travis build: https://travis-ci.org/${TRAVIS_REPO_SLUG}/jobs/${TRAVIS_JOB_ID} started by ${TRAVIS_EVENT_TYPE}"
-      skip_cleanup: true
-      api_key:
-        secure: FNzPtWJ1wxgE3LITPT4CSTKboxeJF5tO0SznHMC/pswZeJ7KESZFsRZE0BiPalHT58o7sjW5bjI5GjjTnwLNHC1GpHdH1VRtIPqZF0K6WSfjeZoK5uEURWE3nego4J+h0C9DoQLdvjKwkW9Zw4OvIL1ZLhrqzbix6dcL0M1EGcoavDgkx8c5dsrtOAgafI3owp/RO1JQhPIzKrMwtLNNVHVJthU2ZmOrEngnJhN58hOu+tlcvYmIQvcgqF3S/zUAfsTictc5SiVEezH+lXiDKO361vh5InEMv/+Y9qXM/hZGG1PGdLGGwnVQ9jw2U4SfXNGrudnSxDzbyXLUxE0jeTadX+J9QHOQTaHv2uRevZI4Ok1YFQi/8L+/QSOBSQ1hAeLtvpJ2mGCW5iETbW3KhgShgvexF6tCAEePXIZA0bU9YcTTA0N5R6R09AcZA/jkOoOmwveN00vBsEBfgaEuFOshSPXMCsDl/UMiniU0Xmk47U8ABjAUW3381bMBhiA42Mue8S6bSkZdAoZTuQ/FZSOa4CyeOY6b1dv+kk2Y3rcXK5MmuDypcd2HHDNIWMCAa8zxlyFOd9eZZ2+jNf5XGSudiztMVqoUkosa3WY22GX1cWnRQELuzzAXztv1C6Gckxog4rdU1/U47yhCzYTQqjmwm0b5YqM+Fmsi2uQaOew=
-      file: PerspectiveTransform.framework.zip
-      on:
-        repo: paulz/PerspectiveTransform
-        tags: true
-  - xcode_scheme: OpenCV Tests
+  - name: Mac OS
+    xcode_scheme: OpenCV Tests
     env: XCODE_DESNITATION='platform=macos' CACHE_NAME=macOS
     before_script:
-      - bundle exec pod update --project-directory=Example
-      - git diff --exit-code # Outdated Cocoapods dependencies found, please run 'pod update' and checkin changes
-      - bundle update
-      - git diff --exit-code # Outdated Bundle dependencies found, please run 'bundle update' and checkin changes
-      - bundle exec pod lib lint || bundle exec pod lib lint --verbose --no-clean
       - yes | pip2 uninstall numpy > /dev/null # Fix Conflict between numpy installed by pip and brew, see https://github.com/travis-ci/travis-ci/issues/6688
       - for package in opencv xz $(brew deps opencv); do brew link $package || brew install $package; done
     cache:
@@ -66,6 +58,27 @@ matrix:
         - /usr/local/Cellar/x264
         - /usr/local/Cellar/xvid
         - /usr/local/Cellar/xz
+  - stage: deploy
+    name: Cartage build, archive, deploy on tag
+    env:
+    cache: false
+    script:
+      - brew update > /dev/null
+      - brew outdated carthage || brew upgrade carthage
+      - carthage build --no-skip-current --platform iOS
+      - carthage archive PerspectiveTransform
+    deploy:
+      provider: releases
+      prerelease: true
+      name: "Release $TRAVIS_TAG"
+      body: "Travis build: https://travis-ci.org/${TRAVIS_REPO_SLUG}/jobs/${TRAVIS_JOB_ID} started by ${TRAVIS_EVENT_TYPE}"
+      skip_cleanup: true
+      api_key:
+        secure: FNzPtWJ1wxgE3LITPT4CSTKboxeJF5tO0SznHMC/pswZeJ7KESZFsRZE0BiPalHT58o7sjW5bjI5GjjTnwLNHC1GpHdH1VRtIPqZF0K6WSfjeZoK5uEURWE3nego4J+h0C9DoQLdvjKwkW9Zw4OvIL1ZLhrqzbix6dcL0M1EGcoavDgkx8c5dsrtOAgafI3owp/RO1JQhPIzKrMwtLNNVHVJthU2ZmOrEngnJhN58hOu+tlcvYmIQvcgqF3S/zUAfsTictc5SiVEezH+lXiDKO361vh5InEMv/+Y9qXM/hZGG1PGdLGGwnVQ9jw2U4SfXNGrudnSxDzbyXLUxE0jeTadX+J9QHOQTaHv2uRevZI4Ok1YFQi/8L+/QSOBSQ1hAeLtvpJ2mGCW5iETbW3KhgShgvexF6tCAEePXIZA0bU9YcTTA0N5R6R09AcZA/jkOoOmwveN00vBsEBfgaEuFOshSPXMCsDl/UMiniU0Xmk47U8ABjAUW3381bMBhiA42Mue8S6bSkZdAoZTuQ/FZSOa4CyeOY6b1dv+kk2Y3rcXK5MmuDypcd2HHDNIWMCAa8zxlyFOd9eZZ2+jNf5XGSudiztMVqoUkosa3WY22GX1cWnRQELuzzAXztv1C6Gckxog4rdU1/U47yhCzYTQqjmwm0b5YqM+Fmsi2uQaOew=
+      file: PerspectiveTransform.framework.zip
+      on:
+        repo: paulz/PerspectiveTransform
+        tags: true
 before_install:
   - bundle -v || gem install bundler
   - ls -la Example/Pods/Manifest.lock && echo Skipping cocoapods repo update || git -C ~/.cocoapods/repos/master/ pull --quiet
