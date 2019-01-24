@@ -28,6 +28,16 @@ commands:
           paths:
             - Example/Pods
 jobs:
+  check-dependecies-update:
+    description: Check if any dependecies have been updated
+    executor: latest-xcode
+    shell: /bin/bash --login -o pipefail
+    steps:
+      - pod-install
+      - run: bundle exec pod update --project-directory=Example
+      - run: bundle update
+      - run: git diff --exit-code # Outdated Cocoapods dependencies found, please run 'pod update' and checkin changes
+      - run: bundle exec pod lib lint || bundle exec pod lib lint --verbose --no-clean
   macos-tests:
     description: Run tests on Mac OS
     executor: latest-xcode
@@ -65,13 +75,22 @@ jobs:
           path: build/reports
           destination: xcodebuild-test-results
 workflows:
-  build:
+  monthly:
+    jobs: [check-dependecies-update]
+    triggers:
+      - schedule:
+          cron: "0 0 1 * *"
+          filters:
+            branches:
+              only: circleci
+  onpush:
     jobs:
+      - check-dependecies-update
       - macos-tests
-      - ios-tests:
-          destination: platform=iOS Simulator,name=iPhone X
-          post-steps:
-            - run: bash <(curl -s 'https://codecov.io/bash') -Z -J '^PerspectiveTransform$' -X gcov -X fix
+      # - ios-tests:
+      #     destination: platform=iOS Simulator,name=iPhone X
+      #     post-steps:
+      #       - run: bash <(curl -s 'https://codecov.io/bash') -Z -J '^PerspectiveTransform$' -X gcov -X fix
       # - ios-tests:
       #     destination: platform=iOS Simulator,name=iPhone XS
       # - ios-tests:
