@@ -1,13 +1,31 @@
 version: 2.1
+executors:
+  latest-xcode:
+    macos:
+      xcode: '10.1.0'
 jobs:
+  test-on-macos:
+    description: Run tests on Mac OS
+    executor: latest-xcode
+    shell: /bin/bash --login -o pipefail
+    steps:
+      - restore_cache:
+          key: 1-opencv-{{ .Branch }}
+      - run: for package in opencv xz $(brew deps opencv); do brew link $package || brew install $package; done
+      - save_cache:
+          key: 1-opencv-{{ .Branch }}
+          paths:
+            - /usr/local/Cellar/
+      - run:
+          name: Build and run tests
+          command: xcodebuild -workspace Example/PerspectiveTransform.xcworkspace -scheme "OpenCV Tests" test -destination "platform=macos" | xcpretty -r junit
   run-tests:
-    description: Parameterized job by destination
+    description: Run tests on parameterized xcode destination
     parameters:
       destination:
         description: Xcode destination to run tests
         type: string
-    macos:
-      xcode: '10.1.0'
+    executor: latest-xcode
     shell: /bin/bash --login -o pipefail
     steps:
       - checkout
@@ -41,10 +59,13 @@ jobs:
 workflows:
   build:
     jobs:
-      - run-tests:
-          destination: 'platform=iOS Simulator,name=iPhone XS'
+      - test-on-macos
       - run-tests:
           destination: platform=iOS Simulator,name=iPhone X
+          post-steps:
+            - run: bash <(curl -s 'https://codecov.io/bash') -Z -J '^PerspectiveTransform$' -X gcov -X fix
+      - run-tests:
+          destination: platform=iOS Simulator,name=iPhone XS
       - run-tests:
           destination: platform=iOS Simulator,name=iPhone XR
       - run-tests:
