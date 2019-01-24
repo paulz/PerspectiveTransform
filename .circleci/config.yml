@@ -9,8 +9,6 @@ jobs:
     macos:
       xcode: '10.1.0'
     shell: /bin/bash --login -o pipefail
-    environment:
-      DESTINATION: '<< parameters.destination >>'
     steps:
       - checkout
       - run: gem install bundler
@@ -34,7 +32,7 @@ jobs:
             - Example/Pods
       - run:
           name: Build and run tests
-          command: xcodebuild -workspace Example/PerspectiveTransform.xcworkspace -scheme Example test -destination "$DESTINATION" | xcpretty -r junit
+          command: xcodebuild -workspace Example/PerspectiveTransform.xcworkspace -scheme Example test -destination "<< parameters.destination >>" | xcpretty -r junit
       - store_test_results:
           path: build/reports
       - store_artifacts:
@@ -46,4 +44,12 @@ workflows:
       - run-tests:
           destination: 'platform=iOS Simulator,name=iPhone XS'
       - run-tests:
-          destination: 'platform=iOS Simulator,name=iPhone X'
+          destination: platform=iOS Simulator,name=iPhone X
+      - run-tests:
+          destination: platform=iOS Simulator,name=iPhone XR
+      - run-tests:
+          destination: platform=iOS Simulator,name=iPhone 8
+      - run-tests:
+          destination: platform=iOS Simulator,name=iPhone 8 Plus
+      - run-tests:
+          destination: platform=iOS Simulator,name=iPhone SE
