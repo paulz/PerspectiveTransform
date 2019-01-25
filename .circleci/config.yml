@@ -49,35 +49,15 @@ jobs:
     shell: /bin/bash --login -o pipefail
     environment:
       HOMEBREW_NO_AUTO_UPDATE: 1
+      CACHE_PATHS: /usr/local/opt/opencv@2/ /usr/local/Cellar/opencv@2
     steps:
       - pod-install
       - restore_cache:
-          key: 5-opencv-{{ .Branch }}
-      - run: for package in opencv@2 xz $(brew deps --1 opencv@2); do brew link $package || brew install --ignore-dependencies $package; done
+          key: 6-opencv-{{ .Branch }}
+      - run: ./Example/OpenCV-OSX-Tests/install-opencv.sh
       - save_cache:
-          key: 5-opencv-{{ .Branch }}
-          paths:
-            - /usr/local/opt/opencv@2/
-            - /usr/local/Cellar/opencv@2
-            - /usr/local/Cellar/eigen
-            - /usr/local/Cellar/ffmpeg
-            - /usr/local/Cellar/gdbm
-            - /usr/local/Cellar/ilmbase
-            - /usr/local/Cellar/jpeg
-            - /usr/local/Cellar/lame
-            - /usr/local/Cellar/libpng
-            - /usr/local/Cellar/libtiff
-            - /usr/local/Cellar/numpy
-            - /usr/local/Cellar/openexr
-            - /usr/local/Cellar/openssl
-            - /usr/local/Cellar/python
-            - /usr/local/Cellar/python3
-            - /usr/local/Cellar/readline
-            - /usr/local/Cellar/sqlite
-            - /usr/local/Cellar/tbb
-            - /usr/local/Cellar/x264
-            - /usr/local/Cellar/xvid
-            - /usr/local/Cellar/xz
+          key: 6-opencv-{{ .Branch }}
+          paths: $CACHE_PATHS
       - run:
           name: Build and run tests
           command: xcodebuild -workspace Example/PerspectiveTransform.xcworkspace -scheme "OpenCV Tests" test -destination "platform=macos" | xcpretty -r junit
