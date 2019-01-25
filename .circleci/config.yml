@@ -47,10 +47,10 @@ jobs:
     steps:
       - pod-install
       - restore_cache:
-          key: 1-opencv-{{ .Branch }}
-      - run: for package in opencv xz $(brew deps opencv); do brew link $package || brew install $package; done
+          key: 2-opencv-{{ .Branch }}
+      - run: for package in opencv@2 xz $(brew deps opencv@2); do brew link $package || brew install $package; done
       - save_cache:
-          key: 1-opencv-{{ .Branch }}
+          key: 2-opencv-{{ .Branch }}
           paths:
             - /usr/local/Cellar/
       - run:

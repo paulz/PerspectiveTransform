@@ -795,10 +795,10 @@
 			buildSettings = {
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
-					/usr/local/include,
+					"/usr/local/opt/opencv@2/include",
 				);
 				INFOPLIST_FILE = Specs/Info.plist;
-				LIBRARY_SEARCH_PATHS = /usr/local/lib/;
+				LIBRARY_SEARCH_PATHS = "/usr/local/opt/opencv@2/lib/";
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = "paulz.github.io.PerspectiveTransform.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -813,10 +813,10 @@
 			buildSettings = {
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
-					/usr/local/include,
+					"/usr/local/opt/opencv@2/include",
 				);
 				INFOPLIST_FILE = Specs/Info.plist;
-				LIBRARY_SEARCH_PATHS = /usr/local/lib/;
+				LIBRARY_SEARCH_PATHS = "/usr/local/opt/opencv@2/lib/";
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = "paulz.github.io.PerspectiveTransform.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
