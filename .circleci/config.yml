@@ -49,7 +49,6 @@ jobs:
     shell: /bin/bash --login -o pipefail
     environment:
       HOMEBREW_NO_AUTO_UPDATE: 1
-      CACHE_PATHS: /usr/local/opt/opencv@2/ /usr/local/Cellar/opencv@2
     steps:
       - pod-install
       - restore_cache:
@@ -57,7 +56,27 @@ jobs:
       - run: ./Example/OpenCV-OSX-Tests/install-opencv.sh
       - save_cache:
           key: 6-opencv-{{ .Branch }}
-          paths: $CACHE_PATHS
+          paths:
+            - /usr/local/opt/opencv@2/
+            - /usr/local/Cellar/opencv@2
+            - /usr/local/Cellar/ffmpeg
+            - /usr/local/Cellar/ilmbase
+            - /usr/local/Cellar/snappy
+            - /usr/local/Cellar/opencore-amr
+            - /usr/local/Cellar/speex
+            - /usr/local/Cellar/theora
+            - /usr/local/Cellar/rtmpdump
+            - /usr/local/Cellar/libogg
+            - /usr/local/Cellar/libvorbis
+            - /usr/local/Cellar/opus
+            - /usr/local/Cellar/jpeg
+            - /usr/local/Cellar/lame
+            - /usr/local/Cellar/libpng
+            - /usr/local/Cellar/libtiff
+            - /usr/local/Cellar/openexr
+            - /usr/local/Cellar/openssl
+            - /usr/local/Cellar/x264
+            - /usr/local/Cellar/x265
       - run:
           name: Build and run tests
           command: xcodebuild -workspace Example/PerspectiveTransform.xcworkspace -scheme "OpenCV Tests" test -destination "platform=macos" | xcpretty -r junit
