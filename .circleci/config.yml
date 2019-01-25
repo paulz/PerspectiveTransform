@@ -33,7 +33,7 @@ commands:
           paths:
             - Example/Pods
 jobs:
-  check-dependecies-update:
+  check-dependecies-up-to-date:
     description: Check if any dependecies have been updated
     executor: latest-xcode
     shell: /bin/bash --login -o pipefail
@@ -100,7 +100,7 @@ jobs:
           destination: xcodebuild-test-results
 workflows:
   monthly:
-    jobs: [check-dependecies-update]
+    jobs: [check-dependecies-up-to-date]
     triggers:
       - schedule:
           cron: "0 0 1 * *"
@@ -109,7 +109,7 @@ workflows:
               only: circleci
   onpush:
     jobs:
-      - check-dependecies-update
+      - check-dependecies-up-to-date
       - macos-tests
       # - ios-tests:
       #     destination: platform=iOS Simulator,name=iPhone X
