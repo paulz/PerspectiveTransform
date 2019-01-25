@@ -52,10 +52,10 @@ jobs:
     steps:
       - pod-install
       - restore_cache:
-          key: 4-opencv-{{ .Branch }}
-      - run: for package in opencv@2 xz $(brew deps --1 opencv@2); do brew link $package || brew install $package; done
+          key: 5-opencv-{{ .Branch }}
+      - run: for package in opencv@2 xz $(brew deps --1 opencv@2); do brew link $package || brew install --ignore-dependencies $package; done
       - save_cache:
-          key: 4-opencv-{{ .Branch }}
+          key: 5-opencv-{{ .Branch }}
           paths:
             - /usr/local/opt/opencv@2/
             - /usr/local/Cellar/opencv@2
@@ -78,20 +78,6 @@ jobs:
             - /usr/local/Cellar/x264
             - /usr/local/Cellar/xvid
             - /usr/local/Cellar/xz
-            - /usr/local/Cellar/gcc
-            - /usr/local/Cellar/gmp
-            - /usr/local/Cellar/isl
-            - /usr/local/Cellar/mpfr
-            - /usr/local/Cellar/libmpc
-            - /usr/local/Cellar/libogg
-            - /usr/local/Cellar/libvorbis
-            - /usr/local/Cellar/libvpx
-            - /usr/local/Cellar/openblas
-            - /usr/local/Cellar/opus
-            - /usr/local/Cellar/sdl2
-            - /usr/local/Cellar/snappy
-            - /usr/local/Cellar/theora
-            - /usr/local/Cellar/x265
       - run:
           name: Build and run tests
           command: xcodebuild -workspace Example/PerspectiveTransform.xcworkspace -scheme "OpenCV Tests" test -destination "platform=macos" | xcpretty -r junit
@@ -124,7 +110,6 @@ workflows:
               only: circleci
   onpush:
     jobs:
-      - check-dependecies-up-to-date
       - macos-tests
       # - ios-tests:
       #     destination: platform=iOS Simulator,name=iPhone X
