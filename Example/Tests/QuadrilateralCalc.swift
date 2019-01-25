@@ -18,7 +18,7 @@ public class QuadrilateralCalc {
         return CGRect(origin: CGPoint(x: xmin, y: ymin), size: CGSize(width: xmax - xmin, height: ymax - ymin))
     }
 
-    public func modifyPoints(transform:(CGPoint)->CGPoint) {
+    public func modifyPoints(transform: (CGPoint) -> CGPoint) {
         topLeft = transform(topLeft)
         topRight = transform(topRight)
         bottomLeft = transform(bottomLeft)
@@ -87,13 +87,13 @@ public class QuadrilateralCalc {
         let kEpsilon = CGFloat(0.0001)
 
         if abs(i) < kEpsilon {
-            i = kEpsilon * (i > 0 ? 1.0 : -1.0);
+            i = kEpsilon * (i > 0 ? 1.0 : -1.0)
         }
 
-        return CATransform3D(m11:a/i, m12:d/i, m13:0, m14:g/i,
-                             m21:b/i, m22:e/i, m23:0, m24:h/i,
-                             m31:0, m32:0, m33:1, m34:0,
-                             m41:c/i, m42:f/i, m43:0, m44:1.0)
+        return CATransform3D(m11: a/i, m12: d/i, m13: 0, m14: g/i,
+                             m21: b/i, m22: e/i, m23: 0, m24: h/i,
+                             m31: 0, m32: 0, m33: 1, m34: 0,
+                             m41: c/i, m42: f/i, m43: 0, m44: 1.0)
     }
 
 }

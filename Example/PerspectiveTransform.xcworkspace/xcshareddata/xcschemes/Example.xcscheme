@@ -46,7 +46,7 @@
       <CodeCoverageTargets>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "506EC09FBBBCE0959C2471EEE770C328"
+            BlueprintIdentifier = "A8E8CD82C2B65E5DF42B579E9F963CF7"
             BuildableName = "PerspectiveTransform.framework"
             BlueprintName = "PerspectiveTransform"
             ReferencedContainer = "container:Pods/Pods.xcodeproj">

@@ -36,7 +36,7 @@ extension PolygonLoader: XMLParserDelegate {
                 didStartElement elementName: String,
                 namespaceURI: String?,
                 qualifiedName qName: String?,
-                attributes attributeDict: [String : String] = [:]) {
+                attributes attributeDict: [String: String] = [:]) {
         if elementName == "polygon" {
             pointString = attributeDict["points"]?.trimmingCharacters(in: .whitespacesAndNewlines)
         }

@@ -16,7 +16,7 @@ extension CATransform3D {
             m11, m12, m13, m14,
             m21, m22, m23, m24,
             m31, m32, m33, m34,
-            m41, m42, m43, m44,
+            m41, m42, m43, m44
         ]
     }
 }
@@ -48,8 +48,8 @@ public func beCloseTo(_ expectedValue: CGPoint, within delta: CGFloat = CGFloat(
             if actual == expectedValue {
                 return .matches
             } else {
-                let eachCoordinate = beCloseTo([expectedValue.x, expectedValue.y].map{Double($0)})
-                return try! eachCoordinate.satisfies(actualExpression.cast{[$0!.x,$0!.y].map{Double($0)}}).status
+                let eachCoordinate = beCloseTo([expectedValue.x, expectedValue.y].map {Double($0)})
+                return try! eachCoordinate.satisfies(actualExpression.cast {[$0!.x, $0!.y].map {Double($0)}}).status
             }
         }
         return .doesNotMatch
@@ -70,7 +70,7 @@ extension CATransform3D: Equatable {
 }
 
 extension Int {
-    func times(block: ()->Void) {
+    func times(block: () -> Void) {
         for _ in 1...self {
             block()
         }

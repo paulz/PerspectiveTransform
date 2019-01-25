@@ -17,7 +17,7 @@ extension UIPanGestureRecognizer {
         let pan = translation(in: controlPoint.superview)
         let transform = CGAffineTransform(translationX: pan.x, y: pan.y)
         controlPoint.center = controlPoint.center.applying(transform)
-        setTranslation(CGPoint.zero, in:controlPoint.superview)
+        setTranslation(CGPoint.zero, in: controlPoint.superview)
     }
 }
 
@@ -53,7 +53,7 @@ class PanViewController: UIViewController {
         return start.projectiveTransform(destination: destination)
     }
 
-    private lazy var start : Perspective = createStartingPerspective()
+    private lazy var start: Perspective = createStartingPerspective()
 
     private func createStartingPerspective() -> Perspective {
         transView.resetAnchorPoint()
@@ -62,7 +62,7 @@ class PanViewController: UIViewController {
 
     private var destination: Perspective {
         get {
-            return Perspective(cornerViews.map{$0.center})
+            return Perspective(cornerViews.map {$0.center})
         }
     }
 }

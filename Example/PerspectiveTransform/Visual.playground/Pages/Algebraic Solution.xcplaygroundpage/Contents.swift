@@ -33,7 +33,7 @@ let points = [
     CGPoint(x: 108.315837, y: 80.1687782),
     CGPoint(x: 377.282671, y: 41.4352201),
     CGPoint(x: 193.321418, y: 330.023027),
-    CGPoint(x: 459.781253, y: 251.836131),
+    CGPoint(x: 459.781253, y: 251.836131)
 ]
 
 let destination = QuadrilateralCalc()
@@ -62,15 +62,13 @@ CATransform3DEqualToTransform(matrix, toPlace)
 overlayView.layer.transform = toPlace
 overlayView2.layer.transform = matrix
 
-
-
 //: Single point rect should produce identity matrix
 
 let q = QuadrilateralCalc()
-q.topLeft = CGPoint(x:0, y:0)
-q.topRight = CGPoint(x:1, y:0)
-q.bottomLeft = CGPoint(x:0, y:1)
-q.bottomRight = CGPoint(x:1, y:1)
+q.topLeft = CGPoint(x: 0, y: 0)
+q.topRight = CGPoint(x: 1, y: 0)
+q.bottomLeft = CGPoint(x: 0, y: 1)
+q.bottomRight = CGPoint(x: 1, y: 1)
 
 q.box()
 q.box() == CGRect(x: 0, y: 0, width: 1, height: 1)

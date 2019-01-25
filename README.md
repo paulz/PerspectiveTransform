@@ -1,6 +1,7 @@
 # Perspective Transform
 
 [![Build Status](https://travis-ci.org/paulz/PerspectiveTransform.svg?branch=master)](https://travis-ci.org/paulz/PerspectiveTransform)
+[![CircleCI](https://circleci.com/gh/paulz/PerspectiveTransform.svg?style=svg)](https://circleci.com/gh/paulz/PerspectiveTransform)
 [![codecov](https://codecov.io/gh/paulz/PerspectiveTransform/branch/master/graph/badge.svg)](https://codecov.io/gh/paulz/PerspectiveTransform)
 [![Version](https://img.shields.io/cocoapods/v/PerspectiveTransform.svg?style=flat)](http://cocoapods.org/pods/PerspectiveTransform)
 [![License](https://img.shields.io/cocoapods/l/PerspectiveTransform.svg?style=flat)](http://cocoapods.org/pods/PerspectiveTransform)
@@ -19,7 +20,7 @@ To place an overlay image on top of a container image with matching persperctive
 | ------------- | ------------- | --- |
 | <img src="https://raw.githubusercontent.com/paulz/PerspectiveTransform/master/Example/Tests/container.jpg" alt="Container"/>  | <img src="https://raw.githubusercontent.com/paulz/PerspectiveTransform/master/Example/Tests/sky.jpg" alt="Overlay"/>  | <img src="https://github.com/paulz/PerspectiveTransform/wiki/images/withOverlay-example.png" alt="Combined image"/> |
 
-Core Animation allow applying `CATransform3D` to `CALayer` via `transform` property: 
+Core Animation allow applying `CATransform3D` to `CALayer` via `transform` property:
 
 ```swift
 let layer = UIView().layer
@@ -28,7 +29,7 @@ layer.transform = CATransform3D(m11: sX,  m12: r12, m13: r13, m14: 0,
                                 m31: r31, m32: r32, m33: 0,   m34: 0,
                                 m41: tX,  m42: tY,  m43: 0,   m44: 1)
 ```
-In detail `CATransform3D` is a 4 x 4 matrix which takes 16 parameters to build. 
+In detail `CATransform3D` is a 4 x 4 matrix which takes 16 parameters to build.
 
 Translation and scale are represented by their axis components: (tX, tY) and (sX, sY) within the matrix.  While 3D rotation is represented by multiple values: r12, r21, r13, r31, r32, r23.
 
@@ -91,7 +92,7 @@ Since `CALayer` transform is animatable property we can easily define smooth tra
 
 ## Example Project
 
-See [Example iOS project](https://github.com/paulz/PerspectiveTransform/tree/master/Example) illustating animation and interactive tranform within view controllers. To build Example project run `pod install` within Example folder. 
+See [Example iOS project](https://github.com/paulz/PerspectiveTransform/tree/master/Example) illustating animation and interactive tranform within view controllers. To build Example project run `pod install` within Example folder.
 
 Example project also includes [Swift Playground](https://github.com/paulz/PerspectiveTransform/tree/master/Example/PerspectiveTransform/Visual.playground) with couple of live examples.
 

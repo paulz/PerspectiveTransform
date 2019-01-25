@@ -51,7 +51,7 @@ public func ≈(lhs: Expectation<Vector3Type>, rhs: (expected: Vector3Type, delt
 }
 
 extension Matrix3x3Type {
-    init(_ array:[ScalarType]) {
+    init(_ array: [ScalarType]) {
         let rows = 3
         let scalars = rows * rows
         precondition(array.count == scalars, "should have 9 values for 3x3 matrix")
@@ -81,8 +81,8 @@ extension Vector3Type {
     var dehomogenized: CGPoint {return CGPoint(x: z.isZero ? 0 : x/z, y: z.isZero ? 0 : y/z)}
 }
 
-func arrayWith<S>(_ factory: (()->S)) -> [S] {
-    return Array(Vector3Type.indexSlice).map{_ in factory()}
+func arrayWith<S>(_ factory: (() -> S)) -> [S] {
+    return Array(Vector3Type.indexSlice).map {_ in factory()}
 }
 
 extension GKRandomSource {

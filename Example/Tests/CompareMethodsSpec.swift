@@ -2,7 +2,7 @@ import Quick
 import Nimble
 import PerspectiveTransform
 
-typealias Transformer = (CGRect,[CGPoint])->CATransform3D
+typealias Transformer = (CGRect, [CGPoint]) -> CATransform3D
 
 class CompareTransformSpecConfiguration: QuickConfiguration {
     override class func configure(_ configuration: Configuration) {
@@ -13,7 +13,7 @@ class CompareTransformSpecConfiguration: QuickConfiguration {
                 CGPoint(x: 108.315837, y: 80.1687782),
                 CGPoint(x: 377.282671, y: 41.4352201),
                 CGPoint(x: 193.321418, y: 330.023027),
-                CGPoint(x: 459.781253, y: 251.836131),
+                CGPoint(x: 459.781253, y: 251.836131)
                 ]
             let frame = CGRect(origin: CGPoint.zero,
                                size: CGSize(width: 20, height: 10))
@@ -22,14 +22,14 @@ class CompareTransformSpecConfiguration: QuickConfiguration {
             }
 
             it("should be identity for same start and destination") {
-                let points = [CGPoint(x:0,y:0),CGPoint(x:20,y:0),CGPoint(x:0,y:10),CGPoint(x:20,y:10)]
+                let points = [CGPoint(x: 0, y: 0), CGPoint(x: 20, y: 0), CGPoint(x: 0, y: 10), CGPoint(x: 20, y: 10)]
                 let toItself = transformer.transform(frame: frame, points: points)
                 expect(toItself) ≈ CATransform3DIdentity
             }
 
             it("produce the same solution as  algebraic method") {
                 let algebra = AlgebraMethod()
-                expect(transformer.transform(frame: frame, points: points)) ≈ algebra.transform(frame:frame, points:points)
+                expect(transformer.transform(frame: frame, points: points)) ≈ algebra.transform(frame: frame, points: points)
             }
         }
     }

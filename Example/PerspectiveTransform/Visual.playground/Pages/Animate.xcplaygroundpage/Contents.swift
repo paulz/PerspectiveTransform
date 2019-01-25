@@ -32,10 +32,10 @@ containerView.addSubview(destinationView)
 containerView.addSubview(view)
 
 let start = Perspective(view.frame)
-let transform = start.projectiveTransform(destination:Perspective(destinationView.frame))
+let transform = start.projectiveTransform(destination: Perspective(destinationView.frame))
 print(transform)
 
-UIView.animate(withDuration:1.0,
+UIView.animate(withDuration: 1.0,
     delay: 0,
     options: [.repeat, .autoreverse],
     animations: {
@@ -49,4 +49,3 @@ transform.m33 == 1
 transform.m41 == 100
 transform.m42 == 100
 transform.m43 == 0
-

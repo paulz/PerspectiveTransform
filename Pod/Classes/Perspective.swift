@@ -12,17 +12,17 @@ import simd
     3D Perspective represented on 2D by 4 corners polygon
  */
 public final class Perspective {
-    let vectors : [Vector3Type]
+    let vectors: [Vector3Type]
 
-    init(_ q: Quadrilateral) {
-        vectors = q.corners.map{$0.homogeneous3dvector}
+    init(_ quad: Quadrilateral) {
+        vectors = quad.corners.map {$0.homogeneous3dvector}
     }
 
     internal lazy var basisVectorsToPointsMap = calculateBasisVectorsToPointsMap()
     internal lazy var pointsToBasisVectorsMap = basisVectorsToPointsMap.inverse
 
-    internal func projection(to:Perspective) -> Matrix3x3Type {
-        return to.basisVectorsToPointsMap * pointsToBasisVectorsMap
+    internal func projection(to destination: Perspective) -> Matrix3x3Type {
+        return destination.basisVectorsToPointsMap * pointsToBasisVectorsMap
     }
 
     private func calculateBasisVectorsToPointsMap() -> Matrix3x3Type {

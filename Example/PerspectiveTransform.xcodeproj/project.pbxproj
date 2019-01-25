@@ -95,6 +95,7 @@
 		4B84138A201DD90D00D17FE2 /* PerspectiveSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerspectiveSpec.swift; sourceTree = "<group>"; };
 		4B8C085320C1F415006BFBEF /* WorkaroundForXcodeCompleteCoverageSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkaroundForXcodeCompleteCoverageSpec.swift; sourceTree = "<group>"; };
 		4B97C3CC2047BAC1004C9782 /* AccelerateSolvePerfTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccelerateSolvePerfTest.swift; sourceTree = "<group>"; };
+		4B9A5BF021FBA91500979AFE /* install-opencv.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "install-opencv.sh"; sourceTree = "<group>"; };
 		4BA3D17A1C771B2E0009B690 /* ProjectionSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = ProjectionSpec.swift; sourceTree = "<group>"; tabWidth = 4; };
 		4BA3D17C1C771B560009B690 /* NimbleSpecHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NimbleSpecHelper.swift; sourceTree = "<group>"; };
 		4BA3D1801C77230A0009B690 /* VectorProjectionSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VectorProjectionSpec.swift; sourceTree = "<group>"; };
@@ -198,6 +199,7 @@
 				4BDF64AD2046A9ED0022C5F8 /* OpenCVPerformanceTest.swift */,
 				4BDF64A420469B350022C5F8 /* OpenCVWrapper.h */,
 				4BDF64A520469B350022C5F8 /* OpenCVWrapper.mm */,
+				4B9A5BF021FBA91500979AFE /* install-opencv.sh */,
 			);
 			path = "OpenCV-OSX-Tests";
 			sourceTree = "<group>";
@@ -379,6 +381,7 @@
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
 				125261E66BB239DB9C4C2C55 /* [CP] Embed Pods Frameworks */,
+				4BD29D3B21F6E985009729A5 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -575,6 +578,23 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Application Specs/Pods-Application Specs-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		4BD29D3B21F6E985009729A5 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = "/bin/bash -l";
+			shellScript = "if which swiftlint >/dev/null; then\n    /usr/local/bin/swiftlint autocorrect\nelse\n    echo \"warning: SwiftLint not installed\"\n    echo \"brew install swiftlint\"\nfi\n";
 		};
 		70CD543F2A946479825D6587 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -777,10 +797,10 @@
 			buildSettings = {
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
-					/usr/local/include,
+					"/usr/local/opt/opencv@2/include",
 				);
 				INFOPLIST_FILE = Specs/Info.plist;
-				LIBRARY_SEARCH_PATHS = /usr/local/lib/;
+				LIBRARY_SEARCH_PATHS = "/usr/local/opt/opencv@2/lib/";
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = "paulz.github.io.PerspectiveTransform.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -795,10 +815,10 @@
 			buildSettings = {
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
-					/usr/local/include,
+					"/usr/local/opt/opencv@2/include",
 				);
 				INFOPLIST_FILE = Specs/Info.plist;
-				LIBRARY_SEARCH_PATHS = /usr/local/lib/;
+				LIBRARY_SEARCH_PATHS = "/usr/local/opt/opencv@2/lib/";
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = "paulz.github.io.PerspectiveTransform.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";

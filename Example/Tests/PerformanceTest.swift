@@ -27,7 +27,7 @@ class PerformanceTest: XCTestCase {
             CGPoint(x: 108.315837, y: 80.1687782),
             CGPoint(x: 377.282671, y: 41.4352201),
             CGPoint(x: 193.321418, y: 330.023027),
-            CGPoint(x: 459.781253, y: 251.836131),
+            CGPoint(x: 459.781253, y: 251.836131)
             ]
 
         let destination = QuadrilateralCalc()
@@ -62,8 +62,8 @@ class PerformanceTest: XCTestCase {
     }
 
     private struct Path {
-        let start:Perspective
-        let destination:Perspective
+        let start: Perspective
+        let destination: Perspective
 
         func performProjectiveTransform() {
             _ = start.projectiveTransform(destination: destination)
@@ -74,7 +74,7 @@ class PerformanceTest: XCTestCase {
         return Path(start: Perspective(startRect),
                     destination: Perspective(destinationRect))
     }
-    
+
     private func repeatTransform(path: Path) {
         repeatTimes.times {
             path.performProjectiveTransform()
