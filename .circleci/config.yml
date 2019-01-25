@@ -52,12 +52,31 @@ jobs:
     steps:
       - pod-install
       - restore_cache:
-          key: 2-opencv-{{ .Branch }}
+          key: 3-opencv-{{ .Branch }}
       - run: for package in opencv@2 xz $(brew deps opencv@2); do brew link $package || brew install $package; done
       - save_cache:
-          key: 2-opencv-{{ .Branch }}
+          key: 3-opencv-{{ .Branch }}
           paths:
-            - /usr/local/Cellar/
+            - /usr/local/Cellar/opencv@2
+            - /usr/local/Cellar/eigen
+            - /usr/local/Cellar/ffmpeg
+            - /usr/local/Cellar/gdbm
+            - /usr/local/Cellar/ilmbase
+            - /usr/local/Cellar/jpeg
+            - /usr/local/Cellar/lame
+            - /usr/local/Cellar/libpng
+            - /usr/local/Cellar/libtiff
+            - /usr/local/Cellar/numpy
+            - /usr/local/Cellar/openexr
+            - /usr/local/Cellar/openssl
+            - /usr/local/Cellar/python
+            - /usr/local/Cellar/python3
+            - /usr/local/Cellar/readline
+            - /usr/local/Cellar/sqlite
+            - /usr/local/Cellar/tbb
+            - /usr/local/Cellar/x264
+            - /usr/local/Cellar/xvid
+            - /usr/local/Cellar/xz
       - run:
           name: Build and run tests
           command: xcodebuild -workspace Example/PerspectiveTransform.xcworkspace -scheme "OpenCV Tests" test -destination "platform=macos" | xcpretty -r junit
