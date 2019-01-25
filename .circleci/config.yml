@@ -4,8 +4,13 @@ executors:
     macos:
       xcode: '10.1.0'
 commands:
+  pod-update:
+    description: Optimized pod update by using S3 cache, see https://discuss.circleci.com/t/best-practice-for-use-of-cached-cocoapods-specs/18897
+    steps:
+      - run: curl https://cocoapods-specs.circleci.com/fetch-cocoapods-repo-from-s3.sh | bash -s cf
+      - run: bundle exec pod update --project-directory=Example --no-repo-update
   pod-install:
-    description: Install Pods
+    description: Checkout and Install Dependencies
     steps:
       - checkout
       - run: gem install bundler
@@ -34,9 +39,9 @@ jobs:
     shell: /bin/bash --login -o pipefail
     steps:
       - pod-install
-      - run: bundle exec pod update --project-directory=Example
+      - pod-update
       - run: bundle update
-      - run: git diff --exit-code # Outdated Cocoapods dependencies found, please run 'pod update' and checkin changes
+      - run: git diff --exit-code # Outdated Cocoapods or Bundle dependencies found, please run 'bundle update and pod update' and checkin changes
       - run: bundle exec pod lib lint || bundle exec pod lib lint --verbose --no-clean
   macos-tests:
     description: Run tests on Mac OS
