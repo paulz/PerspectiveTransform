@@ -24,7 +24,7 @@ matrix:
       bundler: true
       cocoapods: true
       directories: # Cache opencv with dependecies
-        - /usr/local/opt/opencv@2
+        - /usr/local/opt/
         - /usr/local/Cellar/opencv@2
         - /usr/local/Cellar/ffmpeg
         - /usr/local/Cellar/ilmbase
