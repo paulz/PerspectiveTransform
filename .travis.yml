@@ -18,8 +18,7 @@ matrix:
     name: Mac OS
     xcode_scheme: OpenCV Tests
     env: XCODE_DESNITATION='platform=macos' CACHE_NAME=macOS
-    before_script:
-      - ./Example/OpenCV-OSX-Tests/install-opencv.sh
+    before_script: ./Example/OpenCV-OSX-Tests/install-opencv.sh
     cache:
       bundler: true
       cocoapods: true
