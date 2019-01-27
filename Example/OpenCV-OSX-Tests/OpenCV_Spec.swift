@@ -67,7 +67,7 @@ class OpenCV_Spec: QuickSpec {
     override func spec() {
         describe("OpenCV") {
             context("OpenCVWrapper") {
-                itBehavesLike("transformer") {["method":OpenCVWrapper.perspectiveTransform(_:to:)]}
+//                itBehavesLike("transformer") {["method":OpenCVWrapper.perspectiveTransform(_:to:)]}
                 itBehavesLike("transformer") {["method":OpenCVWrapper.findHomography(from:to:)]}
             }
         }
