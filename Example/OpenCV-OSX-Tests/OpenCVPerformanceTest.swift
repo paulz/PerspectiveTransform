@@ -26,7 +26,7 @@ class OpenCVPerformanceTest: XCTestCase {
         return one
     }()
 
-    func XtestPerspectiveTransformPerformance() {
+    func testPerspectiveTransformPerformance() {
         measure {
             (self.repeatTimes/15).times {
                 _ = OpenCVWrapper.perspectiveTransform(start, to: destination)

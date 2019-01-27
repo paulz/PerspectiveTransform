@@ -32,6 +32,7 @@
 		4B97C3CA2047B9F0004C9782 /* NimbleSpecHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA3D17C1C771B560009B690 /* NimbleSpecHelper.swift */; };
 		4B97C3CB2047BA5F004C9782 /* NimbleSpecHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA3D17C1C771B560009B690 /* NimbleSpecHelper.swift */; };
 		4B97C3CE2047BAD3004C9782 /* AccelerateSolvePerfTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B97C3CC2047BAC1004C9782 /* AccelerateSolvePerfTest.swift */; };
+		4B9A5BF121FE67FC00979AFE /* OpenCVPerformanceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDF64AD2046A9ED0022C5F8 /* OpenCVPerformanceTest.swift */; };
 		4BA7B1521C816DCE00933779 /* container.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4B2D2E881C7C2E620045FD11 /* container.jpg */; };
 		4BA7B1531C816DCE00933779 /* sky.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4B2D2E8C1C7C323D0045FD11 /* sky.jpg */; };
 		4BD09EAE2046B05A006D2FA4 /* OpenCV_Spec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD09EAD2046B05A006D2FA4 /* OpenCV_Spec.swift */; };
@@ -701,6 +702,7 @@
 			files = (
 				4BDF64AC2046A1830022C5F8 /* QuadrilateralCalc.swift in Sources */,
 				4BDF64A620469B350022C5F8 /* OpenCVWrapper.mm in Sources */,
+				4B9A5BF121FE67FC00979AFE /* OpenCVPerformanceTest.swift in Sources */,
 				4BD09EAE2046B05A006D2FA4 /* OpenCV_Spec.swift in Sources */,
 				4B97C3CA2047B9F0004C9782 /* NimbleSpecHelper.swift in Sources */,
 			);
@@ -797,7 +799,6 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/usr/local/include/opencv4,
-					/usr/local/include,
 				);
 				INFOPLIST_FILE = Specs/Info.plist;
 				LIBRARY_SEARCH_PATHS = /usr/local/lib/;
@@ -817,7 +818,6 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/usr/local/include/opencv4,
-					/usr/local/include,
 				);
 				INFOPLIST_FILE = Specs/Info.plist;
 				LIBRARY_SEARCH_PATHS = /usr/local/lib/;
