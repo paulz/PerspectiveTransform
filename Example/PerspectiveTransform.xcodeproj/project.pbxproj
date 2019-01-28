@@ -799,6 +799,7 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/usr/local/include/opencv4,
+					/usr/local/include/,
 				);
 				INFOPLIST_FILE = Specs/Info.plist;
 				LIBRARY_SEARCH_PATHS = /usr/local/lib/;
@@ -818,6 +819,7 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/usr/local/include/opencv4,
+					/usr/local/include/,
 				);
 				INFOPLIST_FILE = Specs/Info.plist;
 				LIBRARY_SEARCH_PATHS = /usr/local/lib/;
