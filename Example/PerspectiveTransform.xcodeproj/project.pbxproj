@@ -32,6 +32,7 @@
 		4B97C3CA2047B9F0004C9782 /* NimbleSpecHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA3D17C1C771B560009B690 /* NimbleSpecHelper.swift */; };
 		4B97C3CB2047BA5F004C9782 /* NimbleSpecHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA3D17C1C771B560009B690 /* NimbleSpecHelper.swift */; };
 		4B97C3CE2047BAD3004C9782 /* AccelerateSolvePerfTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B97C3CC2047BAC1004C9782 /* AccelerateSolvePerfTest.swift */; };
+		4B9A5BF121FE67FC00979AFE /* OpenCVPerformanceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDF64AD2046A9ED0022C5F8 /* OpenCVPerformanceTest.swift */; };
 		4BA7B1521C816DCE00933779 /* container.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4B2D2E881C7C2E620045FD11 /* container.jpg */; };
 		4BA7B1531C816DCE00933779 /* sky.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4B2D2E8C1C7C323D0045FD11 /* sky.jpg */; };
 		4BD09EAE2046B05A006D2FA4 /* OpenCV_Spec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD09EAD2046B05A006D2FA4 /* OpenCV_Spec.swift */; };
@@ -44,7 +45,6 @@
 		4BDF64A820469D140022C5F8 /* libopencv_core.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BDF64A720469D140022C5F8 /* libopencv_core.dylib */; };
 		4BDF64AA20469D670022C5F8 /* libopencv_calib3d.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BDF64A920469D670022C5F8 /* libopencv_calib3d.dylib */; };
 		4BDF64AC2046A1830022C5F8 /* QuadrilateralCalc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4009942042575A00B7CE37 /* QuadrilateralCalc.swift */; };
-		4BDF64AE2046A9ED0022C5F8 /* OpenCVPerformanceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDF64AD2046A9ED0022C5F8 /* OpenCVPerformanceTest.swift */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* PanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* PanViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
@@ -702,8 +702,8 @@
 			files = (
 				4BDF64AC2046A1830022C5F8 /* QuadrilateralCalc.swift in Sources */,
 				4BDF64A620469B350022C5F8 /* OpenCVWrapper.mm in Sources */,
+				4B9A5BF121FE67FC00979AFE /* OpenCVPerformanceTest.swift in Sources */,
 				4BD09EAE2046B05A006D2FA4 /* OpenCV_Spec.swift in Sources */,
-				4BDF64AE2046A9ED0022C5F8 /* OpenCVPerformanceTest.swift in Sources */,
 				4B97C3CA2047B9F0004C9782 /* NimbleSpecHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -795,12 +795,14 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F60BDD4F7314FB618651526D /* Pods-OpenCV OSX Tests.debug.xcconfig */;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
-					"/usr/local/opt/opencv@2/include",
+					/usr/local/include/opencv4,
+					/usr/local/include/,
 				);
 				INFOPLIST_FILE = Specs/Info.plist;
-				LIBRARY_SEARCH_PATHS = "/usr/local/opt/opencv@2/lib/";
+				LIBRARY_SEARCH_PATHS = /usr/local/lib/;
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = "paulz.github.io.PerspectiveTransform.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -813,12 +815,14 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 617247F9B099C3D5CB91A2ED /* Pods-OpenCV OSX Tests.release.xcconfig */;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
-					"/usr/local/opt/opencv@2/include",
+					/usr/local/include/opencv4,
+					/usr/local/include/,
 				);
 				INFOPLIST_FILE = Specs/Info.plist;
-				LIBRARY_SEARCH_PATHS = "/usr/local/opt/opencv@2/lib/";
+				LIBRARY_SEARCH_PATHS = /usr/local/lib/;
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = "paulz.github.io.PerspectiveTransform.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
