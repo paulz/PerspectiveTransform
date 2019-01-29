@@ -52,10 +52,10 @@ jobs:
     steps:
       - pod-install
       - restore_cache:
-          key: 7-opencv-{{ .Branch }}
+          key: 8-opencv-{{ .Branch }}
       - run: ./Example/OpenCV-OSX-Tests/install-opencv.sh
       - save_cache:
-          key: 7-opencv-{{ .Branch }}
+          key: 8-opencv-{{ .Branch }}
           paths:
             - /usr/local/Cellar/opencv
             - /usr/local/Cellar/tbb
