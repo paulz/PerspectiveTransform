@@ -1,18 +1,18 @@
 PODS:
   - ImageCoordinateSpace (1.0.6)
-  - iOSSnapshotTestCase (4.0.1):
-    - iOSSnapshotTestCase/SwiftSupport (= 4.0.1)
-  - iOSSnapshotTestCase/Core (4.0.1)
-  - iOSSnapshotTestCase/SwiftSupport (4.0.1):
+  - iOSSnapshotTestCase (5.0.2):
+    - iOSSnapshotTestCase/SwiftSupport (= 5.0.2)
+  - iOSSnapshotTestCase/Core (5.0.2)
+  - iOSSnapshotTestCase/SwiftSupport (5.0.2):
     - iOSSnapshotTestCase/Core
-  - Nimble (7.3.2)
-  - Nimble-Snapshots (6.9.0):
-    - Nimble-Snapshots/Core (= 6.9.0)
-  - Nimble-Snapshots/Core (6.9.0):
-    - iOSSnapshotTestCase (~> 4.0)
+  - Nimble (7.3.3)
+  - Nimble-Snapshots (6.9.1):
+    - Nimble-Snapshots/Core (= 6.9.1)
+  - Nimble-Snapshots/Core (6.9.1):
+    - iOSSnapshotTestCase (~> 5.0)
     - Nimble (~> 7.0)
   - PerspectiveTransform (0.4)
-  - Quick (1.3.2)
+  - Quick (1.3.4)
 
 DEPENDENCIES:
   - ImageCoordinateSpace
@@ -35,12 +35,12 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   ImageCoordinateSpace: 7c527176d9013a04627d9b97366793526a44bb69
-  iOSSnapshotTestCase: f3b2b7e606fe03fdbe49af84316bd235df32dc44
-  Nimble: 5e94a8cacb355943c6c87198035dc4adbb0f10e4
-  Nimble-Snapshots: 79394f8d0aea3df54bd5ff78ee9dff05a523a09c
+  iOSSnapshotTestCase: 2d51aa06775e95cecb0a1fb9c5c159ccd1dd4596
+  Nimble: 3b434b1e7d0a92603a13550a82880b0d952f518e
+  Nimble-Snapshots: bbd1ab264bacc24a9ce24a8363bc05aac783aeb0
   PerspectiveTransform: 4e823871c7fde15b776610dbdf102a3b00adb077
-  Quick: 2623cb30d7a7f41ca62f684f679586558f483d46
+  Quick: f4f7f063c524394c73ed93ac70983c609805d481
 
 PODFILE CHECKSUM: 882ce3558060409e596935d1d06dd5a6707894f9
 
-COCOAPODS: 1.6.0.rc.1
+COCOAPODS: 1.6.0.rc.2
