@@ -67,10 +67,10 @@ class CompareMethodsSpec: QuickSpec {
     override func spec() {
         describe("compare different methods") {
             context("AlgebraMethod") {
-                itBehavesLike("transformer") {["method":AlgebraMethod()]}
+                itBehavesLike("transformer") {["method": AlgebraMethod()]}
             }
             context("PerspectiveTrasform") {
-                itBehavesLike("transformer") {["method":MatrixMethod()]}
+                itBehavesLike("transformer") {["method": MatrixMethod()]}
             }
         }
     }
