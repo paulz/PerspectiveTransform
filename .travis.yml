@@ -4,7 +4,7 @@ xcode_workspace: Example/PerspectiveTransform.xcworkspace
 xcode_scheme: Example
 xcode_sdk: iphonesimulator12.1
 git:
-  depth: 0 # use 0, as false cause travis lint server 500 exception
+  depth: 1 # use 1, as false cause travis lint server 500 exception
 cache:
   bundler: true
   cocoapods: true
