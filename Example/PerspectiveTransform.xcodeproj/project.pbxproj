@@ -381,7 +381,7 @@
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
 				125261E66BB239DB9C4C2C55 /* [CP] Embed Pods Frameworks */,
-				4BD29D3B21F6E985009729A5 /* ShellScript */,
+				4BD29D3B21F6E985009729A5 /* Swift Lint */,
 			);
 			buildRules = (
 			);
@@ -579,7 +579,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Application Specs/Pods-Application Specs-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		4BD29D3B21F6E985009729A5 /* ShellScript */ = {
+		4BD29D3B21F6E985009729A5 /* Swift Lint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -588,6 +588,7 @@
 			);
 			inputPaths = (
 			);
+			name = "Swift Lint";
 			outputFileListPaths = (
 			);
 			outputPaths = (
@@ -595,6 +596,7 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = "/bin/bash -l";
 			shellScript = "if which swiftlint >/dev/null; then\n    /usr/local/bin/swiftlint autocorrect\nelse\n    echo \"warning: SwiftLint not installed\"\n    echo \"brew install swiftlint\"\nfi\n";
+			showEnvVarsInLog = 0;
 		};
 		70CD543F2A946479825D6587 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
