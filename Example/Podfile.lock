@@ -1,5 +1,5 @@
 PODS:
-  - ImageCoordinateSpace (1.0.6)
+  - ImageCoordinateSpace (1.0.7)
   - iOSSnapshotTestCase (5.0.2):
     - iOSSnapshotTestCase/SwiftSupport (= 5.0.2)
   - iOSSnapshotTestCase/Core (5.0.2)
@@ -34,7 +34,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  ImageCoordinateSpace: 7c527176d9013a04627d9b97366793526a44bb69
+  ImageCoordinateSpace: 424e76be5db1cbd02a93cb0e97b0d3d46957b454
   iOSSnapshotTestCase: 2d51aa06775e95cecb0a1fb9c5c159ccd1dd4596
   Nimble: 051e3d8912d40138fa5591c78594f95fb172af37
   Nimble-Snapshots: bbd1ab264bacc24a9ce24a8363bc05aac783aeb0
