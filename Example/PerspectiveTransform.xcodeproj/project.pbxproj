@@ -34,6 +34,7 @@
 		4B9A5BF121FE67FC00979AFE /* OpenCVPerformanceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDF64AD2046A9ED0022C5F8 /* OpenCVPerformanceTest.swift */; };
 		4BA7B1521C816DCE00933779 /* container.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4B2D2E881C7C2E620045FD11 /* container.jpg */; };
 		4BA7B1531C816DCE00933779 /* sky.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4B2D2E8C1C7C323D0045FD11 /* sky.jpg */; };
+		4BCA955F2237A7CE0091E312 /* CATransform3D+MatrixSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCA955E2237A7CE0091E312 /* CATransform3D+MatrixSpec.swift */; };
 		4BD09EAE2046B05A006D2FA4 /* OpenCV_Spec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD09EAD2046B05A006D2FA4 /* OpenCV_Spec.swift */; };
 		4BD09EB220478E5C006D2FA4 /* PerspectiveTransformSpecHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD09EB120478E5C006D2FA4 /* PerspectiveTransformSpecHelper.swift */; };
 		4BD09EB320478E5C006D2FA4 /* PerspectiveTransformSpecHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD09EB120478E5C006D2FA4 /* PerspectiveTransformSpecHelper.swift */; };
@@ -102,6 +103,7 @@
 		4BA7B14D1C7D710D00933779 /* ReferenceImages */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ReferenceImages; sourceTree = "<group>"; };
 		4BB87C3B21F468CA00DABAED /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		4BB87C3C21F468CA00DABAED /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4BCA955E2237A7CE0091E312 /* CATransform3D+MatrixSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CATransform3D+MatrixSpec.swift"; sourceTree = "<group>"; };
 		4BD09EAD2046B05A006D2FA4 /* OpenCV_Spec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenCV_Spec.swift; sourceTree = "<group>"; };
 		4BD09EB120478E5C006D2FA4 /* PerspectiveTransformSpecHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerspectiveTransformSpecHelper.swift; sourceTree = "<group>"; };
 		4BDEE37220004185007214F1 /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 			children = (
 				607FACEB1AFB9204008FA782 /* MatrixSpec.swift */,
 				4B58ECF61C79C3C200F1BC00 /* CATransform3Dfrom2DSpec.swift */,
+				4BCA955E2237A7CE0091E312 /* CATransform3D+MatrixSpec.swift */,
 				4B74DB2C203BAA1A0030F41B /* CALayerTransformSpec.swift */,
 				4BA3D17A1C771B2E0009B690 /* ProjectionSpec.swift */,
 				4B84138A201DD90D00D17FE2 /* PerspectiveSpec.swift */,
@@ -685,6 +688,7 @@
 				4B97C3C92047B9EF004C9782 /* NimbleSpecHelper.swift in Sources */,
 				4BD09EB320478E5C006D2FA4 /* PerspectiveTransformSpecHelper.swift in Sources */,
 				4B74DB42203BDA070030F41B /* BasisVectorSpec.swift in Sources */,
+				4BCA955F2237A7CE0091E312 /* CATransform3D+MatrixSpec.swift in Sources */,
 				4B74DB41203BDA070030F41B /* PerspectiveSpec.swift in Sources */,
 				4B74DB3E203BDA070030F41B /* CATransform3Dfrom2DSpec.swift in Sources */,
 				4B74DB45203BDA070030F41B /* VectorProjectionSpec.swift in Sources */,
