@@ -27,7 +27,6 @@
 		4B74DB48203BDAD70030F41B /* ReferenceImages in Resources */ = {isa = PBXBuildFile; fileRef = 4BA7B14D1C7D710D00933779 /* ReferenceImages */; };
 		4B76EDD8205674CF009492EC /* FittingPolygon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B76EDD7205674CF009492EC /* FittingPolygon.swift */; };
 		4B76EDDA205674F3009492EC /* PolygonLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B76EDD9205674F3009492EC /* PolygonLoader.swift */; };
-		4B8C085420C1F415006BFBEF /* WorkaroundForXcodeCompleteCoverageSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8C085320C1F415006BFBEF /* WorkaroundForXcodeCompleteCoverageSpec.swift */; };
 		4B97C3C92047B9EF004C9782 /* NimbleSpecHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA3D17C1C771B560009B690 /* NimbleSpecHelper.swift */; };
 		4B97C3CA2047B9F0004C9782 /* NimbleSpecHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA3D17C1C771B560009B690 /* NimbleSpecHelper.swift */; };
 		4B97C3CB2047BA5F004C9782 /* NimbleSpecHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA3D17C1C771B560009B690 /* NimbleSpecHelper.swift */; };
@@ -93,7 +92,6 @@
 		4B76EDD7205674CF009492EC /* FittingPolygon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FittingPolygon.swift; sourceTree = "<group>"; };
 		4B76EDD9205674F3009492EC /* PolygonLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolygonLoader.swift; sourceTree = "<group>"; };
 		4B84138A201DD90D00D17FE2 /* PerspectiveSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerspectiveSpec.swift; sourceTree = "<group>"; };
-		4B8C085320C1F415006BFBEF /* WorkaroundForXcodeCompleteCoverageSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkaroundForXcodeCompleteCoverageSpec.swift; sourceTree = "<group>"; };
 		4B97C3CC2047BAC1004C9782 /* AccelerateSolvePerfTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccelerateSolvePerfTest.swift; sourceTree = "<group>"; };
 		4B9A5BF021FBA91500979AFE /* install-opencv.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "install-opencv.sh"; sourceTree = "<group>"; };
 		4BA3D17A1C771B2E0009B690 /* ProjectionSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = ProjectionSpec.swift; sourceTree = "<group>"; tabWidth = 4; };
@@ -186,7 +184,6 @@
 				4B84138A201DD90D00D17FE2 /* PerspectiveSpec.swift */,
 				4B58ECEE1C799C2A00F1BC00 /* BasisVectorSpec.swift */,
 				4BA3D1801C77230A0009B690 /* VectorProjectionSpec.swift */,
-				4B8C085320C1F415006BFBEF /* WorkaroundForXcodeCompleteCoverageSpec.swift */,
 				4B74DB38203BD9C70030F41B /* Info.plist */,
 			);
 			path = Specs;
@@ -694,7 +691,6 @@
 				4B74DB40203BDA070030F41B /* ProjectionSpec.swift in Sources */,
 				4B74DB3C203BDA070030F41B /* MatrixSpec.swift in Sources */,
 				4B74DB3F203BDA070030F41B /* CALayerTransformSpec.swift in Sources */,
-				4B8C085420C1F415006BFBEF /* WorkaroundForXcodeCompleteCoverageSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
