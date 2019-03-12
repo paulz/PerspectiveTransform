@@ -10,7 +10,7 @@ import XCTest
 
 class OpenCVPerformanceTest: XCTestCase {
     static let reasonableTestDurationMs = 100
-    let repeatTimes = {OpenCVPerformanceTest.reasonableTestDurationMs * 1000}()
+    let repeatTimes = OpenCVPerformanceTest.reasonableTestDurationMs * 1000
 
     let destination = Quadrilateral(upperLeft: CGPoint(x: 108.315837, y: 80.1687782),
                                     upperRight: CGPoint(x: 377.282671, y: 41.4352201),

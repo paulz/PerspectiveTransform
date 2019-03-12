@@ -19,7 +19,7 @@ class CATransform3DMatrixPerformanceTest: XCTestCase {
     /// Shows that bitcast is 2-5 times faster
     func testInitUsingBitcast() {
         measure {
-            for _ in (0...iterations) {
+            iterations.times {
                 _ = CATransform3D(m4x4)
             }
         }
@@ -28,7 +28,7 @@ class CATransform3DMatrixPerformanceTest: XCTestCase {
     /// Shows that designated init is slower
     func testInitUsingDesignatedInitializer() {
         measure {
-            for _ in (0...iterations) {
+            iterations.times {
                 _ = CATransform3D(
                     m11: CGFloat(m4x4[0, 0]), m12: CGFloat(m4x4[0, 1]), m13: CGFloat(m4x4[0, 2]), m14: CGFloat(m4x4[0, 3]),
                     m21: CGFloat(m4x4[1, 0]), m22: CGFloat(m4x4[1, 1]), m23: CGFloat(m4x4[1, 2]), m24: CGFloat(m4x4[1, 3]),

@@ -66,7 +66,6 @@ class CALayerTransformSpec: QuickSpec {
                             (original, delta:0.001)
                     }
                 }
-
             }
         }
     }

@@ -30,9 +30,7 @@ extension Matrix4x3Type {
 }
 
 extension Matrix3x4Type {
-    static let zeroRowBeforeLast: Matrix3x4Type =  {
-        return Matrix4x3Type.zeroColumnBeforeLast.transpose
-    }()
+    static let zeroRowBeforeLast: Matrix3x4Type = Matrix4x3Type.zeroColumnBeforeLast.transpose
 
     func insertColumnBeforeLast() -> Matrix4x4Type {
         return self * Matrix4x3Type.zeroColumnBeforeLast
