@@ -1,5 +1,5 @@
 //
-//  PerformanceTest.swift
+//  CATransform3D+MatrixPerformanceTest.swift
 //  Framework Unit Specs
 //
 //  Created by Paul Zabelin on 3/12/19.
@@ -10,13 +10,13 @@ import XCTest
 import simd
 @testable import PerspectiveTransform
 
-class PerformanceTest: XCTestCase {
+class CATransform3DMatrixPerformanceTest: XCTestCase {
     let m4x4 = double4x4((1...4).map { row in
         double4((1...4).map {Double(10 * row + $0)})
     })
     let iterations = 100000
 
-    /// Shows that bitcast is 2-4 times faster
+    /// Shows that bitcast is 2-5 times faster
     func testInitUsingBitcast() {
         measure {
             for _ in (0...iterations) {

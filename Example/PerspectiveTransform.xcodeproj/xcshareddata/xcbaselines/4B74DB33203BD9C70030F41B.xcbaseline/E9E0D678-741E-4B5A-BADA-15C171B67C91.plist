@@ -4,7 +4,7 @@
 <dict>
 	<key>classNames</key>
 	<dict>
-		<key>PerformanceTest</key>
+		<key>CATransform3DMatrixPerformanceTest</key>
 		<dict>
 			<key>testInitUsingBitcast()</key>
 			<dict>
