@@ -10,6 +10,6 @@ import CoreGraphics
 
 extension CGPoint {
     var homogeneous3dvector: Vector3Type {
-        return Vector3Type(ScalarType(x), ScalarType(y), ScalarType.one)
+        return .init(.init(x), .init(y), .one)
     }
 }

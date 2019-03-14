@@ -61,8 +61,6 @@ class PanViewController: UIViewController {
     }
 
     private var destination: Perspective {
-        get {
-            return Perspective(cornerViews.map {$0.center})
-        }
+        return .init(cornerViews.map {$0.center})
     }
 }
