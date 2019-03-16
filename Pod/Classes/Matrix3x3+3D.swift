@@ -26,7 +26,7 @@ extension Matrix4x3Type {
     0 1 0 0
     0 0 0 1
      */
-    static let zeroColumnBeforeLast: Matrix4x3Type =  {
+    fileprivate static let zeroColumnBeforeLast: Matrix4x3Type =  {
         let identity = Matrix3x3Type(diagonal: .one)
         var columns = Vector3Type.indexArray.map {identity[$0]}
         columns.insert(.zero, at: Vector3Type.lastIndex)
@@ -41,15 +41,15 @@ extension Matrix3x4Type {
      0 0 0
      0 0 1
      */
-    static let zeroRowBeforeLast: Matrix3x4Type = Matrix4x3Type.zeroColumnBeforeLast.transpose
+    fileprivate static let zeroRowBeforeLast: Matrix3x4Type = Matrix4x3Type.zeroColumnBeforeLast.transpose
 
-    func insertColumnBeforeLast() -> Matrix4x4Type {
+    fileprivate func insertColumnBeforeLast() -> Matrix4x4Type {
         return self * .zeroColumnBeforeLast
     }
 }
 
 extension Matrix3x3Type {
-    func insertRowBeforeLast() -> Matrix3x4Type {
+    fileprivate func insertRowBeforeLast() -> Matrix3x4Type {
         return .zeroRowBeforeLast * self
     }
 
