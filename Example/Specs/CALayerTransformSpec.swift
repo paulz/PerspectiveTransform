@@ -12,7 +12,7 @@ class CALayerTransformSpec: QuickSpec {
                     let layer = CALayer()
                     layer.transform = transform
 
-                    var translate = Vector3Type()
+                    var translate = Vector3()
                     translate.x = layer.value(forKeyPath: "transform.translation.x") as! Double
                     translate.y = layer.value(forKeyPath: "transform.translation.y") as! Double
                     translate.z = layer.value(forKeyPath: "transform.translation.z") as! Double
@@ -35,13 +35,13 @@ class CALayerTransformSpec: QuickSpec {
                     }
                     context("other axis") {
                         it("should match corresponding value") {
-                            expect(CATransform3DMakeRotation(0.1234, 0, 10, 0).layerRotation()) == Vector3Type(0, 0.1234, 0)
-                            expect(CATransform3DMakeRotation(0.1234, 0, 0, 10).layerRotation()) == Vector3Type(0, 0, 0.1234)
+                            expect(CATransform3DMakeRotation(0.1234, 0, 10, 0).layerRotation()) == Vector3(0, 0.1234, 0)
+                            expect(CATransform3DMakeRotation(0.1234, 0, 0, 10).layerRotation()) == Vector3(0, 0, 0.1234)
                         }
                     }
                     context("vector length") {
                         it("should be ignored") {
-                            expect(CATransform3DMakeRotation(0.1234, 1000, 0, 0).layerRotation()) == Vector3Type(0.1234, 0, 0)
+                            expect(CATransform3DMakeRotation(0.1234, 1000, 0, 0).layerRotation()) == Vector3(0.1234, 0, 0)
                         }
                     }
                     context("large angles") {

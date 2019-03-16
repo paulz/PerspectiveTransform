@@ -51,7 +51,7 @@ class MatrixSpec: QuickSpec {
                     // | 4 5 6 | = (1*5*9+2*6*7+3*4*8)-(3*5*7+2*4*9+1*6*8) = 0
                     // | 7 8 9 |
                     // See: https://www.google.com/search?client=safari&rls=en&q=(1*5*9%2B2*6*7%2B3*4*8)-(3*5*7%2B2*4*9%2B1*6*8)+=&ie=UTF-8&oe=UTF-8
-                    expect(Matrix3x3Type([1, 2, 3, 4, 5, 6, 7, 8, 9]).determinant) == 0
+                    expect(Matrix3x3([1, 2, 3, 4, 5, 6, 7, 8, 9]).determinant) == 0
                 }
             }
         }

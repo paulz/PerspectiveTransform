@@ -9,10 +9,10 @@ class CATransform3Dfrom2DSpec: QuickSpec {
         describe("weak perspective projection") {
             context("2D to 3D") {
                 it("should add row and column and set 1 for z") {
-                    let projection2D = Matrix3x3Type([
-                        Vector3Type(11, 12, 13),
-                        Vector3Type(21, 22, 23),
-                        Vector3Type(31, 32, 1)
+                    let projection2D = Matrix3x3([
+                        Vector3(11, 12, 13),
+                        Vector3(21, 22, 23),
+                        Vector3(31, 32, 1)
                         ])
                     let projection3D = CATransform3D(
                         m11: 11, m12: 12, m13: 0, m14: 13,
@@ -24,7 +24,7 @@ class CATransform3Dfrom2DSpec: QuickSpec {
 
                 context("random matrix") {
                     let source = GKRandomSource.sharedRandom()
-                    var matrix: Matrix3x3Type!
+                    var matrix: Matrix3x3!
 
                     beforeEach {
                         matrix = source.nextMatrix()
@@ -49,14 +49,14 @@ class CATransform3Dfrom2DSpec: QuickSpec {
                             let transform = CATransform3D(matrix.to3d())
                             let layer = CALayer()
                             layer.transform = transform
-                            var scale = Vector3Type()
+                            var scale = Vector3()
                             scale.x = layer.value(forKeyPath: "transform.scale.x") as! Double
                             scale.y = layer.value(forKeyPath: "transform.scale.y") as! Double
                             scale.z = layer.value(forKeyPath: "transform.scale.z") as! Double
                             let madeScale = CATransform3DMakeScale(CGFloat(scale.x), CGFloat(scale.y), CGFloat(scale.z))
                             print("madeScale:", madeScale)
 
-                            var translate = Vector3Type()
+                            var translate = Vector3()
                             translate.x = layer.value(forKeyPath: "transform.translation.x") as! Double
                             translate.y = layer.value(forKeyPath: "transform.translation.y") as! Double
                             translate.z = layer.value(forKeyPath: "transform.translation.z") as! Double

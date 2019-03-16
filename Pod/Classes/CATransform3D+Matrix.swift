@@ -9,7 +9,7 @@
 import QuartzCore
 
 extension CATransform3D {
-    init(_ m: Matrix4x4Type) {
+    init(_ m: Matrix4x4) {
         self = unsafeBitCast(m, to: CATransform3D.self)
     }
 }

@@ -122,7 +122,7 @@ class ProjectionSpec: QuickSpec {
             }
 
             context("scale and translate") {
-                let expected = Matrix3x3Type([200.0/152, 0, 100,
+                let expected = Matrix3x3([200.0/152, 0, 100,
                                               0, 200.0/122, 100,
                                               0, 0, 1])
                 var start: Perspective!

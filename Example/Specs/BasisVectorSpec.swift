@@ -16,10 +16,10 @@ class BasisSpec: QuickSpec {
 
         context("multiply adj by vector") {
             it("should match expected") {
-                let adjM = Matrix3x3Type([-122, -152, 18544, 122, 0, 0, 0, 152, 0])
-                let vector = Vector3Type([152, 122, 1])
+                let adjM = Matrix3x3([-122, -152, 18544, 122, 0, 0, 0, 152, 0])
+                let vector = Vector3([152, 122, 1])
                 let result = adjM * vector
-                let expected = Vector3Type([-18544, 18544, 18544])
+                let expected = Vector3([-18544, 18544, 18544])
                 expect(result).to(equal(expected))
             }
         }
@@ -27,12 +27,12 @@ class BasisSpec: QuickSpec {
         context("basisVectorsToPointsMap") {
             context("any 4 points") {
                 var points: [CGPoint]!
-                var subject: Matrix3x3Type!
+                var subject: Matrix3x3!
 
-                let basisVectors = [Vector3Type(1, 0, 0),
-                                    Vector3Type(0, 1, 0),
-                                    Vector3Type(0, 0, 1),
-                                    Vector3Type(1, 1, 1)]
+                let basisVectors = [Vector3(1, 0, 0),
+                                    Vector3(0, 1, 0),
+                                    Vector3(0, 0, 1),
+                                    Vector3(1, 1, 1)]
 
                 let source = GKRandomSource.sharedRandom()
 
@@ -50,12 +50,12 @@ class BasisSpec: QuickSpec {
             }
 
             it("should match expected") {
-                let startBasis = Matrix3x3Type([[0.0, 0.0, -1.0], [152.0, 0.0, 1.0], [0.0, 122.0, 1.0]])
+                let startBasis = Matrix3x3([[0.0, 0.0, -1.0], [152.0, 0.0, 1.0], [0.0, 122.0, 1.0]])
                 expect(Perspective(start).basisVectorsToPointsMap) ≈ (startBasis, delta:0.5)
             }
 
             it("should work for destination") {
-                let destBasis = Matrix3x3Type([[-100.0, -100.0, -1.0], [300.0, 100.0, 1.0], [100.0, 300.0, 1.0]])
+                let destBasis = Matrix3x3([[-100.0, -100.0, -1.0], [300.0, 100.0, 1.0], [100.0, 300.0, 1.0]])
                 expect(Perspective(destination).basisVectorsToPointsMap) ≈ (destBasis, delta:0.5)
             }
         }

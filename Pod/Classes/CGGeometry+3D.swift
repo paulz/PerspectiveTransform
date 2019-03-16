@@ -9,7 +9,7 @@
 import CoreGraphics
 
 extension CGPoint {
-    var homogeneous3dvector: Vector3Type {
+    var homogeneous3dvector: Vector3 {
         return .init(.init(x), .init(y), .one)
     }
 }

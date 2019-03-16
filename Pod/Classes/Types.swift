@@ -8,9 +8,9 @@
 
 import simd
 
-typealias ScalarType = Double
-typealias Vector3Type = double3
-typealias Matrix3x3Type = double3x3
-typealias Matrix3x4Type = double3x4
-typealias Matrix4x3Type = double4x3
-typealias Matrix4x4Type = double4x4
+typealias Scalar = Double
+typealias Vector3 = double3
+typealias Matrix3x3 = double3x3
+typealias Matrix3x4 = double3x4
+typealias Matrix4x3 = double4x3
+typealias Matrix4x4 = double4x4

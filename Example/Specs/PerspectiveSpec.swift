@@ -51,13 +51,13 @@ class PerspectiveSpec: QuickSpec {
                     let perspective = Perspective(CGRect(origin: CGPoint.zero, size: CGSize(width: 10, height: 20)))
 
                     it("should be homegenious vector to corners") {
-                        expect(perspective.basisVectorsToPointsMap) == Matrix3x3Type(Vector3Type(0.0, 0.0, -1.0),
-                                                                                     Vector3Type(10.0, 0.0, 1.0),
-                                                                                     Vector3Type(0.0, 20.0, 1.0))
+                        expect(perspective.basisVectorsToPointsMap) == Matrix3x3(Vector3(0.0, 0.0, -1.0),
+                                                                                     Vector3(10.0, 0.0, 1.0),
+                                                                                     Vector3(0.0, 20.0, 1.0))
                     }
 
                     context("pointsToBasisVectorsMap") {
-                        let identity = Matrix3x3Type(diagonal: Vector3Type(1))
+                        let identity = Matrix3x3(diagonal: Vector3(1))
 
                         it("should result in identity when multiplied by basisVectorsToPointsMap") {
                             expect(perspective.basisVectorsToPointsMap * perspective.pointsToBasisVectorsMap) == identity
