@@ -21,6 +21,11 @@ extension ScalarType {
 }
 
 extension Matrix4x3Type {
+    /**~~~
+    1 0 0 0
+    0 1 0 0
+    0 0 0 1
+     */
     static let zeroColumnBeforeLast: Matrix4x3Type =  {
         let identity = Matrix3x3Type(diagonal: .one)
         var columns = Vector3Type.indexArray.map {identity[$0]}
@@ -30,6 +35,12 @@ extension Matrix4x3Type {
 }
 
 extension Matrix3x4Type {
+    /**~~~
+     1 0 0
+     0 1 0
+     0 0 0
+     0 0 1
+     */
     static let zeroRowBeforeLast: Matrix3x4Type = Matrix4x3Type.zeroColumnBeforeLast.transpose
 
     func insertColumnBeforeLast() -> Matrix4x4Type {
@@ -42,6 +53,12 @@ extension Matrix3x3Type {
         return .zeroRowBeforeLast * self
     }
 
+    /**~~~
+     m11 m12 m13          m11/m33 m12/m33 0 m13/m33
+     m21 m22 m23    =>    m21/m33 m22/m33 0 m23/m33
+     m31 m32 m33             0       0    1    0
+                          m31/m33 m32/m33 0    1
+     */
     func to3d() -> Matrix4x4Type {
         var m4x4 = zNormalized().insertRowBeforeLast().insertColumnBeforeLast()
         m4x4[Vector3Type.lastIndex, Vector3Type.lastIndex] = .one
