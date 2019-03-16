@@ -13,39 +13,10 @@ extension Vector3 {
     static let zero = Vector3(0)
     static let lastIndex = Vector3().endIndex - 1
     static let indexSlice = 0...Vector3.lastIndex
-    static let indexArray = Array(Vector3.indexSlice)
 }
 
 extension Scalar {
     static let one = Scalar(1)
-}
-
-extension Matrix4x3 {
-    /**~~~
-    1 0 0 0
-    0 1 0 0
-    0 0 0 1
-     */
-    fileprivate static let zeroColumnBeforeLast: Matrix4x3 =  {
-        let identity = Matrix3x3(diagonal: .one)
-        var columns = Vector3.indexArray.map {identity[$0]}
-        columns.insert(.zero, at: Vector3.lastIndex)
-        return .init(columns)
-    }()
-}
-
-extension Matrix3x4 {
-    /**~~~
-     1 0 0
-     0 1 0
-     0 0 0
-     0 0 1
-     */
-    fileprivate static let zeroRowBeforeLast: Matrix3x4 = Matrix4x3.zeroColumnBeforeLast.transpose
-
-    fileprivate func insertColumnBeforeLast() -> Matrix4x4 {
-        return self * .zeroColumnBeforeLast
-    }
 }
 
 extension Matrix3x3 {
@@ -75,3 +46,35 @@ extension Matrix3x3 {
         return .one / zScale
     }
 }
+
+fileprivate typealias Matrix3x4 = double3x4
+fileprivate typealias Matrix4x3 = double4x3
+
+extension Matrix4x3 {
+    /**~~~
+     1 0 0 0
+     0 1 0 0
+     0 0 0 1
+     */
+    fileprivate static let zeroColumnBeforeLast: Matrix4x3 =  {
+        let identity = Matrix3x3(diagonal: .one)
+        var columns = Vector3.indexSlice.map {identity[$0]}
+        columns.insert(.zero, at: Vector3.lastIndex)
+        return .init(columns)
+    }()
+}
+
+extension Matrix3x4 {
+    /**~~~
+     1 0 0
+     0 1 0
+     0 0 0
+     0 0 1
+     */
+    fileprivate static let zeroRowBeforeLast: Matrix3x4 = Matrix4x3.zeroColumnBeforeLast.transpose
+
+    fileprivate func insertColumnBeforeLast() -> Matrix4x4 {
+        return self * .zeroColumnBeforeLast
+    }
+}
+
