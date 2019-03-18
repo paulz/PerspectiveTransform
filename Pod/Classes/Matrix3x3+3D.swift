@@ -23,23 +23,23 @@ extension Matrix3x3 {
     fileprivate func insertRowBeforeLast() -> Matrix3x4 {
         return .zeroRowBeforeLast * self
     }
-
+    
     /**~~~
      m11 m12 m13          m11/m33 m12/m33 0 m13/m33
      m21 m22 m23    =>    m21/m33 m22/m33 0 m23/m33
      m31 m32 m33             0       0    1    0
-                          m31/m33 m32/m33 0    1
+                          m31/m33 m32/m33 0    1
      */
     func to3d() -> Matrix4x4 {
         var m4x4 = zNormalized().insertRowBeforeLast().insertColumnBeforeLast()
         m4x4[Vector3.lastIndex, Vector3.lastIndex] = .one
         return m4x4
     }
-
+    
     private func zNormalized() -> Matrix3x3 {
         return normalizationFactor * self
     }
-
+    
     private var normalizationFactor: Scalar {
         let zScale = self[Vector3.lastIndex, Vector3.lastIndex]
         assert(zScale.isZero == false, "since we use homogenized vectors, z != 0")
@@ -72,7 +72,7 @@ extension Matrix3x4 {
      0 0 1
      */
     fileprivate static let zeroRowBeforeLast: Matrix3x4 = Matrix4x3.zeroColumnBeforeLast.transpose
-
+    
     fileprivate func insertColumnBeforeLast() -> Matrix4x4 {
         return self * .zeroColumnBeforeLast
     }

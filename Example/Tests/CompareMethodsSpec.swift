@@ -14,7 +14,7 @@ class CompareTransformSpecConfiguration: QuickConfiguration {
                 CGPoint(x: 377.282671, y: 41.4352201),
                 CGPoint(x: 193.321418, y: 330.023027),
                 CGPoint(x: 459.781253, y: 251.836131)
-                ]
+            ]
             let frame = CGRect(origin: CGPoint.zero,
                                size: CGSize(width: 20, height: 10))
             beforeEach {

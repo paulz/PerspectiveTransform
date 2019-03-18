@@ -10,11 +10,11 @@ class PerspectiveSpec: QuickSpec {
                 it("should list all vectors") {
                     let perspective = Perspective(CGRect.zero)
                     expect(String(describing: perspective)) == "Perspective: [\n"
-                    + "double3(0.0, 0.0, 1.0)\n"
-                    + "double3(0.0, 0.0, 1.0)\n"
-                    + "double3(0.0, 0.0, 1.0)\n"
-                    + "double3(0.0, 0.0, 1.0)\n"
-                    + "]"
+                        + "double3(0.0, 0.0, 1.0)\n"
+                        + "double3(0.0, 0.0, 1.0)\n"
+                        + "double3(0.0, 0.0, 1.0)\n"
+                        + "double3(0.0, 0.0, 1.0)\n"
+                        + "]"
                 }
             }
 
@@ -52,8 +52,8 @@ class PerspectiveSpec: QuickSpec {
 
                     it("should be homegenious vector to corners") {
                         expect(perspective.basisVectorsToPointsMap) == Matrix3x3(Vector3(0.0, 0.0, -1.0),
-                                                                                     Vector3(10.0, 0.0, 1.0),
-                                                                                     Vector3(0.0, 20.0, 1.0))
+                                                                                 Vector3(10.0, 0.0, 1.0),
+                                                                                 Vector3(0.0, 20.0, 1.0))
                     }
 
                     context("pointsToBasisVectorsMap") {

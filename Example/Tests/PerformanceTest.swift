@@ -28,7 +28,7 @@ class PerformanceTest: XCTestCase {
             CGPoint(x: 377.282671, y: 41.4352201),
             CGPoint(x: 193.321418, y: 330.023027),
             CGPoint(x: 459.781253, y: 251.836131)
-            ]
+        ]
 
         let destination = QuadrilateralCalc()
         destination.topLeft = points[0]
