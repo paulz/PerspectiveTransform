@@ -46,6 +46,18 @@ class PerspectiveSpec: QuickSpec {
                 }
             }
 
+            context("vectors") {
+                it("should be homogeneous 3d vector for each corner") {
+                    let perspective = Perspective(CGRect(origin: CGPoint.zero, size: CGSize(width: 10, height: 20)))
+                    expect(perspective.vectors) ≈ [
+                        Vector3(0, 0, 1),
+                        Vector3(10, 0, 1),
+                        Vector3(0, 20, 1),
+                        Vector3(10, 20, 1)
+                    ]
+                }
+            }
+
             context("basisVectorsToPointsMap") {
                 context("rectangle") {
                     let perspective = Perspective(CGRect(origin: CGPoint.zero, size: CGSize(width: 10, height: 20)))
@@ -56,11 +68,31 @@ class PerspectiveSpec: QuickSpec {
                                                                                  Vector3(0.0, 20.0, 1.0))
                     }
 
-                    context("pointsToBasisVectorsMap") {
-                        let identity = Matrix3x3(diagonal: Vector3(1))
+                    it("should convert basis vectors to points") {
+                        let points = basisVectors.map {perspective.basisVectorsToPointsMap * $0}
+                        expect(points) ≈ [
+                            Vector3(0, 0, -1),
+                            Vector3(10, 0, 1),
+                            Vector3(0, 20, 1),
+                            Vector3(10, 20, 1)
+                            ]
+                    }
 
+                    context("pointsToBasisVectorsMap") {
                         it("should result in identity when multiplied by basisVectorsToPointsMap") {
+                            let identity = Matrix3x3(diagonal: Vector3(1))
                             expect(perspective.basisVectorsToPointsMap * perspective.pointsToBasisVectorsMap) == identity
+                        }
+
+                        it("should convert points to basis vectors") {
+                            let points = [
+                                Vector3(0, 0, -1),
+                                Vector3(10, 0, 1),
+                                Vector3(0, 20, 1),
+                                Vector3(10, 20, 1)
+                            ]
+                            let vectors = points.map {perspective.pointsToBasisVectorsMap * $0}
+                            expect(vectors) ≈ basisVectors
                         }
                     }
                 }

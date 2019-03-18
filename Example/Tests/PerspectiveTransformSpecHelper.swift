@@ -34,6 +34,26 @@ func beCloseTo(_ expectedValue: Vector3, within delta: Double = 0.00001) -> Pred
     }
 }
 
+public func beCloseTo(_ expectedValues: [Vector3], within delta: Double = DefaultDelta) -> Predicate<[Vector3]> {
+    let errorMessage = "be close to <\(stringify(expectedValues))> (each within \(stringify(delta)))"
+    return Predicate.simple(errorMessage) { actualExpression in
+        if let actual = try actualExpression.evaluate() {
+            if actual.count != expectedValues.count {
+                return .doesNotMatch
+            } else {
+                for (index, actualItem) in actual.enumerated() {
+                    let singleExpression = Expression(expression: {actualItem}, location: actualExpression.location)
+                    if try! beCloseTo(expectedValues[index]).satisfies(singleExpression).toBoolean(expectation: ExpectationStyle.toMatch) == false {
+                        return .doesNotMatch
+                    }
+                }
+                return .matches
+            }
+        }
+        return .doesNotMatch
+    }
+}
+
 public func ≈(lhs: Expectation<Matrix3x3>, rhs: Matrix3x3) {
     lhs.to(beCloseTo(rhs))
 }
@@ -47,6 +67,14 @@ public func ≈(lhs: Expectation<Vector3>, rhs: Vector3) {
 }
 
 public func ≈(lhs: Expectation<Vector3>, rhs: (expected: Vector3, delta: Double)) {
+    lhs.to(beCloseTo(rhs.expected, within: rhs.delta))
+}
+
+public func ≈(lhs: Expectation<[Vector3]>, rhs: [Vector3]) {
+    lhs.to(beCloseTo(rhs))
+}
+
+public func ≈(lhs: Expectation<[Vector3]>, rhs: (expected: [Vector3], delta: Double)) {
     lhs.to(beCloseTo(rhs.expected, within: rhs.delta))
 }
 
