@@ -8,7 +8,7 @@ class PerspectiveSpec: QuickSpec {
         describe("Perspective") {
             context("debug description") {
                 it("should list all vectors") {
-                    let perspective = Perspective(CGRect.zero)
+                    let perspective = Perspective(.zero)
                     expect(String(describing: perspective)) == "Perspective: [\n"
                         + "double3(0.0, 0.0, 1.0)\n"
                         + "double3(0.0, 0.0, 1.0)\n"
@@ -19,7 +19,7 @@ class PerspectiveSpec: QuickSpec {
             }
 
             context("CGRect.zero") {
-                let perspective = Perspective(CGRect.zero)
+                let perspective = Perspective(.zero)
 
                 it("should have Not A Number vectors") {
                     for row in stride(from: 0, to: 2, by: 1) {
@@ -48,7 +48,7 @@ class PerspectiveSpec: QuickSpec {
 
             context("vectors") {
                 it("should be homogeneous 3d vector for each corner") {
-                    let perspective = Perspective(CGRect(origin: CGPoint.zero, size: CGSize(width: 10, height: 20)))
+                    let perspective = Perspective(.init(origin: .zero, size: .init(width: 10, height: 20)))
                     expect(perspective.vectors) ≈ [
                         Vector3(0, 0, 1),
                         Vector3(10, 0, 1),
@@ -60,7 +60,7 @@ class PerspectiveSpec: QuickSpec {
 
             context("basisVectorsToPointsMap") {
                 context("rectangle") {
-                    let perspective = Perspective(CGRect(origin: CGPoint.zero, size: CGSize(width: 10, height: 20)))
+                    let perspective = Perspective(.init(origin: .zero, size: .init(width: 10, height: 20)))
 
                     it("should be homegenious vector to corners") {
                         expect(perspective.basisVectorsToPointsMap) == Matrix3x3(Vector3(0.0, 0.0, -1.0),
