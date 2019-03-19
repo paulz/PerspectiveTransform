@@ -59,11 +59,10 @@ class ProjectionSpec: QuickSpec {
                     let projection = from.projection(to: to)
                     let transform3D = CATransform3D(projection.to3d())
                     expect(CATransform3DIsIdentity(transform3D)) == true
-                    let layer = CALayer()
-                    layer.transform = transform3D
-                    expect(layer.value(forKeyPath: "transform.scale") as? Double) == 1
-                    expect(layer.value(forKeyPath: "transform.translation") as? CGSize) == CGSize.zero
-                    expect(layer.value(forKeyPath: "transform.rotation") as? Double) == 0
+
+                    expect(transform3D.component(for: .scale)) == Vector3(1, 1, 1)
+                    expect(transform3D.component(for: .rotation)) == Vector3(0, 0, 0)
+                    expect(transform3D.component(for: .translation)) == Vector3(0, 0, 0)
                 }
             }
 
@@ -109,14 +108,9 @@ class ProjectionSpec: QuickSpec {
                     }
 
                     it("should have key path components of rotation and translation") {
-                        let layer = CALayer()
-                        layer.transform = matrix
-                        expect(layer.value(forKeyPath: "transform.scale") as? Double) == 1
-                        expect(layer.value(forKeyPath: "transform.translation") as? CGSize) == CGSize(width: 10, height: 0)
-                        expect(layer.value(forKeyPath: "transform.rotation.x") as? Double) == 0
-                        expect(layer.value(forKeyPath: "transform.rotation.y") as? Double) == 0
-                        expect(layer.value(forKeyPath: "transform.rotation.z") as? Double) ≈ Double.pi / 2
-                        expect(layer.value(forKeyPath: "transform.rotation") as? Double) == (layer.value(forKeyPath: "transform.rotation.z") as! Double)
+                        expect(matrix.component(for: .scale)) == Vector3(1, 1, 1)
+                        expect(matrix.component(for: .rotation)) == Vector3(0, 0, Double.pi / 2)
+                        expect(matrix.component(for: .translation)) == Vector3(10, 0, 0)
                     }
                 }
             }

@@ -9,13 +9,8 @@ class CALayerTransformSpec: QuickSpec {
             context("translation") {
                 it("should have x,y,z") {
                     let transform = CATransform3DMakeTranslation(1, 2, 3)
-                    let layer = CALayer()
-                    layer.transform = transform
 
-                    var translate = Vector3()
-                    translate.x = layer.value(forKeyPath: "transform.translation.x") as! Double
-                    translate.y = layer.value(forKeyPath: "transform.translation.y") as! Double
-                    translate.z = layer.value(forKeyPath: "transform.translation.z") as! Double
+                    var translate = transform.component(for: .translation)
 
                     expect(translate.x) == 1
                     expect(translate.y) == 2
@@ -27,7 +22,7 @@ class CALayerTransformSpec: QuickSpec {
                 context("around one axis") {
                     it("should match rotation.x component") {
                         let transform = CATransform3DMakeRotation(0.1234, 1, 0, 0)
-                        var rotate = transform.layerRotation()
+                        var rotate = transform.component(for: .rotation)
 
                         expect(rotate.x) == 0.1234
                         expect(rotate.y) == 0
@@ -55,8 +50,8 @@ class CALayerTransformSpec: QuickSpec {
                         }
                     }
                 }
-                context("three values") {
-                    it("should match") {
+                context("three values for angle") {
+                    it("should have only relative significance") {
                         let multiplier: CGFloat = 20.0
                         let original = CATransform3DMakeRotation(0.1, 0.02, 0.03, 0.04).layerRotation()
                         expect(CATransform3DMakeRotation(0.1,

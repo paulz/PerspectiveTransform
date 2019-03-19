@@ -93,15 +93,34 @@ extension Matrix3x3 {
 }
 
 extension CATransform3D {
-    func layerRotation() -> Vector3 {
+    func component(for component: TransformComponent) -> Vector3 {
         let layer = CALayer()
         layer.transform = self
+        return layer.transformComponent(component)
+    }
 
-        var rotate = Vector3()
-        rotate.x = layer.value(forKeyPath: "transform.rotation.x") as! Double
-        rotate.y = layer.value(forKeyPath: "transform.rotation.y") as! Double
-        rotate.z = layer.value(forKeyPath: "transform.rotation.z") as! Double
-        return rotate
+    func layerRotation() -> Vector3 {
+        return component(for: .rotation)
+    }
+}
+
+enum TransformComponent: String {
+    case rotation, translation, scale
+}
+
+extension CALayer {
+    func transformComponent(_ component: TransformComponent) -> Vector3 {
+        var vector = Vector3()
+        let keyPathMap: [WritableKeyPath<Vector3, Double>:String] = [
+            \.x:"x",
+            \.y:"y",
+            \.z:"z"
+        ]
+        keyPathMap.forEach { (arg) in
+            let (keyPath, axis) = arg
+            vector[keyPath: keyPath] = value(forKeyPath: "transform.\(component.rawValue).\(axis)") as! Double
+        }
+        return vector
     }
 }
 

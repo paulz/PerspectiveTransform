@@ -47,23 +47,15 @@ class CATransform3Dfrom2DSpec: QuickSpec {
                     context("layer") {
                         it("should have components") {
                             let transform = CATransform3D(matrix.to3d())
-                            let layer = CALayer()
-                            layer.transform = transform
-                            var scale = Vector3()
-                            scale.x = layer.value(forKeyPath: "transform.scale.x") as! Double
-                            scale.y = layer.value(forKeyPath: "transform.scale.y") as! Double
-                            scale.z = layer.value(forKeyPath: "transform.scale.z") as! Double
+                            var scale = transform.component(for: .scale)
                             let madeScale = CATransform3DMakeScale(CGFloat(scale.x), CGFloat(scale.y), CGFloat(scale.z))
                             print("madeScale:", madeScale)
 
-                            var translate = Vector3()
-                            translate.x = layer.value(forKeyPath: "transform.translation.x") as! Double
-                            translate.y = layer.value(forKeyPath: "transform.translation.y") as! Double
-                            translate.z = layer.value(forKeyPath: "transform.translation.z") as! Double
+                            var translate = transform.component(for: .translation)
                             let madeTranslation = CATransform3DMakeTranslation(CGFloat(translate.x), CGFloat(translate.y), CGFloat(translate.z))
                             print("madeTranslation:", madeTranslation)
 
-                            let rotate = transform.layerRotation()
+                            let rotate = transform.component(for: .rotation)
                             print("scale, translate, rotate = ", scale, translate, rotate)
                             let b = atan(transform.m12/transform.m22)
                             let p = asin(transform.m32)
