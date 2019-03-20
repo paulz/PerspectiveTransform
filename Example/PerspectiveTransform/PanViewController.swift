@@ -26,9 +26,7 @@ class PanViewController: UIViewController {
     // MARK: - Outlets
 
     @IBOutlet var cornerViews: [UIView]!
-    @IBOutlet weak var transView: UIView!
-    @IBOutlet weak var startView: UIView!
-    @IBOutlet weak var destView: UIView!
+    @IBOutlet weak var toBeTransformedView: UIView!
 
     // MARK: - UIViewController
 
@@ -46,7 +44,7 @@ class PanViewController: UIViewController {
 
     // MARK: - private
     private func updatePosition() {
-        transView.layer.transform = transformToCorners()
+        toBeTransformedView.layer.transform = transformToCorners()
     }
 
     private func transformToCorners() -> CATransform3D {
@@ -56,11 +54,11 @@ class PanViewController: UIViewController {
     private lazy var start: Perspective = createStartingPerspective()
 
     private func createStartingPerspective() -> Perspective {
-        transView.resetAnchorPoint()
-        return Perspective(transView.frame)
+        toBeTransformedView.resetAnchorPoint()
+        return Perspective(toBeTransformedView.frame)
     }
 
     private var destination: Perspective {
-        return .init(cornerViews.map {$0.center})
+        return .init(cornerViews.sorted {$0.tag < $1.tag}.map {$0.center})
     }
 }
