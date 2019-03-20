@@ -26,11 +26,10 @@ class FittingPolygon {
         }
         assert(points.count == 4, "should have 4 point")
         points = [points[3], points[0], points[2], points[1]]
-        print("points:", points)
     }
 
-    class func loadFromSvgFile() -> FittingPolygon {
-        let loader = PolygonLoader(fileName: "with-overlay.svg")
+    class func load(fromSvgFile fileName: String) -> FittingPolygon {
+        let loader = PolygonLoader(fileName: fileName)
         return FittingPolygon(svgPointsString: loader.loadPoints())
     }
 }

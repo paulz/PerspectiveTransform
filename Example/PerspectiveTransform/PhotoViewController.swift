@@ -14,45 +14,60 @@ class PhotoViewController: UIViewController {
 
     @IBOutlet var containerImageView: UIImageView!
     @IBOutlet var overlayImageView: UIImageView!
-    @IBOutlet var tapGesture: UITapGestureRecognizer!
-    var applied = false
+    var fitApplied = false
+    var reverseApplied = false
     var transform: CATransform3D!
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
+    @IBOutlet weak var fittingView: UIView!
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        toggleTransform()
+        containerImageView.resetAnchorPoint()
+        containerImageView.frame = containerImageView.bounds
+        overlayImageView.resetAnchorPoint()
+        overlayImageView.frame = overlayImageView.bounds
     }
 
-    @IBAction func didTap(_ sender: UITapGestureRecognizer) {
+    @IBAction func didSelectSegment(_ sender: UISegmentedControl) {
         UIView.animate(withDuration: 0.5) {
-            self.toggleTransform()
+            if sender.selectedSegmentIndex == 1 {
+                self.toggleReverse()
+            } else {
+                self.toggleTransform()
+            }
         }
+    }
+
+    func toggleReverse() {
+        reverseApplied = !reverseApplied
+        fitApplied = false
+        containerImageView.layer.transform = reverseApplied ? reverseTranformation() : CATransform3DIdentity
+        overlayImageView.layer.transform = CATransform3DIdentity
     }
 
     func toggleTransform() {
-        applied = !applied
-        overlayImageView.layer.transform = applied ? CATransform3DIdentity : tranformation()
+        fitApplied = !fitApplied
+        reverseApplied = false
+        overlayImageView.layer.transform = fitApplied ? toFitImageTranformation() : CATransform3DIdentity
+        containerImageView.layer.transform = CATransform3DIdentity
     }
 
-    func tranformation() -> CATransform3D {
-        overlayImageView.resetAnchorPoint()
-        overlayImageView.frame = overlayImageView.bounds
-        let start = Perspective(overlayImageView.frame)
-        let transform = FittingPolygon.loadFromSvgFile()
-        let points = transform.points.map {
-            return containerImageView.contentSpace().convert($0, to: view)
+    lazy var iPadPerspective: Perspective = {
+        let polygon = FittingPolygon.load(fromSvgFile: "with-overlay.svg")
+        let points = polygon.points.map {
+            self.containerImageView.contentSpace().convert($0, to: self.view)
         }
-        let destination = Perspective(points)
-        print("start:", start)
-        print("destination:", destination)
-        return start.projectiveTransform(destination: destination)
+        return Perspective(points)
+    }()
+
+    func toFitImageTranformation() -> CATransform3D {
+        let start = Perspective(overlayImageView.bounds)
+        return start.projectiveTransform(destination: iPadPerspective)
     }
 
-    func applyTranformation() {
-        overlayImageView.layer.transform = tranformation()
+    func reverseTranformation() -> CATransform3D {
+        let destination = Perspective(fittingView.frame)
+        return iPadPerspective.projectiveTransform(destination: destination)
     }
+
 }
