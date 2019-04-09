@@ -94,6 +94,8 @@
 		4B76EDD7205674CF009492EC /* FittingPolygon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FittingPolygon.swift; sourceTree = "<group>"; };
 		4B76EDD9205674F3009492EC /* PolygonLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolygonLoader.swift; sourceTree = "<group>"; };
 		4B84138A201DD90D00D17FE2 /* PerspectiveSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerspectiveSpec.swift; sourceTree = "<group>"; };
+		4B96E125225C8C4600C7E49D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4B96E126225C8C4600C7E49D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		4B97C3CC2047BAC1004C9782 /* AccelerateSolvePerfTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccelerateSolvePerfTest.swift; sourceTree = "<group>"; };
 		4B9A5BF021FBA91500979AFE /* install-opencv.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "install-opencv.sh"; sourceTree = "<group>"; };
 		4BA3D17A1C771B2E0009B690 /* ProjectionSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = ProjectionSpec.swift; sourceTree = "<group>"; tabWidth = 4; };
@@ -102,8 +104,6 @@
 		4BA3D1871C7995630009B690 /* Visual.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Visual.playground; sourceTree = "<group>"; };
 		4BA7B1481C7C7A0600933779 /* .travis.yml */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = text; name = .travis.yml; path = ../.travis.yml; sourceTree = "<group>"; tabWidth = 2; };
 		4BA7B14D1C7D710D00933779 /* ReferenceImages */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ReferenceImages; sourceTree = "<group>"; };
-		4BB87C3B21F468CA00DABAED /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		4BB87C3C21F468CA00DABAED /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4BCA955E2237A7CE0091E312 /* CATransform3D+MatrixSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CATransform3D+MatrixSpec.swift"; sourceTree = "<group>"; };
 		4BCA95622237B9880091E312 /* CATransform3D+MatrixPerformanceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CATransform3D+MatrixPerformanceTest.swift"; sourceTree = "<group>"; };
 		4BD09EAD2046B05A006D2FA4 /* OpenCV_Spec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenCV_Spec.swift; sourceTree = "<group>"; };
@@ -422,7 +422,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0940;
+				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = CocoaPods;
 				TargetAttributes = {
 					4B74DB33203BD9C70030F41B = {
@@ -445,10 +445,11 @@
 			};
 			buildConfigurationList = 607FACCB1AFB9204008FA782 /* Build configuration list for PBXProject "PerspectiveTransform" */;
 			compatibilityVersion = "Xcode 8.0";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 607FACC71AFB9204008FA782;
 			productRefGroup = 607FACD11AFB9204008FA782 /* Products */;
@@ -761,7 +762,7 @@
 		607FACD91AFB9204008FA782 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				4BB87C3C21F468CA00DABAED /* en */,
+				4B96E125225C8C4600C7E49D /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -769,7 +770,7 @@
 		607FACDE1AFB9204008FA782 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				4BB87C3B21F468CA00DABAED /* en */,
+				4B96E126225C8C4600C7E49D /* Base */,
 			);
 			name = LaunchScreen.xib;
 			sourceTree = "<group>";
@@ -841,6 +842,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
@@ -900,6 +902,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
