@@ -80,7 +80,7 @@ public func ≈(lhs: Expectation<[Vector3]>, rhs: (expected: [Vector3], delta: D
 
 extension Matrix3x3 {
     init(_ array: [Scalar]) {
-        let rows = 3
+        let rows = Vector3().scalarCount
         let scalars = rows * rows
         precondition(array.count == scalars, "should have 9 values for 3x3 matrix")
         var rowsOfVectors: [Vector3] = []
