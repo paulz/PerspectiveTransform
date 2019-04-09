@@ -2,7 +2,7 @@ version: 2.1
 executors:
   latest-xcode:
     macos:
-      xcode: '10.1.0'
+      xcode: '10.2.0'
 commands:
   pod-update:
     description: Optimized pod update by using S3 cache, see https://discuss.circleci.com/t/best-practice-for-use-of-cached-cocoapods-specs/18897
@@ -15,21 +15,21 @@ commands:
       - checkout
       - run: gem install bundler
       - restore_cache:
-          key: 1-gems-{{ checksum "Gemfile.lock" }}
+          key: 2-gems-{{ checksum "Gemfile.lock" }}
       - run: bundle check || bundle install --path vendor/bundle
       - save_cache:
-          key: 1-gems-{{ checksum "Gemfile.lock" }}
+          key: 2-gems-{{ checksum "Gemfile.lock" }}
           paths:
             - vendor/bundle
       - restore_cache:
-          key: 2-pods-{{ checksum "Example/Podfile.lock" }}
+          key: 3-pods-{{ checksum "Example/Podfile.lock" }}
       - run:
           name: Install CocoaPods
           command: |
             ls -la Example/Pods/Manifest.lock && echo Skipping cocoapods repo update || curl https://cocoapods-specs.circleci.com/fetch-cocoapods-repo-from-s3.sh | bash -s cf
             cmp Example/Pods/Manifest.lock Example/Podfile.lock && echo Skipping pod install || bundle exec pod install --project-directory=Example
       - save_cache:
-          key: 2-pods-{{ checksum "Example/Podfile.lock" }}
+          key: 3-pods-{{ checksum "Example/Podfile.lock" }}
           paths:
             - Example/Pods
 jobs:
@@ -52,33 +52,45 @@ jobs:
     steps:
       - pod-install
       - restore_cache:
-          key: 8-opencv-{{ .Branch }}
+          key: 9-opencv-{{ .Branch }}
       - run: ./Example/OpenCV-OSX-Tests/install-opencv.sh
       - save_cache:
-          key: 8-opencv-{{ .Branch }}
+          key: 9-opencv-{{ .Branch }}
           paths:
             - /usr/local/Cellar/opencv
             - /usr/local/Cellar/tbb
             - /usr/local/Cellar/openblas
             - /usr/local/Cellar/gcc
             - /usr/local/Cellar/ffmpeg
-            - /usr/local/Cellar/ilmbase
-            - /usr/local/Cellar/snappy
-            - /usr/local/Cellar/opencore-amr
-            - /usr/local/Cellar/speex
-            - /usr/local/Cellar/theora
-            - /usr/local/Cellar/rtmpdump
-            - /usr/local/Cellar/libogg
-            - /usr/local/Cellar/libvorbis
-            - /usr/local/Cellar/opus
-            - /usr/local/Cellar/jpeg
-            - /usr/local/Cellar/lame
             - /usr/local/Cellar/libpng
             - /usr/local/Cellar/libtiff
+            - /usr/local/Cellar/ilmbase
             - /usr/local/Cellar/openexr
-            - /usr/local/Cellar/openssl
+            - /usr/local/Cellar/jpeg
+            - /usr/local/Cellar/opencore-amr
+            - /usr/local/Cellar/snappy
+            - /usr/local/Cellar/lame
+            - /usr/local/Cellar/openjpeg
+            - /usr/local/Cellar/opus
+            - /usr/local/Cellar/speex
+            - /usr/local/Cellar/theora
+            - /usr/local/Cellar/libogg
+            - /usr/local/Cellar/libvorbis
             - /usr/local/Cellar/x264
             - /usr/local/Cellar/x265
+            - /usr/local/Cellar/libsoxr
+            - /usr/local/Cellar/libbluray
+            - /usr/local/Cellar/gnutls
+            - /usr/local/Cellar/rtmpdump
+            - /usr/local/Cellar/openssl
+            - /usr/local/Cellar/fontconfig
+            - /usr/local/Cellar/freetype
+            - /usr/local/Cellar/p11-kit
+            - /usr/local/Cellar/libunistring
+            - /usr/local/Cellar/libtasn1
+            - /usr/local/Cellar/nettle
+            - /usr/local/Cellar/gmp
+            - /usr/local/Cellar/libffi
       - run:
           name: Build and run tests
           command: xcodebuild -workspace Example/PerspectiveTransform.xcworkspace -scheme "OpenCV Tests" test -destination "platform=macos" | xcpretty -r junit
