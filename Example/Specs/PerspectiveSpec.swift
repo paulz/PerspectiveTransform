@@ -10,10 +10,10 @@ class PerspectiveSpec: QuickSpec {
                 it("should list all vectors") {
                     let perspective = Perspective(.zero)
                     expect(String(describing: perspective)) == "Perspective: [\n"
-                        + "double3(0.0, 0.0, 1.0)\n"
-                        + "double3(0.0, 0.0, 1.0)\n"
-                        + "double3(0.0, 0.0, 1.0)\n"
-                        + "double3(0.0, 0.0, 1.0)\n"
+                        + "SIMD3<Double>(0.0, 0.0, 1.0)\n"
+                        + "SIMD3<Double>(0.0, 0.0, 1.0)\n"
+                        + "SIMD3<Double>(0.0, 0.0, 1.0)\n"
+                        + "SIMD3<Double>(0.0, 0.0, 1.0)\n"
                         + "]"
                 }
             }
@@ -80,7 +80,7 @@ class PerspectiveSpec: QuickSpec {
 
                     context("pointsToBasisVectorsMap") {
                         it("should result in identity when multiplied by basisVectorsToPointsMap") {
-                            let identity = Matrix3x3(diagonal: Vector3(1))
+                            let identity = Matrix3x3(diagonal: Vector3(repeating: 1))
                             expect(perspective.basisVectorsToPointsMap * perspective.pointsToBasisVectorsMap) == identity
                         }
 

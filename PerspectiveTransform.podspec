@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.cocoapods_version = '~> 1.5'
   s.name              = 'PerspectiveTransform'
-  s.version           = '0.4'
+  s.version           = '1.0'
   s.summary           = 'Perspective Transform calculates CATransform3D'
   s.description       = <<-DESC
   Calculates CATransform3D to transform rectangular frame to convex quadrilateral
@@ -14,15 +14,16 @@ Pod::Spec.new do |s|
   s.author            = { 'Paul Zabelin' => authorPage }
   s.source            = { :git => "#{s.homepage}.git", :tag => s.version.to_s }
   s.social_media_url  = 'https://twitter.com/iospaulz'
-  s.platform          = :ios, '11.0'
-  s.swift_version     = '4.2'
+  s.platform          = :ios, '12.2'
+  s.swift_version     = '5.0'
   s.source_files      = 'Pod/Classes/**/*'
   s.frameworks        = 'UIKit', 'CoreGraphics', 'QuartzCore'
   s.test_spec 'UnitSpecs' do |ts|
+      ts.requires_app_host = false
       ts.source_files   = 'Example/Specs/**/*.{h,swift}', 'Example/Tests/*Helper.swift'
       ts.dependencies   = {
-          'Quick' => '~> 1.3',
-          'Nimble' => '~> 7.1'
+          'Quick' => '~> 2.0',
+          'Nimble' => '~> 8.0'
       }
   end
   s.test_spec 'AppSpecs' do |ts|
@@ -30,9 +31,9 @@ Pod::Spec.new do |s|
       ts.resources      = 'Example/Tests/**/*.{png,jpg,svg}'
       ts.source_files   = 'Example/Tests/**/*.{h,swift}', 'Example/PerspectiveTransform/resetAnchorPoint.swift'
       ts.dependencies   = {
-          'Quick' => '~> 1.3',
-          'Nimble-Snapshots' => '~> 6.8',
-          'iOSSnapshotTestCase' => '~> 4.0'
+          'Quick' => '~> 2.0',
+          'Nimble-Snapshots' => '~> 7.0',
+          'iOSSnapshotTestCase' => '~> 6.0'
       }
   end
 end
