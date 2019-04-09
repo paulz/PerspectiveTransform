@@ -41,23 +41,35 @@ matrix:
         - /usr/local/Cellar/openblas
         - /usr/local/Cellar/gcc
         - /usr/local/Cellar/ffmpeg
-        - /usr/local/Cellar/ilmbase
-        - /usr/local/Cellar/snappy
-        - /usr/local/Cellar/opencore-amr
-        - /usr/local/Cellar/speex
-        - /usr/local/Cellar/theora
-        - /usr/local/Cellar/rtmpdump
-        - /usr/local/Cellar/libogg
-        - /usr/local/Cellar/libvorbis
-        - /usr/local/Cellar/opus
-        - /usr/local/Cellar/jpeg
-        - /usr/local/Cellar/lame
         - /usr/local/Cellar/libpng
         - /usr/local/Cellar/libtiff
+        - /usr/local/Cellar/ilmbase
         - /usr/local/Cellar/openexr
-        - /usr/local/Cellar/openssl
+        - /usr/local/Cellar/jpeg
+        - /usr/local/Cellar/opencore-amr
+        - /usr/local/Cellar/snappy
+        - /usr/local/Cellar/lame
+        - /usr/local/Cellar/openjpeg
+        - /usr/local/Cellar/opus
+        - /usr/local/Cellar/speex
+        - /usr/local/Cellar/theora
+        - /usr/local/Cellar/libogg
+        - /usr/local/Cellar/libvorbis
         - /usr/local/Cellar/x264
         - /usr/local/Cellar/x265
+        - /usr/local/Cellar/libsoxr
+        - /usr/local/Cellar/libbluray
+        - /usr/local/Cellar/gnutls
+        - /usr/local/Cellar/rtmpdump
+        - /usr/local/Cellar/openssl
+        - /usr/local/Cellar/fontconfig
+        - /usr/local/Cellar/freetype
+        - /usr/local/Cellar/p11-kit
+        - /usr/local/Cellar/libunistring
+        - /usr/local/Cellar/libtasn1
+        - /usr/local/Cellar/nettle
+        - /usr/local/Cellar/gmp
+        - /usr/local/Cellar/libffi
   - stage: deploy
     name: Cartage build, archive, deploy on tag
     env:
