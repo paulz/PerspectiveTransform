@@ -16,19 +16,7 @@ stages:
 matrix:
   include:
   - stage: test
-    name: Check dependencies up-to-date, Lint
-    env: CACHE_NAME=iOS
-    script:
-        - bundle exec pod update --project-directory=Example
-        - git diff --exit-code # Outdated Cocoapods dependencies found, please run 'pod update' and checkin changes
-        - bundle update
-        - git diff --exit-code # Outdated Bundle dependencies found, please run 'bundle update' and checkin changes
-        - bundle exec pod lib lint || bundle exec pod lib lint --verbose --no-clean
-  - name: With coverage report
-    env: XCODE_DESNITATION='platform=iOS Simulator,name=iPhone X' CACHE_NAME=iOS
-    after_success:
-      - bash <(curl -s 'https://codecov.io/bash') -Z -J '^PerspectiveTransform$' -X gcov -X fix
-  - name: Mac OS
+    name: Mac OS
     xcode_scheme: OpenCV Tests
     env: XCODE_DESNITATION='platform=macos' CACHE_NAME=macOS
     before_script: ./Example/OpenCV-OSX-Tests/install-opencv.sh
@@ -41,6 +29,7 @@ matrix:
         - /usr/local/Cellar/openblas
         - /usr/local/Cellar/gcc
         - /usr/local/Cellar/ffmpeg
+        - /usr/local/Cellar/libsoxr
         - /usr/local/Cellar/ilmbase
         - /usr/local/Cellar/snappy
         - /usr/local/Cellar/opencore-amr
@@ -86,8 +75,6 @@ script:
   - set -o pipefail && xcodebuild test -workspace "$TRAVIS_XCODE_WORKSPACE" -scheme "$TRAVIS_XCODE_SCHEME" -destination "$XCODE_DESNITATION" | bundle exec xcpretty -f `bundle exec xcpretty-travis-formatter`
 env:
   - XCODE_DESNITATION='platform=iOS Simulator,name=iPhone SE' CACHE_NAME=iOS
-  - XCODE_DESNITATION='platform=iOS Simulator,name=iPhone 8 Plus' CACHE_NAME=iOS
-  - XCODE_DESNITATION='platform=iOS Simulator,name=iPhone 8' CACHE_NAME=iOS
 branches:
   except:
   - circleci
