@@ -427,18 +427,20 @@
 				TargetAttributes = {
 					4B74DB33203BD9C70030F41B = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 1020;
 					};
 					4BDF649A20469AB60022C5F8 = {
 						CreatedOnToolsVersion = 9.2;
-						LastSwiftMigration = 0920;
+						LastSwiftMigration = 1020;
 						ProvisioningStyle = Manual;
 					};
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
-						LastSwiftMigration = 0920;
+						LastSwiftMigration = 1020;
 					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						LastSwiftMigration = 1020;
 						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
 				};
@@ -785,6 +787,7 @@
 				INFOPLIST_FILE = Specs/Info.plist;
 				PRODUCT_BUNDLE_IDENTIFIER = "paulz.github.io.PerspectiveTransform.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -795,6 +798,7 @@
 				INFOPLIST_FILE = Specs/Info.plist;
 				PRODUCT_BUNDLE_IDENTIFIER = "paulz.github.io.PerspectiveTransform.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -815,6 +819,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SWIFT_OBJC_BRIDGING_HEADER = "OpenCV-OSX-Tests/OpenCVWrapper.h";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -835,6 +840,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SWIFT_OBJC_BRIDGING_HEADER = "OpenCV-OSX-Tests/OpenCVWrapper.h";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -959,6 +965,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "paulz.github.io.PerspectiveTransform.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -971,6 +978,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "paulz.github.io.PerspectiveTransform.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -982,6 +990,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "paulz.github.io.PerspectiveTransform.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Example.app/Example";
 			};
 			name = Debug;
@@ -994,6 +1003,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "paulz.github.io.PerspectiveTransform.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Example.app/Example";
 			};
 			name = Release;

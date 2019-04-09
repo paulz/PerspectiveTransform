@@ -9,8 +9,8 @@
 import simd
 
 extension Vector3 {
-    static let one = Vector3(.one)
-    static let zero = Vector3(0)
+    static let one = Vector3(repeating: .one)
+    static let zero = Vector3(repeating: 0)
     static let lastIndex = Vector3().scalarCount - 1
     static let indexSlice = 0...Vector3.lastIndex
 }
