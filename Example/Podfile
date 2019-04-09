@@ -1,6 +1,6 @@
 source 'https://github.com/CocoaPods/Specs.git'
 use_frameworks!
-platform :ios, '11.0'
+platform :ios, '12.2'
 
 def DevelopmentPodAndDependencies
     pod 'PerspectiveTransform', :path => '../'
@@ -24,7 +24,7 @@ target 'Example' do
     end
 
     target 'OpenCV OSX Tests' do
-        platform :osx, '10.13'
+        platform :osx, '10.14'
         SwiftTestingPods()
     end
 end
