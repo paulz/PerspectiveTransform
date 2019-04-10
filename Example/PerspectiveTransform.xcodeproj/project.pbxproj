@@ -34,6 +34,8 @@
 		4B9A5BF121FE67FC00979AFE /* OpenCVPerformanceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDF64AD2046A9ED0022C5F8 /* OpenCVPerformanceTest.swift */; };
 		4BA7B1521C816DCE00933779 /* container.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4B2D2E881C7C2E620045FD11 /* container.jpg */; };
 		4BA7B1531C816DCE00933779 /* sky.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4B2D2E8C1C7C323D0045FD11 /* sky.jpg */; };
+		4BBEF6B7225DEF350018F4AA /* CompareTransformSpecConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBEF6B6225DEF350018F4AA /* CompareTransformSpecConfiguration.swift */; };
+		4BBEF6B8225DEFC10018F4AA /* CompareTransformSpecConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBEF6B6225DEF350018F4AA /* CompareTransformSpecConfiguration.swift */; };
 		4BCA955F2237A7CE0091E312 /* CATransform3D+MatrixSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCA955E2237A7CE0091E312 /* CATransform3D+MatrixSpec.swift */; };
 		4BCA95632237B9880091E312 /* CATransform3D+MatrixPerformanceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BCA95622237B9880091E312 /* CATransform3D+MatrixPerformanceTest.swift */; };
 		4BD09EAE2046B05A006D2FA4 /* OpenCV_Spec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BD09EAD2046B05A006D2FA4 /* OpenCV_Spec.swift */; };
@@ -104,6 +106,7 @@
 		4BA3D1871C7995630009B690 /* Visual.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Visual.playground; sourceTree = "<group>"; };
 		4BA7B1481C7C7A0600933779 /* .travis.yml */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = text; name = .travis.yml; path = ../.travis.yml; sourceTree = "<group>"; tabWidth = 2; };
 		4BA7B14D1C7D710D00933779 /* ReferenceImages */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ReferenceImages; sourceTree = "<group>"; };
+		4BBEF6B6225DEF350018F4AA /* CompareTransformSpecConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompareTransformSpecConfiguration.swift; sourceTree = "<group>"; };
 		4BCA955E2237A7CE0091E312 /* CATransform3D+MatrixSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CATransform3D+MatrixSpec.swift"; sourceTree = "<group>"; };
 		4BCA95622237B9880091E312 /* CATransform3D+MatrixPerformanceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CATransform3D+MatrixPerformanceTest.swift"; sourceTree = "<group>"; };
 		4BD09EAD2046B05A006D2FA4 /* OpenCV_Spec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenCV_Spec.swift; sourceTree = "<group>"; };
@@ -267,6 +270,7 @@
 				4BA7B14D1C7D710D00933779 /* ReferenceImages */,
 				4B2D2E861C7C2AD10045FD11 /* SnapshotSpec.swift */,
 				4B4F23C62051068600482ABF /* CompareMethodsSpec.swift */,
+				4BBEF6B6225DEF350018F4AA /* CompareTransformSpecConfiguration.swift */,
 				4B97C3CC2047BAC1004C9782 /* AccelerateSolvePerfTest.swift */,
 				4B1B1C0C1C7A76C8003F8165 /* PerformanceTest.swift */,
 				4B4009942042575A00B7CE37 /* QuadrilateralCalc.swift */,
@@ -711,6 +715,7 @@
 			files = (
 				4BDF64AC2046A1830022C5F8 /* QuadrilateralCalc.swift in Sources */,
 				4BDF64A620469B350022C5F8 /* OpenCVWrapper.mm in Sources */,
+				4BBEF6B8225DEFC10018F4AA /* CompareTransformSpecConfiguration.swift in Sources */,
 				4B9A5BF121FE67FC00979AFE /* OpenCVPerformanceTest.swift in Sources */,
 				4BD09EAE2046B05A006D2FA4 /* OpenCV_Spec.swift in Sources */,
 				4B97C3CA2047B9F0004C9782 /* NimbleSpecHelper.swift in Sources */,
@@ -739,6 +744,7 @@
 				4B4F23C72051068600482ABF /* CompareMethodsSpec.swift in Sources */,
 				4B2D2E871C7C2AD10045FD11 /* SnapshotSpec.swift in Sources */,
 				4BD09EB220478E5C006D2FA4 /* PerspectiveTransformSpecHelper.swift in Sources */,
+				4BBEF6B7225DEF350018F4AA /* CompareTransformSpecConfiguration.swift in Sources */,
 				4B74DB47203BDA9C0030F41B /* PerformanceTest.swift in Sources */,
 				4B4009952042575A00B7CE37 /* QuadrilateralCalc.swift in Sources */,
 				4B97C3CE2047BAD3004C9782 /* AccelerateSolvePerfTest.swift in Sources */,
