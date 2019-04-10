@@ -52,10 +52,10 @@ jobs:
     steps:
       - pod-install
       - restore_cache:
-          key: 9-opencv-{{ .Branch }}
+          key: 10-opencv-{{ .Branch }}
       - run: ./Example/OpenCV-OSX-Tests/install-opencv.sh
       - save_cache:
-          key: 9-opencv-{{ .Branch }}
+          key: 10-opencv-{{ .Branch }}
           paths:
             - /usr/local/Cellar/opencv
             - /usr/local/Cellar/tbb
@@ -83,8 +83,8 @@ jobs:
             - /usr/local/Cellar/gnutls
             - /usr/local/Cellar/rtmpdump
             - /usr/local/Cellar/openssl
-            - /usr/local/Cellar/fontconfig
             - /usr/local/Cellar/freetype
+            - /usr/local/Cellar/fontconfig
             - /usr/local/Cellar/p11-kit
             - /usr/local/Cellar/libunistring
             - /usr/local/Cellar/libtasn1
