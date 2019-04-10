@@ -41,11 +41,11 @@ class PerformanceTest: XCTestCase {
         destination.bottomRight = points[3]
 
         let start = QuadrilateralCalc()
-        let overlayFrame = CGRect(x: 0, y: 0, width: 1, height: 1)
-        start.topLeft = CGPoint(x: overlayFrame.minX, y: overlayFrame.minY)
-        start.topRight = CGPoint(x: overlayFrame.maxX, y: overlayFrame.minY)
-        start.bottomLeft = CGPoint(x: overlayFrame.minX, y: overlayFrame.maxY)
-        start.topLeft = CGPoint(x: overlayFrame.maxX, y: overlayFrame.maxY)
+        let corners = CGRect(x: 0, y: 0, width: 1, height: 1).corners()
+        start.topLeft = corners[0]
+        start.topRight = corners[1]
+        start.bottomLeft = corners[2]
+        start.topLeft = corners[3]
 
         measure {
             repeatTimes.times {

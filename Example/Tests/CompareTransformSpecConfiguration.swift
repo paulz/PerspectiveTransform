@@ -27,8 +27,7 @@ class CompareTransformSpecConfiguration: QuickConfiguration {
             }
 
             it("should be identity for same start and destination") {
-                let points = [CGPoint(x: 0, y: 0), CGPoint(x: 20, y: 0), CGPoint(x: 0, y: 10), CGPoint(x: 20, y: 10)]
-                let toItself = transformer.transform(frame: frame, points: points)
+                let toItself = transformer.transform(frame: frame, points: frame.corners())
                 expect(toItself) ≈ CATransform3DIdentity
             }
 
@@ -53,10 +52,11 @@ struct AlgebraMethod: TransformMatrixCalculator {
         destination.bottomRight = points[3]
 
         let start = QuadrilateralCalc()
-        start.topLeft = CGPoint(x: frame.minX, y: frame.minY)
-        start.topRight = CGPoint(x: frame.maxX, y: frame.minY)
-        start.bottomLeft = CGPoint(x: frame.minX, y: frame.maxY)
-        start.bottomRight = CGPoint(x: frame.maxX, y: frame.maxY)
+        let corners = frame.corners()
+        start.topLeft = corners[0]
+        start.topRight = corners[1]
+        start.bottomLeft = corners[2]
+        start.bottomRight = corners[3]
 
         return start.rectToQuad(rect: start.box(), quad: destination)
     }

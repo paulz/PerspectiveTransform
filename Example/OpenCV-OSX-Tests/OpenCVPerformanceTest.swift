@@ -18,11 +18,11 @@ class OpenCVPerformanceTest: XCTestCase {
                                     lowerLeft: CGPoint(x: 459.781253, y: 251.836131))
     let start: Quadrilateral = {
         var one = Quadrilateral()
-        let overlayFrame = CGRect(x: 0, y: 0, width: 1, height: 1)
-        one.upperLeft = CGPoint(x: overlayFrame.minX, y: overlayFrame.minY)
-        one.upperRight = CGPoint(x: overlayFrame.maxX, y: overlayFrame.minY)
-        one.lowerLeft = CGPoint(x: overlayFrame.minX, y: overlayFrame.maxY)
-        one.lowerRight = CGPoint(x: overlayFrame.maxX, y: overlayFrame.maxY)
+        let corners = CGRect(x: 0, y: 0, width: 1, height: 1).corners()
+        one.upperLeft = corners[0]
+        one.upperRight = corners[1]
+        one.lowerLeft = corners[2]
+        one.lowerRight = corners[3]
         return one
     }()
 

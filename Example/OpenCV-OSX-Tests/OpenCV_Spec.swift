@@ -7,10 +7,11 @@ struct OpenCVAdapter: TransformMatrixCalculator {
     var method: OpenCVTransformer
 
     func transform(frame: CGRect, points: [CGPoint]) -> CATransform3D {
-        let start = Quadrilateral(upperLeft: CGPoint(x: frame.minX, y: frame.minY),
-                                  upperRight: CGPoint(x: frame.maxX, y: frame.minY),
-                                  lowerRight: CGPoint(x: frame.maxX, y: frame.maxY),
-                                  lowerLeft: CGPoint(x: frame.minX, y: frame.maxY))
+        let corners = frame.corners()
+        let start = Quadrilateral(upperLeft: corners[0],
+                                  upperRight: corners[1],
+                                  lowerRight: corners[3],
+                                  lowerLeft: corners[2])
         let destination = Quadrilateral(upperLeft: points[0],
                                         upperRight: points[1],
                                         lowerRight: points[3],

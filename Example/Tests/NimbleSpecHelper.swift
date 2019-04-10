@@ -90,3 +90,14 @@ extension GKRandomSource {
         return Array(0...3).map {_ in nextPoint()}
     }
 }
+
+extension CGRect {
+    func corners() -> [CGPoint] {
+        return [
+            CGPoint(x: minX, y: minY),  // topLeft
+            CGPoint(x: maxX, y: minY),  // topRight
+            CGPoint(x: minX, y: maxY),  // bottomLeft
+            CGPoint(x: maxX, y: maxY)   // bottomRight
+        ]
+    }
+}
