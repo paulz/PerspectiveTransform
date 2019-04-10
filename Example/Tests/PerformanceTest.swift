@@ -15,6 +15,8 @@ class PerformanceTest: XCTestCase {
                      height: 200)
     )
 
+    /** shows perspective transform has the same performance as algebraic solution
+     */
     func testProjectiveTransformPerformance() {
         let testData = createTestPath()
         measure {
@@ -22,6 +24,8 @@ class PerformanceTest: XCTestCase {
         }
     }
 
+    /** shows algebraic solution has the same performance as perspective transform
+     */
     func testAlgebraicSolution() {
         let points = [
             CGPoint(x: 108.315837, y: 80.1687782),
@@ -50,6 +54,8 @@ class PerformanceTest: XCTestCase {
         }
     }
 
+    /** shows that creating perspective is 10,000 times slower then calculating transform
+     */
     func testProjectiveTransformFromPoints() {
         let createNewPerspectivesTimes = 10_000
         repeatTimes /= createNewPerspectivesTimes

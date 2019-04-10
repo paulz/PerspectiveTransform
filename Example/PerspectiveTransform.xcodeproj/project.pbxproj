@@ -270,9 +270,9 @@
 				4BA7B14D1C7D710D00933779 /* ReferenceImages */,
 				4B2D2E861C7C2AD10045FD11 /* SnapshotSpec.swift */,
 				4B4F23C62051068600482ABF /* CompareMethodsSpec.swift */,
-				4BBEF6B6225DEF350018F4AA /* CompareTransformSpecConfiguration.swift */,
 				4B97C3CC2047BAC1004C9782 /* AccelerateSolvePerfTest.swift */,
 				4B1B1C0C1C7A76C8003F8165 /* PerformanceTest.swift */,
+				4BBEF6B6225DEF350018F4AA /* CompareTransformSpecConfiguration.swift */,
 				4B4009942042575A00B7CE37 /* QuadrilateralCalc.swift */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
 			);

@@ -92,6 +92,10 @@ class AccelerateSolvePerfTest: XCTestCase {
         XCTAssertEqual(solution[7], 0, accuracy: accuracy)
     }
 
+    /** shows that accelerate is about 5-10 times slower then other methods
+     compare repeatTimes with PerformanceTest.repeatTimes
+     it's not surprising as it uses multiple iterations for approximate solution
+     */
     func testSolvePerformance() {
         preparePerspective()
         measure {

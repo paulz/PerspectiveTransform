@@ -26,6 +26,8 @@ class OpenCVPerformanceTest: XCTestCase {
         return one
     }()
 
+    /** on average perspectiveTransform 4 times faster then findHomography
+     */
     func testPerspectiveTransformPerformance() {
         measure {
             (self.repeatTimes/15).times {
@@ -34,9 +36,11 @@ class OpenCVPerformanceTest: XCTestCase {
         }
     }
 
+    /** on average findHomography 4 times slower then perspectiveTransform
+     */
     func testFindHomographyPerformance() {
         measure {
-            (self.repeatTimes/20).times {
+            (self.repeatTimes/60).times {
                 _ = OpenCVWrapper.findHomography(from: start, to: destination)
             }
         }
