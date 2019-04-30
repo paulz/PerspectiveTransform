@@ -112,9 +112,9 @@ extension CALayer {
     func transformComponent(_ component: TransformComponent) -> Vector3 {
         var vector = Vector3()
         let keyPathMap: [WritableKeyPath<Vector3, Double>:String] = [
-            \.x:"x",
-            \.y:"y",
-            \.z:"z"
+            \.x: "x",
+            \.y: "y",
+            \.z: "z"
         ]
         keyPathMap.forEach { (arg) in
             let (keyPath, axis) = arg
