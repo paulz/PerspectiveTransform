@@ -12,7 +12,9 @@ commands:
   pod-install:
     description: Checkout and Install Dependencies
     steps:
+      - run: chruby
       - checkout
+      - run: echo "2.5.5" > .ruby-version # Use preinstalled version of chruby
       - run: gem install bundler
       - restore_cache:
           key: 2-gems-{{ checksum "Gemfile.lock" }}
