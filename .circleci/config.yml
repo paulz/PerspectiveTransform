@@ -114,6 +114,10 @@ jobs:
       - store_artifacts:
           path: build/reports
           destination: xcodebuild-test-results
+skip-travis-only: &skip-travis-branches
+  filters:
+    branches:
+      ignore: /.*travis.*/
 workflows:
   monthly:
     jobs: [check-dependecies-up-to-date]
@@ -125,18 +129,25 @@ workflows:
               only: master
   onpush:
     jobs:
-      - macos-tests
+      - macos-tests:
+          <<: *skip-travis-branches
       - ios-tests:
           destination: platform=iOS Simulator,name=iPhone X
           post-steps:
             - run: bash <(curl -s 'https://codecov.io/bash') -Z -J '^PerspectiveTransform$' -X gcov -X fix
+          <<: *skip-travis-branches
       - ios-tests:
           destination: platform=iOS Simulator,name=iPhone XS
+          <<: *skip-travis-branches
       - ios-tests:
           destination: platform=iOS Simulator,name=iPhone XR
+          <<: *skip-travis-branches
       - ios-tests:
           destination: platform=iOS Simulator,name=iPhone 8
+          <<: *skip-travis-branches
       - ios-tests:
           destination: platform=iOS Simulator,name=iPhone 8 Plus
+          <<: *skip-travis-branches
       - ios-tests:
           destination: platform=iOS Simulator,name=iPhone SE
+          <<: *skip-travis-branches
