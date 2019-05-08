@@ -73,7 +73,7 @@ GEM
     minitest (5.11.3)
     molinillo (0.6.6)
     multi_json (1.13.1)
-    multipart-post (2.0.0)
+    multipart-post (2.1.0)
     nanaimo (0.2.6)
     nap (1.1.0)
     net-http-persistent (2.9.4)
