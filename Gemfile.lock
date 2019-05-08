@@ -73,7 +73,7 @@ GEM
     minitest (5.11.3)
     molinillo (0.6.6)
     multi_json (1.13.1)
-    multipart-post (2.0.0)
+    multipart-post (2.1.0)
     nanaimo (0.2.6)
     nap (1.1.0)
     net-http-persistent (2.9.4)
@@ -85,7 +85,7 @@ GEM
     rouge (2.0.7)
     ruby-macho (1.4.0)
     thread_safe (0.3.6)
-    travis (1.8.9)
+    travis (1.8.10)
       backports
       faraday (~> 0.9)
       faraday_middleware (~> 0.9, >= 0.9.1)
