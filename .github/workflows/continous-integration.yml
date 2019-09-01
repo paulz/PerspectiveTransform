@@ -5,6 +5,8 @@ jobs:
       name: Test iOS 
       runs-on: macOS-latest
       steps:
-        - uses: actions/checkout@v1            
+        - uses: actions/checkout@v1
+        - name: Prepare
+          run: bundle exec pod install --project-directory=Example
         - name: iOS
           run: xcodebuild test -workspace Example/PerspectiveTransform.xcworkspace -scheme Example -destination "platform=iOS Simulator,name=iPhone SE" | tee .ci/results/xcodebuild-ios.log
