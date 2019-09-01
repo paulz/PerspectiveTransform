@@ -11,4 +11,6 @@ jobs:
         - name: Install Cocoapods dependencies
           run: bundle exec pod install --project-directory=Example
         - name: iOS
-          run: xcodebuild test -workspace Example/PerspectiveTransform.xcworkspace -scheme Example -destination "platform=iOS Simulator,name=iPhone SE"
+          run: xcodebuild test -workspace Example/PerspectiveTransform.xcworkspace -scheme Example -destination "platform=iOS Simulator,name=iPhone SE" | xcpretty
+        - name: Report coverage
+          run: bash <(curl -s 'https://codecov.io/bash') -Z -J '^PerspectiveTransform$' -X gcov -X fix
