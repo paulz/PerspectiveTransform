@@ -9,6 +9,6 @@
 import simd
 
 typealias Scalar = Double
-typealias Vector3 = double3
+typealias Vector3 = SIMD3<Double>
 typealias Matrix3x3 = double3x3
 typealias Matrix4x4 = double4x4

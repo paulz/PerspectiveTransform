@@ -12,7 +12,7 @@ import simd
 
 class CATransform3DMatrixPerformanceTest: XCTestCase {
     let m4x4 = double4x4((1...4).map { row in
-        double4((1...4).map {Double(10 * row + $0)})
+        SIMD4<Double>((1...4).map {Double(10 * row + $0)})
     })
     let iterations = 100000
 
