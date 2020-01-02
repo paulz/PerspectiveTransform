@@ -17,7 +17,7 @@ PODS:
 DEPENDENCIES:
   - ImageCoordinateSpace
   - Nimble
-  - Nimble-Snapshots
+  - Nimble-Snapshots (from `https://github.com/paulz/Nimble-Snapshots.git`, branch `pixel-tolerance`)
   - PerspectiveTransform (from `../`)
   - Quick
 
@@ -26,21 +26,28 @@ SPEC REPOS:
     - ImageCoordinateSpace
     - iOSSnapshotTestCase
     - Nimble
-    - Nimble-Snapshots
     - Quick
 
 EXTERNAL SOURCES:
+  Nimble-Snapshots:
+    :branch: pixel-tolerance
+    :git: https://github.com/paulz/Nimble-Snapshots.git
   PerspectiveTransform:
     :path: "../"
+
+CHECKOUT OPTIONS:
+  Nimble-Snapshots:
+    :commit: 472005cac0e5da082eb03f64fb41d61073b5d52f
+    :git: https://github.com/paulz/Nimble-Snapshots.git
 
 SPEC CHECKSUMS:
   ImageCoordinateSpace: 9e560a43a97375371f22343bb47e2c7e7fc428ae
   iOSSnapshotTestCase: 9ab44cb5aa62b84d31847f40680112e15ec579a6
   Nimble: 4ab1aeb9b45553c75b9687196b0fa0713170a332
-  Nimble-Snapshots: 8ec63f41ce6c7229a17be9a64edbc123b181f75b
+  Nimble-Snapshots: cc5ddfb60c5953242a71a1125d20998a8fc0f651
   PerspectiveTransform: 77d4f6b4ef5b8dbf5472afb8864ee3a74fffa193
   Quick: 7fb19e13be07b5dfb3b90d4f9824c855a11af40e
 
-PODFILE CHECKSUM: 1221c727f79e65c43c225a7da4f95a63cfa8f911
+PODFILE CHECKSUM: 7390b46646ad12744bbcb095521a2ea0d5d8fa4d
 
 COCOAPODS: 1.8.4

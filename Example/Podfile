@@ -20,7 +20,7 @@ target 'Example' do
     target 'Application Specs' do
         inherit! :search_paths
         SwiftTestingPods()
-        pod 'Nimble-Snapshots'
+        pod 'Nimble-Snapshots', :git => 'https://github.com/paulz/Nimble-Snapshots.git', :branch => 'pixel-tolerance'
     end
 
     target 'OpenCV OSX Tests' do
