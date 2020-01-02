@@ -98,8 +98,8 @@ script:
   - set -o pipefail && xcodebuild test -workspace "$TRAVIS_XCODE_WORKSPACE" -scheme "$TRAVIS_XCODE_SCHEME" -destination "$XCODE_DESTINATION" | bundle exec xcpretty -f `bundle exec xcpretty-travis-formatter`
 env:
   - XCODE_DESTINATION='platform=iOS Simulator,name=iPhone 11' CACHE_NAME=iOS
-  - XCODE_DESTINATION='platform=iOS Simulator,name=iPhone XS Max' CACHE_NAME=iOS
-  - XCODE_DESTINATION='platform=iOS Simulator,name=iPhone XR' CACHE_NAME=iOS
+  - XCODE_DESTINATION='platform=iOS Simulator,name=iPhone Xs Max' CACHE_NAME=iOS
+  - XCODE_DESTINATION='platform=iOS Simulator,name=iPhone Xʀ' CACHE_NAME=iOS
 branches:
   except:
   - circleci
