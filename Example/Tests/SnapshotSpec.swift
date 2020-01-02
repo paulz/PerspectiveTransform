@@ -41,7 +41,9 @@ class SnapshotSpec: QuickSpec {
                     let tolerance: CGFloat = 0.01
                     let toleranceMessage = {"\(100 * tolerance)% tolerance"}
                     fputs("images are compared with \(toleranceMessage())\n".uppercased(), __stderrp)
-                    expect(containerView).to(haveValidSnapshot(usesDrawRect: true, tolerance: tolerance), description: "should match with \(toleranceMessage())")
+                    expect(containerView).to(haveValidSnapshot(usesDrawRect: true,
+                                                               tolerance: tolerance),
+                                             description: "should match with \(toleranceMessage())")
                 }
             }
         }
