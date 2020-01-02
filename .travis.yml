@@ -25,7 +25,7 @@ matrix:
         - git diff --exit-code # Outdated Bundle dependencies found, please run 'bundle update' and checkin changes
         - bundle exec pod lib lint || bundle exec pod lib lint --verbose --no-clean
   - name: With coverage report
-    env: XCODE_DESTINATION='platform=iOS Simulator,name=iPhone X' CACHE_NAME=iOS
+    env: XCODE_DESTINATION='platform=iOS Simulator,name=iPhone 11 Pro' CACHE_NAME=iOS
     after_success:
       - bash <(curl -s 'https://codecov.io/bash') -Z -J '^PerspectiveTransform$' -X gcov -X fix
   - name: Mac OS
@@ -97,9 +97,9 @@ before_install:
 script:
   - set -o pipefail && xcodebuild test -workspace "$TRAVIS_XCODE_WORKSPACE" -scheme "$TRAVIS_XCODE_SCHEME" -destination "$XCODE_DESTINATION" | bundle exec xcpretty -f `bundle exec xcpretty-travis-formatter`
 env:
-  - XCODE_DESTINATION='platform=iOS Simulator,name=iPhone SE' CACHE_NAME=iOS
-  - XCODE_DESTINATION='platform=iOS Simulator,name=iPhone 8 Plus' CACHE_NAME=iOS
-  - XCODE_DESTINATION='platform=iOS Simulator,name=iPhone 8' CACHE_NAME=iOS
+  - XCODE_DESTINATION='platform=iOS Simulator,name=iPhone 11' CACHE_NAME=iOS
+  - XCODE_DESTINATION='platform=iOS Simulator,name=iPhone XS Max' CACHE_NAME=iOS
+  - XCODE_DESTINATION='platform=iOS Simulator,name=iPhone XR' CACHE_NAME=iOS
 branches:
   except:
   - circleci
