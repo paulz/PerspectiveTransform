@@ -1,8 +1,8 @@
 language: swift
-osx_image: xcode10.2
+osx_image: xcode11.3
 xcode_workspace: Example/PerspectiveTransform.xcworkspace
 xcode_scheme: Example
-xcode_sdk: iphonesimulator12.2
+xcode_sdk: iphonesimulator13.2
 git:
   depth: 1 # use 1, as false cause travis lint server 500 exception
 cache:
@@ -25,12 +25,12 @@ matrix:
         - git diff --exit-code # Outdated Bundle dependencies found, please run 'bundle update' and checkin changes
         - bundle exec pod lib lint || bundle exec pod lib lint --verbose --no-clean
   - name: With coverage report
-    env: XCODE_DESNITATION='platform=iOS Simulator,name=iPhone X' CACHE_NAME=iOS
+    env: XCODE_DESTINATION='platform=iOS Simulator,name=iPhone X' CACHE_NAME=iOS
     after_success:
       - bash <(curl -s 'https://codecov.io/bash') -Z -J '^PerspectiveTransform$' -X gcov -X fix
   - name: Mac OS
     xcode_scheme: OpenCV Tests
-    env: XCODE_DESNITATION='platform=macos' CACHE_NAME=macOS
+    env: XCODE_DESTINATION='platform=macos' CACHE_NAME=macOS
     before_script: ./Example/OpenCV-OSX-Tests/install-opencv.sh
     cache:
       bundler: true
@@ -95,11 +95,11 @@ before_install:
   - bundle -v || gem install bundler
   - ls -la Example/Pods/Manifest.lock && echo Skipping cocoapods repo update || git -C ~/.cocoapods/repos/master/ pull --quiet
 script:
-  - set -o pipefail && xcodebuild test -workspace "$TRAVIS_XCODE_WORKSPACE" -scheme "$TRAVIS_XCODE_SCHEME" -destination "$XCODE_DESNITATION" | bundle exec xcpretty -f `bundle exec xcpretty-travis-formatter`
+  - set -o pipefail && xcodebuild test -workspace "$TRAVIS_XCODE_WORKSPACE" -scheme "$TRAVIS_XCODE_SCHEME" -destination "$XCODE_DESTINATION" | bundle exec xcpretty -f `bundle exec xcpretty-travis-formatter`
 env:
-  - XCODE_DESNITATION='platform=iOS Simulator,name=iPhone SE' CACHE_NAME=iOS
-  - XCODE_DESNITATION='platform=iOS Simulator,name=iPhone 8 Plus' CACHE_NAME=iOS
-  - XCODE_DESNITATION='platform=iOS Simulator,name=iPhone 8' CACHE_NAME=iOS
+  - XCODE_DESTINATION='platform=iOS Simulator,name=iPhone SE' CACHE_NAME=iOS
+  - XCODE_DESTINATION='platform=iOS Simulator,name=iPhone 8 Plus' CACHE_NAME=iOS
+  - XCODE_DESTINATION='platform=iOS Simulator,name=iPhone 8' CACHE_NAME=iOS
 branches:
   except:
   - circleci
