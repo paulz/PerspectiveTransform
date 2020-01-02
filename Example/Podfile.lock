@@ -22,7 +22,7 @@ DEPENDENCIES:
   - Quick
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  trunk:
     - ImageCoordinateSpace
     - iOSSnapshotTestCase
     - Nimble
@@ -41,6 +41,6 @@ SPEC CHECKSUMS:
   PerspectiveTransform: 77d4f6b4ef5b8dbf5472afb8864ee3a74fffa193
   Quick: 7fb19e13be07b5dfb3b90d4f9824c855a11af40e
 
-PODFILE CHECKSUM: 80ff60e539c07a49578d282438bd9e678f55ceff
+PODFILE CHECKSUM: 1221c727f79e65c43c225a7da4f95a63cfa8f911
 
 COCOAPODS: 1.8.4

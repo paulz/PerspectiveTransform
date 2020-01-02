@@ -1,6 +1,6 @@
-source 'https://github.com/CocoaPods/Specs.git'
+source 'https://cdn.cocoapods.org/'
 use_frameworks!
-platform :ios, '12.2'
+platform :ios, '13.2'
 
 def DevelopmentPodAndDependencies
     pod 'PerspectiveTransform', :path => '../'

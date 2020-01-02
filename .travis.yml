@@ -93,7 +93,7 @@ matrix:
         tags: true
 before_install:
   - bundle -v || gem install bundler
-  - ls -la Example/Pods/Manifest.lock && echo Skipping cocoapods repo update || git -C ~/.cocoapods/repos/master/ pull --quiet
+  - ls -la Example/Pods/Manifest.lock && echo Skipping cocoapods repo update || pod install
 script:
   - set -o pipefail && xcodebuild test -workspace "$TRAVIS_XCODE_WORKSPACE" -scheme "$TRAVIS_XCODE_SCHEME" -destination "$XCODE_DESTINATION" | bundle exec xcpretty -f `bundle exec xcpretty-travis-formatter`
 env:
