@@ -11,7 +11,7 @@ PODS:
   - Nimble-Snapshots/Core (8.1.0):
     - iOSSnapshotTestCase (~> 6.0)
     - Nimble (~> 8.0)
-  - PerspectiveTransform (1.0)
+  - PerspectiveTransform (1.1)
   - Quick (2.2.0)
 
 DEPENDENCIES:
@@ -38,7 +38,7 @@ SPEC CHECKSUMS:
   iOSSnapshotTestCase: 9ab44cb5aa62b84d31847f40680112e15ec579a6
   Nimble: 4ab1aeb9b45553c75b9687196b0fa0713170a332
   Nimble-Snapshots: 3a624ceb92ec1f110da64933d1536199910e885a
-  PerspectiveTransform: 5f34dcbc5576e4edc2232ff692d686c739dec3a1
+  PerspectiveTransform: aad7656efae3e58b5939221e0ea859aab78319a6
   Quick: 7fb19e13be07b5dfb3b90d4f9824c855a11af40e
 
 PODFILE CHECKSUM: 1022d64c64e11ea237eb8911f12da68da807a763
