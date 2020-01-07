@@ -47,11 +47,11 @@ class CATransform3Dfrom2DSpec: QuickSpec {
                     context("layer") {
                         it("should have components") {
                             let transform = CATransform3D(matrix.to3d())
-                            var scale = transform.component(for: .scale)
+                            let scale = transform.component(for: .scale)
                             let madeScale = CATransform3DMakeScale(CGFloat(scale.x), CGFloat(scale.y), CGFloat(scale.z))
                             print("madeScale:", madeScale)
 
-                            var translate = transform.component(for: .translation)
+                            let translate = transform.component(for: .translation)
                             let madeTranslation = CATransform3DMakeTranslation(CGFloat(translate.x), CGFloat(translate.y), CGFloat(translate.z))
                             print("madeTranslation:", madeTranslation)
 

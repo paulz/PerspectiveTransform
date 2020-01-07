@@ -73,7 +73,7 @@ class ProjectionSpec: QuickSpec {
                 var to: Perspective!
 
                 beforeEach {
-                    var points = Quadrilateral(CGRect(origin: CGPoint.zero, size: CGSize(width: 10, height: 10))).corners
+                    let points = Quadrilateral(CGRect(origin: CGPoint.zero, size: CGSize(width: 10, height: 10))).corners
                     from = Perspective(points)
                     let turnedRight = [points[1], points[3], points[0], points[2]]
                     to = Perspective(turnedRight)

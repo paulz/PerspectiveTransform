@@ -111,7 +111,7 @@ enum TransformComponent: String {
 extension CALayer {
     func transformComponent(_ component: TransformComponent) -> Vector3 {
         var vector = Vector3()
-        let keyPathMap: [WritableKeyPath<Vector3, Double>:String] = [
+        let keyPathMap: [WritableKeyPath<Vector3, Double>: String] = [
             \.x: "x",
             \.y: "y",
             \.z: "z"

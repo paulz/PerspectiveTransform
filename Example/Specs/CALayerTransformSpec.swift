@@ -10,7 +10,7 @@ class CALayerTransformSpec: QuickSpec {
                 it("should have x,y,z") {
                     let transform = CATransform3DMakeTranslation(1, 2, 3)
 
-                    var translate = transform.component(for: .translation)
+                    let translate = transform.component(for: .translation)
 
                     expect(translate.x) == 1
                     expect(translate.y) == 2
@@ -22,7 +22,7 @@ class CALayerTransformSpec: QuickSpec {
                 context("around one axis") {
                     it("should match rotation.x component") {
                         let transform = CATransform3DMakeRotation(0.1234, 1, 0, 0)
-                        var rotate = transform.component(for: .rotation)
+                        let rotate = transform.component(for: .rotation)
 
                         expect(rotate.x) == 0.1234
                         expect(rotate.y) == 0
@@ -42,7 +42,7 @@ class CALayerTransformSpec: QuickSpec {
                     context("large angles") {
                         it("should be wrapped by asin") {
                             let transform = CATransform3DMakeRotation(100, 1, 0, 0)
-                            var rotate = transform.layerRotation()
+                            let rotate = transform.layerRotation()
 
                             expect(rotate.x) == asin(sin(100))
                             expect(rotate.y) == 0

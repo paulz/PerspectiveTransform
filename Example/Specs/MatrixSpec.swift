@@ -8,8 +8,8 @@ class MatrixSpec: QuickSpec {
         describe("matrix") {
 
             let m = float2x2(rows: [
-                float2(  4, 3),
-                float2(  3, 2)
+                SIMD2<Float>(  4, 3),
+                SIMD2<Float>(  3, 2)
                 ])
 
             context("inverse") {
@@ -18,8 +18,8 @@ class MatrixSpec: QuickSpec {
                 it("should match expected") {
                     // http://www.mathwords.com/i/inverse_of_a_matrix.htm
                     let expectInvert = float2x2(rows: [
-                        float2( -2, 3),
-                        float2(  3, -4)
+                        SIMD2<Float>( -2, 3),
+                        SIMD2<Float>(  3, -4)
                         ])
                     expect(inverse) == expectInvert
                 }
@@ -42,7 +42,7 @@ class MatrixSpec: QuickSpec {
                     // | 1   2 |
                     // |       | = 1*4-2*3 = -2
                     // | 3   4 |
-                    expect(float2x2([float2(1, 2), float2(3, 4)]).determinant) == -2
+                    expect(float2x2([SIMD2<Float>(1, 2), SIMD2<Float>(3, 4)]).determinant) == -2
                 }
 
                 it("should match math word 3x3 example") {

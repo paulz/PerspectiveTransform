@@ -9,8 +9,8 @@ class CATransform3D_MatrixSpec: QuickSpec {
             var m4x4: double4x4!
 
             beforeEach {
-                let columns: [double4] = (1...4).map { row in
-                    double4((1...4).map {Double(10 * row + $0)})
+                let columns: [SIMD4<Double>] = (1...4).map { row in
+                    SIMD4<Double>((1...4).map {Double(10 * row + $0)})
                 }
                 m4x4 = double4x4(columns)
             }
