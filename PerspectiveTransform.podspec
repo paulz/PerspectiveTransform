@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.cocoapods_version = '~> 1.8'
   s.name              = 'PerspectiveTransform'
-  s.version           = '1.0'
+  s.version           = '1.1'
   s.summary           = 'Perspective Transform calculates CATransform3D'
   s.description       = <<-DESC
   Calculates CATransform3D to transform rectangular frame to convex quadrilateral
