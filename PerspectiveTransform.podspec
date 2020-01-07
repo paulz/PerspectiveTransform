@@ -32,7 +32,7 @@ Pod::Spec.new do |s|
       ts.source_files   = 'Example/Tests/**/*.{h,swift}', 'Example/PerspectiveTransform/resetAnchorPoint.swift'
       ts.dependencies   = {
           'Quick' => '~> 2.2',
-          'Nimble-Snapshots' => '~> 8.0'
+          'Nimble-Snapshots' => '~> 8.1'
       }
   end
 end
