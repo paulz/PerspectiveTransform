@@ -1,5 +1,5 @@
 Pod::Spec.new do |s|
-  s.cocoapods_version = '~> 1.5'
+  s.cocoapods_version = '~> 1.8'
   s.name              = 'PerspectiveTransform'
   s.version           = '1.0'
   s.summary           = 'Perspective Transform calculates CATransform3D'
