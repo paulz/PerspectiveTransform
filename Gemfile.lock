@@ -58,7 +58,7 @@ GEM
       multipart-post (>= 1.2, < 3)
     faraday_middleware (0.13.1)
       faraday (>= 0.7.4, < 1.0)
-    ffi (1.12.1)
+    ffi (1.12.2)
     fourflusher (2.3.1)
     fuzzy_match (2.0.4)
     gh (0.15.1)
