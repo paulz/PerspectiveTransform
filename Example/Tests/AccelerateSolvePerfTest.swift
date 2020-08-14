@@ -9,6 +9,7 @@
 import XCTest
 import Accelerate
 @testable import PerspectiveTransform
+import simd
 
 @discardableResult
 func solve(_ A: [Double], _ B: [Double] ) -> [Double] {
@@ -103,5 +104,35 @@ class AccelerateSolvePerfTest: XCTestCase {
                 solve( self.A!, self.B! )
             }
         }
+    }
+
+    func transform(point: CGPoint, with transform: CATransform3D) -> CGPoint {
+        let vec = simd_double4(point) * Matrix4x4(transform)
+        let w = 1.0 //vec.w != 0 ? vec.w : Double.infinity
+        return CGPoint(x: vec.x * w, y: vec.y * w)
+    }
+
+    func testSimpleProjection() {
+        let src = Quadrilateral(CGRect(x: 1, y: 2, width: 3, height: 4))
+        let dst = Quadrilateral(CGRect(x: 1, y: 2, width: 13, height: 4))
+        let matrix = Perspective(src)
+            .projectiveTransform(destination: Perspective(dst))
+
+        let transformed = src.corners.map { transform(point: $0, with: matrix) }
+        for i in 0..<src.corners.count {
+            XCTAssertEqual(src.corners[i], transformed[i])
+        }
+    }
+}
+
+extension simd_double4 {
+    init(_ point: CGPoint) {
+        self.init(Double(point.x), Double(point.y), 0.0, 1.0)
+    }
+}
+
+extension Matrix4x4 {
+    init(_ transform: CATransform3D) {
+        self = unsafeBitCast(transform, to: Matrix4x4.self)
     }
 }
