@@ -120,7 +120,7 @@ class AccelerateSolvePerfTest: XCTestCase {
 
         let transformed = src.corners.map { transform(point: $0, with: matrix) }
         for i in 0..<src.corners.count {
-            XCTAssertEqual(src.corners[i], transformed[i])
+            XCTAssertEqual(dst.corners[i], transformed[i])
         }
     }
 }
