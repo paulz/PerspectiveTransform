@@ -108,8 +108,8 @@ class AccelerateSolvePerfTest: XCTestCase {
 
     func transform(point: CGPoint, with transform: CATransform3D) -> CGPoint {
         let vec = simd_double4(point) * Matrix4x4(transform)
-        let w = 1.0 //vec.w != 0 ? vec.w : Double.infinity
-        return CGPoint(x: vec.x * w, y: vec.y * w)
+        let w = 1.0 // vec.w != 0 ? vec.w : Double.infinity
+        return CGPoint(x: vec.x / w, y: vec.y / w)
     }
 
     func testSimpleProjection() {
