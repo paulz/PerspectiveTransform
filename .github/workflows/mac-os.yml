@@ -17,7 +17,6 @@ jobs:
               /usr/local/Cellar/gcc
               /usr/local/Cellar/opencv
         - name: Install OpenCV
-          if: steps.opencv-cache.outputs.cache-hit != 'true'
           run: Example/OpenCV-OSX-Tests/install-opencv.sh
         - uses: actions/cache@v2.1.1
           id: pods-cache
