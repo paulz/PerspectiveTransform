@@ -8,7 +8,7 @@ jobs:
       steps:
         - uses: actions/checkout@v2.3.2
         - name: Install Cocoapods dependencies
-          run: bundle exec pod install --project-directory=Example
+          run: pod install --project-directory=Example
         - name: Unit Specs
           uses: sersoft-gmbh/xcodebuild-action@v1.1
           with:
