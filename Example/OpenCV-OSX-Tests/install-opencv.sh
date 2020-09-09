@@ -6,7 +6,7 @@ libraries="openblas tbb gcc"
 
 for package in $libraries opencv
 do
-  brew list $package || brew install --ignore-dependencies --force-bottle $package
+  brew list $package > /dev/null || brew install --ignore-dependencies --force-bottle $package
 done
 
 brew link opencv
