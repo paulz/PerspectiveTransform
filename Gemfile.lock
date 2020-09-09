@@ -91,7 +91,7 @@ GEM
     rouge (2.0.7)
     ruby-macho (1.4.0)
     thread_safe (0.3.6)
-    travis (1.8.10)
+    travis (1.8.13)
       backports
       faraday (~> 0.9)
       faraday_middleware (~> 0.9, >= 0.9.1)
