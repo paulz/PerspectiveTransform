@@ -21,5 +21,4 @@ jobs:
           uses: sersoft-gmbh/xcodebuild-action@v1.1
           with:
             workspace: Example/PerspectiveTransform.xcworkspace
-            scheme: Example
-            destination: platform=macos
+            scheme: OpenCV Tests
