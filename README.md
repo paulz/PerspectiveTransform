@@ -1,6 +1,6 @@
 # Perspective Transform
 
-[![Build Status](https://travis-ci.org/paulz/PerspectiveTransform.svg?branch=master)](https://travis-ci.org/paulz/PerspectiveTransform)
+[![macOS](https://github.com/paulz/PerspectiveTransform/workflows/macOS/badge.svg)](https://github.com/paulz/PerspectiveTransform/actions?query=workflow%3AmacOS)
 [![CircleCI](https://circleci.com/gh/paulz/PerspectiveTransform.svg?style=svg)](https://circleci.com/gh/paulz/PerspectiveTransform)
 [![codecov](https://codecov.io/gh/paulz/PerspectiveTransform/branch/master/graph/badge.svg)](https://codecov.io/gh/paulz/PerspectiveTransform)
 [![Version](https://img.shields.io/cocoapods/v/PerspectiveTransform.svg?style=flat)](http://cocoapods.org/pods/PerspectiveTransform)
