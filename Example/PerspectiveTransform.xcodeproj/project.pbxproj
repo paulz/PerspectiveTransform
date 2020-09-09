@@ -77,6 +77,7 @@
 		11CFEB20812B9CCCF8BF46FE /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		228B48512798F0994ED8E8A0 /* Pods-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-Example/Pods-Example.release.xcconfig"; sourceTree = "<group>"; };
 		4B1B1C0C1C7A76C8003F8165 /* PerformanceTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerformanceTest.swift; sourceTree = "<group>"; };
+		4B29775C25089A0000830FB8 /* workflows */ = {isa = PBXFileReference; lastKnownFileType = folder; name = workflows; path = ../.github/workflows; sourceTree = "<group>"; };
 		4B2D2E861C7C2AD10045FD11 /* SnapshotSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotSpec.swift; sourceTree = "<group>"; };
 		4B2D2E881C7C2E620045FD11 /* container.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = container.jpg; sourceTree = "<group>"; };
 		4B2D2E891C7C2E620045FD11 /* with-overlay.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "with-overlay.svg"; sourceTree = "<group>"; };
@@ -300,6 +301,7 @@
 				11CFEB20812B9CCCF8BF46FE /* LICENSE */,
 				4BA7B1481C7C7A0600933779 /* .travis.yml */,
 				4B42173E2047AA4100BA73C2 /* codecov.yml */,
+				4B29775C25089A0000830FB8 /* workflows */,
 				4B714005205E16AA004441A8 /* Gemfile */,
 				4B714007205E16E8004441A8 /* Gemfile.lock */,
 			);

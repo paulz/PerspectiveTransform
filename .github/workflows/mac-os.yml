@@ -1,0 +1,25 @@
+name: macOS
+on: [push, pull_request]
+jobs:
+  macOS:
+      name: Test on macOS
+      runs-on: macOS-latest
+      timeout-minutes: 30
+      steps:
+        - uses: actions/checkout@v2.3.2
+        - uses: actions/cache@v2.1.1
+          id: load-cache
+          with:
+            path: Example/Pods
+            key: macos-pods-${{ hashFiles('**/Podfile.lock') }}
+        - name: Install OpenCV
+          run: Example/OpenCV-OSX-Tests/install-opencv.sh
+        - name: Install Cocoapods dependencies
+          if: steps.load-cache.outputs.cache-hit != 'true'
+          run: pod install --project-directory=Example
+        - name: All Tests
+          uses: sersoft-gmbh/xcodebuild-action@v1.1
+          with:
+            workspace: Example/PerspectiveTransform.xcworkspace
+            scheme: Example
+            destination: platform=macos
