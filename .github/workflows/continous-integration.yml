@@ -2,15 +2,18 @@ name: Build and Test
 on: [push, pull_request]
 jobs:
   iOS:
-      name: Test iOS 
+      name: Test iOS
       runs-on: macOS-latest
+      timeout-minutes: 15
       steps:
-        - uses: actions/checkout@v1
-        - name: Install Bundle dependencies
-          run: bundle install
+        - uses: actions/checkout@v2.3.2
         - name: Install Cocoapods dependencies
           run: bundle exec pod install --project-directory=Example
-        - name: iOS
-          run: xcodebuild test -workspace Example/PerspectiveTransform.xcworkspace -scheme Example -destination "platform=iOS Simulator,name=iPhone SE" | xcpretty
+        - name: Unit Specs
+          uses: sersoft-gmbh/xcodebuild-action@v1.1
+          with:
+            workspace: Example/PerspectiveTransform.xcworkspace
+            scheme: Example
+            destination: platform=iOS Simulator,name=iPhone 11 Pro
         - name: Report coverage
           run: bash <(curl -s 'https://codecov.io/bash') -Z -J '^PerspectiveTransform$' -X gcov -X fix
