@@ -78,6 +78,7 @@
 		228B48512798F0994ED8E8A0 /* Pods-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-Example/Pods-Example.release.xcconfig"; sourceTree = "<group>"; };
 		4B1B1C0C1C7A76C8003F8165 /* PerformanceTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerformanceTest.swift; sourceTree = "<group>"; };
 		4B29775C25089A0000830FB8 /* workflows */ = {isa = PBXFileReference; lastKnownFileType = folder; name = workflows; path = ../.github/workflows; sourceTree = "<group>"; };
+		4B29775D2508D31200830FB8 /* uninstall-opencv.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "uninstall-opencv.sh"; sourceTree = "<group>"; };
 		4B2D2E861C7C2AD10045FD11 /* SnapshotSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotSpec.swift; sourceTree = "<group>"; };
 		4B2D2E881C7C2E620045FD11 /* container.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = container.jpg; sourceTree = "<group>"; };
 		4B2D2E891C7C2E620045FD11 /* with-overlay.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "with-overlay.svg"; sourceTree = "<group>"; };
@@ -207,6 +208,7 @@
 				4BDF64A420469B350022C5F8 /* OpenCVWrapper.h */,
 				4BDF64A520469B350022C5F8 /* OpenCVWrapper.mm */,
 				4B9A5BF021FBA91500979AFE /* install-opencv.sh */,
+				4B29775D2508D31200830FB8 /* uninstall-opencv.sh */,
 			);
 			path = "OpenCV-OSX-Tests";
 			sourceTree = "<group>";

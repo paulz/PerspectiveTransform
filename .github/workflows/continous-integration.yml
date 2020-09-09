@@ -1,8 +1,8 @@
-name: Build and Test
+name: iOS
 on: [push, pull_request]
 jobs:
   iOS:
-      name: Test iOS
+      name: Test on iOS
       runs-on: macOS-latest
       timeout-minutes: 15
       steps:
