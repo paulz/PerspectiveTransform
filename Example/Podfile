@@ -33,3 +33,13 @@ target 'Framework Unit Specs' do
     DevelopmentPodAndDependencies()
     SwiftTestingPods()
 end
+
+post_install do |installer|
+  # Fix Xcode warning update to recommended settings caused by overriding architecture settings
+  # https://github.com/CocoaPods/CocoaPods/issues/8242#issuecomment-572046678
+  installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+      config.build_settings.delete('ARCHS')
+    end
+  end
+end
