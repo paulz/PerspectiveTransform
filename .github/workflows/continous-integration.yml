@@ -7,9 +7,15 @@ jobs:
       timeout-minutes: 15
       steps:
         - uses: actions/checkout@v2.3.2
+        - uses: actions/cache@v1
+          id: load-cache
+          with:
+            path: Example/Pods
+            key: macos-pods-${{ hashFiles('**/Podfile.lock') }}
         - name: Install Cocoapods dependencies
+          if: steps.load-cache.outputs.cache-hit != 'true'
           run: pod install --project-directory=Example
-        - name: Unit Specs
+        - name: All Tests
           uses: sersoft-gmbh/xcodebuild-action@v1.1
           with:
             workspace: Example/PerspectiveTransform.xcworkspace
