@@ -1,9 +1,7 @@
 # Perspective Transform
 
 [![macOS](https://github.com/paulz/PerspectiveTransform/workflows/macOS/badge.svg)](https://github.com/paulz/PerspectiveTransform/actions?query=workflow%3AmacOS)
-[![iOS](https://github.com/paulz/PerspectiveTransform/workflows/iOS/badge.svg)](https://github.com/paulz/PerspectiveTransform/actions?query=workflow%3AiOS)
-[![CircleCI](https://circleci.com/gh/paulz/PerspectiveTransform.svg?style=svg)](https://circleci.com/gh/paulz/PerspectiveTransform)
-[![codecov](https://codecov.io/gh/paulz/PerspectiveTransform/branch/master/graph/badge.svg)](https://codecov.io/gh/paulz/PerspectiveTransform)
+[![iOS](https://github.com/paulz/PerspectiveTransform/workflows/iOS/badge.svg)](https://github.com/paulz/PerspectiveTransform/actions?query=workflow%[![codecov](https://codecov.io/gh/paulz/PerspectiveTransform/branch/master/graph/badge.svg)](https://codecov.io/gh/paulz/PerspectiveTransform)
 [![Version](https://img.shields.io/cocoapods/v/PerspectiveTransform.svg?style=flat)](http://cocoapods.org/pods/PerspectiveTransform)
 [![License](https://img.shields.io/cocoapods/l/PerspectiveTransform.svg?style=flat)](http://cocoapods.org/pods/PerspectiveTransform)
 [![Platform](https://img.shields.io/cocoapods/p/PerspectiveTransform.svg?style=flat)](http://cocoapods.org/pods/PerspectiveTransform)
