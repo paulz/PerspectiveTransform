@@ -12,4 +12,4 @@ done
 # due to Warning: Refusing to link macOS-provided software: openblas
 # link /usr/local/opt/openblas is not getting restored
 cellar=$(brew --prefix)/Cellar/openblas
-ln -s $cellar/`ls $cellar` $(brew --prefix openblas) || true
+ln -s $cellar/`ls $cellar` $(brew --prefix)/opt/openblas || true
