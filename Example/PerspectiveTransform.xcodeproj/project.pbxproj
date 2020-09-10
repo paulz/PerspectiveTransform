@@ -101,7 +101,7 @@
 		4B96E125225C8C4600C7E49D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4B96E126225C8C4600C7E49D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		4B97C3CC2047BAC1004C9782 /* AccelerateSolvePerfTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccelerateSolvePerfTest.swift; sourceTree = "<group>"; };
-		4B9A5BF021FBA91500979AFE /* install-opencv.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "install-opencv.sh"; sourceTree = "<group>"; };
+		4B9A5BF021FBA91500979AFE /* install-opencv.sh */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = text.script.sh; path = "install-opencv.sh"; sourceTree = "<group>"; tabWidth = 2; };
 		4BA3D17A1C771B2E0009B690 /* ProjectionSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = ProjectionSpec.swift; sourceTree = "<group>"; tabWidth = 4; };
 		4BA3D17C1C771B560009B690 /* NimbleSpecHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NimbleSpecHelper.swift; sourceTree = "<group>"; };
 		4BA3D1801C77230A0009B690 /* VectorProjectionSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VectorProjectionSpec.swift; sourceTree = "<group>"; };
