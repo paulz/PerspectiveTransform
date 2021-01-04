@@ -84,7 +84,7 @@ GEM
       rouge (~> 2.0.7)
     xcpretty-actions-formatter (0.1.2)
       xcpretty (~> 0.2)
-    xcpretty-travis-formatter (1.0.0)
+    xcpretty-travis-formatter (1.0.1)
       xcpretty (~> 0.2, >= 0.0.7)
 
 PLATFORMS
