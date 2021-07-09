@@ -1,0 +1,21 @@
+version: 2
+updates:
+- package-ecosystem: bundler
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "13:00"
+  open-pull-requests-limit: 10
+  allow:
+  - dependency-type: direct
+  - dependency-type: indirect
+  ignore:
+  - dependency-name: ethon
+    versions:
+    - 0.13.0
+  - dependency-name: minitest
+    versions:
+    - 5.14.3
+  - dependency-name: ffi
+    versions:
+    - 1.14.2
